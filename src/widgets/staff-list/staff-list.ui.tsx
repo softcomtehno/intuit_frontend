@@ -35,7 +35,7 @@ const teachers = [
 const StaffList = () => {
   return (
     <Swiper
-      className="my-20 py-10 px-1 staff-list"
+      className=" py-10 px-1 staff-list"
       modules={[Pagination]}
       spaceBetween={20}
       slidesPerView={2.5}

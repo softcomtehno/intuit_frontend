@@ -5,12 +5,12 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Link } from 'react-router-dom';
 
 const universitySections = [
-  'Абитуриентам',
-  'Институты',
-  'Специальности',
-  'Курсы',
-  'Студентам',
-  'Об Университете',
+  { title: 'Абитуриентам', route: '/enroll' },
+  { title: 'Институты', route: '/institutes' },
+  { title: 'Специальности', route: '/specialization' },
+  { title: 'Курсы', route: '/courses' },
+  { title: 'Студентам', route: '/students' },
+  { title: 'Об Университете', route: '/about' },
 ];
 
 const degreeSections = [
@@ -61,9 +61,8 @@ export function Header() {
           className="flex justify-between min-h-[29px] max-w-[80%] mx-auto"
         >
           {universitySections.map((univer) => (
-            <Link className="text-base font-medium" to="/">
-              {' '}
-              {univer}
+            <Link className="text-base font-medium" to={univer.route}>
+              {univer.title}
             </Link>
           ))}
         </Toolbar>

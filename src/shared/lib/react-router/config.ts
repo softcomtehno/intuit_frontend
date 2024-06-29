@@ -6,6 +6,9 @@ export const pathKeys = {
   page404() {
     return pathKeys.root.concat('404/');
   },
+  enroll() {
+    return pathKeys.root.concat('enroll/')
+  },
   about: {
     root() {
       return pathKeys.root.concat('about/');
@@ -16,7 +19,7 @@ export const pathKeys = {
   },
   faculties: {
     root() {
-      return pathKeys.root.concat('faculties/');
+      return pathKeys.root.concat('institutes/');
     },
     bySlug(params: { slug: string }) {
       return pathKeys.faculties.root().concat(String(params.slug), '/');
@@ -40,7 +43,7 @@ export const pathKeys = {
   },
   staff: {
     root() {
-      return pathKeys.root.concat('teacher/');
+      return pathKeys.root.concat('teachers/');
     },
     bySlug(params: { slug: string }) {
       return pathKeys.staff.root().concat(String(params.slug), '/');

@@ -3,10 +3,12 @@ import {
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom'
+import { teacherPageRoute } from '~pages/teacher'
 import { degreePageRoute } from '~pages/degree/degree-page.route'
 import { homePageRoute } from '~pages/home/home-page.route'
 import { GenericLayout } from '~app/layout'
-import { teacherPageRoute } from '~pages/teacher'
+import { enrollPageRoute } from '~pages/enroll'
+import { institutesPageRoute } from '~pages/institutes'
 
 function BubbleError() {
   const error = useRouteError()
@@ -20,7 +22,13 @@ const router = createBrowserRouter([
     children: [
       {
         element: <GenericLayout />,
-        children: [homePageRoute, degreePageRoute, teacherPageRoute],
+        children: [
+          homePageRoute,
+          degreePageRoute,
+          enrollPageRoute,
+          institutesPageRoute,
+          teacherPageRoute,
+        ],
       },
     ],
   },

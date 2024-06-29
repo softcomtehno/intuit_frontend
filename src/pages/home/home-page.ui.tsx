@@ -1,7 +1,9 @@
-import { ProfessionCard } from '~entities/profession'
 import { NewsCard } from '~widgets/news-card'
-import { SwiperIntro } from '~widgets/swiper-intro'
 import StaffList from '~widgets/staff-list/staff-list.ui'
+import StaffButtonsSwiper from './ui/StaffCategory.ui'
+import { ProfessionCard } from '~entities/profession'
+import { SwiperIntro } from '~widgets/swiper-intro'
+import { EnrollForm } from '~widgets/enroll-form'
 
 const news = {
   image:
@@ -28,7 +30,12 @@ export function HomePage() {
         <NewsCard {...news} />
         <ProfessionCard {...profession}></ProfessionCard>
       </h1>
-      <StaffList />
+      <EnrollForm />
+      <div className="my-20"></div>
+      <div>
+        <StaffButtonsSwiper />
+        <StaffList />
+      </div>
     </div>
   )
 }
