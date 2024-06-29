@@ -1,6 +1,4 @@
 import { ProfessionCard } from '~entities/profession'
-import { Footer } from '~widgets/footer'
-import { Header } from '~widgets/header'
 import { NewsCard } from '~widgets/news-card'
 import { SwiperIntro } from '~widgets/swiper-intro'
 import StaffList from '~widgets/staff-list/staff-list.ui'
@@ -14,9 +12,10 @@ const news = {
 }
 
 const profession = {
-  title: 'Международная межвузовская научно-практическая конференция',
+  title:
+    'Преподавание иностранного языка (английский язык) в образовательных организациях',
   degree: 'Бакалавриат',
-  faculties: 'Программирование',
+  faculties: 'Институт межкультурной коммуникации и психологии',
   url: 'Maksat loh',
 }
 

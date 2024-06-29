@@ -6,13 +6,13 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
     <>
       <Card
         variant="outlined"
-        className="flex flex-col justify-between mt-10 w-1/3 h-72 bg-[#f7f9fd] p-10 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer"
+        className="flex flex-col justify-between mt-10 w-1/3 h-80 bg-[#f7f9fd] p-10 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer"
       >
-        <Box className="flex flex-col gap-5">
-          <Typography className=" prof-card__text transition-all">
+        <Box className="flex flex-col gap-2">
+          <Typography variant='subtitle1' className=" prof-card__text transition-all">
             {degree} / {faculties}
           </Typography>
-          <Typography className=" prof-card__text transition-all">
+          <Typography variant='h6' className=" prof-card__text transition-all font-bold">
             {title}
           </Typography>
         </Box>
