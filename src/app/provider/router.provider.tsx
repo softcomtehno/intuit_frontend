@@ -4,7 +4,7 @@ import {
   useRouteError,
 } from 'react-router-dom';
 import { homePageRoute } from '~pages/home/home-page.route';
-import { GenericLayout } from '~pages/layout';
+import { GenericLayout } from '~app/layout';
 
 function BubbleError() {
   const error = useRouteError();

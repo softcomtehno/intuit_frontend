@@ -1,6 +1,5 @@
-import { Footer } from '~widgets/footer';
-import { Header } from '~widgets/header';
 import { NewsCard } from '~widgets/news-card';
+import StaffList from '~widgets/staff-list/staff-list.ui';
 
 const news = {
   image:
@@ -13,11 +12,10 @@ const news = {
 export function HomePage() {
   return (
     <div>
-        <Header/>
       <h1 className="my-20 font-medium">
         <NewsCard {...news} />
       </h1>
-      <Footer/>
+      <StaffList/>
     </div>
   );
 }

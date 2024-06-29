@@ -4,3 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.staff-list .swiper-pagination-bullet {
+  width: 20px;
+  height: 6px;
+  display: inline-block;
+  background: #00956F;
+  margin: 0 5px;
+  border-radius: 20px;
+  transition: opacity 0.5s, background-color 0.5s, width 0.5s;
+}
