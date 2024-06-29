@@ -6,6 +6,8 @@ import {
 import { degreePageRoute } from '~pages/degree/degree-page.route';
 import { homePageRoute } from '~pages/home/home-page.route';
 import { GenericLayout } from '~app/layout';
+import { enrollPageRoute } from '~pages/enroll';
+import { institutesPageRoute } from './../../pages/institutes/institutes-page.route';
 
 function BubbleError() {
   const error = useRouteError();
@@ -20,7 +22,10 @@ const router = createBrowserRouter([
       {
         element: <GenericLayout />,
         children: [
-          homePageRoute, degreePageRoute
+          homePageRoute,
+          degreePageRoute,
+          enrollPageRoute,
+          institutesPageRoute,
         ],
       },
     ],
