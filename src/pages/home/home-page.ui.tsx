@@ -1,5 +1,7 @@
+
 import { NewsCard } from '~widgets/news-card';
 import StaffList from '~widgets/staff-list/staff-list.ui';
+import StaffButtonsSwiper from './ui/StaffCategory.ui';
 
 const news = {
   image:
@@ -15,7 +17,10 @@ export function HomePage() {
       <h1 className="my-20 font-medium">
         <NewsCard {...news} />
       </h1>
-      <StaffList/>
+      <div>
+<StaffButtonsSwiper/>
+        <StaffList />
+      </div>
     </div>
   );
 }
