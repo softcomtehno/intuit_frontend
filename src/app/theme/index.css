@@ -4,3 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Profession Card */
+
+.prof-card:hover .prof-card__text {
+  color: white !important;
+}
+.prof-card:hover .prof-card__btn_first {
+  background-color: white !important;
+  color: #00956f !important;
+}
+.prof-card:hover .prof-card__btn_last {
+  background-color: unset !important;
+  border-color: white !important;
+  color: white !important;
+}
