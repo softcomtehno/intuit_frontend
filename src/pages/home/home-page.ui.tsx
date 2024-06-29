@@ -1,9 +1,9 @@
-import { IntroCard } from '~entities/intro'
 import { ProfessionCard } from '~entities/profession'
 import { Footer } from '~widgets/footer'
 import { Header } from '~widgets/header'
 import { NewsCard } from '~widgets/news-card'
 import { SwiperIntro } from '~widgets/swiper-intro'
+import StaffList from '~widgets/staff-list/staff-list.ui'
 
 const news = {
   image:
@@ -23,14 +23,13 @@ const profession = {
 export function HomePage() {
   return (
     <div>
-      <Header />
       <h1 className="my-20 font-medium">
         {/* <IntroCard title={'Специалитет'}></IntroCard> */}
         <SwiperIntro></SwiperIntro>
         <NewsCard {...news} />
         <ProfessionCard {...profession}></ProfessionCard>
       </h1>
-      <Footer />
+      <StaffList />
     </div>
   )
 }
