@@ -1,7 +1,8 @@
-
 import { NewsCard } from '~widgets/news-card';
 import StaffList from '~widgets/staff-list/staff-list.ui';
 import StaffButtonsSwiper from './ui/StaffCategory.ui';
+import { ProfessionCard } from '~entities/profession';
+import { SwiperIntro } from '~widgets/swiper-intro';
 
 const news = {
   image:
@@ -11,16 +12,27 @@ const news = {
   link: '#',
 };
 
+const profession = {
+  title: 'Международная межвузовская научно-практическая конференция',
+  degree: 'Бакалавриат',
+  faculties: 'Программирование',
+  url: 'Maksat loh',
+};
+
 export function HomePage() {
   return (
     <div>
       <h1 className="my-20 font-medium">
+        {/* <IntroCard title={'Специалитет'}></IntroCard> */}
+        <SwiperIntro></SwiperIntro>
         <NewsCard {...news} />
+        <ProfessionCard {...profession}></ProfessionCard>
       </h1>
       <div>
-<StaffButtonsSwiper/>
+        <StaffButtonsSwiper />
         <StaffList />
       </div>
+      <StaffList />
     </div>
   );
 }

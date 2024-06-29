@@ -4,27 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Profession Card */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.prof-card:hover .prof-card__text {
+  color: white !important;
+}
+.prof-card:hover .prof-card__btn_first {
+  background-color: white !important;
+  color: #00956f !important;
+}
+.prof-card:hover .prof-card__btn_last {
+  background-color: unset !important;
+  border-color: white !important;
+  color: white !important;
+}
 
 .staff-list .swiper-pagination-bullet {
   width: 20px;
   height: 6px;
   display: inline-block;
-  background: #00956F;
+  background: #00956f;
   margin: 0 5px;
   border-radius: 20px;
   transition: opacity 0.5s, background-color 0.5s, width 0.5s;

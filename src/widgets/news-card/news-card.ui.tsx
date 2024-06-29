@@ -1,24 +1,23 @@
-import React from 'react';
+import React from 'react'
 import {
   Card,
   CardContent,
   CardMedia,
   Typography,
   CardActionArea,
-} from '@mui/material';
+} from '@mui/material'
 
 interface NewsCardProps {
-  image: string;
-  title: string;
-  description: string;
-  link: string;
+  image: string
+  title: string
+  description: string
+  link: string
 }
 
 export const NewsCard: React.FC<NewsCardProps> = ({
   image,
   title,
   description,
-  link,
 }) => {
   return (
     <Card className="shadow-none border  border-gray max-w-sm">
@@ -44,5 +43,5 @@ export const NewsCard: React.FC<NewsCardProps> = ({
         </CardContent>
       </CardActionArea>
     </Card>
-  );
-};
+  )
+}

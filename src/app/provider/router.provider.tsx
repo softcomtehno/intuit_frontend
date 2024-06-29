@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom';
+import { degreePageRoute } from '~pages/degree/degree-page.route';
 import { homePageRoute } from '~pages/home/home-page.route';
 import { GenericLayout } from '~app/layout';
 
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       {
         element: <GenericLayout />,
         children: [
-          homePageRoute,
+          homePageRoute, degreePageRoute
         ],
       },
     ],
