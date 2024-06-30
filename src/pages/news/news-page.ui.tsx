@@ -1,4 +1,13 @@
 import { Box, Button, Typography } from '@mui/material'
+import { useState } from 'react'
+import { FeedbackVideo } from '~entities/feedback'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Scrollbar } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/scrollbar'
+import { CustomModal } from '~shared/ui/modal'
+
 const news = [
   {
     id: 1,
@@ -46,6 +55,45 @@ const data = {
   </div>
 `,
 }
+
+const modalData = [
+  {
+    name: 'Арина Полищук',
+    description: 'Факультет гостиничного и ресторанного бизнеса',
+    img: 'https://sys3.ru/synergy-ru/content/otzivi/vertikal/arina_polishhuk.webp',
+    link: 'https://www.youtube.com/embed/U8GVU41W0yc?si=RyvP-CqFgLVV7bWn',
+  },
+  {
+    name: 'Арина Полищук',
+    description: 'Факультет гостиничного и ресторанного бизнеса',
+    img: 'https://sys3.ru/synergy-ru/content/otzivi/vertikal/arina_polishhuk.webp',
+    link: 'https://www.youtube.com/embed/U8GVU41W0yc?si=RyvP-CqFgLVV7bWn',
+  },
+  {
+    name: 'Арина Полищук',
+    description: 'Факультет гостиничного и ресторанного бизнеса',
+    img: 'https://sys3.ru/synergy-ru/content/otzivi/vertikal/arina_polishhuk.webp',
+    link: 'https://www.youtube.com/embed/U8GVU41W0yc?si=RyvP-CqFgLVV7bWn',
+  },
+  {
+    name: 'Арина Полищук',
+    description: 'Факультет гостиничного и ресторанного бизнеса',
+    img: 'https://sys3.ru/synergy-ru/content/otzivi/vertikal/arina_polishhuk.webp',
+    link: 'https://www.youtube.com/embed/U8GVU41W0yc?si=RyvP-CqFgLVV7bWn',
+  },
+  {
+    name: 'Арина Полищук',
+    description: 'Факультет гостиничного и ресторанного бизнеса',
+    img: 'https://sys3.ru/synergy-ru/content/otzivi/vertikal/arina_polishhuk.webp',
+    link: 'https://www.youtube.com/embed/U8GVU41W0yc?si=RyvP-CqFgLVV7bWn',
+  },
+  {
+    name: 'Арина Полищук',
+    description: 'Факультет гостиничного и ресторанного бизнеса',
+    img: 'https://sys3.ru/synergy-ru/content/otzivi/vertikal/arina_polishhuk.webp',
+    link: 'https://www.youtube.com/embed/U8GVU41W0yc?si=RyvP-CqFgLVV7bWn',
+  },
+]
 export const NewsPage = () => {
   return (
     <>
@@ -69,6 +117,20 @@ export const NewsPage = () => {
           </Box>
         </Box>
       </section>
+      <Typography variant="h2">Отзывы</Typography>
+
+      <Box className="p-10 cursor-pointer grid grid-cols-4 gap-5">
+        {modalData &&
+          modalData.map((item, i) => {
+            if (i <= 3) {
+              return (
+                <div className="flex justify-center ">
+                  <FeedbackVideo key={i} {...item}></FeedbackVideo>
+                </div>
+              )
+            }
+          })}
+      </Box>
     </>
   )
 }
@@ -77,14 +139,14 @@ export const NewsCard = ({ title, date }) => {
   return (
     <>
       <Box className="bg-[#F0F2F6] p-5 rounded-lg border-2 border-[#818181]  flex flex-col gap-5">
-        <Typography className="font-bold" variant="h6">
+        <Typography className="font-bold" variant="subtitle1">
           {title}
         </Typography>
-        <Box className="flex flex-col items-end">
+        <Box className="flex flex-col items-start gap-2">
           <Typography>{date}</Typography>
           <Button
-            variant="text"
-            className="text-green hover:text-white hover:bg-green"
+            variant="contained"
+            className="text-white transition-all bg-green hover:scale-105 shadow-sm"
           >
             Читать подробнее
           </Button>

@@ -13,7 +13,7 @@ export const FeedbackList = () => {
           hide: true,
         }}
         modules={[Scrollbar]}
-        className="mySwiper p-10"
+        className="mySwiper p-10 cursor-grabbing select-none	"
         slidesPerView={3}
         spaceBetween={30}
       >

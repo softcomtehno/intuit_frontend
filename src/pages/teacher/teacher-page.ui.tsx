@@ -1,5 +1,4 @@
 import {
-  SendRounded,
   WhatsApp,
   Telegram,
   Instagram,

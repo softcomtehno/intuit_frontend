@@ -1,1 +1,2 @@
-export { FeedbackCard } from './feedback-card.ui'
+export { FeedbackCard } from './ui/feedback-card.ui'
+export { FeedbackVideo } from './ui/feedback-video.ui'
