@@ -17,7 +17,7 @@ const degreeSections = [
   'Институты',
   'Бакалавриат',
   'Магистратура',
-  'Колледж',  
+  'Колледж',
   'Аспирантура',
   'Креатив',
   'Курсы',
@@ -25,37 +25,47 @@ const degreeSections = [
 
 export function Header() {
   return (
-    <AppBar position="sticky" className="bg-white text-black shadow-none py-3">
-      <header>
-        <Toolbar
-          disableGutters
-          className="flex justify-between pb-2 max-w-[80%] mx-auto"
-        >
-          <div className="flex items-center gap-1">
-            <img src={IntuitLogo} alt="Intuit" className="h-[58px]" />
-            <p className="text-xs font-semibold leading-3">
-              МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
-              ТЕХНОЛОГИЙ
-            </p>
-          </div>
-          <div className="flex gap-3">
-            <Button
-              variant="outlined"
-              size="small"
-              className="px-12 py-[5px] duration-300 border-green text-green hover:bg-green hover:text-white"
-            >
-              Подобрать программу
-            </Button>
+    <>
+      <AppBar
+        position="static"
+        className="bg-white text-black shadow-none py-3"
+      >
+        <header>
+          <Toolbar
+            disableGutters
+            className="flex justify-between pb-2 max-w-[80%] mx-auto"
+          >
+            <div className="flex items-center gap-1">
+              <img src={IntuitLogo} alt="Intuit" className="h-[58px]" />
+              <p className="text-xs font-semibold leading-3">
+                МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
+                ТЕХНОЛОГИЙ
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <Button
+                variant="outlined"
+                size="small"
+                className="px-12 py-[5px] duration-300 border-green text-green hover:bg-green hover:text-white"
+              >
+                Подобрать программу
+              </Button>
 
-            <Button className="text-blue" startIcon={<LocalPhoneRoundedIcon />}>
-              +996 (312) 88-26-84
-            </Button>
+              <Button
+                className="text-blue"
+                startIcon={<LocalPhoneRoundedIcon />}
+              >
+                +996 (312) 88-26-84
+              </Button>
 
-            <Button className="text-green" endIcon={<MenuRoundedIcon />}>
-              Меню
-            </Button>
-          </div>
-        </Toolbar>
+              <Button className="text-green" endIcon={<MenuRoundedIcon />}>
+                Меню
+              </Button>
+            </div>
+          </Toolbar>
+        </header>
+      </AppBar>
+      <div className="sticky top-0 bg-white z-50">
         <Toolbar
           disableGutters
           className="flex justify-between min-h-[29px] max-w-[80%] mx-auto"
@@ -79,7 +89,7 @@ export function Header() {
           ))}
         </Toolbar>
         <Divider className="h-[2px]" />
-      </header>
-    </AppBar>
+      </div>
+    </>
   );
 }

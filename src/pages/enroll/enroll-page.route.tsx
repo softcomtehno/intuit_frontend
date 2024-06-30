@@ -4,6 +4,6 @@ import { pathKeys } from '~shared/lib/react-router';
 import { EnrollPage } from './enroll-page.ui';
 
 export const enrollPageRoute: RouteObject = {
-  path: pathKeys.enroll(),
+  path: pathKeys.enroll.root(),
   element: createElement(EnrollPage),
 };
