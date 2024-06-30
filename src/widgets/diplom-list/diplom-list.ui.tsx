@@ -1,4 +1,4 @@
-import { Card, Typography } from '@mui/material';
+import { Button, Card, Typography } from '@mui/material';
 import Gerb from '../../assets/gerb.svg';
 import EUGerb from '../../assets/eugerb.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,7 +15,7 @@ export const DiplomList = () => {
         Твой будущий диплом
       </Typography>
       <Swiper
-        className=" py-10 px-1 staff-list"
+        className=" py-10 px-1 diplom-list"
         modules={[Pagination]}
         spaceBetween={20}
         slidesPerView={2.5}
@@ -33,6 +33,7 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Государственный диплом бакалавра
               </Typography>
+              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
             </div>
             <img
               src={Gerb}
@@ -53,6 +54,7 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Государственный диплом магистра
               </Typography>
+              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
             </div>
             <img
               src={Gerb}
@@ -73,6 +75,7 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Государственный диплом аспиранта
               </Typography>
+              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
             </div>
             <img
               src={Gerb}
@@ -93,6 +96,7 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Приложение к диплому
               </Typography>
+              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
             </div>
             <img
               src={EUGerb}
