@@ -9,6 +9,7 @@ import { homePageRoute } from '~pages/home/home-page.route'
 import { GenericLayout } from '~app/layout'
 import { enrollPageRoute } from '~pages/enroll'
 import { institutesPageRoute } from '~pages/institutes'
+import { newsPageRoute } from '~pages/news'
 import { paymentsPageRoute } from '~pages/payments'
 import { institutePageRoute } from '~pages/institute'
 
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
           enrollPageRoute,
           institutesPageRoute,
           teacherPageRoute,
+          newsPageRoute,
           paymentsPageRoute,
           institutePageRoute,
         ],
