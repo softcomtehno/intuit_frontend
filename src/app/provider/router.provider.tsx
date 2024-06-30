@@ -9,6 +9,7 @@ import { homePageRoute } from '~pages/home/home-page.route'
 import { GenericLayout } from '~app/layout'
 import { enrollPageRoute } from '~pages/enroll'
 import { institutesPageRoute } from '~pages/institutes'
+import { newsPageRoute } from '~pages/news'
 
 function BubbleError() {
   const error = useRouteError()
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
           enrollPageRoute,
           institutesPageRoute,
           teacherPageRoute,
+          newsPageRoute,
         ],
       },
     ],
