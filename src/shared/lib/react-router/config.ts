@@ -6,8 +6,13 @@ export const pathKeys = {
   page404() {
     return pathKeys.root.concat('404/');
   },
-  enroll() {
-    return pathKeys.root.concat('enroll/')
+  enroll: {
+    root() {
+      return pathKeys.root.concat('enroll/');
+    },
+    payments() {
+      return pathKeys.enroll.root().concat('payments/');
+    },
   },
   about: {
     root() {
@@ -49,5 +54,4 @@ export const pathKeys = {
       return pathKeys.staff.root().concat(String(params.slug), '/');
     },
   },
-
 };

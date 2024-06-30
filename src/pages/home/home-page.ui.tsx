@@ -4,6 +4,7 @@ import StaffButtonsSwiper from './ui/StaffCategory.ui'
 import { ProfessionCard } from '~entities/profession'
 import { SwiperIntro } from '~widgets/swiper-intro'
 import { EnrollForm } from '~widgets/enroll-form'
+import { DiplomList } from '~widgets/diplom-list'
 
 const news = {
   image:
@@ -24,14 +25,16 @@ const profession = {
 export function HomePage() {
   return (
     <div>
-      <h1 className="my-20 font-medium">
+      <h1 className="my-5 font-medium">
         {/* <IntroCard title={'Специалитет'}></IntroCard> */}
         <SwiperIntro></SwiperIntro>
         <NewsCard {...news} />
         <ProfessionCard {...profession}></ProfessionCard>
       </h1>
       <EnrollForm />
-      <div className="my-20"></div>
+      <div className="my-20">
+        <DiplomList/>
+      </div>
       <div>
         <StaffButtonsSwiper />
         <StaffList />
