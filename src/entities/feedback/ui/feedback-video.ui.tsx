@@ -3,8 +3,13 @@ import { useState } from 'react'
 import { PlayCircleFilledRounded } from '@mui/icons-material/'
 import { CustomModal } from '~shared/ui/modal'
 
-export const FeedbackVideo = ({ name, description, link, img }) => {
+export const FeedbackVideo = ({ name, description, url, img }) => {
   const [active, setActive] = useState(false)
+
+  const getYouTubeEmbedUrl = (url) => {
+    const videoId = url.split('v=')[1]?.split('&')[0]
+    return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : ''
+  }
 
   return (
     <>
@@ -28,7 +33,7 @@ export const FeedbackVideo = ({ name, description, link, img }) => {
       <CustomModal active={active} setActive={setActive}>
         <iframe
           className="w-full h-72"
-          src={link}
+          src={getYouTubeEmbedUrl(url)}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
