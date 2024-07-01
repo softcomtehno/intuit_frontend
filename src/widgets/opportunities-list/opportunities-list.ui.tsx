@@ -8,7 +8,7 @@ export const OpportunitiesList = () => {
         С нами ваши возможности <br /> безграничны
       </Typography>
       <div className="flex justify-between mt-4">
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] transition-all duration-200 hover:scale-105 rounded-lg">
+        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] transition-all duration-200  rounded-lg">
           <Typography
             variant="h6"
             component="div"
@@ -31,7 +31,7 @@ export const OpportunitiesList = () => {
             </li>
           </ul>
         </Card>
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200 hover:scale-105 ">
+        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200  ">
           <Typography
             variant="h6"
             component="div"
@@ -55,7 +55,7 @@ export const OpportunitiesList = () => {
             </li>
           </ul>
         </Card>
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200 hover:scale-105 ">
+        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200  ">
           <Typography
             variant="h6"
             component="div"
@@ -78,7 +78,7 @@ export const OpportunitiesList = () => {
             </li>
           </ul>
         </Card>
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200 hover:scale-105 ">
+        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200  ">
           <Typography
             variant="h6"
             component="div"

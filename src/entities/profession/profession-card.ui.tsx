@@ -28,7 +28,7 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
           </Link>
           <Button
             variant="outlined"
-            className="border-green text-green prof-card__btn_last transition-all border-green"
+            className="text-green prof-card__btn_last transition-all border-green"
           >
             Поступить
           </Button>

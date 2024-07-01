@@ -1,14 +1,18 @@
 import { Button, Card, Typography } from '@mui/material';
 import Gerb from '../../assets/gerb.svg';
 import EUGerb from '../../assets/eugerb.svg';
+import Diplom from '../../assets/image_2024-06-30_16-05-01.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import { CustomModal } from '~shared/ui/modal';
+import { useState } from 'react';
 
 export const DiplomList = () => {
+  const [active, setActive] = useState(false);
   return (
     <div>
       <Typography variant="h3" className="font-semibold">
@@ -33,7 +37,14 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Государственный диплом бакалавра
               </Typography>
-              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
+              <Button
+                onClick={() => setActive(true)}
+                size="small"
+                className="self-start shadow-none bg-blue"
+                variant="contained"
+              >
+                Посмотреть
+              </Button>
             </div>
             <img
               src={Gerb}
@@ -54,7 +65,13 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Государственный диплом магистра
               </Typography>
-              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
+              <Button
+                size="small"
+                className="self-start shadow-none bg-blue"
+                variant="contained"
+              >
+                Посмотреть
+              </Button>
             </div>
             <img
               src={Gerb}
@@ -75,7 +92,13 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Государственный диплом аспиранта
               </Typography>
-              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
+              <Button
+                size="small"
+                className="self-start shadow-none bg-blue"
+                variant="contained"
+              >
+                Посмотреть
+              </Button>
             </div>
             <img
               src={Gerb}
@@ -96,7 +119,13 @@ export const DiplomList = () => {
               <Typography className="font-medium">
                 Приложение к диплому
               </Typography>
-              <Button size='small' className='self-start shadow-none bg-blue' variant='contained'>Посмотреть</Button>
+              <Button
+                size="small"
+                className="self-start shadow-none bg-blue"
+                variant="contained"
+              >
+                Посмотреть
+              </Button>
             </div>
             <img
               src={EUGerb}
@@ -106,6 +135,18 @@ export const DiplomList = () => {
           </Card>
         </SwiperSlide>
       </Swiper>
+
+      <CustomModal active={active} setActive={setActive}>
+        <div className="max-h-[400px] overflow-y-auto ">
+          <img className="min-h-[200px] object-cover" src={Diplom} alt="" />
+
+          <img
+            className="min-h-[200px] object-cover mt-10"
+            src={Diplom}
+            alt=""
+          />
+        </div>
+      </CustomModal>
     </div>
   );
 };

@@ -5,7 +5,7 @@ export function CustomModal({ active, setActive, children }) {
   return (
     <div
       onClick={() => setActive(false)}
-      className={`fixed duration-500 z-50  h-screen w-screen bg-[black]/30 top-0 left-0 flex  pointer-events-none items-center justify-center ${
+      className={`fixed duration-500 z-50 h-screen w-screen bg-[black]/30 top-0 left-0 flex  pointer-events-none items-center justify-center ${
         active ? 'opacity-100 pointer-events-auto' : 'opacity-0'
       }`}
     >
