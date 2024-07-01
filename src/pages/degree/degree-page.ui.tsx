@@ -1,7 +1,6 @@
 import { SwiperIntro } from '~widgets/swiper-intro'
 import { InfoBlock } from './ui/info-block.ui'
 import { Typography } from '@mui/material'
-import { FeedbackList } from '~widgets/feedback-list'
 
 export const DegreePage = () => {
   return (
@@ -22,7 +21,6 @@ export const DegreePage = () => {
           Отзывы студентов
         </Typography>
 
-        <FeedbackList></FeedbackList>
       </div>
     </>
   )

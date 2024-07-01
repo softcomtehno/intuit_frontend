@@ -1,2 +1,5 @@
 export { FeedbackCard } from './ui/feedback-card.ui'
 export { FeedbackVideo } from './ui/feedback-video.ui'
+export * as feedbackApi from './feedback.api'
+export * as feedbackTypes from './feedback.types'
+export * as feedbackQueries from './feedback.queries'
