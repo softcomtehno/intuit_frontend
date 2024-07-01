@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-
 import { getFeedbackQuery } from './feedback.api'
 
 const keys = {
