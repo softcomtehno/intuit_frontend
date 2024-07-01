@@ -19,7 +19,7 @@ const profession = {
     'Преподавание иностранного языка (английский язык) в образовательных организациях',
   degree: 'Бакалавриат',
   faculties: 'Институт межкультурной коммуникации и психологии',
-  url: 'Maksat loh',
+  url: 'specialization/ss',
 }
 
 export function HomePage() {

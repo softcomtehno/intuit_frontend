@@ -1,6 +1,8 @@
+import { Typography } from '@mui/material';
 import { IntroCard } from '~entities/intro';
 import { EnrollForm } from '~widgets/enroll-form';
 import { FacultyCard } from '~widgets/faculty-card';
+import { OpportunitiesList } from '~widgets/opportunities-list';
 
 const institutes = [
   { name: 'Институт Цифровой Трансформации и Программирования', programs: 15 },
@@ -29,15 +31,19 @@ export const InstitutesPage = () => {
         }
         title={'Институты '}
       ></IntroCard>
-      <div className="flex flex-wrap justify-between my-10 gap-5 ">
-        {institutes.map((institute, index) => (
-          <FacultyCard
-            key={index}
-            instituteName={institute.name}
-            programCount={institute.programs}
-          />
-        ))}
+      <div className='my-5'>
+        <Typography className='font-medium' variant='h3' component="div">Институты</Typography>
+        <div className="flex flex-wrap justify-between my-10 gap-5 ">
+          {institutes.map((institute, index) => (
+            <FacultyCard
+              key={index}
+              instituteName={institute.name}
+              programCount={institute.programs}
+            />
+          ))}
+        </div>
       </div>
+      <OpportunitiesList/>
       <EnrollForm />
     </div>
   );

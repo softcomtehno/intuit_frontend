@@ -33,23 +33,49 @@ export const ProgramAccordion = () => {
         'Бизнес-аналитика и анализ больших данных',
       ],
     },
+    {
+      title: '3 Курс',
+      details: [
+        'Управление комплексной системой распределения',
+        'Data-driven маркетинг',
+        'Сбытовая политика в цифровой среде',
+        'UX-исследования потребительского опыта',
+        'Аналитика и визуализация маркетинговых данных',
+        'Инфографика и презентация маркетинговых проектов',
+        'Бизнес-аналитика и анализ больших данных',
+      ],
+    },
+    {
+      title: '4 Курс',
+      details: [
+        'Управление комплексной системой распределения',
+        'Data-driven маркетинг',
+        'Сбытовая политика в цифровой среде',
+        'UX-исследования потребительского опыта',
+        'Аналитика и визуализация маркетинговых данных',
+        'Инфографика и презентация маркетинговых проектов',
+        'Бизнес-аналитика и анализ больших данных',
+      ],
+    },
   ];
 
   return (
-    <div className="container my-10">
+    <div className="my-10 flex flex-col rounded-2xl bg-[#ededed] p-10">
+      <h3 className='font-semibold text-3xl mb-5'>Программа обучения</h3>
       {courses.map((course, index) => (
         <Accordion
           key={index}
           expanded={expanded === `panel${index}`}
           onChange={handleChange(`panel${index}`)}
-          className={`shadow-none ${
-            index !== 0 ? 'border-t' : ''
-          } border-gray rounded-none`}
+          className={`shadow-none p-5 m-0 ${
+            index === 0 ? 'rounded-t-lg' : index === courses.length - 1 ? 'rounded-b-lg' : ''
+          }`}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`panel${index}-content`}
             id={`panel${index}-header`}
+            className='text-xl font-semibold p-0'
           >
             {course.title}
           </AccordionSummary>
