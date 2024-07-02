@@ -3,9 +3,9 @@ import { Partner } from '../partner.types'
 
 export const PartnerCard = ({ logo, title }: Partner) => {
   return (
-    <Card className="bg-gray w-52 h-40  mx-5 flex flex-col items-center justify-center gap-3">
-      <img src={logo} alt={title} className="h-16 w-16 rounded-full" />
-      <Typography variant="h6" className="font-bold">
+    <Card className="bg-[#ECEDF0] w-64 h-24  mx-5 flex  items-center justify-center gap-3 rounded-xl shadow-none">
+      <img src={logo} alt={title} className="h-12 w-12 rounded-full " />
+      <Typography variant="body1" className="font-bold uppercase">
         {title}
       </Typography>
     </Card>
