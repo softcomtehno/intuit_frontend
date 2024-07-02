@@ -6,6 +6,6 @@ export const getStaffQuery = () => {
   return axios.get(`${API_URL}university/staffs/`)
 }
 
-export const getStaffDetailsQuery = (id: number) => {
-  return axios.get(`${API_URL}university/staffs/${id}/`)
+export const getStaffDetailsQuery = (string: string) => {
+  return axios.get(`${API_URL}university/staffs/${string}/`)
 }
