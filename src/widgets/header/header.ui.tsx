@@ -122,7 +122,7 @@ export function Header() {
                 <h2 className="font-bold mb-3">Уровни</h2>
                 {degreeData?.data.map((degree, index) => (
                   <li className="mb-2" key={index}>
-                    <Link to={`degree/${degree.slug}`}>{degree.title}</Link>
+                    <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>{degree.title}</Link>
                   </li>
                 ))}
               </ul>
