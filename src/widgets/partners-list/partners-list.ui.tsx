@@ -19,8 +19,8 @@ export const PartnersList = () => {
   }
   if (isSuccess) {
     return (
-      <Box className="w-full overflow-hidden">
-        <Marquee direction="left" speed={30} pauseOnHover={true}>
+      <Box className="w-full overflow-hidden my-10">
+        <Marquee direction="left" speed={100} pauseOnHover={true}>
           {partnersData &&
             partnersData.data.map((partner) => (
               <PartnerCard key={partner.id} {...partner}></PartnerCard>
