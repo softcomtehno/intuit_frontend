@@ -6,6 +6,7 @@ import { SwiperIntro } from '~widgets/swiper-intro'
 import { EnrollForm } from '~widgets/enroll-form'
 import { DiplomList } from '~widgets/diplom-list'
 import { FeedbackList } from '~widgets/feedback-list'
+import { PartnersList } from '~widgets/partners-list'
 
 const news = {
   image:
@@ -41,6 +42,7 @@ export function HomePage() {
         <StaffList />
       </div>
       <FeedbackList></FeedbackList>
+      <PartnersList></PartnersList>
     </div>
   )
 }
