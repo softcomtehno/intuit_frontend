@@ -15,7 +15,7 @@ export const SwiperIntro = () => {
         spaceBetween={30}
         effect={'fade'}
         modules={[EffectFade, Navigation, Pagination]}
-        className="mySwiper container w-full h-[700px]"
+        className="mySwiper container w-full h-[550px]"
       >
         <SwiperSlide className="bg-center bg-cover">
           <IntroCard
