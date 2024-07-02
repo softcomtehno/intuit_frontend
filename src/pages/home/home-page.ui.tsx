@@ -1,4 +1,4 @@
-import { NewsCard } from '~widgets/news-card'
+import { NewsCard } from '~entities/news'
 import StaffList from '~widgets/staff-list/staff-list.ui'
 import StaffButtonsSwiper from './ui/StaffCategory.ui'
 import { ProfessionCard } from '~entities/profession'
@@ -33,7 +33,7 @@ export function HomePage() {
       </h1>
       <EnrollForm />
       <div className="my-20">
-        <DiplomList/>
+        <DiplomList />
       </div>
       <div>
         <StaffButtonsSwiper />
