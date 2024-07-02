@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import ExpandCircleDownRoundedIcon from '@mui/icons-material/ExpandCircleDownRounded';
 
 export const ProgramAccordion = () => {
   const [expanded, setExpanded] = useState<string | false>(false);
@@ -61,7 +61,9 @@ export const ProgramAccordion = () => {
 
   return (
     <div className="my-10 flex flex-col rounded-2xl bg-[#ededed] p-10">
-      <h3 className='font-semibold text-3xl mb-5'>Программа обучения</h3>
+      <Typography variant="h3" className="font-semibold mb-4">
+        Программа обучения
+      </Typography>
       {courses.map((course, index) => (
         <Accordion
           key={index}
@@ -72,7 +74,7 @@ export const ProgramAccordion = () => {
           }`}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandCircleDownRoundedIcon className='text-[30px]' />}
             aria-controls={`panel${index}-content`}
             id={`panel${index}-header`}
             className='text-xl font-semibold p-0'
@@ -80,7 +82,7 @@ export const ProgramAccordion = () => {
             {course.title}
           </AccordionSummary>
           <AccordionDetails>
-            <ul className="list-disc pl-7">
+            <ul className="list-disc pl-7 font-medium text-lg">
               {course.details.map((detail, detailIndex) => (
                 <li key={detailIndex}>{detail}</li>
               ))}
