@@ -12,6 +12,10 @@ import { staffQueries } from '~entities/staff'
 export const TeacherPage = () => {
   const { slug } = useParams()
 
+  if (!slug) {
+    return <div>Invalid URL</div>
+  }
+
   const {
     data: staffData,
     isSuccess,
@@ -47,9 +51,9 @@ export const TeacherPage = () => {
             <div className="flex flex-col items-center justify-center gap-10">
               <div className="flex justify-center w-36 border-3 border-solid border-black rounded-full shadow-lg">
                 <img
-                  src="https://intuit.kg/media/faculty/images/teachers/photo_2022-05-12_17-42-53.jpg"
+                  src={staffData.data.image}
                   alt="User Avatar"
-                  className="w-36 border-3 border-solid border-black rounded-full shadow-lg"
+                  className="w-36 h-36 border-3 border-solid border-black rounded-full shadow-lg"
                 />
               </div>
               <Typography variant="h4" className="font-bold text-white">
