@@ -1,5 +1,4 @@
 import { SpecializationBanner } from './ui/SpecializationBanner.ui';
-import StaffList from '~widgets/staff-list/staff-list.ui';
 import { EnrollForm } from '~widgets/enroll-form';
 import { SkillsBlock } from './ui/SkillBlock.ui';
 import { ProgramAccordion } from './ui/ProgramAccordion.ui.tsx';
@@ -12,7 +11,6 @@ export const SpecializationPage = () => {
       <ProgramAccordion />
       <SkillsBlock />
       <CareerBlock />
-      <StaffList />
       <EnrollForm />
     </div>
   );

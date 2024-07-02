@@ -1,5 +1,5 @@
 // import { ErrorMessage, Field, Form } from 'formik';
-import { Button,  Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 const initialUser = {
   name: '',
@@ -52,7 +52,10 @@ export const EnrollForm = () => {
               {/* <ErrorMessage name="email" /> */}
             </fieldset>
           </fieldset>
-          <Button variant="contained" className="shadow-none h-[51px] w-full bg-green">
+          <Button
+            variant="contained"
+            className="shadow-none h-[51px] w-full bg-green"
+          >
             Подать заявку
           </Button>
         </div>
