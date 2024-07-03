@@ -4,8 +4,9 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
-} from '@mui/material';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+} from '@mui/material'
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded'
+import { specializationTypes } from '~entities/specialization'
 
 const tasks = [
   'Проводить анализ CJM и конкурентов',
@@ -18,20 +19,20 @@ const tasks = [
   'Составлять бриф для проведения качественного исследования',
   'Проектировать дальнейший путь пользователя',
   'Составлять сценарий глубинного интервью',
-];
+]
 
 const chunkArray = (arr, chunkSize) => {
-  const result = [];
+  const result = []
   for (let i = 0; i < arr.length; i += chunkSize) {
-    result.push(arr.slice(i, i + chunkSize));
+    result.push(arr.slice(i, i + chunkSize))
   }
-  return result;
-};
+  return result
+}
 
-const maxTasks = 10;
-const chunks = chunkArray(tasks.slice(0, maxTasks), 5);
+const maxTasks = 10
 
-export const SkillsBlock = () => {
+export const SkillsBlock = ({ skills }: specializationTypes.Specialization) => {
+  const chunks = chunkArray(skills.slice(0, maxTasks), 5)
   return (
     <div>
       <Typography variant="h3" className="font-semibold">
@@ -45,7 +46,10 @@ export const SkillsBlock = () => {
                 <ListItemIcon className="min-w-[35px]">
                   <CheckCircleRoundedIcon className="text-green" />
                 </ListItemIcon>
-                <ListItemText id={`${task} + ${taskIndex}`} primary={task} />
+                <ListItemText
+                  id={`${task.name} + ${taskIndex}`}
+                  primary={task.name}
+                />
               </ListItem>
             ))}
           </List>
@@ -86,5 +90,5 @@ export const SkillsBlock = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

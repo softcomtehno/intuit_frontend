@@ -24,7 +24,7 @@ export const PartnersList = () => {
           direction="left"
           speed={50}
           pauseOnHover={true}
-          className="mb-2 flex gap-2"
+          className="mb-3 "
         >
           {partnersData &&
             partnersData.data.map((partner, i) => {

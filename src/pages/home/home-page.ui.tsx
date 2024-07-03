@@ -21,7 +21,7 @@ const profession = {
     'Преподавание иностранного языка (английский язык) в образовательных организациях',
   degree: 'Бакалавриат',
   faculties: 'Институт межкультурной коммуникации и психологии',
-  url: 'specialization/ss',
+  url: 'specialization/professiya-prodakt-menedzher',
 }
 
 export function HomePage() {
