@@ -25,6 +25,7 @@ const degreeSections = [
   'Креатив',
   'Курсы',
 ];
+
 const institutes = [
   { name: 'ИНСТИТУТ ЦИФРОВОЙ ТРАНСФОРМАЦИИ И ПРОГРАММИРОВАНИЯ', programs: 15 },
   { name: 'ИНСТИТУТ ДИЗАЙНА, АРХИТЕКТУРЫ И ТЕКСТИЛЯ', programs: 9 },
@@ -100,7 +101,7 @@ export function Header() {
           </Toolbar>
 
           <div
-            className={`transition-all duration-500 ${
+            className={`transition-all duration-300 ${
               isMenuOpen
                 ? 'opacity-100 visible translate-y-2 max-h-screen'
                 : 'opacity-0 invisible translate-y-[-10px] max-h-0'
@@ -122,7 +123,9 @@ export function Header() {
                 <h2 className="font-bold mb-3">Уровни</h2>
                 {degreeData?.data.map((degree, index) => (
                   <li className="mb-2" key={index}>
-                    <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>{degree.title}</Link>
+                    <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
+                      {degree.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
