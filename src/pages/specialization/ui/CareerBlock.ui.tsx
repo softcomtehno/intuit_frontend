@@ -1,14 +1,15 @@
-import { Avatar, Card, Typography } from '@mui/material';
+import { Avatar, Card, Typography } from '@mui/material'
+import { specializationTypes } from '~entities/specialization'
 
-export const CareerBlock = () => {
+export const CareerBlock = ({ tools }: specializationTypes.Specialization) => {
   return (
-    <div className='my-10 bg-[#f5f5f5] p-5 rounded-xl'>
+    <div className="my-10 bg-[#f5f5f5] p-5 rounded-xl">
       <Typography variant="h3" className="font-semibold">
         Кем вы станете
       </Typography>
       <Typography variant="body1">
         После завершения этой специальности вы сможете стать:
-      </Typography> 
+      </Typography>
       <div className="flex justify-between mt-5">
         <Card className="h-[250px] min-w-[200px] rounded-lg flex flex-col items-center justify-center p-8 shadow-none bg-white">
           <Avatar
@@ -18,7 +19,7 @@ export const CareerBlock = () => {
           <Typography variant="h6" className="font-medium">
             Product Manager
           </Typography>
-          <p className='font-medium'>Зарплата 55000с</p>
+          <p className="font-medium">Зарплата 55000с</p>
         </Card>
         <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
           <Avatar
@@ -28,7 +29,7 @@ export const CareerBlock = () => {
           <Typography variant="h6" className="font-medium">
             Product Manager
           </Typography>
-          <p className='font-medium'>Зарплата 55000с</p>
+          <p className="font-medium">Зарплата 55000с</p>
         </Card>
         <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
           <Avatar
@@ -38,7 +39,7 @@ export const CareerBlock = () => {
           <Typography variant="h6" className="font-medium">
             Product Manager
           </Typography>
-          <p className='font-medium'>Зарплата 55000с</p>
+          <p className="font-medium">Зарплата 55000с</p>
         </Card>
         <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
           <Avatar
@@ -48,10 +49,9 @@ export const CareerBlock = () => {
           <Typography variant="h6" className="font-medium">
             Product Manager
           </Typography>
-          <p className='font-medium'>Зарплата 55000с</p>
+          <p className="font-medium">Зарплата 55000с</p>
         </Card>
-
       </div>
     </div>
-  );
-};
+  )
+}
