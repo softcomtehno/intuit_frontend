@@ -1,5 +1,5 @@
-import { Typography } from '@mui/material'
-import { specializationTypes } from '~entities/specialization'
+import { Typography } from '@mui/material';
+import { specializationTypes } from '~entities/specialization';
 
 export const About = ({
   text,
@@ -12,9 +12,11 @@ export const About = ({
         <Typography variant="h3" className="font-semibold">
           {text}
         </Typography>
-        <p className="text-lg font-medium">{subtext}</p>
+        <p className="text-lg font-medium">
+          <div dangerouslySetInnerHTML={{ __html: subtext }} />
+        </p>
       </div>
       <img className="rounded-2xl" src={`${textPhoto}`} alt="" />
     </div>
-  )
-}
+  );
+};

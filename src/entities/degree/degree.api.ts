@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { DegreeSchema } from './degree.types';
 
-const API_URL = 'http://intuit.makalabox.com/api/';
+const API_URL = 'https://intuit.makalabox.com/api/';
 
 export function getDegreeQuery() {
   return axios.get(`${API_URL}university/education-levels/`);
