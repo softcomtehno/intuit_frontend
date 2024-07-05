@@ -16,6 +16,7 @@ export const SkillSchema = z.object({
 export const ToolSchema = z.object({
   name: z.string(),
   logo: z.string(),
+  description: z.string(),
 })
 
 export const SpecializationSchema = z.object({
@@ -36,4 +37,3 @@ export const SpecializationSchema = z.object({
   educationLevel: z.array(z.number()),
   faculty: z.array(z.number()),
 })
-
