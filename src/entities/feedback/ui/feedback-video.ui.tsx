@@ -14,7 +14,7 @@ export const FeedbackVideo = ({ name, description, url, img }) => {
   return (
     <>
       <Box
-        className="flex flex-col justify-between  bg-cover bg-no-repeat bg-center min-h-96 p-5 rounded-2xl"
+        className="flex flex-col justify-between  bg-cover bg-no-repeat bg-center min-h-[350px] p-5 rounded-2xl"
         sx={{ background: `url("${img}")` }}
         onClick={() => setActive(true)}
       >

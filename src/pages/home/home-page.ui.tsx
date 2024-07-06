@@ -1,12 +1,12 @@
-import { NewsCard } from '~entities/news'
 import StaffList from '~widgets/staff-list/staff-list.ui'
 import StaffButtonsSwiper from './ui/StaffCategory.ui'
-import { ProfessionCard } from '~entities/profession'
 import { SwiperIntro } from '~widgets/swiper-intro'
 import { EnrollForm } from '~widgets/enroll-form'
 import { DiplomList } from '~widgets/diplom-list'
-import { FeedbackList } from '~widgets/feedback-list'
+import { FeedbackList, FeedbackVideoList } from '~widgets/feedback-list'
 import { PartnersList } from '~widgets/partners-list'
+import { OpportunitiesList } from '~widgets/opportunities-list'
+
 
 const news = {
   image:
@@ -28,12 +28,9 @@ export function HomePage() {
   return (
     <div>
       <h1 className="my-5 font-medium">
-        {/* <IntroCard title={'Специалитет'}></IntroCard> */}
         <SwiperIntro></SwiperIntro>
-        <NewsCard {...news} />
-        <ProfessionCard {...profession}></ProfessionCard>
       </h1>
-      <EnrollForm />
+      <OpportunitiesList/>
       <div className="my-20">
         <DiplomList />
       </div>
@@ -41,8 +38,9 @@ export function HomePage() {
         <StaffButtonsSwiper />
         <StaffList />
       </div>
-      <FeedbackList></FeedbackList>
-      <PartnersList></PartnersList>
+      <PartnersList/>
+      <EnrollForm />
+      <FeedbackVideoList/>
     </div>
   )
 }
