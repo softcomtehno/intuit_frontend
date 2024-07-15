@@ -1,4 +1,4 @@
-import { AppBar, Button, Paper, Toolbar } from '@mui/material';
+import { Button, Paper, Toolbar } from '@mui/material';
 import IntuitLogo from '../../assets/intuit-logo.png';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Link } from 'react-router-dom';
@@ -16,17 +16,17 @@ const universitySections = [
 ];
 
 const institutes = [
-  { name: 'ИНСТИТУТ ЦИФРОВОЙ ТРАНСФОРМАЦИИ И ПРОГРАММИРОВАНИЯ', programs: 15 },
-  { name: 'ИНСТИТУТ ДИЗАЙНА, АРХИТЕКТУРЫ И ТЕКСТИЛЯ', programs: 9 },
-  { name: 'ИНСТИТУТ СТРОИТЕЛЬСТВА И ИННОВАЦИОННЫХ ТЕХНОЛОГИЙ', programs: 18 },
-  { name: 'ИНСТИТУТ ЭНЕРГЕТИКИ И ТРАНСПОРТА', programs: 5 },
-  { name: 'ИНСТИТУТ ЭКОНОМИКИ И МЕНЕДЖМЕНТА', programs: 6 },
+  { name: 'ЦИФРОВАЯ ТРАНСФОРМАЦИЯ И ПРОГРАММИРОВАНИЕ', programs: 15 },
+  { name: 'ДИЗАЙН, АРХИТЕКТУРА И ТЕКСТИЛЬ', programs: 9 },
+  { name: 'СТРОИТЕЛЬСТВО И ИННОВАЦИОННЫЕ ТЕХНОЛОГИЕ', programs: 18 },
+  { name: 'ЭНЕРГЕТИКА И ТРАНСПОРТ', programs: 5 },
+  { name: 'ЭКОНОМИКА И МЕНЕДЖМЕНТ', programs: 6 },
   {
-    name: 'РОССИЙСКО - КЫРГЫЗСКИЙ ИНСТИТУТ АВТОМАТИЗАЦИИ УПРАВЛЕНИЯ БИЗНЕСА',
+    name: 'АВТОМАТИЗАЦИЯ УПРАВЛЕНИЕ БИЗНЕСОМ (РОССИЙСКО - КЫРГЫЗСКИЙ)',
     programs: 11,
   },
-  { name: 'ИНСТИТУТ МЕЖКУЛЬТУРНОЙ КОММУНИКАЦИИ И ПСИХОЛОГИИ', programs: 5 },
-  { name: 'ИНСТИТУТ МАРКЕТИНГА И ЭЛЕКТРОННОЙ КОММЕРЦИИ', programs: 0 },
+  { name: 'МЕЖКУЛЬТУРНАЯ КОММУНИКАЦИЯ И ПСИХОЛОГИЯ', programs: 5 },
+  { name: 'МАРКЕТИНГ И ЭЛЕКТРОННАЯ КОММЕРЦИЯ', programs: 0 },
 ];
 
 export function Header() {
@@ -39,9 +39,16 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const [activeList, setActiveList] = useState('institutes');
+  const [activeButton, setActiveButton] = useState('institutes');
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+  };
+
+  const displayList = (listName: string, buttonName: string) => {
+    setActiveList(listName);
+    setActiveButton(buttonName);
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -69,10 +76,7 @@ export function Header() {
 
   return (
     <>
-      <AppBar
-        position="sticky"
-        className="bg-white text-black shadow py-1 border-b border-gray"
-      >
+      <header className="bg-white text-black shadow py-1 border-b border-gray sticky  top-0 z-50">
         <header>
           <Toolbar
             disableGutters
@@ -80,7 +84,7 @@ export function Header() {
           >
             <Link to="/" className="flex items-center gap-1">
               <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
-              <p className="text-[10px] font-bold leading-[11px]">
+              <p className="text-[10px] font-bold leading-[11px] ">
                 МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
                 ТЕХНОЛОГИЙ
               </p>
@@ -109,7 +113,7 @@ export function Header() {
           </Toolbar>
 
           <div
-          ref={menuRef}
+            ref={menuRef}
             className={`transition-all duration-300 ${
               isMenuOpen
                 ? 'opacity-100 visible translate-y-[1px] max-h-screen'
@@ -118,38 +122,95 @@ export function Header() {
           >
             <Paper
               elevation={0}
-              className="absolute left-1/2 transform -translate-x-1/2 mt-2 p-7 min-w-[85%] max-w-[85%] bg-white rounded-xl flex gap-20 shadow-xl z-50"
+              className="absolute left-1/2 transform -translate-x-1/2 mt-2 p-7 min-w-[85%] max-w-[85%] min-h-[400px] max-h-[400px] overflow-y-auto bg-white rounded-lg flex gap-20 shadow-xl z-50"
             >
-              <ul>
-                <h2 className="font-bold mb-3">Университет</h2>
-                {universitySections.map((degree, index) => (
-                  <li className="mb-2" key={index}>
-                    {degree.title}
-                  </li>
-                ))}
-              </ul>
-              <ul>
-                <h2 className="font-bold mb-3">Уровни</h2>
-                {degreeData?.data.map((degree, index) => (
-                  <li className="mb-2" key={index}>
-                    <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
-                      {degree.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <ul>
-                <h2 className="font-bold mb-3">Институты</h2>
-                {institutes.map((section, index) => (
-                  <li className="mb-2" key={index}>
-                    {section.name}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col gap-3">
+                <Button
+                  variant="outlined"
+                  className={`px-10 py-1 transition duration-300 border border-green shadow-none font-medium hover:bg-green hover:text-white ${
+                    activeButton === 'institutes'
+                      ? 'bg-green text-white'
+                      : 'text-black bg-white '
+                  }`}
+                  onClick={() => displayList('institutes', 'institutes')}
+                >
+                  Институты
+                </Button>
+                <Button
+                  variant="outlined"
+                  className={`px-10 py-1 transition duration-300 border border-green  shadow-none font-medium  hover:bg-green hover:text-white ${
+                    activeButton === 'abituri'
+                      ? 'bg-green text-white'
+                      : 'text-black bg-white '
+                  }`}
+                  onClick={() => displayList('abituri', 'abituri')}
+                >
+                  Абитуриентам
+                </Button>
+                <Button
+                  variant="outlined"
+                  className={`px-10 py-1 transition duration-300 border border-green  shadow-none font-medium  hover:bg-green hover:text-white ${
+                    activeButton === 'students'
+                      ? 'bg-green text-white'
+                      : 'text-black bg-white '
+                  }`}
+                  onClick={() => displayList('students', 'students')}
+                >
+                  Студентам
+                </Button>
+                <Button
+                  variant="outlined"
+                  className={`px-10 py-1 transition duration-300 border border-green  shadow-none font-medium  hover:bg-green hover:text-white ${
+                    activeButton === 'about'
+                      ? 'bg-green text-white'
+                      : 'text-black bg-white '
+                  }`}
+                  onClick={() => displayList('about', 'about')}
+                >
+                  Об Университете
+                </Button>
+              </div>
+              {activeList === 'institutes' && (
+                <ul>
+                  <h2 className="font-bold mb-3">Институты</h2>
+                  {institutes.map((section, index) => (
+                    <li onClick={toggleMenu} className="mb-2" key={index}>
+                      <Link
+                        to={`/institutes/${section.name}`}
+                        onClick={toggleMenu}
+                      >
+                        {section.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {activeList === 'abituri' && (
+                <ul>
+                  <h2 className="font-bold mb-3">Уровни</h2>
+                  {degreeData?.data.map((degree, index) => (
+                    <li onClick={toggleMenu} className="mb-2" key={index}>
+                      <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
+                        {degree.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {activeList === 'students' && (
+                <ul>
+                  <h2 className="font-bold mb-3">Для студентов</h2>
+                </ul>
+              )}
+              {activeList === 'about' && (
+                <ul>
+                  <h2 className="font-bold mb-3">Об Университете</h2>
+                </ul>
+              )}
             </Paper>
           </div>
         </header>
-      </AppBar>
+      </header>
     </>
   );
 }

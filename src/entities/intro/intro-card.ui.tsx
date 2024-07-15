@@ -7,18 +7,18 @@ export const IntroCard = ({ title, img, description }) => {
         className="container h-[500px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10"
         style={{ backgroundImage: `url(${img})` }}
       >
-        <Typography variant="h1" className="font-bold text-white text-[90px] max-w-[750px]">
+        <Typography variant="h1" className="font-bold text-white text-[70px] max-w-[750px]">
           {title}
         </Typography>
 
         <Box className="flex flex-col gap-5">
           <Typography
             variant="body1"
-            className="text-white text-xl max-w-[500px] font-bold"
+            className="text-white text-xl max-w-[550px] font-bold"
           >
             {description}
           </Typography>
-          <Button variant="contained" className="bg-green shadow-none w-52 ">
+          <Button variant="contained" size="large" className="bg-green shadow-none self-start">
             Подобрать программу
           </Button>
         </Box>

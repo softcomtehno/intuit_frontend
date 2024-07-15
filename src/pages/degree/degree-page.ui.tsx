@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom'
 import { degreeQueries } from '~entities/degree'
 import { EnrollForm } from '~widgets/enroll-form'
 import { OpportunitiesList } from '~widgets/opportunities-list'
+import { InstagramEmbed } from 'react-social-media-embed';
 
 export const DegreePage = () => {
   const slug = useParams()
@@ -21,6 +22,8 @@ export const DegreePage = () => {
     isError,
   } = degreeQueries.useGetDegree(String(slug.slug))
 
+  console.log(degreeData);
+  
   if (isError) {
     return <div>Произошла Ошибка</div>
   }

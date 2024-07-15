@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom'
 
 export const StaffCard = ({ name, rank, image, slug }: staffTypes.Staff) => {
   const navigate = useNavigate()
+  console.log(image, "image");
+  
   return (
     <div onClick={() => navigate(`teachers/${slug}`)}>
       <Card className="flex bg-white min-w-[500px] max-w-[500px] min-h-[240px] max-h-[240px] p-3 shadow-md rounded-md">
