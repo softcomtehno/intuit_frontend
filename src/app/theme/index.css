@@ -39,6 +39,20 @@
   transition: opacity 0.5s, background-color 0.5s, width 0.5s;
 }
 
+.degree-list .swiper-pagination-bullet {
+  width: 50px;
+  height: 6px;
+  display: inline-block;
+  background: #00956F;
+  margin: 0 5px;
+  border-radius: 20px;
+  transition: opacity 0.5s, background-color 0.5s, width 0.5s;
+}
+.degree-list .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 70px !important;
+}
+
+
 
 table , th, td{
   border: 1px solid black;

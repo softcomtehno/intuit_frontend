@@ -20,12 +20,12 @@ export const SwiperIntro = () => {
         <SwiperSlide className="bg-center bg-cover">
           <IntroCard
             description={
-              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quis doloribus velit minus in id corrupti harum nemo accusamus illum!'
+              'Мы собрали подробную информацию о институтах, студенческой жизни и возможностях трудоустройства. Узнай про обучение в один клик!'
             }
             img={
               'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_0_lg.webp'
             }
-            title={'Образование в Дубае'}
+            title={'Подбери программу обучения'}
           ></IntroCard>
         </SwiperSlide>
 

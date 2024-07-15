@@ -19,12 +19,33 @@ export const PartnersList = () => {
   }
   if (isSuccess) {
     return (
-      <Box className="w-full overflow-hidden">
-        <Marquee direction="left" speed={30} pauseOnHover={true}>
+      <Box className="w-full overflow-hidden my-10">
+        <Marquee
+          direction="left"
+          speed={50}
+          pauseOnHover={true}
+          className="mb-3 "
+        >
           {partnersData &&
-            partnersData.data.map((partner) => (
-              <PartnerCard key={partner.id} {...partner}></PartnerCard>
-            ))}
+            partnersData.data.map((partner, i) => {
+              if (i % 2 == 0) {
+                return <PartnerCard key={partner.id} {...partner}></PartnerCard>
+              }
+            })}
+        </Marquee>
+
+        <Marquee
+          direction="right"
+          speed={50}
+          pauseOnHover={true}
+          className="pb-5"
+        >
+          {partnersData &&
+            partnersData.data.map((partner, i) => {
+              if (i % 2 == 1) {
+                return <PartnerCard key={partner.id} {...partner}></PartnerCard>
+              }
+            })}
         </Marquee>
       </Box>
     )
