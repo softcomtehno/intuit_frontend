@@ -9,7 +9,7 @@ export const IntroCard = ({ title, img, description }) => {
       >
         <Typography
           variant="h1"
-          className="font-bold text-white text-[70px] max-w-[750px] sm:text-[40px] md:text-center"
+          className="font-bold text-white text-[70px] max-w-[750px] sm:text-[40px] md:text-center "
         >
           {title}
         </Typography>
