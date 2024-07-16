@@ -56,7 +56,7 @@ export const DegreePage = () => {
                   {degreeData?.data.title}
                 </Typography>
               </Breadcrumbs>
-              <Typography variant="h2" className="font-semibold">
+              <Typography variant="h2" className="font-semibold md:text-[40px]">
                 {degreeData?.data.title}
               </Typography>
             </div>

@@ -10,7 +10,7 @@ const buttonLabels = [
 
 const StaffButtonsSwiper = () => {
   return (
-    <div className="my-5 py-1 px-1 staff-buttons-swiper flex gap-2">
+    <div className="my-5 py-1 px-1 staff-buttons-swiper flex gap-2 lg:flex-col">
       {buttonLabels.map((label) => (
         <Button
           size="small"

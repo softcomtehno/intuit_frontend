@@ -1,23 +1,23 @@
 // import { ErrorMessage, Field, Form } from 'formik';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material'
 
 const initialUser = {
   name: '',
   phone: null,
   email: '',
-};
+}
 
-console.log(initialUser);
+console.log(initialUser)
 
 export const EnrollForm = () => {
   return (
-    <div className="bg-blue  p-5 rounded-lg w-full">
+    <div className="bg-blue  p-5 rounded-lg w-full ">
       <Typography component="div" variant="h3" className="font-bold text-white">
         Оставьте заявку на обучение
       </Typography>
       <div>
-        <div className="flex items-center gap-2">
-          <fieldset className="text-xs flex gap-2">
+        <div className="flex items-center gap-2 lg:flex-col">
+          <fieldset className="text-xs flex gap-2 lg:flex-col">
             <fieldset className="my-5">
               <input
                 type="text"
@@ -25,7 +25,7 @@ export const EnrollForm = () => {
                 name="name"
                 required
                 placeholder="Имя"
-                className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base"
+                className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base lg:w-full"
               />
               {/* <ErrorMessage name="email" /> */}
             </fieldset>
@@ -36,7 +36,7 @@ export const EnrollForm = () => {
                 name="phone"
                 required
                 placeholder="Номер телефона"
-                className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base"
+                className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base lg:w-full"
               />
               {/* <ErrorMessage name="email" /> */}
             </fieldset>
@@ -47,7 +47,7 @@ export const EnrollForm = () => {
                 name="phone"
                 required
                 placeholder="Email"
-                className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base"
+                className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base lg:w-full"
               />
               {/* <ErrorMessage name="email" /> */}
             </fieldset>
@@ -61,5 +61,5 @@ export const EnrollForm = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

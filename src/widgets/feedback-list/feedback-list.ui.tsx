@@ -34,6 +34,17 @@ export const FeedbackList = () => {
           className="mySwiper p-10 cursor-grabbing select-none	"
           slidesPerView={3}
           spaceBetween={30}
+          breakpoints={{
+            360: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
         >
           {feedbackData?.data.map((feedback: feedbackTypes.Feedback) => {
             return (

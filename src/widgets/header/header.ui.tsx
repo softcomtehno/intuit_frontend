@@ -1,10 +1,10 @@
-import { Button, Paper, Toolbar } from '@mui/material';
-import IntuitLogo from '../../assets/intuit-logo.png';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import { Link } from 'react-router-dom';
-import { degreeQueries } from '~entities/degree';
-import { useState, useRef, useEffect } from 'react';
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import { Button, Paper, Toolbar } from '@mui/material'
+import IntuitLogo from '../../assets/intuit-logo.png'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
+import { Link } from 'react-router-dom'
+import { degreeQueries } from '~entities/degree'
+import { useState, useRef, useEffect } from 'react'
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded'
 
 const universitySections = [
   { title: 'Абитуриентам', route: '/enroll' },
@@ -13,7 +13,7 @@ const universitySections = [
   { title: 'Курсы', route: '/courses' },
   { title: 'Студентам', route: '/students' },
   { title: 'Об Университете', route: '/about' },
-];
+]
 
 const institutes = [
   { name: 'ЦИФРОВАЯ ТРАНСФОРМАЦИЯ И ПРОГРАММИРОВАНИЕ', programs: 15 },
@@ -27,29 +27,25 @@ const institutes = [
   },
   { name: 'МЕЖКУЛЬТУРНАЯ КОММУНИКАЦИЯ И ПСИХОЛОГИЯ', programs: 5 },
   { name: 'МАРКЕТИНГ И ЭЛЕКТРОННАЯ КОММЕРЦИЯ', programs: 0 },
-];
+]
 
 export function Header() {
-  const {
-    data: degreeData,
-    isLoading,
-    isError,
-  } = degreeQueries.useGetDegrees();
+  const { data: degreeData, isLoading, isError } = degreeQueries.useGetDegrees()
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [activeList, setActiveList] = useState('institutes');
-  const [activeButton, setActiveButton] = useState('institutes');
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const [activeList, setActiveList] = useState('institutes')
+  const [activeButton, setActiveButton] = useState('institutes')
 
   const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+    setIsMenuOpen((prev) => !prev)
+  }
 
   const displayList = (listName: string, buttonName: string) => {
-    setActiveList(listName);
-    setActiveButton(buttonName);
-  };
+    setActiveList(listName)
+    setActiveButton(buttonName)
+  }
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -58,25 +54,25 @@ export function Header() {
       buttonRef.current &&
       !buttonRef.current.contains(event.target as Node)
     ) {
-      setIsMenuOpen(false);
+      setIsMenuOpen(false)
     }
-  };
+  }
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside)
     } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isMenuOpen]);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOpen])
 
   return (
     <>
-      <header className="bg-white text-black shadow py-1 border-b border-gray sticky  top-0 z-50">
+      <header className="bg-white text-black shadow py-1 border-b border-gray sticky  top-0 z-50 md:hidden">
         <header>
           <Toolbar
             disableGutters
@@ -212,7 +208,7 @@ export function Header() {
         </header>
       </header>
     </>
-  );
+  )
 }
 
 {

@@ -1,13 +1,13 @@
-import { Button, IconButton } from '@mui/material';
-import IntuitLogo from '../../assets/intuit-logo.png';
-import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Button, IconButton } from '@mui/material'
+import IntuitLogo from '../../assets/intuit-logo.png'
+import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded'
+import TelegramIcon from '@mui/icons-material/Telegram'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const degreeSections = [
   'Колледж',
@@ -19,7 +19,7 @@ const degreeSections = [
   'Креатив',
   'Курсы',
   'Факультеты',
-];
+]
 const fieldsOfStudy = [
   'Медицина',
   'Психология',
@@ -32,7 +32,7 @@ const fieldsOfStudy = [
   'Менеджмент',
   'Экономика',
   'Информационные технологии',
-];
+]
 
 const categories = [
   'Специальности',
@@ -42,7 +42,7 @@ const categories = [
   'Отзывы студентов',
   'Выпускники',
   'Оплата обучения',
-];
+]
 
 const universityInfo = [
   'Жизнь Университета',
@@ -56,40 +56,39 @@ const universityInfo = [
   'Рейтинг ППС',
   'Единное окно',
   'PHD',
-];
+]
 interface ContactInfo {
-  address: string;
-  admissionOfficePhone: string;
-  facebook: string;
-  hoursSaturday: string;
-  hoursSunday: string;
-  hoursWeekdays: string;
-  id: number;
-  instagram: string;
-  receptionPhone: string;
-  telegram: string;
-  whatsapp: string;
-  youtube: string;
+  address: string
+  admissionOfficePhone: string
+  facebook: string
+  hoursSaturday: string
+  hoursSunday: string
+  hoursWeekdays: string
+  id: number
+  instagram: string
+  receptionPhone: string
+  telegram: string
+  whatsapp: string
+  youtube: string
 }
 
-const studentResources = ['Расписание', 'AVN', 'Moodle', 'Оплата обучения'];
+const studentResources = ['Расписание', 'AVN', 'Moodle', 'Оплата обучения']
 
 export function Footer() {
-  const [data, setData] = useState<ContactInfo>();
+  const [data, setData] = useState<ContactInfo>()
 
   useEffect(() => {
     axios
       .get('https://intuit.makalabox.com/api/university/university-info/1/')
-      .then((res) => setData(res.data));
-  }, []);
-
+      .then((res) => setData(res.data))
+  }, [])
 
   if (!data) {
-    return <div>Ошибка при получении данных</div>;
+    return <div>Ошибка при получении данных</div>
   }
 
   return (
-    <footer className="bg-[#0d1140] text-white py-10">
+    <footer className="bg-[#0d1140] text-white py-10 lg:hidden">
       <div className=" max-w-[80%] mx-auto">
         <div className="flex items-center gap-1 mb-5">
           <img src={IntuitLogo} alt="Intuit" className="h-[58px]" />
@@ -206,5 +205,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -49,7 +49,7 @@ export const FeedbackVideoList = () => {
   return (
     <>
       <Typography variant="h2">Отзывы</Typography>
-      <Box className="py-10 cursor-pointer grid grid-cols-5 gap-5">
+      <Box className="py-10 cursor-pointer grid grid-cols-5 gap-5 md:grid-cols-subgrid">
         {modalData &&
           modalData.map((item, i) => {
             if (i <= 4) {

@@ -1,22 +1,18 @@
-import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
-import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
-import { degreeQueries } from '~entities/degree';
-import { useNavigate } from 'react-router-dom';
+import { Card, CardActionArea, CardContent, Typography } from '@mui/material'
+import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded'
+import { degreeQueries } from '~entities/degree'
+import { useNavigate } from 'react-router-dom'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 
 export const DegreeCategory = () => {
-  const navigate = useNavigate();
-  const {
-    data: degreeData,
-    isLoading,
-    isError,
-  } = degreeQueries.useGetDegrees();
+  const navigate = useNavigate()
+  const { data: degreeData, isLoading, isError } = degreeQueries.useGetDegrees()
   return (
     <div>
       <Typography variant="h3" component="div" className="font-semibold">
@@ -28,10 +24,28 @@ export const DegreeCategory = () => {
         spaceBetween={20}
         slidesPerView={3.5}
         pagination={{ clickable: true }}
+        breakpoints={{
+          360: {
+            slidesPerView: 1,
+            centeredSlides: true,
+            spaceBetween: 10,
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+          },
+        }}
       >
         {degreeData?.data.map((degree) => (
           <SwiperSlide>
-            <Card className="min-w-[350px] max-w-[300px] p-4 border border-gray text-black/80 transition duration-200 rounded-lg hover:bg-green hover:text-white">
+            <Card className=" max-w-[300px] p-4 border border-gray text-black/80 transition duration-200 rounded-lg hover:bg-green hover:text-white md:max-w-full">
               <CardActionArea onClick={() => navigate(`degree/${degree.slug}`)}>
                 <Typography variant="h6" className="font-bold">
                   {degree.title}
@@ -61,5 +75,5 @@ export const DegreeCategory = () => {
         ))}
       </Swiper>
     </div>
-  );
-};
+  )
+}

@@ -22,15 +22,15 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
   ];
 
   return (
-    <Box className="grid grid-cols-2 gap-5 my-7">
+    <Box className="grid grid-cols-2 gap-5 my-7 lg:grid-cols-1">
       <Card className="bg-[#e0e1e5] p-5 shadow-none flex flex-col justify-between gap-16 rounded-xl">
         <Box className="flex flex-col gap-3">
-          <Typography variant="h4" className="font-bold">
+          <Typography variant="h4" className="font-bold lg:text-[25px]">
             {title}
           </Typography>
           <Typography variant="body1">{description}</Typography>
         </Box>
-        <Box className="flex justify-between">
+        <Box className="flex justify-between lg:flex-col lg:items-center lg:gap-10">
           <Box className="flex gap-3">
             {tags.map((tag, index) => (
               <div
@@ -74,7 +74,7 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
                 'https://i.pinimg.com/736x/27/ab/89/27ab89c2730038168938dc8af4cdb8f7.jpg'
                   ? 'text-white '
                   : ''
-              }`}
+              } md:text-[25px]`}
             >
               {stat.value}
             </Typography>
@@ -85,7 +85,7 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
                 'https://i.pinimg.com/736x/27/ab/89/27ab89c2730038168938dc8af4cdb8f7.jpg'
                   ? 'text-white'
                   : ''
-              }`}
+              } md:text-[15px]`}
             >
               {stat.label}
             </Typography>
