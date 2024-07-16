@@ -4,12 +4,12 @@ export const IntroCard = ({ title, img, description }) => {
   return (
     <>
       <section
-        className="container h-[500px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10   lg:bg-center md:bg-right"
+        className="container h-[500px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right "
         style={{ backgroundImage: `url(${img})` }}
       >
         <Typography
           variant="h1"
-          className="font-bold text-white text-[70px] max-w-[750px] sm:text-[40px] md:text-center "
+          className="font-bold text-white text-[70px] max-w-[750px] sm:text-[40px] md:text-center md:text-[50px]"
         >
           {title}
         </Typography>
