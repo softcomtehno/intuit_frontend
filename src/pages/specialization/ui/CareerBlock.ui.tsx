@@ -10,7 +10,7 @@ export const CareerBlock = ({ tools }: specializationTypes.Specialization) => {
       <Typography variant="body1">
         После завершения этой специальности вы сможете стать:
       </Typography>
-      <div className="flex justify-between mt-5">
+      <div className="flex justify-between mt-5 flex-wrap gap-10 lg:justify-center">
         <Card className="h-[250px] min-w-[200px] rounded-lg flex flex-col items-center justify-center p-8 shadow-none bg-white">
           <Avatar
             className="h-[90px] w-[90px]"

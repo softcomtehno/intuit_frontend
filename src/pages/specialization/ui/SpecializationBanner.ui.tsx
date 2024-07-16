@@ -26,7 +26,7 @@ export const SpecializationBanner = ({
       </Typography>
       <Button variant='contained' size='large' className='px-20 py-3 rounded-lg shadow-none bg-green mt-5'>Оставить заявку</Button>
       </div>
-      <div className="flex gap-10 justify-between">
+      <div className="flex gap-10 justify-between lg:flex-col lg:mt-10">
         <Card className="shadow-none min-w-[250px]  p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
           <p className="">Уровень</p>
           <Typography variant="h6" className="font-semibold">
@@ -53,7 +53,7 @@ export const SpecializationBanner = ({
         </Card>
       </div>
       <img
-        className=" absolute right-0 top-0 h-[620px]"
+        className=" absolute right-0 top-0 h-[620px] lg:static lg:h-auto"
         src={`${photo}`}
         alt=""
       />

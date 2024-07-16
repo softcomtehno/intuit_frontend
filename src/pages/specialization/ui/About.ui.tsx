@@ -7,7 +7,7 @@ export const About = ({
   textPhoto,
 }: specializationTypes.Specialization) => {
   return (
-    <div className="flex gap-5 my-10">
+    <div className="flex gap-5 my-10 lg:flex-col">
       <div className="flex flex-col gap-4">
         <Typography variant="h3" className="font-semibold">
           {text}
