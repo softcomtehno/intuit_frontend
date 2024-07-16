@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material'
-import { NewsRecomendationCard } from '~entities/news'
 import { NewsRecomendationList } from '~widgets/news-list'
 
 const data = {
@@ -21,9 +20,9 @@ const data = {
 export const NewsPage = () => {
   return (
     <>
-      <section className=" grid grid-cols-3 p-10 rounded-md my-10 ">
-        <Box className="col-span-2 border-r-2 p-5">
-          <Typography variant="h4" className=" ">
+      <section className=" grid grid-cols-3 p-10 rounded-md my-10 md:grid-cols-1">
+        <Box className="col-span-2 border-r-2 p-5 md:border-r-0 md:border-b-2">
+          <Typography variant="h4" className="md:text-[30px] md:text-center ">
             {data.title}
           </Typography>
           <Box className="mt-20">
