@@ -1,11 +1,11 @@
-import { Box, Button, Card, Typography } from '@mui/material';
-import { ChevronRightRounded } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Box, Button, Card, Typography } from '@mui/material'
+import { ChevronRightRounded } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 export const ProfessionCard = ({ degree, faculties, title, url }) => {
   return (
     <Card
       variant="outlined"
-      className="min-w-[400px] max-w-[400px] min-h-[250px] flex flex-col justify-between    bg-[#f7f9fd] p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer"
+      className="min-w-[400px] max-w-[400px] min-h-[250px] flex flex-col justify-between    bg-[#f7f9fd] p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer sm:min-w-fit"
     >
       <Box className="flex flex-col gap-2">
         <Typography
@@ -39,5 +39,5 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
         </Button>
       </Box>
     </Card>
-  );
-};
+  )
+}

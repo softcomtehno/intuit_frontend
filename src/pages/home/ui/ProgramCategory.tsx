@@ -1,6 +1,6 @@
-import { Button, Typography } from '@mui/material';
-import Select from 'react-select';
-import { ProfessionCard } from '~entities/profession';
+import { Button, Typography } from '@mui/material'
+import Select from 'react-select'
+import { ProfessionCard } from '~entities/profession'
 
 const options = [
   { value: 'chocolate', label: 'Бакалавриат' },
@@ -8,7 +8,7 @@ const options = [
   { value: 'vanilla', label: 'Аспирантура' },
   { value: 'vanilla', label: 'Колледж' },
   { value: 'vanilla', label: 'Курсы' },
-];
+]
 const professions = [
   {
     degree: 'Бакалавриат',
@@ -40,7 +40,7 @@ const professions = [
     title: 'Врач',
     url: '/specialization/doctor',
   },
-];
+]
 
 export const ProgramCategory = () => {
   return (
@@ -49,22 +49,25 @@ export const ProgramCategory = () => {
         Программы обучения
       </Typography>
       <div>
-        <div className="flex gap-5 my-5">
+        <div className="flex gap-5 my-5 lg:flex-col lg:items-center">
           <Select
             options={options}
             placeholder="Выберите уровень образования"
-            className="w-[350px]"
+            className="w-[350px] lg:w-full"
           />
           <Select
             options={options}
             placeholder="Выберите направление"
-            className="w-[350px]"
+            className="w-[350px] lg:w-full"
           />
-          <Button variant="contained" className="shadow-none bg-blue px-10">
+          <Button
+            variant="contained"
+            className="shadow-none bg-blue px-10 w-[350px] lg:w-full"
+          >
             Применить
           </Button>
         </div>
-        <div className="flex flex-wrap  gap-2">
+        <div className="flex flex-wrap  gap-2 lg:justify-center">
           {professions.map((profession, index) => (
             <ProfessionCard
               key={index}
@@ -77,5 +80,5 @@ export const ProgramCategory = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -15,7 +15,7 @@ export default {
       gray: '#CFD1DF',
     },
     container: {
-      center:true,
+      center: true,
       padding: {
         DEFAULT: '1rem',
         sm: '2rem',
@@ -25,13 +25,13 @@ export default {
       },
     },
     screens: {
-      xs: '360px',
-      sm: '480px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1440px',
+      xs: { max: '359px' },
+      sm: { max: '479px' },
+      md: { max: '767px' },
+      lg: { max: '1023px' },
+      xl: { max: '1439px' },
     },
     extend: {},
   },
   plugins: [],
-};
+}
