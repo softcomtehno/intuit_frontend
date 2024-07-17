@@ -72,7 +72,7 @@ export function Header() {
 
   return (
     <>
-      <header className="bg-white text-black shadow py-1 border-b border-gray sticky  top-0 z-50 md:hidden">
+      <header className="bg-white text-black shadow py-1 border-b border-gray sticky  top-0 z-50 ">
         <header>
           <Toolbar
             disableGutters
@@ -89,7 +89,7 @@ export function Header() {
               <Button
                 variant="outlined"
                 size="small"
-                className="px-10 duration-300 border-green text-green hover:bg-green hover:text-white"
+                className="px-10 duration-300 border-green text-green hover:bg-green hover:text-white md:hidden"
               >
                 Подобрать программу
               </Button>
@@ -112,13 +112,13 @@ export function Header() {
             ref={menuRef}
             className={`transition-all duration-300 ${
               isMenuOpen
-                ? 'opacity-100 visible translate-y-[1px] max-h-screen'
+                ? 'opacity-100 visible translate-y-[1px] max-h-screen '
                 : 'opacity-0 invisible translate-y-[-10px] max-h-0'
             }`}
           >
             <Paper
               elevation={0}
-              className="absolute left-1/2 transform -translate-x-1/2 mt-2 p-7 min-w-[85%] max-w-[85%] min-h-[400px] max-h-[400px] overflow-y-auto bg-white rounded-lg flex gap-20 shadow-xl z-50"
+              className="absolute left-1/2 transform -translate-x-1/2 mt-2 md:mt-1 p-7 min-w-[85%] md:min-w-[95%] max-w-[85%] min-h-[400px] max-h-[400px] overflow-y-auto bg-white rounded-lg flex md:flex-col md:gap-10 md:pb-20 gap-20 shadow-xl z-50"
             >
               <div className="flex flex-col gap-3">
                 <Button
