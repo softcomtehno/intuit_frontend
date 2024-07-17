@@ -1,10 +1,19 @@
-import { Button, Paper, Toolbar } from '@mui/material'
-import IntuitLogo from '../../assets/intuit-logo.png'
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
-import { Link } from 'react-router-dom'
-import { degreeQueries } from '~entities/degree'
-import { useState, useRef, useEffect } from 'react'
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded'
+import { Button, IconButton, Paper, Toolbar } from '@mui/material';
+import IntuitLogo from '../../assets/intuit-logo.png';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { Link } from 'react-router-dom';
+import { degreeQueries } from '~entities/degree';
+import { useState, useRef, useEffect } from 'react';
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import  ExpandMoreIcon  from '@mui/icons-material/ExpandMore';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 const universitySections = [
   { title: 'Абитуриентам', route: '/enroll' },
@@ -13,7 +22,7 @@ const universitySections = [
   { title: 'Курсы', route: '/courses' },
   { title: 'Студентам', route: '/students' },
   { title: 'Об Университете', route: '/about' },
-]
+];
 
 const institutes = [
   { name: 'ЦИФРОВАЯ ТРАНСФОРМАЦИЯ И ПРОГРАММИРОВАНИЕ', programs: 15 },
@@ -27,25 +36,29 @@ const institutes = [
   },
   { name: 'МЕЖКУЛЬТУРНАЯ КОММУНИКАЦИЯ И ПСИХОЛОГИЯ', programs: 5 },
   { name: 'МАРКЕТИНГ И ЭЛЕКТРОННАЯ КОММЕРЦИЯ', programs: 0 },
-]
+];
 
 export function Header() {
-  const { data: degreeData, isLoading, isError } = degreeQueries.useGetDegrees()
+  const {
+    data: degreeData,
+    isLoading,
+    isError,
+  } = degreeQueries.useGetDegrees();
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
-  const [activeList, setActiveList] = useState('institutes')
-  const [activeButton, setActiveButton] = useState('institutes')
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [activeList, setActiveList] = useState('institutes');
+  const [activeButton, setActiveButton] = useState('institutes');
 
   const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev)
-  }
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const displayList = (listName: string, buttonName: string) => {
-    setActiveList(listName)
-    setActiveButton(buttonName)
-  }
+    setActiveList(listName);
+    setActiveButton(buttonName);
+  };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -54,21 +67,21 @@ export function Header() {
       buttonRef.current &&
       !buttonRef.current.contains(event.target as Node)
     ) {
-      setIsMenuOpen(false)
+      setIsMenuOpen(false);
     }
-  }
+  };
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('mousedown', handleClickOutside);
     } else {
-      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMenuOpen])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -118,9 +131,117 @@ export function Header() {
           >
             <Paper
               elevation={0}
-              className="absolute left-1/2 transform -translate-x-1/2 mt-2 md:mt-1 p-7 min-w-[85%] md:min-w-[95%] max-w-[85%] min-h-[400px] max-h-[400px] overflow-y-auto bg-white rounded-lg flex md:flex-col md:gap-10 md:pb-20 gap-20 shadow-xl z-50"
+              className="absolute left-1/2 transform -translate-x-1/2 mt-2 md:mt-1 p-7 lg:overflow-y-auto lg:p-3 min-w-[85%] md:min-w-[95%] max-w-[85%] min-h-[400px] max-h-[400px] md:min-h-screen md:max-h-screen  overflow-y-auto bg-white rounded-lg flex md:flex-col md:gap-10 md:pb-20 gap-20 shadow-xl z-50"
             >
-              <div className="flex flex-col gap-3">
+              <div className='hidden lg:block '>
+                <Accordion className='shadow-none' >
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                  >
+                    Институты
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <ul>
+                    {institutes.map((section, index) => (
+                    <li onClick={toggleMenu} className="mb-2" key={index}>
+                      <Link
+                        to={`/institutes/${section.name}`}
+                        onClick={toggleMenu}
+                      >
+                        {section.name}
+                      </Link>
+                    </li>
+                  ))}
+                    </ul>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion className='shadow-none'>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2-content"
+                    id="panel2-header"
+                  >
+                    Абитуриентам
+                  </AccordionSummary>
+                  <AccordionDetails>
+                  <ul>
+                  {degreeData?.data.map((degree, index) => (
+                    <li onClick={toggleMenu} className="mb-2" key={index}>
+                      <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
+                        {degree.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion className='shadow-none'>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2-content"
+                    id="panel2-header"
+                  >
+                   Студентам
+                  </AccordionSummary>
+                  <AccordionDetails>
+                  <ul>
+                  {degreeData?.data.map((degree, index) => (
+                    <li onClick={toggleMenu} className="mb-2" key={index}>
+                      <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
+                        {degree.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion className='shadow-none'>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel3-content"
+                    id="panel3-header"
+                  >
+                    Приемная комиссия
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget.
+                  </AccordionDetails>
+                </Accordion>
+                <Button
+              variant="outlined"
+              className="w-full my-3 duration-300  font-bold text-white bg-green hover:border-green"
+            >
+              Обратная связь
+            </Button>
+            <div className='flex justify-between'>
+                <Link className=' border border-green rounded px-3' to="/">
+                  <IconButton className="text-green">
+                    <FacebookRoundedIcon />
+                  </IconButton>
+                </Link>
+                <Link className=' border border-green rounded px-3' to="/">
+                  <IconButton className="text-green">
+                    <WhatsAppIcon />
+                  </IconButton>
+                </Link>
+                <Link className=' border border-green rounded px-3' to="/">
+                  <IconButton className="text-green">
+                    <InstagramIcon />
+                  </IconButton>
+                </Link>
+
+                <Link className=' border border-green rounded px-3' to="/">
+                  <IconButton className="text-green">
+                    <TelegramIcon />
+                  </IconButton>
+                </Link>
+              </div>
+              </div>
+              <div className="flex flex-col gap-3 lg:hidden">
                 <Button
                   variant="outlined"
                   className={`px-10 py-1 transition duration-300 border border-green shadow-none font-medium hover:bg-green hover:text-white ${
@@ -167,7 +288,7 @@ export function Header() {
                 </Button>
               </div>
               {activeList === 'institutes' && (
-                <ul>
+                <ul className="lg:hidden">
                   <h2 className="font-bold mb-3">Институты</h2>
                   {institutes.map((section, index) => (
                     <li onClick={toggleMenu} className="mb-2" key={index}>
@@ -208,7 +329,7 @@ export function Header() {
         </header>
       </header>
     </>
-  )
+  );
 }
 
 {
