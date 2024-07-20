@@ -30,6 +30,9 @@ export default {
         xl: '100px',
         '2xl': '100px',
       },
+      screens: {
+        'xl-max': '1340px', // Specific width for xl-max screens
+      },
     },
     extend: {},
   },
