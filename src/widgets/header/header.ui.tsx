@@ -89,7 +89,7 @@ export function Header() {
         <header>
           <Toolbar
             disableGutters
-            className="flex justify-between max-w-[85%] mx-auto "
+            className="flex justify-between  lg:max-w-[90%] max-w-[85%] mx-auto "
           >
             <Link to="/" className="flex items-center gap-1">
               <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />

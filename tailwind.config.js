@@ -14,22 +14,22 @@ export default {
       black: 'black',
       gray: '#CFD1DF',
     },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
-      },
-    },
     screens: {
       xs: { max: '359px' },
       sm: { max: '479px' },
       md: { max: '767px' },
       lg: { max: '1023px' },
       xl: { max: '1439px' },
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '20px',
+        sm: '2rem',
+        lg: '100px',
+        xl: '100px',
+        '2xl': '100px',
+      },
     },
     extend: {},
   },

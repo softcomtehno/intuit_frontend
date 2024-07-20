@@ -9,6 +9,9 @@ import { OpportunitiesList } from '~widgets/opportunities-list';
 import { DegreeCategory } from './ui/DegreeCategory.ui';
 import { ProgramCategory } from './ui/ProgramCategory';
 import { AboutBlock } from './ui/AboutBlock.ui';
+import { articleQueries } from '~entities/makalabox/degree';
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import { ArticleList } from '~widgets/article-list/article-list.ui';
 
 const news = {
   image:
@@ -32,6 +35,7 @@ export function HomePage() {
       <h1 className="my-5 font-medium">
         <SwiperIntro />
       </h1>
+      <ArticleList/>
       <DegreeCategory />
       <ProgramCategory/>
       <OpportunitiesList />
