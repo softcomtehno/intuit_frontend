@@ -1,14 +1,26 @@
-import StaffList from '~widgets/staff-list/staff-list.ui';
-import StaffButtonsSwiper from './ui/StaffCategory.ui';
-import { SwiperIntro } from '~widgets/swiper-intro';
-import { EnrollForm } from '~widgets/enroll-form';
-import { DiplomList } from '~widgets/diplom-list';
-import { FeedbackList, FeedbackVideoList } from '~widgets/feedback-list';
-import { PartnersList } from '~widgets/partners-list';
-import { OpportunitiesList } from '~widgets/opportunities-list';
-import { DegreeCategory } from './ui/DegreeCategory.ui';
-import { ProgramCategory } from './ui/ProgramCategory';
-import { AboutBlock } from './ui/AboutBlock.ui';
+import StaffList from '~widgets/staff-list/staff-list.ui'
+import StaffButtonsSwiper from './ui/StaffCategory.ui'
+import { SwiperIntro } from '~widgets/swiper-intro'
+import { EnrollForm } from '~widgets/enroll-form'
+import { DiplomList } from '~widgets/diplom-list'
+import { FeedbackList, FeedbackVideoList } from '~widgets/feedback-list'
+import { PartnersList } from '~widgets/partners-list'
+import { OpportunitiesList } from '~widgets/opportunities-list'
+import { DegreeCategory } from './ui/DegreeCategory.ui'
+import { ProgramCategory } from './ui/ProgramCategory'
+import { AboutBlock } from './ui/AboutBlock.ui'
+import { articleQueries } from '~entities/makalabox/degree'
+import {
+  Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from '@mui/material'
+import { ArticleList } from '~widgets/article-list/article-list.ui'
+import { Quizizz } from '~widgets/quizizz'
 
 const news = {
   image:
@@ -16,7 +28,7 @@ const news = {
   title: 'Международная межвузовская научно-практическая конференция',
   description: '31 мая 2024 г. 17:06',
   link: '#',
-};
+}
 
 const profession = {
   title:
@@ -24,7 +36,7 @@ const profession = {
   degree: 'Бакалавриат',
   faculties: 'Институт межкультурной коммуникации и психологии',
   url: 'specialization/professiya-prodakt-menedzher',
-};
+}
 
 export function HomePage() {
   return (
@@ -32,10 +44,11 @@ export function HomePage() {
       <h1 className="my-5 font-medium">
         <SwiperIntro />
       </h1>
+      <ArticleList />
       <DegreeCategory />
-      <ProgramCategory/>
+      <ProgramCategory />
       <OpportunitiesList />
-      <AboutBlock/>
+      <AboutBlock />
       <div className="my-20">
         <DiplomList />
       </div>
@@ -47,5 +60,5 @@ export function HomePage() {
       <EnrollForm />
       <FeedbackVideoList />
     </div>
-  );
+  )
 }

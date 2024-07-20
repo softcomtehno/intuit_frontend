@@ -11,7 +11,7 @@ export function CustomModal({ active, setActive, children }) {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`p-[10px] duration-300 rounded bg-[white] w-[320px] md:w-[450px] flex flex-col gap-5 ${
+        className={`p-[10px] duration-300 rounded bg-[white] min-w-[320px] md:w-[450px] flex flex-col gap-5 ${
           active ? 'scale-100' : 'scale-0'
         }`}
       >
