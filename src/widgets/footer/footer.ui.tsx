@@ -1,10 +1,13 @@
-import { Button, IconButton } from '@mui/material';
-import IntuitLogo from '../../assets/intuit-logo.png';
-import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-import TelegramIcon from '@mui/icons-material/Telegram';
+import { Button, IconButton } from '@mui/material'
+import IntuitLogo from '../../assets/intuit-logo.png'
+import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded'
+import TelegramIcon from '@mui/icons-material/Telegram'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const degreeSections = [
   'Колледж',
@@ -16,7 +19,7 @@ const degreeSections = [
   'Креатив',
   'Курсы',
   'Факультеты',
-];
+]
 const fieldsOfStudy = [
   'Медицина',
   'Психология',
@@ -29,7 +32,7 @@ const fieldsOfStudy = [
   'Менеджмент',
   'Экономика',
   'Информационные технологии',
-];
+]
 
 const categories = [
   'Специальности',
@@ -39,7 +42,7 @@ const categories = [
   'Отзывы студентов',
   'Выпускники',
   'Оплата обучения',
-];
+]
 
 const universityInfo = [
   'Жизнь Университета',
@@ -53,13 +56,39 @@ const universityInfo = [
   'Рейтинг ППС',
   'Единное окно',
   'PHD',
-];
+]
+interface ContactInfo {
+  address: string
+  admissionOfficePhone: string
+  facebook: string
+  hoursSaturday: string
+  hoursSunday: string
+  hoursWeekdays: string
+  id: number
+  instagram: string
+  receptionPhone: string
+  telegram: string
+  whatsapp: string
+  youtube: string
+}
 
-const studentResources = ['Расписание', 'AVN', 'Moodle', 'Оплата обучения'];
+const studentResources = ['Расписание', 'AVN', 'Moodle', 'Оплата обучения']
 
 export function Footer() {
+  const [data, setData] = useState<ContactInfo>()
+
+  useEffect(() => {
+    axios
+      .get('https://intuit.makalabox.com/api/university/university-info/1/')
+      .then((res) => setData(res.data))
+  }, [])
+
+  if (!data) {
+    return <div>Ошибка при получении данных</div>
+  }
+
   return (
-    <footer className="bg-[#0d1140] text-white py-10">
+    <footer className="bg-[#0d1140] text-white py-10 lg:hidden">
       <div className=" max-w-[80%] mx-auto">
         <div className="flex items-center gap-1 mb-5">
           <img src={IntuitLogo} alt="Intuit" className="h-[58px]" />
@@ -115,13 +144,13 @@ export function Footer() {
         <div className="flex justify-between mt-6">
           <ul>
             <h5 className="font-bold mt-5">Адрес</h5>
-            <li>г. Бишкек ул. Анкара 1/17</li>
+            <li>{data.address}</li>
           </ul>
           <ul>
             <h5 className="font-bold mt-5">График работы</h5>
-            <li>Пн-пт09:00 — 20:00</li>
-            <li>Сб10:00 — 19:00</li>
-            <li>Вс10:00 — 17:00</li>
+            <li>Пн-пт {data.hoursWeekdays}</li>
+            <li>Сб {data.hoursSaturday}</li>
+            <li>Вс {data.hoursSunday}</li>
           </ul>
           <div>
             <h5 className="font-bold mt-5">По Всем вопросам</h5>
@@ -129,14 +158,14 @@ export function Footer() {
               className="text-white"
               startIcon={<LocalPhoneRoundedIcon />}
             >
-              +996 (312) 88-26-84
+              {data.admissionOfficePhone}
             </Button>
             <h5 className="font-bold mt-5">Приемная коммисия</h5>
             <Button
               className="text-white"
               startIcon={<LocalPhoneRoundedIcon />}
             >
-              +996 (312) 46-79-14
+              {data.receptionPhone}
             </Button>
           </div>
           <div>
@@ -149,23 +178,32 @@ export function Footer() {
             <div className="flex items-center">
               <p>Мы в соцсетях</p>
               <div>
-                <IconButton  className='text-white'>
-                  <FacebookRoundedIcon />
-                </IconButton>
-                <IconButton className='text-white'>
-                  <WhatsAppIcon />
-                </IconButton>
-                <IconButton className='text-white'>
-                  <InstagramIcon />
-                </IconButton>
-                <IconButton className='text-white'>
-                  <TelegramIcon />
-                </IconButton>
+                <Link to={data.facebook}>
+                  <IconButton className="text-white">
+                    <FacebookRoundedIcon />
+                  </IconButton>
+                </Link>
+                <Link to={data.whatsapp}>
+                  <IconButton className="text-white">
+                    <WhatsAppIcon />
+                  </IconButton>
+                </Link>
+                <Link to={data.instagram}>
+                  <IconButton className="text-white">
+                    <InstagramIcon />
+                  </IconButton>
+                </Link>
+
+                <Link to={data.telegram}>
+                  <IconButton className="text-white">
+                    <TelegramIcon />
+                  </IconButton>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }

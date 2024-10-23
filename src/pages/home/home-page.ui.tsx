@@ -26,12 +26,12 @@ export function HomePage() {
   return (
     <div>
       <h1 className="my-5 font-medium">
-        {/* <IntroCard title={'Специалитет'}></IntroCard> */}
-        <SwiperIntro></SwiperIntro>
-        <NewsCard {...news} />
-        <ProfessionCard {...profession}></ProfessionCard>
+        <SwiperIntro />
       </h1>
-      <EnrollForm />
+      <DegreeCategory />
+      <ProgramCategory/>
+      <OpportunitiesList />
+      <AboutBlock/>
       <div className="my-20">
         <DiplomList />
       </div>
@@ -39,6 +39,9 @@ export function HomePage() {
         <StaffButtonsSwiper />
         <StaffList />
       </div>
+      <PartnersList />
+      <EnrollForm />
+      <FeedbackVideoList />
     </div>
   );
 }

@@ -1,28 +1,40 @@
-import { SwiperIntro } from '~widgets/swiper-intro';
-import InfoBlock from './ui/info-block.ui'; // Adjusted import statement
-import { Breadcrumbs, Button, CircularProgress, Link, Typography } from '@mui/material';
-import { FeedbackList } from '~widgets/feedback-list';
-import { useParams } from 'react-router-dom';
-import { degreeQueries } from '~entities/degree';
-import { EnrollForm } from '~widgets/enroll-form';
-import { OpportunitiesList } from '~widgets/opportunities-list';
+import InfoBlock from './ui/info-block.ui' // Adjusted import statement
+import {
+  Breadcrumbs,
+  Button,
+  CircularProgress,
+  Link,
+  Typography,
+} from '@mui/material'
+import { FeedbackList } from '~widgets/feedback-list'
+import { useParams } from 'react-router-dom'
+import { degreeQueries } from '~entities/degree'
+import { EnrollForm } from '~widgets/enroll-form'
+import { OpportunitiesList } from '~widgets/opportunities-list'
+import { InstagramEmbed } from 'react-social-media-embed';
 
 export const DegreePage = () => {
-  const slug = useParams();
+  const slug = useParams()
 
   const {
     data: degreeData,
     isLoading,
     isError,
-  } = degreeQueries.useGetDegree(String(slug.slug));
+  } = degreeQueries.useGetDegree(String(slug.slug))
 
-  console.log(degreeData?.data.title);
+  console.log(degreeData);
+  
+  if (isError) {
+    return <div>Произошла Ошибка</div>
+  }
 
   if (isLoading) {
-    return <div className='flex flex-col gap-3 items-center justify-center h-[400px]'>
-      <CircularProgress className='text-blue'/>
-      <Typography variant='h6'>Загрузка</Typography>
-    </div>;
+    return (
+      <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
+        <CircularProgress className="text-blue" />
+        <Typography variant="h6">Загрузка</Typography>
+      </div>
+    )
   }
 
   return (
@@ -44,7 +56,7 @@ export const DegreePage = () => {
                   {degreeData?.data.title}
                 </Typography>
               </Breadcrumbs>
-              <Typography variant="h2" className="font-semibold">
+              <Typography variant="h2" className="font-semibold md:text-[40px]">
                 {degreeData?.data.title}
               </Typography>
             </div>
@@ -90,8 +102,8 @@ export const DegreePage = () => {
             mollitia, facere aperiam debitis quo. Eum minima expedita accusamus
             qui repudiandae. Sit mollitia nemo culpa?
           </p>
-          <OpportunitiesList/>
-          <EnrollForm/>
+          <OpportunitiesList />
+          <EnrollForm />
           <Typography variant="h2" className="my-5">
             Отзывы студентов
           </Typography>
@@ -100,5 +112,5 @@ export const DegreePage = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
