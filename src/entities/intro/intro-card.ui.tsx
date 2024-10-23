@@ -1,6 +1,13 @@
 import { Box, Button, Typography } from '@mui/material'
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
+import { CustomModal } from '~shared/ui/modal'
+import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
+import { Quizizz } from '~widgets/quizizz'
 
 export const IntroCard = ({ title, img, description }) => {
+  const [modal, setModal] = useState(false)
+
   return (
     <>
       <section
@@ -25,11 +32,15 @@ export const IntroCard = ({ title, img, description }) => {
             variant="contained"
             size="large"
             className="bg-green shadow-none self-start md:mx-auto"
+            onClick={() => setModal(true)}
           >
             Подобрать программу
           </Button>
         </Box>
       </section>
+      <MaterialModal open={modal} setOpen={setModal}>
+        <Quizizz></Quizizz>
+      </MaterialModal>
     </>
   )
 }

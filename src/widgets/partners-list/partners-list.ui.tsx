@@ -22,7 +22,7 @@ export const PartnersList = () => {
       <Box className="w-full overflow-hidden my-10">
         <Marquee
           direction="left"
-          speed={50}
+          speed={150}
           pauseOnHover={true}
           className="mb-3 "
         >
@@ -36,7 +36,7 @@ export const PartnersList = () => {
 
         <Marquee
           direction="right"
-          speed={50}
+          speed={150}
           pauseOnHover={true}
           className="pb-5"
         >
