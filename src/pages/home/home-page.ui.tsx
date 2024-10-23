@@ -1,10 +1,10 @@
-import { NewsCard } from '~entities/news'
-import StaffList from '~widgets/staff-list/staff-list.ui'
-import StaffButtonsSwiper from './ui/StaffCategory.ui'
-import { ProfessionCard } from '~entities/profession'
-import { SwiperIntro } from '~widgets/swiper-intro'
-import { EnrollForm } from '~widgets/enroll-form'
-import { DiplomList } from '~widgets/diplom-list'
+import { NewsCard } from '~entities/news';
+import StaffList from '~widgets/staff-list/staff-list.ui';
+import StaffButtonsSwiper from './ui/StaffCategory.ui';
+import { ProfessionCard } from '~entities/profession';
+import { SwiperIntro } from '~widgets/swiper-intro';
+import { EnrollForm } from '~widgets/enroll-form';
+import { DiplomList } from '~widgets/diplom-list';
 
 const news = {
   image:
@@ -12,7 +12,7 @@ const news = {
   title: 'Международная межвузовская научно-практическая конференция',
   description: '31 мая 2024 г. 17:06',
   link: '#',
-}
+};
 
 const profession = {
   title:
@@ -20,7 +20,7 @@ const profession = {
   degree: 'Бакалавриат',
   faculties: 'Институт межкультурной коммуникации и психологии',
   url: 'specialization/ss',
-}
+};
 
 export function HomePage() {
   return (
@@ -40,5 +40,5 @@ export function HomePage() {
         <StaffList />
       </div>
     </div>
-  )
+  );
 }
