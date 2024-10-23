@@ -11,9 +11,6 @@ import { AboutBlock } from './ui/AboutBlock.ui'
 import { PartnersList } from '~widgets/partners-list'
 import { FeedbackVideoList } from '~widgets/feedback-list'
 
-
-
-
 export function HomePage() {
   return (
     <div>
