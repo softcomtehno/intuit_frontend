@@ -13,6 +13,12 @@ import 'swiper/css/effect-fade'
 export const DegreeCategory = () => {
   const navigate = useNavigate()
   const { data: degreeData, isLoading, isError } = degreeQueries.useGetDegrees()
+  if (isLoading) {
+    return <h1>Загрузка</h1>
+  }
+  if (isError) {
+    return <h1>Ошибка</h1>
+  }
   return (
     <div>
       <Typography variant="h3" component="div" className="font-semibold">
