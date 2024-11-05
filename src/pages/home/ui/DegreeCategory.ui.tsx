@@ -45,7 +45,7 @@ export const DegreeCategory = () => {
       >
         {degreeData?.data.map((degree) => (
           <SwiperSlide>
-            <Card className=" max-w-[300px] p-4 border border-gray text-black/80 transition duration-200 rounded-lg hover:bg-green hover:text-white md:max-w-full">
+            <Card className="max-w-[300px] p-4 border border-gray text-black/80 transition duration-200 rounded-lg hover:bg-green hover:text-white md:max-w-full">
               <CardActionArea onClick={() => navigate(`degree/${degree.slug}`)}>
                 <Typography variant="h6" className="font-bold">
                   {degree.title}

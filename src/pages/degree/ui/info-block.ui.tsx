@@ -35,19 +35,11 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
             {tags.map((tag, index) => (
               <div
                 key={index}
-                className="border-[1px] rounded-3xl border-black p-2"
+                className="border-[1px] rounded-3xl border-black py-1 px-3 text-[15px]"
               >
                 {tag}
               </div>
             ))}
-          </Box>
-          <Box className="flex gap-3">
-            <div className="bg-white p-2 rounded-[100%]">
-              <SchoolRounded />
-            </div>
-            <div className="bg-white p-2 rounded-[100%]">
-              <PaidRounded />
-            </div>
           </Box>
         </Box>
       </Card>

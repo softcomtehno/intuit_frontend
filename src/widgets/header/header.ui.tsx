@@ -9,7 +9,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import  ExpandMoreIcon  from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
@@ -53,6 +53,9 @@ export function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+  };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   const displayList = (listName: string, buttonName: string) => {
@@ -133,8 +136,8 @@ export function Header() {
               elevation={0}
               className="absolute left-1/2 transform -translate-x-1/2 mt-2 md:mt-1 p-7 lg:overflow-y-auto lg:p-3 min-w-[85%] md:min-w-[95%] max-w-[85%] min-h-[400px] max-h-[400px] md:min-h-screen md:max-h-screen  overflow-y-auto bg-white rounded-lg flex md:flex-col md:gap-10 md:pb-20 gap-20 shadow-xl z-50"
             >
-              <div className='hidden lg:block '>
-                <Accordion className='shadow-none' >
+              <div className="hidden lg:block ">
+                <Accordion className="shadow-none">
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1-content"
@@ -144,20 +147,20 @@ export function Header() {
                   </AccordionSummary>
                   <AccordionDetails>
                     <ul>
-                    {institutes.map((section, index) => (
-                    <li onClick={toggleMenu} className="mb-2" key={index}>
-                      <Link
-                        to={`/institutes/${section.name}`}
-                        onClick={toggleMenu}
-                      >
-                        {section.name}
-                      </Link>
-                    </li>
-                  ))}
+                      {institutes.map((section, index) => (
+                        <li onClick={toggleMenu} className="mb-2" key={index}>
+                          <Link
+                            to={`/institutes/${section.name}`}
+                            onClick={toggleMenu}
+                          >
+                            {section.name}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </AccordionDetails>
                 </Accordion>
-                <Accordion className='shadow-none'>
+                <Accordion className="shadow-none">
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2-content"
@@ -166,38 +169,44 @@ export function Header() {
                     Абитуриентам
                   </AccordionSummary>
                   <AccordionDetails>
-                  <ul>
-                  {degreeData?.data.map((degree, index) => (
-                    <li onClick={toggleMenu} className="mb-2" key={index}>
-                      <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
-                        {degree.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                    <ul>
+                      {degreeData?.data.map((degree, index) => (
+                        <li onClick={toggleMenu} className="mb-2" key={index}>
+                          <Link
+                            onClick={toggleMenu}
+                            to={`degree/${degree.slug}`}
+                          >
+                            {degree.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </AccordionDetails>
                 </Accordion>
-                <Accordion className='shadow-none'>
+                <Accordion className="shadow-none">
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2-content"
                     id="panel2-header"
                   >
-                   Студентам
+                    Студентам
                   </AccordionSummary>
                   <AccordionDetails>
-                  <ul>
-                  {degreeData?.data.map((degree, index) => (
-                    <li onClick={toggleMenu} className="mb-2" key={index}>
-                      <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
-                        {degree.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                    <ul>
+                      {degreeData?.data.map((degree, index) => (
+                        <li onClick={toggleMenu} className="mb-2" key={index}>
+                          <Link
+                            onClick={toggleMenu}
+                            to={`degree/${degree.slug}`}
+                          >
+                            {degree.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </AccordionDetails>
                 </Accordion>
-                <Accordion className='shadow-none'>
+                <Accordion className="shadow-none">
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel3-content"
@@ -212,34 +221,34 @@ export function Header() {
                   </AccordionDetails>
                 </Accordion>
                 <Button
-              variant="outlined"
-              className="w-full my-3 duration-300  font-bold text-white bg-green hover:border-green"
-            >
-              Обратная связь
-            </Button>
-            <div className='flex justify-between'>
-                <Link className=' border border-green rounded px-3' to="/">
-                  <IconButton className="text-green">
-                    <FacebookRoundedIcon />
-                  </IconButton>
-                </Link>
-                <Link className=' border border-green rounded px-3' to="/">
-                  <IconButton className="text-green">
-                    <WhatsAppIcon />
-                  </IconButton>
-                </Link>
-                <Link className=' border border-green rounded px-3' to="/">
-                  <IconButton className="text-green">
-                    <InstagramIcon />
-                  </IconButton>
-                </Link>
+                  variant="outlined"
+                  className="w-full my-3 duration-300  font-bold text-white bg-green hover:border-green"
+                >
+                  Обратная связь
+                </Button>
+                <div className="flex justify-between">
+                  <Link className=" border border-green rounded px-3" to="/">
+                    <IconButton className="text-green">
+                      <FacebookRoundedIcon />
+                    </IconButton>
+                  </Link>
+                  <Link className=" border border-green rounded px-3" to="/">
+                    <IconButton className="text-green">
+                      <WhatsAppIcon />
+                    </IconButton>
+                  </Link>
+                  <Link className=" border border-green rounded px-3" to="/">
+                    <IconButton className="text-green">
+                      <InstagramIcon />
+                    </IconButton>
+                  </Link>
 
-                <Link className=' border border-green rounded px-3' to="/">
-                  <IconButton className="text-green">
-                    <TelegramIcon />
-                  </IconButton>
-                </Link>
-              </div>
+                  <Link className=" border border-green rounded px-3" to="/">
+                    <IconButton className="text-green">
+                      <TelegramIcon />
+                    </IconButton>
+                  </Link>
+                </div>
               </div>
               <div className="flex flex-col gap-3 lg:hidden">
                 <Button
@@ -267,17 +276,6 @@ export function Header() {
                 <Button
                   variant="outlined"
                   className={`px-10 py-1 transition duration-300 border border-green  shadow-none font-medium  hover:bg-green hover:text-white ${
-                    activeButton === 'students'
-                      ? 'bg-green text-white'
-                      : 'text-black bg-white '
-                  }`}
-                  onClick={() => displayList('students', 'students')}
-                >
-                  Студентам
-                </Button>
-                <Button
-                  variant="outlined"
-                  className={`px-10 py-1 transition duration-300 border border-green  shadow-none font-medium  hover:bg-green hover:text-white ${
                     activeButton === 'about'
                       ? 'bg-green text-white'
                       : 'text-black bg-white '
@@ -286,15 +284,26 @@ export function Header() {
                 >
                   Об Университете
                 </Button>
+                <Button
+                  variant="outlined"
+                  className={`px-10 py-1 transition duration-300 border border-green  shadow-none font-medium  hover:bg-green hover:text-white ${
+                    activeButton === 'students'
+                      ? 'bg-green text-white'
+                      : 'text-black bg-white '
+                  }`}
+                  onClick={() => displayList('students', 'students')}
+                >
+                  Студентам
+                </Button>
               </div>
               {activeList === 'institutes' && (
                 <ul className="lg:hidden">
                   <h2 className="font-bold mb-3">Институты</h2>
                   {institutes.map((section, index) => (
-                    <li onClick={toggleMenu} className="mb-2" key={index}>
+                    <li onClick={closeMenu} className="mb-2" key={index}>
                       <Link
                         to={`/institutes/${section.name}`}
-                        onClick={toggleMenu}
+                        onClick={closeMenu}
                       >
                         {section.name}
                       </Link>
@@ -304,24 +313,38 @@ export function Header() {
               )}
               {activeList === 'abituri' && (
                 <ul>
-                  <h2 className="font-bold mb-3">Уровни</h2>
+           <h2 className="font-bold mb-3">Абитуриентам</h2>
+           <Link to="/contract">Оплата обучения</Link>
+                  <h2 className="font-bold my-3">Уровни образований</h2>
                   {degreeData?.data.map((degree, index) => (
-                    <li onClick={toggleMenu} className="mb-2" key={index}>
-                      <Link onClick={toggleMenu} to={`degree/${degree.slug}`}>
+                    <li onClick={closeMenu} className="mb-2" key={index}>
+                      <Link onClick={closeMenu} to={`degree/${degree.slug}`}>
                         {degree.title}
                       </Link>
                     </li>
                   ))}
                 </ul>
               )}
-              {activeList === 'students' && (
-                <ul>
-                  <h2 className="font-bold mb-3">Для студентов</h2>
-                </ul>
-              )}
               {activeList === 'about' && (
                 <ul>
                   <h2 className="font-bold mb-3">Об Университете</h2>
+                  <li>
+                    <Link to="/news">Новости</Link>
+                  </li>
+                </ul>
+              )}
+              {activeList === 'students' && (
+                <ul>
+                  <h2 className="font-bold mb-3">Для студентов</h2>
+                  <li>
+                    <Link to="/schedule">Расписание</Link>
+                  </li>
+                  <li>
+                    <a href="http://moodle.intuit.kg/">Moodle</a>
+                  </li>
+                  <li>
+                    <a href="http://178.217.169.139/">AVN</a>
+                  </li>
                 </ul>
               )}
             </Paper>

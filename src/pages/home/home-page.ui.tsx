@@ -35,7 +35,7 @@ export function HomePage() {
       <h1 className="my-5 font-medium">
         <SwiperIntro />
       </h1>
-      <ArticleList/>
+ 
       <DegreeCategory />
       <ProgramCategory/>
       <OpportunitiesList />
@@ -49,6 +49,7 @@ export function HomePage() {
       </div>
       <PartnersList />
       <EnrollForm />
+      <ArticleList/>
       <FeedbackVideoList />
     </div>
   );

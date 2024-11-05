@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const InstituteBanner = () => {
   return (
-    <div className="bg-[#f5f5f5] p-7 rounded-2xl flex ">
+    <div className="bg-[#f5f5f5] p-7 rounded-2xl flex  justify-between">
       <div className="flex flex-col justify-between min-h-[400px] ">
         <div>
           <Breadcrumbs aria-label="breadcrumb">
@@ -16,7 +16,7 @@ export const InstituteBanner = () => {
           <Typography
             variant="h1"
             component="h1"
-            className="text-[3.3rem] font-medium mt-7"
+            className="text-[2.5rem] font-bold mt-7 text-[#333] max-w-[800px]"
           >
             Институт Цифровой Трансформации и Программирования
           </Typography>

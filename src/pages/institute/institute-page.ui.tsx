@@ -3,6 +3,7 @@ import { EnrollForm } from '~widgets/enroll-form';
 import { OpportunitiesList } from '~widgets/opportunities-list';
 import StaffList from '~widgets/staff-list/staff-list.ui';
 import { InstituteBanner } from './ui/InstituteBanner.ui';
+import { AboutInstitute } from './ui/AboutInstitute.ui';
 
 export const InstitutePage = () => {
   const slug = useParams();
@@ -11,6 +12,7 @@ export const InstitutePage = () => {
   return (
     <div className="my-5">
       <InstituteBanner />
+      <AboutInstitute/>
       <OpportunitiesList />
       <StaffList />
       <EnrollForm />
