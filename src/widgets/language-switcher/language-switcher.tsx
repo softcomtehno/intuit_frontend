@@ -41,7 +41,7 @@ export const LanguageSwitcher = () => {
         className="cursor-pointer text-black hover:text-gray-700"
         onClick={() => handleLanguageChange('ky')}
       >
-        kyrgyz
+        Kyrgyz
       </Typography>
     </div>
   )

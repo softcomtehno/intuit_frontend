@@ -1,23 +1,21 @@
 import { Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 export const AboutBlock = () => {
+  const { t } = useTranslation()
+
   return (
     <div>
       <Typography variant="h3" component="div" className="font-semibold">
-        Об Университете
+        {t('homepage.aboutUniversity.title')}
       </Typography>
       <div className="flex justify-between md:flex-col-reverse">
         <div className="max-w-[800px]">
           <Typography variant="h4">
-            <b className="text-blue">Наша цель</b> — качественное образование
-            для вашей успешной карьеры
+            <b className="text-blue">{t('homepage.aboutUniversity.goal')}</b>
           </Typography>
           <Typography variant="subtitle1">
-            В Муит готовят высококлассных специалистов, востребованных в России
-            и за рубежом. Начните строить своё профессиональное будущее вместе с
-            нами. Более 25 лет в Муит обучают актуальным и востребованным
-            профессиям. У нас вы получите знания, которые помогут развить свой
-            бизнес или устроиться на работу в крупную компанию.
+            {t('homepage.aboutUniversity.description')}
           </Typography>
         </div>
         <img
