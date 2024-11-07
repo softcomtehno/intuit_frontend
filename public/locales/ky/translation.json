@@ -3,8 +3,8 @@
     "universityBlogArticles": "Университет блогунун макалалары",
     "degrees": {
       "degreeCategory": "Окуу багыттары",
-      "collegesCount": "2 колледж",
-      "programCount": "{degree.programCount} программалар",
+      "collegesCount": "институттар",
+      "programCount": "программалар",
       "programs": "Окуу программалары",
       "selectDegreePlaceholder": "Билим деңгээлин тандаңыз",
       "selectDirectionPlaceholder": "Багытты тандаңыз"

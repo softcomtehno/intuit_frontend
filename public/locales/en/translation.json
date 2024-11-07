@@ -3,8 +3,8 @@
     "universityBlogArticles": "University Blog Articles",
     "degrees": {
       "degreeCategory": "Fields of Study",
-      "collegesCount": "2 colleges",
-      "programCount": "{degree.programCount} programs",
+      "collegesCount": "faculties",
+      "programCount": "programs",
       "programs": "Programs of Study",
       "selectDegreePlaceholder": "Select Education Level",
       "selectDirectionPlaceholder": "Select Field of Study"

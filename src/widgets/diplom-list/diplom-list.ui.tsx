@@ -26,7 +26,7 @@ export const DiplomList = () => {
           className="py-10 px-1 diplom-list"
           modules={[Pagination]}
           spaceBetween={20}
-          slidesPerView={2.5}
+          slidesPerView={3}
           pagination={{ clickable: true }}
           breakpoints={{
             360: {

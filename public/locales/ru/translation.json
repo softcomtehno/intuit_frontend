@@ -3,8 +3,8 @@
     "universityBlogArticles": "Статьи с университетского блога статей",
     "degrees": {
       "degreeCategory": "Направления обучения",
-      "collegesCount": "2 колледжа",
-      "programCount": "{degree.programCount} направлений",
+      "collegesCount": "институты",
+      "programCount": "направлений",
       "programs": "Программы обучения",
       "selectDegreePlaceholder": "Выберите уровень образования",
       "selectDirectionPlaceholder": "Выберите направление"

@@ -31,8 +31,8 @@ export const DegreeCategory = () => {
       <Swiper
         className="py-10 px-1 degree-list"
         modules={[Pagination]}
-        spaceBetween={20}
-        slidesPerView={3.5}
+        spaceBetween={5}
+        slidesPerView={4}
         pagination={{ clickable: true }}
         breakpoints={{
           360: { slidesPerView: 1, centeredSlides: true, spaceBetween: 10 },
@@ -43,7 +43,7 @@ export const DegreeCategory = () => {
       >
         {degreeData?.data.map((degree) => (
           <SwiperSlide key={degree.id}>
-            <Card className="max-w-[300px] p-4 border border-gray text-black/80 transition duration-200 rounded-lg hover:bg-green hover:text-white md:max-w-full">
+            <Card className="max-w-[320px]  p-4 border border-gray text-black/80 transition duration-200 rounded-lg hover:bg-green hover:text-white md:max-w-full">
               <CardActionArea onClick={() => navigate(`degree/${degree.slug}`)}>
                 <Typography variant="h6" className="font-bold">
                   {degree.title}
@@ -60,7 +60,8 @@ export const DegreeCategory = () => {
                       variant="subtitle1"
                       className="leading-[20px] text-[16px] font-medium"
                     >
-                      {t('homepage.degrees.programCount', { degree: degree })}
+                      {degree.programCount} 
+                      { " " + t('homepage.degrees.programCount')}
                     </Typography>
                   </div>
                   <div className="bg-green rounded-full p-2">
