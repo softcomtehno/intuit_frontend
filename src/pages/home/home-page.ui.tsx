@@ -1,17 +1,15 @@
-import StaffList from '~widgets/staff-list/staff-list.ui';
-import StaffButtonsSwiper from './ui/StaffCategory.ui';
-import { SwiperIntro } from '~widgets/swiper-intro';
-import { EnrollForm } from '~widgets/enroll-form';
-import { DiplomList } from '~widgets/diplom-list';
-import { FeedbackVideoList } from '~widgets/feedback-list';
-import { PartnersList } from '~widgets/partners-list';
-import { OpportunitiesList } from '~widgets/opportunities-list';
-import { DegreeCategory } from './ui/DegreeCategory.ui';
-import { ProgramCategory } from './ui/ProgramCategory';
-import { AboutBlock } from './ui/AboutBlock.ui';
-import { ArticleList } from '~widgets/article-list/article-list.ui';
-
-
+import StaffList from '~widgets/staff-list/staff-list.ui'
+import StaffButtonsSwiper from './ui/StaffCategory.ui'
+import { SwiperIntro } from '~widgets/swiper-intro'
+import { EnrollForm } from '~widgets/enroll-form'
+import { DiplomList } from '~widgets/diplom-list'
+import { SpeakerVideoList } from '~widgets/speaker-list'
+import { PartnersList } from '~widgets/partners-list'
+import { OpportunitiesList } from '~widgets/opportunities-list'
+import { DegreeCategory } from './ui/DegreeCategory.ui'
+import { ProgramCategory } from './ui/ProgramCategory'
+import { AboutBlock } from './ui/AboutBlock.ui'
+import { ArticleList } from '~widgets/article-list/article-list.ui'
 
 export function HomePage() {
   return (
@@ -33,7 +31,7 @@ export function HomePage() {
       <ArticleList />
       <PartnersList />
       <EnrollForm />
-      <FeedbackVideoList />
+      <SpeakerVideoList />
     </div>
   )
 }

@@ -1,14 +1,17 @@
-import { Button } from '@mui/material';
-
-const buttonLabels = [
-  'Ректорат',
-  'Директора Институтов',
-  'Заведующий отделения',
-  'Заместитель директора по УВР',
-  'Профессорско-преподавательский состав',
-];
+import { Button } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 const StaffButtonsSwiper = () => {
+  const { t } = useTranslation()
+
+  const buttonLabels = [
+    t('homepage.staff.rectorate'),
+    t('homepage.staff.directors'),
+    t('homepage.staff.departmentHead'),
+    t('homepage.staff.uvrDeputyDirector'),
+    t('homepage.staff.professorStaff'),
+  ]
+
   return (
     <div className="my-5 py-1 px-1 staff-buttons-swiper flex gap-2 lg:flex-col">
       {buttonLabels.map((label) => (
@@ -21,7 +24,7 @@ const StaffButtonsSwiper = () => {
         </Button>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default StaffButtonsSwiper;
+export default StaffButtonsSwiper

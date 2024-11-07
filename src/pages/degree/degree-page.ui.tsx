@@ -6,13 +6,11 @@ import {
   Link,
   Typography,
 } from '@mui/material';
-import { FeedbackList } from '~widgets/feedback-list';
 import { useParams } from 'react-router-dom';
 import { degreeQueries } from '~entities/degree';
 import { EnrollForm } from '~widgets/enroll-form';
 import { OpportunitiesList } from '~widgets/opportunities-list';
-import { InstagramEmbed } from 'react-social-media-embed';
-import { ProgramCategory } from './ui/ProgramCategory';
+import { FeedbackList } from '~widgets/feedback-list';
 
 export const DegreePage = () => {
   const slug = useParams();
@@ -52,15 +50,18 @@ export const DegreePage = () => {
             }}
           >
             <div>
-              <Breadcrumbs aria-label="breadcrumb" className='text-[white]'>
+              <Breadcrumbs aria-label="breadcrumb" className="text-[white]">
                 <Link underline="hover" color="white" href="/">
                   Главная
                 </Link>
-                <Typography color="text.primary" className='text-[white]'>
+                <Typography color="text.primary" className="text-[white]">
                   {degreeData?.data.title}
                 </Typography>
               </Breadcrumbs>
-              <Typography variant="h2" className="text-[white] font-semibold md:text-[40px]">
+              <Typography
+                variant="h2"
+                className="text-[white] font-semibold md:text-[40px]"
+              >
                 {degreeData?.data.title}
               </Typography>
             </div>
@@ -98,15 +99,17 @@ export const DegreePage = () => {
               { value: 'Документ', label: `${degreeData?.data.diploma}` },
             ]}
           />
-          <ProgramCategory/>
+          <ProgramCategory />
           <OpportunitiesList />
           <EnrollForm />
           <Typography variant="h2" className="my-5">
             Отзывы студентов
           </Typography>
+
           <FeedbackList></FeedbackList>
         </div>
       )}
+      <FeedbackList></FeedbackList>
     </>
   );
 };

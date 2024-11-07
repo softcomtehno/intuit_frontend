@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { PlayCircleFilledRounded } from '@mui/icons-material/'
 import { CustomModal } from '~shared/ui/modal'
 
-export const FeedbackVideo = ({ name, description, url, img }) => {
+export const SpeakerVideo = ({ name, description, videoUrl, preview }) => {
   const [active, setActive] = useState(false)
 
   const getYouTubeEmbedUrl = (url) => {
@@ -15,7 +15,7 @@ export const FeedbackVideo = ({ name, description, url, img }) => {
     <>
       <Box
         className="flex flex-col justify-between  bg-cover bg-no-repeat bg-center min-h-[350px] p-5 rounded-2xl"
-        sx={{ background: `url("${img}")` }}
+        sx={{ background: `url("${preview}")` }}
         onClick={() => setActive(true)}
       >
         <Button onClick={() => setActive(true)} className="self-end">
@@ -33,7 +33,7 @@ export const FeedbackVideo = ({ name, description, url, img }) => {
       <CustomModal active={active} setActive={setActive}>
         <iframe
           className="w-full h-72"
-          src={getYouTubeEmbedUrl(url)}
+          src={getYouTubeEmbedUrl(videoUrl)}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

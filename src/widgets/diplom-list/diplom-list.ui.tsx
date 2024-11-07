@@ -1,8 +1,8 @@
-import { Button, Card, Typography } from '@mui/material';
-import Gerb from '../../assets/gerb.svg';
-import EUGerb from '../../assets/eugerb.svg';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Button, Card, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
+import Gerb from '../../assets/gerb.svg'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -10,10 +10,12 @@ import 'swiper/css/effect-fade';
 import Fancybox from '~widgets/diplom-list/Fancybox';
 
 export const DiplomList = () => {
+  const { t } = useTranslation()
+
   return (
     <div className="container-lg">
       <Typography variant="h3" className="font-semibold">
-        Твой будущий диплом
+        {t('homepage.diploma.listTitle')}
       </Typography>
       <Fancybox
         options={{
@@ -50,14 +52,14 @@ export const DiplomList = () => {
                       variant="h4"
                       className="font-semibold text-[27px] leading-8"
                     >
-                      Бакалавриат
+                      {t('homepage.diploma.bachelor.degree')}
                     </Typography>
                     <Typography className="font-medium ">
-                      Государственный диплом бакалавра
+                      {t('homepage.diploma.bachelor.description')}
                     </Typography>
                   </div>
                   <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium">
-                    Посмотреть
+                    {t('homepage.diploma.buttonText')}
                   </Button>
                 </div>
                 <img
@@ -80,14 +82,14 @@ export const DiplomList = () => {
                       variant="h4"
                       className="font-semibold text-[27px] leading-8"
                     >
-                      Магистратура
+                      {t('homepage.diploma.master.degree')}
                     </Typography>
                     <Typography className="font-medium ">
-                      Государственный диплом магистранта
+                      {t('homepage.diploma.master.description')}
                     </Typography>
                   </div>
                   <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium">
-                    Посмотреть
+                    {t('homepage.diploma.buttonText')}
                   </Button>
                 </div>
                 <img
@@ -110,14 +112,14 @@ export const DiplomList = () => {
                       variant="h4"
                       className="font-semibold text-[27px] leading-8"
                     >
-                      Аспирантура
+                      {t('homepage.diploma.postgraduate.degree')}
                     </Typography>
                     <Typography className="font-medium ">
-                      Государственный диплом аспиранта
+                      {t('homepage.diploma.postgraduate.description')}
                     </Typography>
                   </div>
                   <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium">
-                    Посмотреть
+                    {t('homepage.diploma.buttonText')}
                   </Button>
                 </div>
                 <img
@@ -140,14 +142,14 @@ export const DiplomList = () => {
                       variant="h4"
                       className="font-semibold text-[27px] leading-8"
                     >
-                      Diploma Supplement
+                      {t('homepage.diploma.diplomaSupplement.title')}
                     </Typography>
                     <Typography className="font-medium ">
-                      Приложение к диплому
+                      {t('homepage.diploma.diplomaSupplement.description')}
                     </Typography>
                   </div>
                   <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium">
-                    Посмотреть
+                    {t('homepage.diploma.buttonText')}
                   </Button>
                 </div>
                 <img
@@ -161,5 +163,7 @@ export const DiplomList = () => {
         </Swiper>
       </Fancybox>
     </div>
-  );
-};
+  )
+}
+
+export default DiplomList

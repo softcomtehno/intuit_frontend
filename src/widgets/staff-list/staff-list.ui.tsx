@@ -1,29 +1,33 @@
-import { StaffCard, staffQueries, staffTypes } from '~entities/staff'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/effect-fade'
-
+import { StaffCard, staffQueries, staffTypes } from '~entities/staff';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import { useTranslation } from 'react-i18next';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const StaffList = () => {
+  const { t } = useTranslation();
+  
   const {
     data: staffData,
     isSuccess,
     isError,
     isLoading,
-  } = staffQueries.useGetStaffs()
+  } = staffQueries.useGetStaffs();
 
   if (isLoading) {
-    return <div>Идёт загрузка данных</div>
+    return <div>{t('homepage.loading.loading')}</div>;
   }
+  
   if (isError) {
-    return <div>Данные не загружены</div>
+    return <div>{t('homepage.loading.error')}</div>;
   }
+  
   if (isSuccess) {
     return (
       <Swiper
-        className=" py-10 px-1 staff-list"
+        className="py-10 px-1 staff-list"
         modules={[Pagination]}
         spaceBetween={20}
         slidesPerView={2.5}
@@ -35,8 +39,8 @@ const StaffList = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    )
+    );
   }
-}
+};
 
-export default StaffList
+export default StaffList;
