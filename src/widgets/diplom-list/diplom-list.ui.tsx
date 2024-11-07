@@ -4,10 +4,10 @@ import Gerb from '../../assets/gerb.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/effect-fade'
-import Fancybox from '~widgets/diplom-list/Fancybox'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import Fancybox from '~widgets/diplom-list/Fancybox';
 
 export const DiplomList = () => {
   const { t } = useTranslation()

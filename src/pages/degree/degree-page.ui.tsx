@@ -10,8 +10,8 @@ import { useParams } from 'react-router-dom'
 import { degreeQueries } from '~entities/degree'
 import { EnrollForm } from '~widgets/enroll-form'
 import { OpportunitiesList } from '~widgets/opportunities-list'
-import { InstagramEmbed } from 'react-social-media-embed'
 import { FeedbackList } from '~widgets/feedback-list'
+import { InstagramEmbed } from 'react-social-media-embed'
 
 export const DegreePage = () => {
   const slug = useParams()

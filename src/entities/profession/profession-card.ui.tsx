@@ -1,6 +1,39 @@
 import { Box, Button, Card, Typography } from '@mui/material'
 import { ChevronRightRounded } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
+
+const professions = [
+  {
+    degree: 'Бакалавриат',
+    faculties: 'Факультет информационных технологий',
+    title: 'Программист',
+    url: '/specialization/programmer',
+  },
+  {
+    degree: 'Бакалавриат',
+    faculties: 'Институт экономики и менеджмента',
+    title: 'Менеджмент в инновационной деятельности',
+    url: '/specialization/economist',
+  },
+  {
+    degree: 'Бакалавриат',
+    faculties: 'Факультет инженерии',
+    title: 'Инженер',
+    url: '/specialization/engineer',
+  },
+  {
+    degree: 'Магистратура',
+    faculties: 'Факультет права',
+    title: 'Юрист',
+    url: '/specialization/lawyer',
+  },
+  {
+    degree: 'Бакалавриат',
+    faculties: 'Факультет медицины',
+    title: 'Врач',
+    url: '/specialization/doctor',
+  },
+]
 export const ProfessionCard = ({ degree, faculties, title, url }) => {
   return (
     <Card
