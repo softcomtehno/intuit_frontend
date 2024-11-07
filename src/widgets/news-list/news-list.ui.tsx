@@ -11,8 +11,8 @@ export const NewsList = () => {
       <Typography variant="h3" component="div" className="font-semibold">
         Новости
       </Typography>
-      <div className='my-10'>
-      {data?.data.map((news, index) => (
+      <div className='my-10 flex justify-between'>
+      {data?.data.slice(0, 3).map((news, index) => (
         <NewsCard
           image={news.banner}
           title={news.title}

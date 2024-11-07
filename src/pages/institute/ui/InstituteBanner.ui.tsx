@@ -22,7 +22,7 @@ export const InstituteBanner: React.FC<FacultyPageType> = ({
               Главная
             </Link>
             <Link to="/institutes/">Институты</Link>
-            <Typography color="text.primary">Breadcrumbs</Typography>
+            <Typography color="text.primary">{title}</Typography>
           </Breadcrumbs>
           <Typography
             variant="h1"

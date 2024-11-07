@@ -6,6 +6,7 @@ import { InstituteBanner } from './ui/InstituteBanner.ui';
 import { facultyQueries } from '~entities/faculties';
 import { CircularProgress, Typography } from '@mui/material';
 import DescriptionCard from './ui/Description.ui';
+import ProgramCategory from './ui/ProgramCategory.ui';
 import { NewsList } from '~widgets/news-list';
 
 export const InstitutePage = () => {
@@ -43,10 +44,11 @@ export const InstitutePage = () => {
         text={facultyData?.data.text}
         subtext={facultyData?.data.subtext}
       />
+      <EnrollForm />
+      <ProgramCategory />
       <OpportunitiesList />
       <StaffList />
-      <NewsList/>
-      <EnrollForm />
+      <NewsList />
     </div>
   );
 };
