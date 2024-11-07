@@ -1,31 +1,31 @@
-import InfoBlock from './ui/info-block.ui' // Adjusted import statement
+import InfoBlock from './ui/info-block.ui'; // Adjusted import statement
 import {
   Breadcrumbs,
   Button,
   CircularProgress,
   Link,
   Typography,
-} from '@mui/material'
-import { FeedbackList } from '~widgets/feedback-list'
-import { useParams } from 'react-router-dom'
-import { degreeQueries } from '~entities/degree'
-import { EnrollForm } from '~widgets/enroll-form'
-import { OpportunitiesList } from '~widgets/opportunities-list'
-import { InstagramEmbed } from 'react-social-media-embed'
+} from '@mui/material';
+import { FeedbackList } from '~widgets/feedback-list';
+import { useParams } from 'react-router-dom';
+import { degreeQueries } from '~entities/degree';
+import { EnrollForm } from '~widgets/enroll-form';
+import { OpportunitiesList } from '~widgets/opportunities-list';
+import { InstagramEmbed } from 'react-social-media-embed';
 
 export const DegreePage = () => {
-  const slug = useParams()
+  const slug = useParams();
 
   const {
     data: degreeData,
     isLoading,
     isError,
-  } = degreeQueries.useGetDegree(String(slug.slug))
+  } = degreeQueries.useGetDegree(String(slug.slug));
 
-  console.log(degreeData)
+  console.log(degreeData);
 
   if (isError) {
-    return <div>Произошла Ошибка</div>
+    return <div>Произошла Ошибка</div>;
   }
 
   if (isLoading) {
@@ -34,7 +34,7 @@ export const DegreePage = () => {
         <CircularProgress className="text-blue" />
         <Typography variant="h6">Загрузка</Typography>
       </div>
-    )
+    );
   }
 
   return (
@@ -112,5 +112,5 @@ export const DegreePage = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};

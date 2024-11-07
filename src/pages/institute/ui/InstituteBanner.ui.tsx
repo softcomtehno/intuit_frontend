@@ -1,7 +1,18 @@
-import { Breadcrumbs, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Breadcrumbs, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-export const InstituteBanner = () => {
+type FacultyPageType = {
+  title: string;
+  banner: string;
+  programCount:number;
+};
+export const InstituteBanner: React.FC<FacultyPageType> = ({
+  title,
+  banner,
+  programCount
+}) => {
+  console.log(banner);
+  
   return (
     <div className="bg-[#f5f5f5] p-7 rounded-2xl flex md:flex-col ">
       <div className="flex flex-col justify-between min-h-[400px] ">
@@ -18,18 +29,18 @@ export const InstituteBanner = () => {
             component="h1"
             className="text-[3.3rem] font-medium mt-7  lg:text-[40px] md:!text-[30px] "
           >
-            Институт Цифровой Трансформации и Программирования
+            {title}
           </Typography>
         </div>
         <div className="self-start border py-1 px-7 rounded-lg">
-          15 Программ
+          {programCount} Программ
         </div>
       </div>
       <img
         className="h-[350px] rotate-[45deg] self-end lg:max-h-[250px]"
-        src="https://sys3.ru/synergy-ru/content/faculties/new3_big/programmirovanie.svg"
+        src={banner}
         alt=""
       />
     </div>
-  )
-}
+  );
+};

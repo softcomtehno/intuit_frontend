@@ -38,7 +38,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+          <div dangerouslySetInnerHTML={{ __html: description }} />
           </Typography>
         </CardContent>
       </CardActionArea>
