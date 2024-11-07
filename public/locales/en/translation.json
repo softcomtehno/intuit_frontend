@@ -77,25 +77,33 @@
       "goal": "Our goal is quality education for your successful career",
       "description": "At MUIT, we train highly skilled specialists in demand in Russia and abroad. Start building your professional future with us. For over 25 years, MUIT has been teaching relevant and in-demand professions. Here, you’ll gain knowledge that can help grow your business or land a job in a major company."
     },
-    "diploma": {
-      "listTitle": "Your Future Diploma",
-      "bachelor": {
-        "degree": "Bachelor’s",
-        "description": "State Bachelor’s diploma"
-      },
-      "master": {
-        "degree": "Master’s",
-        "description": "State Master's diploma"
-      },
-      "postgraduate": {
-        "degree": "Postgraduate",
-        "description": "State Postgraduate diploma"
-      },
-      "diplomaSupplement": {
-        "title": "Diploma Supplement",
-        "description": "Diploma Supplement"
-      }
+    "staff": {
+      "rectorate": "Rectorate",
+      "directors": "Institute Directors",
+      "departmentHead": "Department Head",
+      "uvrDeputyDirector": "Deputy Director for Academic Affairs",
+      "professorStaff": "Professorial Teaching Staff"
     },
+    "diploma": {
+    "listTitle": "Your Future Diploma",
+    "buttonText": "View",
+    "bachelor": {
+      "degree": "Bachelor's Degree",
+      "description": "State Bachelor's Diploma"
+    },
+    "master": {
+      "degree": "Master's Degree",
+      "description": "State Master's Diploma"
+    },
+    "postgraduate": {
+      "degree": "Postgraduate",
+      "description": "State Postgraduate Diploma"
+    },
+    "diplomaSupplement": {
+      "title": "Diploma Supplement",
+      "description": "Supplement to the diploma"
+    }
+  },
     "buttons": {
       "viewButton": "View",
       "applyButton": "Apply"
@@ -105,6 +113,17 @@
       "description": "Fill out the form to enroll in our university.",
       "successMessage": "Your application has been successfully submitted!",
       "formError": "Please fill out all fields correctly."
+    },
+    "enrollForm": {
+      "title": "Submit your application for training",
+      "placeholders": {
+        "name": "Name",
+        "phone": "Phone number",
+        "email": "Email"
+      },
+      "buttons": {
+        "submit": "Submit application"
+      }
     }
   },
   "degreePage": {

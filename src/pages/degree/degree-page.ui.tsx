@@ -6,12 +6,12 @@ import {
   Link,
   Typography,
 } from '@mui/material'
-import { FeedbackList } from '~widgets/feedback-list'
 import { useParams } from 'react-router-dom'
 import { degreeQueries } from '~entities/degree'
 import { EnrollForm } from '~widgets/enroll-form'
 import { OpportunitiesList } from '~widgets/opportunities-list'
 import { InstagramEmbed } from 'react-social-media-embed'
+import { FeedbackList } from '~widgets/feedback-list'
 
 export const DegreePage = () => {
   const slug = useParams()
@@ -107,10 +107,9 @@ export const DegreePage = () => {
           <Typography variant="h2" className="my-5">
             Отзывы студентов
           </Typography>
-
-          <FeedbackList></FeedbackList>
         </div>
       )}
+      <FeedbackList></FeedbackList>
     </>
   )
 }
