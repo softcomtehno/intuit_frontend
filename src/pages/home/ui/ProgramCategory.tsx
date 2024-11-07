@@ -1,6 +1,7 @@
 import { Button, Typography } from '@mui/material'
 import Select from 'react-select'
 import { ProfessionCard } from '~entities/profession'
+import { useTranslation } from 'react-i18next' // импортируем хук для локализации
 
 const options = [
   { value: 'chocolate', label: 'Бакалавриат' },
@@ -9,6 +10,7 @@ const options = [
   { value: 'vanilla', label: 'Колледж' },
   { value: 'vanilla', label: 'Курсы' },
 ]
+
 const professions = [
   {
     degree: 'Бакалавриат',
@@ -43,28 +45,30 @@ const professions = [
 ]
 
 export const ProgramCategory = () => {
+  const { t } = useTranslation() // хук useTranslation
+
   return (
     <div className="my-20 bg-[#ededed] px-5 py-7 rounded-lg">
       <Typography variant="h3" component="div" className="font-semibold">
-        Программы обучения
+        {t('homepage.degrees.programs')} {/* Программы обучения */}
       </Typography>
       <div>
         <div className="flex gap-5 my-5 lg:flex-col lg:items-center">
           <Select
             options={options}
-            placeholder="Выберите уровень образования"
+            placeholder={t('homepage.degrees.selectDegreePlaceholder')}
             className="w-[350px] lg:w-full"
           />
           <Select
             options={options}
-            placeholder="Выберите направление"
+            placeholder={t('homepage.degrees.selectDirectionPlaceholder')}
             className="w-[350px] lg:w-full"
           />
           <Button
             variant="contained"
             className="shadow-none bg-blue px-10 w-[350px] lg:w-full"
           >
-            Применить
+            {t('homepage.buttons.applyButton')} {/* Применить */}
           </Button>
         </div>
         <div className="flex flex-wrap  gap-2 lg:justify-center">

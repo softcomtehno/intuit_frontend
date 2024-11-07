@@ -1,0 +1,231 @@
+{
+  "homepage": {
+    "universityBlogArticles": "University Blog Articles",
+    "degrees": {
+      "degreeCategory": "Fields of Study",
+      "collegesCount": "2 colleges",
+      "programCount": "{degree.programCount} programs",
+      "programs": "Programs of Study",
+      "selectDegreePlaceholder": "Select Education Level",
+      "selectDirectionPlaceholder": "Select Field of Study"
+    },
+    "loading": {
+      "loading": "Loading",
+      "error": "Error"
+    },
+    "opportunities": {
+      "title": "With us, your opportunities are limitless",
+      "materials": {
+        "title": "Availability of study materials",
+        "moodle": "All materials are available in the MOODLE system.",
+        "review": "Review materials and take notes at any time.",
+        "keepUp": "Catch up with classmates and stay informed."
+      },
+      "transfer": {
+        "title": "Transfer from another university",
+        "contact": "Contact the admissions office",
+        "documents": "Provide a set of documents",
+        "assistance": "Our staff is ready to answer all your questions and assist with the transfer"
+      },
+      "payment": {
+        "title": "Online tuition payment",
+        "onlineCheck": "Online payment verification",
+        "mobileApps": "Payment via mobile apps",
+        "monthly": "Convenient, including monthly payments with personal code"
+      },
+      "career": {
+        "title": "Employment and career",
+        "resumeHelp": "We will help you create a resume",
+        "interviewPrep": "Prepare you for an interview",
+        "referenceLetter": "We will write a recommendation letter"
+      }
+    },
+    "availability": {
+      "title": "Availability of Learning Materials",
+      "points": [
+        "All materials are available on the MOODLE system.",
+        "Review and take notes anytime.",
+        "Keep up with your classmates and stay updated."
+      ]
+    },
+    "transfer": {
+      "title": "Transfer from Another University",
+      "points": [
+        "Contact the admissions office",
+        "Provide a set of documents",
+        "Our staff is ready to answer all your questions and assist with the transfer."
+      ]
+    },
+    "onlinePayment": {
+      "title": "Online Tuition Payment",
+      "points": [
+        "Online payment verification",
+        "Payment via mobile apps",
+        "Convenient monthly payments using your personal code."
+      ]
+    },
+    "employment": {
+      "title": "Employment and Career",
+      "points": [
+        "We'll help you write a resume",
+        "Prepare you for interviews",
+        "Write a recommendation letter."
+      ]
+    },
+    "aboutUniversity": {
+      "title": "About the University",
+      "goal": "Our goal is quality education for your successful career",
+      "description": "At MUIT, we train highly skilled specialists in demand in Russia and abroad. Start building your professional future with us. For over 25 years, MUIT has been teaching relevant and in-demand professions. Here, you’ll gain knowledge that can help grow your business or land a job in a major company."
+    },
+    "diploma": {
+      "listTitle": "Your Future Diploma",
+      "bachelor": {
+        "degree": "Bachelor’s",
+        "description": "State Bachelor’s diploma"
+      },
+      "master": {
+        "degree": "Master’s",
+        "description": "State Master's diploma"
+      },
+      "postgraduate": {
+        "degree": "Postgraduate",
+        "description": "State Postgraduate diploma"
+      },
+      "diplomaSupplement": {
+        "title": "Diploma Supplement",
+        "description": "Diploma Supplement"
+      }
+    },
+    "buttons": {
+      "viewButton": "View",
+      "applyButton": "Apply"
+    },
+    "enrollment": {
+      "title": "Enrollment",
+      "description": "Fill out the form to enroll in our university.",
+      "successMessage": "Your application has been successfully submitted!",
+      "formError": "Please fill out all fields correctly."
+    }
+  },
+  "degreePage": {
+    "breadcrumbs": {
+      "home": "Home",
+      "currentPage": "{degreeData.data.title}"
+    },
+    "header": {
+      "title": "{degreeData.data.title}",
+      "description": "Take a test and find out which field suits you best",
+      "button": "Find a Program"
+    },
+    "infoBlock": {
+      "tags": ["Graduates", "Bachelor’s"],
+      "stats": {
+        "programCount": "programs",
+        "studyPeriod": "study period",
+        "employment": "Employment",
+        "diploma": "Certificate"
+      }
+    },
+    "programsTitle": "Programs of Study",
+    "opportunities": {
+      "title": "With us, your opportunities are limitless",
+      "availabilityTitle": "Availability of Learning Materials"
+    },
+    "enrollForm": {
+      "title": "Enrollment",
+      "description": "Fill out the form to enroll in our university."
+    },
+    "feedback": {
+      "title": "Student Feedback"
+    }
+  },
+  "enrollPage": {
+    "introCard": {
+      "title": "For Applicants",
+      "description": "Enroll at 'Synergy'. Take a test and find out which field suits you best"
+    },
+    "infoSection": {
+      "title": "Information for Applicants",
+      "text1": "At MUIT, you can apply for budget-funded spots or contract-based education.",
+      "text2": "MUIT offers discounts and benefits for tuition fees for disabled individuals, orphans, and those under guardianship.",
+      "text3": "Admission and enrollment based on current year results are conducted online.",
+      "text4": "The registration and competitive selection process for 2022 is exclusively online on designated portals."
+    },
+    "importantLinks": {
+      "noMedCertificate": "No medical certificate required.",
+      "noDormitory": "MUIT does not provide dormitories.",
+      "programList": "List of specialties for 2024-2025 academic year.",
+      "brochure": "MUIT Brochure"
+    },
+    "documentsSection": {
+      "title": "Documents",
+      "admissionProcedure": "Admission procedure for universities in Kyrgyzstan",
+      "noORTNeeded": "Programs that don’t require test results.",
+      "benefitsDocuments": "Documents for obtaining benefits",
+      "bachelorFees": "Tuition fees for 2024-2025",
+      "masterFees": "Tuition fees for master’s 2024-2025",
+      "internationalFees": "Tuition fees for international students 2024-2025"
+    },
+    "foreignStudentsSection": {
+      "title": "For International Students",
+      "text": "Admission for international students is based on the regulations approved by the government of Kyrgyzstan.",
+      "entranceExams": {
+        "title": "Entrance Exams for International Students",
+        "item1": "All applicants must take an exam in Russian.",
+        "item2": "Some fields require an additional test in math or physics.",
+        "item3": "Applicants must achieve a minimum score for admission.",
+        "item4": "Further details are available on the MUIT website and edugate.edu.gov.kg."
+      },
+      "registration": "Registration for International Students",
+      "documents": "Documents for international student admission"
+    }
+  },
+  "institutPage": {
+    "instituteBanner": {
+      "breadcrumbs": {
+        "home": "Home",
+        "institutes": "Institutes",
+        "current": "Breadcrumbs"
+      },
+      "title": "Institute of Digital Transformation and Programming",
+      "programsCount": "15 Programs"
+    },
+    "opportunitiesList": {
+      "title": "With us, your opportunities are limitless",
+      "opportunities": [
+        {
+          "title": "Availability of Learning Materials",
+          "items": [
+            "All materials are available on the MOODLE system.",
+            "Review and take notes anytime.",
+            "Keep up with your classmates and stay updated."
+          ]
+        },
+        {
+          "title": "Transfer from Another University",
+          "items": [
+            "Contact the admissions office",
+            "Provide a set of documents",
+            "Our staff is ready to answer all your questions and assist with the transfer."
+          ]
+        },
+        {
+          "title": "Online Tuition Payment",
+          "items": [
+            "Online payment verification",
+            "Payment via mobile apps",
+            "Convenient monthly payments using your personal code."
+          ]
+        },
+        {
+          "title": "Employment and Career",
+          "items": [
+            "We'll help you write a resume",
+            "Prepare you for interviews",
+            "Write a recommendation letter."
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,15 +1,19 @@
-import i18n from 'i18next'
+import i18n from './i18n' // убедитесь, что путь правильный
 import { setCookie, getCookie } from 'typescript-cookie'
 
 export const setLanguage = (lng: string) => {
-  if (i18n.language !== lng) {
-    // Проверяем, чтобы избежать лишних вызовов
+  if (i18n.isInitialized && i18n.language !== lng) { // проверка инициализации
     i18n.changeLanguage(lng)
-    setCookie('language', lng, { expires: 365 }) // Сохраняем язык в cookie на 365 дней
+    setCookie('language', lng, { expires: 365 }) // сохраняем язык в cookie
+  } else {
+    i18n.on('initialized', () => {
+      i18n.changeLanguage(lng)
+      setCookie('language', lng, { expires: 365 })
+    })
   }
 }
 
 export const getLanguage = (): string => {
   const savedLanguage = getCookie('language')
-  return savedLanguage || 'ru' // Возвращаем сохраненный язык или язык по умолчанию
+  return savedLanguage || 'ru'
 }
