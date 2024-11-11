@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import { NewsRecomendationCard } from '~entities/news'
+import { newsQueries, NewsRecomendationCard } from '~entities/news'
 
 const news = [
   {
@@ -33,20 +33,34 @@ const news = [
   },
 ]
 
-
-
 export const NewsRecomendationList = () => {
-  return (
-    <Box className="flex flex-col gap-10 mt-10 ">
-      {news &&
-        news.map((news) => {
-          return (
-            <NewsRecomendationCard
-              key={news.id}
-              {...news}
-            ></NewsRecomendationCard>
-          )
-        })}
-    </Box>
-  )
+  const {
+    data: newsRecomendationList,
+    isLoading,
+    isError,
+    isSuccess,
+  } = newsQueries.useGetNews()
+  if (isError) {
+    return <div>Error</div>
+  }
+  if (isLoading) {
+    return <div>Loading</div>
+  }
+  if (isSuccess) {
+    return (
+      <Box className="flex flex-col gap-10 mt-10 ">
+        {newsRecomendationList.data &&
+          newsRecomendationList.data.map((news, index) => {
+            if (index <= 4) {
+              return (
+                <NewsRecomendationCard
+                  key={news.id}
+                  {...news}
+                ></NewsRecomendationCard>
+              )
+            }
+          })}
+      </Box>
+    )
+  }
 }
