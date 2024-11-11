@@ -1,12 +1,10 @@
-import axios from 'axios';
+import apiClient from '~shared/lib/api/apiClient';
 import { FacultySchema } from './news.types';
 
-const API_URL = 'https://intuit.makalabox.com/api/';
-
 export function getNews() {
-  return axios.get(`${API_URL}news/posts/`);
+  return apiClient.get('news/posts/');
 }
 
 export function getNewsDetail(slug: string) {
-  return axios.get<FacultySchema>(`${API_URL}news/posts/${slug}/`);
+  return apiClient.get<FacultySchema>(`news/posts/${slug}/`);
 }

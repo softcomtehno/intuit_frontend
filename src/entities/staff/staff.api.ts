@@ -1,11 +1,9 @@
-import axios from 'axios'
-
-const API_URL = 'https://intuit.makalabox.com/api/'
+import apiClient from '~shared/lib/api/apiClient';
 
 export const getStaffQuery = () => {
-  return axios.get(`${API_URL}university/staffs/`)
-}
+  return apiClient.get('university/staffs/');
+};
 
 export const getStaffDetailsQuery = (string: string) => {
-  return axios.get(`${API_URL}university/staffs/${string}/`)
-}
+  return apiClient.get(`university/staffs/${string}/`);
+};

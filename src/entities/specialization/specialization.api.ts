@@ -1,6 +1,5 @@
-import axios from 'axios'
+import apiClient from '~shared/lib/api/apiClient'
 
-const API_URL = 'https://intuit.makalabox.com/api/'
 export const getSpecializationDetail = (slug: string) => {
-  return axios.get(`${API_URL}university/programs/${slug}`)
+  return apiClient.get(`university/programs/${slug}`)
 }
