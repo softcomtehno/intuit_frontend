@@ -1,12 +1,10 @@
-import axios from 'axios';
+import apiClient from '~shared/lib/api/apiClient';
 import { FacultySchema } from './faculty.types';
 
-const API_URL = 'https://intuit.makalabox.com/api/';
-
 export function getFaculties() {
-  return axios.get(`${API_URL}university/faculties/`);
+  return apiClient.get('university/faculties/');
 }
 
 export function getFacultyBySlugQuery(slug: string) {
-  return axios.get<FacultySchema>(`${API_URL}university/faculties/${slug}/`);
+  return apiClient.get<FacultySchema>(`university/faculties/${slug}/`);
 }

@@ -1,11 +1,9 @@
-import axios from 'axios';
-
-const API_URL = 'https://intuit.makalabox.com/api/university/';
+import apiClient from '~shared/lib/api/apiClient';
 
 export function getProgramsQuery() {
-  return axios.get(`${API_URL}programs/`);
+  return apiClient.get('university/programs/');
 }
 
 export function getProgramBySlugQuery(slug: string) {
-  return axios.get(`${API_URL}programs/${slug}/`);
+  return apiClient.get(`university/programs/${slug}/`);
 }

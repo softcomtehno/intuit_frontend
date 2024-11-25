@@ -1,12 +1,10 @@
-import axios from 'axios';
+import apiClient from '~shared/lib/api/apiClient';
 import { DegreeSchema } from './degree.types';
 
-const API_URL = 'https://intuit.makalabox.com/api/';
-
 export function getDegreeQuery() {
-  return axios.get(`${API_URL}university/education-levels/`);
+  return apiClient.get('university/education-levels/');
 }
 
 export function getDegreeBySlugQuery(slug: string) {
-  return axios.get<DegreeSchema>(`${API_URL}university/education-levels/${slug}/`);
+  return apiClient.get<DegreeSchema>(`university/education-levels/${slug}/`);
 }

@@ -10,5 +10,5 @@ export const NewsSchema = z.object({
   banner: z.string(),
   category: z.array(z.number()),
   images: z.array(z.number()),
-  files: z.array(z.number())  
+  files: z.array(z.number())
 });
