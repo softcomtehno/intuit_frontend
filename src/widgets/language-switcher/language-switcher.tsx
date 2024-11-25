@@ -9,7 +9,7 @@ export const LanguageSwitcher = () => {
   useEffect(() => {
     const savedLanguage = getLanguage()
     if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage)
+      i18n.changeLanguage(savedLanguage)  
     }
   }, [i18n])
 

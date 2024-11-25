@@ -2,60 +2,34 @@ import { Box, Button, Card, Typography } from '@mui/material'
 import { ChevronRightRounded } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 
-const professions = [
-  {
-    degree: 'Бакалавриат',
-    faculties: 'Факультет информационных технологий',
-    title: 'Программист',
-    url: '/specialization/programmer',
-  },
-  {
-    degree: 'Бакалавриат',
-    faculties: 'Институт экономики и менеджмента',
-    title: 'Менеджмент в инновационной деятельности',
-    url: '/specialization/economist',
-  },
-  {
-    degree: 'Бакалавриат',
-    faculties: 'Факультет инженерии',
-    title: 'Инженер',
-    url: '/specialization/engineer',
-  },
-  {
-    degree: 'Магистратура',
-    faculties: 'Факультет права',
-    title: 'Юрист',
-    url: '/specialization/lawyer',
-  },
-  {
-    degree: 'Бакалавриат',
-    faculties: 'Факультет медицины',
-    title: 'Врач',
-    url: '/specialization/doctor',
-  },
-]
+
+const capitalizeFirstLetter = (text) => {
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+};
+
 export const ProfessionCard = ({ degree, faculties, title, url }) => {
   return (
+    <Link to={`/specialization/${url}`}>
     <Card
       variant="outlined"
-      className="min-w-[400px] max-w-[400px] min-h-[250px] flex flex-col justify-between    bg-[#f7f9fd] p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer sm:min-w-fit"
+      className="min-w-[400px] max-w-[400px] min-h-[250px] flex flex-col justify-betweenbg-[#f7f9fd] p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer sm:min-w-fit"
     >
       <Box className="flex flex-col gap-2">
         <Typography
           variant="subtitle2"
           className=" prof-card__text transition-all"
         >
-          {degree} / {faculties}
+          {degree} / {capitalizeFirstLetter(faculties)}
         </Typography>
         <Typography
           variant="h6"
           className=" prof-card__text transition-all font-meduim"
         >
-          {title}
+          {title} 
         </Typography>
       </Box>
-      <Box className="flex gap-5">
-        <Link to={`${url}`}>
+      <Box className="flex gap-5 mt-20">
+        <Link to={`/specialization/${url}`}>
           <Button
             variant="outlined"
             className="bg-green text-white border-green prof-card__btn_first transition-all"
@@ -64,13 +38,14 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
             Подробнее
           </Button>
         </Link>
-        <Button
+        {/* <Button
           variant="outlined"
           className="text-green prof-card__btn_last transition-all border-green"
         >
           Поступить
-        </Button>
+        </Button> */}
       </Box>
     </Card>
+    </Link>
   )
 }

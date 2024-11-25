@@ -19,8 +19,8 @@ export const AboutBlock = () => {
           </Typography>
         </div>
         <img
-          className="h-[350px] md:h-auto"
-          src="https://intuit.kg/static/img/header/welcome.png"
+          className="max-w-[550px] object-cover  rounded-xl h-[350px] md:h-auto"
+          src="https://cachizer2.2gis.com/reviews-photos/30b96412-86d8-4ac0-8211-8fe942dace70.jpg?w=640"
           alt=""
         />
       </div>

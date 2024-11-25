@@ -10,6 +10,7 @@ import { DegreeCategory } from './ui/DegreeCategory.ui'
 import { ProgramCategory } from './ui/ProgramCategory'
 import { AboutBlock } from './ui/AboutBlock.ui'
 import { ArticleList } from '~widgets/article-list/article-list.ui'
+import { Typography } from '@mui/material'
 
 export function HomePage() {
   return (
@@ -25,7 +26,10 @@ export function HomePage() {
         <DiplomList />
       </div>
       <div>
-        <StaffButtonsSwiper />
+      <Typography variant="h3" component="div" className="font-semibold">
+       Преподавательский состав
+      </Typography>
+        {/* <StaffButtonsSwiper /> */}
         <StaffList />
       </div>
       <ArticleList />

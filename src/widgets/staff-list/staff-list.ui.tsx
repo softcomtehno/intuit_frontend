@@ -23,6 +23,7 @@ const StaffList = () => {
   if (isError) {
     return <div>{t('homepage.loading.error')}</div>;
   }
+  console.log(staffData, "stadfff");
   
   if (isSuccess) {
     return (

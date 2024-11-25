@@ -11,7 +11,7 @@ import { degreeQueries } from '~entities/degree';
 import { EnrollForm } from '~widgets/enroll-form';
 import { OpportunitiesList } from '~widgets/opportunities-list';
 import { FeedbackList } from '~widgets/feedback-list';
-
+import { ProgramCategory } from './ui/ProgramCategory';
 export const DegreePage = () => {
   const slug = useParams();
 
@@ -46,7 +46,7 @@ export const DegreePage = () => {
             //   backgroundImage: `url(${degreeData?.data.banner})`,
             // }}
             style={{
-              background: `gray`,
+              background: `linear-gradient(200deg, rgba(42,33,115,1) 0%, rgba(0,149,111,1) 100%)`,
             }}
           >
             <div>

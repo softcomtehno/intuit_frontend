@@ -20,7 +20,7 @@ export const StaffCard = ({ name, description, image, slug }: staffTypes.Staff) 
         <div className="flex mih-h-[140px] max-h-[140px]">
           <CardMedia
             component="img"
-            className="max-w-[110px] max-h-[140px] rounded-xl"
+            className="max-w-[110px] min-h-[140px] max-h-[140px] rounded-xl"
             image={image}
             alt={name}
           />
@@ -33,13 +33,13 @@ export const StaffCard = ({ name, description, image, slug }: staffTypes.Staff) 
               {name}
             </Typography>
 
-            <Button
+            {/* <Button
               variant="contained"
               className="shadow-none self-start bg-green px-5"
               size="small"
             >
               Узнать больше
-            </Button>
+            </Button> */}
           </CardContent>
         </div>
         <Divider className="my-3" />

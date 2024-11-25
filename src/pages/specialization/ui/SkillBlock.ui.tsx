@@ -35,7 +35,7 @@ export const SkillsBlock = ({
                 />
               </ListItem>
             ))}
-          </List>
+          </List>   
         </div>
         <div className="border-t mt-5 border-gray  flex flex-wrap  gap-5 items-start  pt-5">
           {tools.map((tool, i) => (

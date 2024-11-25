@@ -6,6 +6,7 @@ import { About } from './ui/About.ui.tsx'
 import { EnrollForm } from '~widgets/enroll-form'
 import { specializationQueries } from '~entities/specialization/'
 import { useParams } from 'react-router-dom'
+import { CircularProgress, Typography } from '@mui/material'
 
 type RouteObject = {
   slug: string
@@ -25,8 +26,14 @@ export const SpecializationPage = () => {
   } = specializationQueries.useGetSpecialization(slug)
 
   if (isLoading) {
-    return <div>ЗАГРУЗКА</div>
+    return (
+      <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
+        <CircularProgress className="text-blue" />
+        <Typography variant="h6">Загрузка</Typography>
+      </div>
+    );
   }
+  
   if (isError) {
     return <div>Error</div>
   }
