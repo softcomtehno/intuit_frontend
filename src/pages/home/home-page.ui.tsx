@@ -30,7 +30,7 @@ export function HomePage() {
        Преподавательский состав
       </Typography>
         {/* <StaffButtonsSwiper /> */}
-        <StaffList />
+        <StaffList filterByRanks={["professor", "doctor"]} />
       </div>
       <ArticleList />
       <PartnersList />

@@ -471,6 +471,9 @@ import Typography from '@mui/material/Typography';
 import { setLanguage, getLanguage } from '~shared/lib/i18n/i18nHelper';
  import IntuitLogo from '../../assets/intuit-logo.png';
 import { Link } from 'react-router-dom';
+import { facultyQueries } from '~entities/faculties';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import LanguageIcon from '@mui/icons-material/Language';
 
 export const Header: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -498,13 +501,54 @@ export const Header: React.FC = () => {
     ky: 'Кыргызча',
   };
 
+  const { data:facultyData, isLoading, isError } = facultyQueries.useGetFaculties()
+
+  if (isLoading) {
+    return <div>Произошла Ошибка</div>;
+  }
+  if (isError) {
+    return <div>Произошла Ошибка</div>;
+  }
+  console.log('data', facultyData?.data);
+
   const currentLanguage = languageMap[i18n.language] || 'Language'; // Отображать текущий язык
 
+  // Формируем пункты меню "Институты" из данных
+  // const institutes = facultyData.data.map((faculty: any) => ({
+  //   label: faculty.subtitle,
+  //   link: `/${faculty.slug}`,
+  // }));
+    // Фильтрация и сортировка институтов
+
+    const filteredAndSortedInstitutes = facultyData?.data
+      .sort((a: any, b: any) => a.subtitle.localeCompare(b.subtitle, 'ru')); // Сортировка по алфавиту
+  
+    // Формируем элементы меню для институтов
+    const instituteMenuItems = filteredAndSortedInstitutes?.map((institute: any) => ({
+      label: institute.subtitle,
+      link: `/institutes/${institute.slug}`,
+    }));
+
+  // Формируем общую структуру меню
   const headerItems = [
-    { label: 'Институты', items: [{ label: 'Программирование', link: '#' }, { label: 'Менеджмент и Экономика', link: '#' }, { label: 'Маркетинг', link: '#' }, { label: 'Дизайн и Архитектура', link: '#' }, { label: 'Энергетика и Транспорт', link: '#' }] },
-    { label: 'Об Университете', items: [{ label: 'Преподавательский состав', link: '#' }, { label: 'Студенческая жизнь', link: '#' }] },
-    { label: 'Абитуриентам', items: [{ label: 'Подобрать программу', link: '#' }, { label: 'Направления', link: '#' }] },
+    { label: 'Институты', items: instituteMenuItems },
+    {
+      label: 'Об Университете',
+      items: [
+        { label: 'Преподавательский состав', link: '#' },
+        { label: 'Студенческая жизнь', link: '#' },
+      ],
+    },
+    {
+      label: 'Абитуриентам',
+      items: [
+        { label: 'Подобрать программу', link: '#' },
+        { label: 'Направления', link: '#' },
+      ],
+    },
   ];
+
+
 
   return (
     <header className="bg-[white] fixed top-0 left-0 w-full z-50 shadow-md ">
@@ -526,15 +570,16 @@ export const Header: React.FC = () => {
             >
               <button className="text-black  text-lg font-semibold ">
                 {item.label}
+                {activeIndex === index ? ( <ArrowDropDownIcon className='rotate-180 text-[#3e3e3e]'/>):( <ArrowDropDownIcon className='text-[#3e3e3e]'/>)}
               </button>
               {activeIndex === index && (
-                <div className="absolute left-0 top-full bg-white mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block">
+                <div className="absolute   min-w-[240px] left-0 top-full bg-white mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[300px] overflow-y-scroll">
                   <ul className="space-y-1">
                     {item.items.map((subItem, subIndex) => (
                       <li key={subIndex} className='hover:bg-green hover:text-white hover:roun'>
                         <a
                           href={subItem.link}
-                          className="block px-4 py-2 hover:bg-gray-200 rounded-md"
+                          className="block px-4 py-2 leading-5 hover:bg-gray-200 rounded-md"
                         >
                           {subItem.label}
                         </a>
@@ -551,6 +596,7 @@ export const Header: React.FC = () => {
             className="text-[black] text-lg font-semibold hover:text-gray-400 flex items-center"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
+            <LanguageIcon className='mr-2'/>
              {currentLanguage}
             <svg
               className={`w-5 h-5 ml-2 transition-transform ${

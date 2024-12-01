@@ -57,3 +57,16 @@
 table , th, td{
   border: 1px solid black;
 }
+/* Пример для кастомизации скроллбара */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00956F; /* Светло-серый */
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af; /* Темнее при наведении */
+}
