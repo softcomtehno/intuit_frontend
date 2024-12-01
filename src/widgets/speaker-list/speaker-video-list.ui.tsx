@@ -1,46 +1,61 @@
-import { Box, Typography } from '@mui/material'
-import { speakerQueries } from '~entities/speaker'
-import { SpeakerVideo } from '~entities/speaker'
+import { Box, Typography } from '@mui/material';
+import { speakerQueries } from '~entities/speaker';
+import { SpeakerVideo } from '~entities/speaker';
 
-export const SpeakerVideoList = () => {
-  // Переместите вызов хука внутрь компонента
+interface SpeakerVideoListProps {
+  facultyId?: number;
+}
+
+export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({ facultyId }) => {
   const {
-    data: speakersData,
-    isLoading,
-    isSuccess,
-    isError,
-  } = speakerQueries.useGetSpeakers()
+    data: filteredSpeakersData,
+    isLoading: isFilteredLoading,
+    isError: isFilteredError,
+  } = speakerQueries.useGetSpeakers(facultyId); 
+
+  const {
+    data: allSpeakersData,
+    isLoading: isAllLoading,
+    isError: isAllError,
+  } = speakerQueries.useGetSpeakers(); 
+
+  const isLoading = isFilteredLoading || isAllLoading;
+  const isError = isFilteredError && isAllError; 
+
+  const speakersData =
+    filteredSpeakersData?.data?.length > 0
+      ? filteredSpeakersData.data
+      : allSpeakersData?.data; 
 
   if (isLoading) {
-    return <div>Загрузка...</div>
+    return <div>Загрузка...</div>;
   }
 
   if (isError) {
-    return <div>Ошибка загрузки данных</div>
+    return <div>Ошибка загрузки данных</div>;
   }
 
-  if (!isSuccess || !speakersData) {
-    return <div>Нет данных для отображения</div>
+  if (!speakersData || speakersData.length === 0) {
+    return <div>Нет данных для отображения</div>;
   }
-
-  console.log(speakersData) // Для отладки, можно удалить позже
 
   return (
     <>
-      <Typography variant="h2">Отзывы</Typography>
+      <Typography variant="h3" component="div" className="font-semibold">
+        Отзывы
+      </Typography>
       <Box className="py-10 cursor-pointer grid grid-cols-5 gap-5 md:grid-cols-subgrid">
-        {/* Теперь отобразите данные, например, через speakersData */}
-        {speakersData.data.map((item, i) => {
+        {speakersData.map((item, i) => {
           if (i <= 4) {
             return (
               <div className="flex justify-center" key={i}>
                 <SpeakerVideo {...item} />
               </div>
-            )
+            );
           }
-          return null
+          return null;
         })}
       </Box>
     </>
-  )
-}
+  );
+};

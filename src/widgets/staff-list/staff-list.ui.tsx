@@ -11,9 +11,12 @@ interface StaffListProps {
   filterByFaculty?: number; // Например: 3
 }
 
-const StaffList: React.FC<StaffListProps> = ({ filterByRanks, filterByFaculty }) => {
+const StaffList: React.FC<StaffListProps> = ({
+  filterByRanks,
+  filterByFaculty,
+}) => {
   const { t } = useTranslation();
-  
+
   const {
     data: staffData,
     isSuccess,
@@ -24,7 +27,7 @@ const StaffList: React.FC<StaffListProps> = ({ filterByRanks, filterByFaculty })
   if (isLoading) {
     return <div>{t('homepage.loading.loading')}</div>;
   }
-  
+
   if (isError) {
     return <div>{t('homepage.loading.error')}</div>;
   }
@@ -32,23 +35,19 @@ const StaffList: React.FC<StaffListProps> = ({ filterByRanks, filterByFaculty })
   const filteredAndSortedStaff = isSuccess
     ? staffData.data
         .filter((staff: staffTypes.Staff) => {
-          const rankMatches = filterByRanks
-            ? filterByRanks.includes(staff.rank)
-            : true;
-          const facultyMatches = filterByFaculty
-            ? staff.faculty.includes(filterByFaculty)
-            : true;
+          const rankMatches =
+            !filterByRanks || filterByRanks.includes(staff.rank);
+          const facultyMatches =
+            !filterByFaculty || staff.faculty.includes(filterByFaculty);
           return rankMatches && facultyMatches;
         })
-        .sort((a: staffTypes.Staff, b: staffTypes.Staff) => {
-          return Number(a.position) - Number(b.position);
-        })
+        .sort((a: staffTypes.Staff, b: staffTypes.Staff) => b.status - a.status)
     : [];
 
   if (!filteredAndSortedStaff.length) {
     return <div>{t('homepage.noResults')}</div>;
   }
-  
+
   return (
     <Swiper
       className="py-10 px-1 staff-list"

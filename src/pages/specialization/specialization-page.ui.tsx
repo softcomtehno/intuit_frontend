@@ -24,8 +24,6 @@ export const SpecializationPage = () => {
     isSuccess,
     isError,
   } = specializationQueries.useGetSpecialization(slug)
-  console.log(specializationData);
-  
 
   if (isLoading) {
     return (
@@ -45,7 +43,7 @@ export const SpecializationPage = () => {
         <SpecializationBanner {...specializationData.data} />
         <About {...specializationData.data} />
         <ProgramAccordion {...specializationData.data} />
-        <SkillsBlock {...specializationData.data} />
+        {/* <SkillsBlock {...specializationData.data} /> */}
         <CareerBlock {...specializationData.data} />
         <EnrollForm />
       </div>

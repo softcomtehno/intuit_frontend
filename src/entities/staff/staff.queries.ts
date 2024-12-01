@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getStaffDetailsQuery, getStaffQuery } from './staff.api'
+import { getSortStaffs, getStaffDetailsQuery, getStaffQuery } from './staff.api'
 
 const keys = {
   root: () => ['staff'],
@@ -12,6 +12,14 @@ export const useGetStaffs = () => {
     queryFn: getStaffQuery,
   })
 }
+
+export const useSoftStaffs = (faculty: string) => {
+  return useQuery({
+    queryKey: [...keys.root(), faculty], 
+    queryFn: () => getSortStaffs(faculty), 
+  });
+};
+
 export const useGetStaffDetail = (slug: string) => {
   return useQuery({
     queryKey: keys.staff(slug),
