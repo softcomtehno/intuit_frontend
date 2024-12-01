@@ -40,10 +40,10 @@ export const TeacherPage = () => {
   if (isSuccess) {
     return (
       <section
-        className="bg-cover bg-center  flex items-center justify-center py-20"
+        className="bg-cover bg-center  flex items-center justify-center py-20 bg-no-repeat w-full"
         style={{
           backgroundImage:
-            'url("https://img2.akspic.ru/crops/8/2/9/0/4/140928/140928-nebo-gora-gornyj_hrebet-minimalizm-televideniye-3840x2160.jpg")',
+            'url("https://propowerpoint.ru/fony/den-uchitelya/6.jpg")',
         }}
       >
         <div className="container mx-auto">

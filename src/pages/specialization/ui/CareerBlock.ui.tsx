@@ -1,7 +1,11 @@
 import { Avatar, Card, Typography } from '@mui/material'
 import { specializationTypes } from '~entities/specialization'
 
-export const CareerBlock = ({ tools }: specializationTypes.Specialization) => {
+export const CareerBlock = ({
+  professions,
+}: specializationTypes.Specialization) => {
+  console.log(professions)
+
   return (
     <div className="my-10 bg-[#f5f5f5] p-5 rounded-xl">
       <Typography variant="h3" className="font-semibold">
@@ -21,7 +25,19 @@ export const CareerBlock = ({ tools }: specializationTypes.Specialization) => {
           </Typography>
           <p className="font-medium">Зарплата 55000с</p>
         </Card>
-        <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
+        
+        {professions.map((prof, i) => {
+          return (
+            <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
+              <Avatar className="h-[90px] w-[90px]" src={prof.photo} />
+              <Typography variant="h6" className="font-medium">
+                {prof.name}
+              </Typography>
+              <p className="font-medium">{prof.description}</p>
+            </Card>
+          )
+        })}
+        {/* <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
           <Avatar
             className="h-[90px] w-[90px]"
             src="https://cdn.skillbox.pro/landgen/blocks/universal-extra-info/224403/lg/54ef68f4-b6e5-403f-8288-438945abb2a7.webp"
@@ -30,27 +46,7 @@ export const CareerBlock = ({ tools }: specializationTypes.Specialization) => {
             Product Manager
           </Typography>
           <p className="font-medium">Зарплата 55000с</p>
-        </Card>
-        <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
-          <Avatar
-            className="h-[90px] w-[90px]"
-            src="https://cdn.skillbox.pro/landgen/blocks/universal-extra-info/224403/lg/54ef68f4-b6e5-403f-8288-438945abb2a7.webp"
-          />
-          <Typography variant="h6" className="font-medium">
-            Product Manager
-          </Typography>
-          <p className="font-medium">Зарплата 55000с</p>
-        </Card>
-        <Card className="h-[250px] min-w-[200px] rounded-xl flex flex-col items-center justify-center p-8 shadow-none bg-white">
-          <Avatar
-            className="h-[90px] w-[90px]"
-            src="https://cdn.skillbox.pro/landgen/blocks/universal-extra-info/224403/lg/54ef68f4-b6e5-403f-8288-438945abb2a7.webp"
-          />
-          <Typography variant="h6" className="font-medium">
-            Product Manager
-          </Typography>
-          <p className="font-medium">Зарплата 55000с</p>
-        </Card>
+        </Card> */}
       </div>
     </div>
   )

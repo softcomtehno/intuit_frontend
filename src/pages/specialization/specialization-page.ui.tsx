@@ -24,6 +24,8 @@ export const SpecializationPage = () => {
     isSuccess,
     isError,
   } = specializationQueries.useGetSpecialization(slug)
+  console.log(specializationData);
+  
 
   if (isLoading) {
     return (

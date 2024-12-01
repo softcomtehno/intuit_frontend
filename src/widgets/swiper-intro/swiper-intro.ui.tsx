@@ -21,24 +21,30 @@ export const SwiperIntro = () => {
         <SwiperSlide className="bg-center bg-cover">
           <IntroCard
             description={t('enrollPage.introCard.description')}
-            img={'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_0_lg.webp'}
+            img={
+              'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_0_lg.webp'
+            }
             title={t('enrollPage.introCard.title')}
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <IntroCard
-            description={t('someNamespace.someDescription')} // Добавьте соответствующий ключ из JSON для замены
-            img={'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_2_lg.webp'}
-            title={t('someNamespace.someTitle')} // Добавьте соответствующий ключ из JSON для замены
+            description={t('enrollPage.introCard.secondDescription')} // Добавьте соответствующий ключ из JSON для замены
+            img={
+              'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_2_lg.webp'
+            }
+            title={t('enrollPage.introCard.secondTitle')} // Добавьте соответствующий ключ из JSON для замены
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <IntroCard
-            description={t('someNamespace.anotherDescription')} // Добавьте соответствующий ключ из JSON для замены
-            img={'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_1_lg.webp'}
-            title={t('someNamespace.anotherTitle')} // Добавьте соответствующий ключ из JSON для замены
+            description={t('enrollPage.introCard.thirdDescription')} // Добавьте соответствующий ключ из JSON для замены
+            img={
+              'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_1_lg.webp'
+            }
+            title={t('enrollPage.introCard.thirdTitle')} // Добавьте соответствующий ключ из JSON для замены
           />
         </SwiperSlide>
       </Swiper>
