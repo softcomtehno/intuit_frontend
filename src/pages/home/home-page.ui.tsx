@@ -12,6 +12,7 @@ import { ProgramCategory } from '~widgets/programm-category'
 import { AboutBlock } from './ui/AboutBlock.ui'
 import { ArticleList } from '~widgets/article-list/article-list.ui'
 import { Typography } from '@mui/material'
+import { EducationForm } from '~widgets/education-form'
 
 export function HomePage() {
   return (
@@ -27,16 +28,17 @@ export function HomePage() {
         <DiplomList />
       </div>
       <div>
-      <Typography variant="h3" component="div" className="font-semibold">
-       Преподавательский состав
-      </Typography>
+        <Typography variant="h3" component="div" className="font-semibold">
+          Преподавательский состав
+        </Typography>
         {/* <StaffButtonsSwiper /> */}
-        <StaffList filterByRanks={["professor", "doctor"]} />
+        <StaffList filterByRanks={['professor', 'doctor']} />
       </div>
       <ArticleList />
       <PartnersList />
       <EnrollForm />
       <SpeakerVideoList />
+      <EducationForm></EducationForm>
     </div>
   )
 }
