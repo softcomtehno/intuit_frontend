@@ -1,30 +1,30 @@
-import { Button, CircularProgress, Typography } from '@mui/material';
-import Select from 'react-select';
-import { ProfessionCard } from '~entities/profession';
-import { useTranslation } from 'react-i18next';
-import { programQueries } from '~entities/programs';
-import { facultyQueries } from '~entities/faculties';
-import { degreeQueries } from '~entities/degree';
-import { useState, useEffect } from 'react';
+import { Button, CircularProgress, Typography } from '@mui/material'
+import Select from 'react-select'
+import { ProfessionCard } from '~entities/profession'
+import { useTranslation } from 'react-i18next'
+import { programQueries } from '~entities/programs'
+import { facultyQueries } from '~entities/faculties'
+import { degreeQueries } from '~entities/degree'
+import { useState } from 'react'
 
 export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const {
     data: serverData,
     isLoading,
     isError,
-  } = programQueries.useGetPrograms(degreeId, facultyId);
+  } = programQueries.useGetPrograms(degreeId, facultyId)
   const {
     data: facultyData,
     isFacultyLoading,
     isFacultyError,
-  } = facultyQueries.useGetFaculties();
+  } = facultyQueries.useGetFaculties()
   const {
     data: degreeData,
     isDegreeLoading,
     isDegreeError,
-  } = degreeQueries.useGetDegrees();
+  } = degreeQueries.useGetDegrees()
 
   const sortedFaculties =
     facultyData?.data
@@ -32,7 +32,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       .map((faculty) => ({
         value: faculty.id,
         label: faculty.titleRu || faculty.title,
-      })) || [];
+      })) || []
 
   const sortedDegrees =
     degreeData?.data
@@ -40,25 +40,25 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       .map((degree) => ({
         value: degree.id,
         label: degree.titleRu || degree.title,
-      })) || [];
+      })) || []
 
-  const [selectedDegree, setSelectedDegree] = useState(degreeId || null);
-  const [selectedFaculty, setSelectedFaculty] = useState(facultyId || null);
+  const [selectedDegree, setSelectedDegree] = useState(degreeId || null)
+  const [selectedFaculty, setSelectedFaculty] = useState(facultyId || null)
 
-  const professions = propdata || serverData;
+  const professions = propdata || serverData
 
   const filteredProfessions = professions?.data.filter((profession) => {
     const matchesDegree = selectedDegree
       ? profession.educationLevel.some((level) => level.id === selectedDegree)
-      : true;
+      : true
     const matchesFaculty = selectedFaculty
       ? profession.faculty.some((faculty) => faculty.id === selectedFaculty)
-      : true;
-    return matchesDegree && matchesFaculty;
-  });
+      : true
+    return matchesDegree && matchesFaculty
+  })
 
   if (isError) {
-    return <div>Произошла ошибка</div>;
+    return <div>Произошла ошибка</div>
   }
 
   if (isLoading || isDegreeLoading || isFacultyLoading) {
@@ -67,21 +67,21 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
         <CircularProgress className="text-blue" />
         <Typography variant="h6">Загрузка</Typography>
       </div>
-    );
+    )
   }
 
   const handleDegreeChange = (selectedOption) => {
-    setSelectedDegree(selectedOption?.value || null);
-  };
+    setSelectedDegree(selectedOption?.value || null)
+  }
 
   const handleFacultyChange = (selectedOption) => {
-    setSelectedFaculty(selectedOption?.value || null);
-  };
+    setSelectedFaculty(selectedOption?.value || null)
+  }
 
   const handleClearFilters = () => {
-    setSelectedDegree(null);
-    setSelectedFaculty(null);
-  };
+    setSelectedDegree(null)
+    setSelectedFaculty(null)
+  }
 
   return (
     <div className="my-20 rounded-lg">
@@ -138,5 +138,5 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
