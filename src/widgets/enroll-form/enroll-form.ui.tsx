@@ -23,7 +23,7 @@ export const EnrollForm = () => {
           user: formData.name,
           phone: formData.phone,
           email: formData.email,
-          slug: `${window.location}`, // Передаем slug в теле запроса
+          slug: window.location, // Передаем slug в теле запроса
         }
       ),
     onSuccess: () => {
