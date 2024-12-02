@@ -11,7 +11,7 @@ import { degreeQueries } from '~entities/degree';
 import { EnrollForm } from '~widgets/enroll-form';
 import { OpportunitiesList } from '~widgets/opportunities-list';
 import { FeedbackList } from '~widgets/feedback-list';
-import { ProgramCategory } from './ui/ProgramCategory';
+import { ProgramCategory } from '~widgets/programm-category';
 export const DegreePage = () => {
   const slug = useParams();
 
@@ -99,7 +99,7 @@ export const DegreePage = () => {
               { value: 'Документ', label: `${degreeData?.data.diploma}` },
             ]}
           />
-          <ProgramCategory />
+          <ProgramCategory degreeId={degreeData?.data.id}/>
           <OpportunitiesList />
           <EnrollForm />
           <Typography variant="h2" className="my-5">

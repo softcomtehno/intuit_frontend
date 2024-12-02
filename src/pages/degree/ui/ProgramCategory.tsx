@@ -45,12 +45,12 @@ const professions = [
 ]
 
 export const ProgramCategory = () => {
-  const { t } = useTranslation() // хук useTranslation
+  const { t } = useTranslation() 
 
   return (
     <div className="my-20  rounded-lg">
       <Typography variant="h3" component="div" className="font-semibold">
-        {t('homepage.degrees.programs')} {/* Программы обучения */}
+        {t('homepage.degrees.programs')} 
       </Typography>
       <div>
         <div className="flex gap-10 my-5 lg:flex-col lg:items-center">
@@ -66,7 +66,7 @@ export const ProgramCategory = () => {
             {t('homepage.buttons.applyButton')} 
           </Button>
         </div>
-        <div className="flex flex-wrap justify-between  gap-2 lg:justify-center">
+        <div className="flex flex-wrap   gap-10 lg:justify-center">
           {professions.map((profession, index) => (
             <ProfessionCard
               key={index}

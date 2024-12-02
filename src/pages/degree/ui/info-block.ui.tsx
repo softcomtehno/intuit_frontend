@@ -23,39 +23,41 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
 
   return (
     <Box className="grid grid-cols-2 gap-5 my-7 lg:grid-cols-1">
-      <Card className="bg-[#e0e1e5] p-5 shadow-none flex flex-col justify-between gap-16 rounded-xl">
-        <Box className="flex flex-col gap-3">
-          <Typography variant="h4" className="font-bold lg:text-[25px]">
+      <Card className="bg-[#e0e1e5] p-4 shadow-none flex flex-col justify-between gap-12 rounded-xl">
+        <Box className="flex flex-col gap-2">
+          <Typography variant="h5" className="font-semibold lg:text-[20px]">
             {title}
           </Typography>
-          <Typography variant="body1">{description}</Typography>
+          <Typography variant="body2" className="text-sm">
+            {description}
+          </Typography>
         </Box>
-        <Box className="flex justify-between lg:flex-col lg:items-center lg:gap-10">
-          <Box className="flex gap-3">
+        <Box className="flex justify-between lg:flex-col lg:items-center lg:gap-8">
+          <Box className="flex gap-2">
             {tags.map((tag, index) => (
               <div
                 key={index}
-                className="border-[1px] rounded-3xl border-black p-2"
+                className="border-[1px] px-4 py-2 rounded-3xl border-black text-xs"
               >
                 {tag}
               </div>
             ))}
           </Box>
-          <Box className="flex gap-3">
+          {/* <Box className="flex gap-2">
             <div className="bg-white p-2 rounded-[100%]">
-              <SchoolRounded />
+              <SchoolRounded fontSize="small" />
             </div>
             <div className="bg-white p-2 rounded-[100%]">
-              <PaidRounded />
+              <PaidRounded fontSize="small" />
             </div>
-          </Box>
+          </Box> */}
         </Box>
       </Card>
-      <Box className="grid grid-cols-2 gap-5">
+      <Box className="grid grid-cols-2 gap-4">
         {stats.map((stat, index) => (
           <Card
             key={index}
-            className="bg-[#e0e1e5] shadow-none flex flex-col justify-between p-5 rounded-xl"
+            className="bg-[#e0e1e5] shadow-none flex flex-col justify-between p-4 rounded-xl"
             style={{
               backgroundImage: `url(${staticBackgrounds[index]})`,
               backgroundSize:
@@ -68,24 +70,24 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
             }}
           >
             <Typography
-              variant="h3"
-              className={`font-bold ${
+              variant="h2"
+              className={`text-[1.7rem] font-bold ${
                 staticBackgrounds[index] ===
                 'https://i.pinimg.com/736x/27/ab/89/27ab89c2730038168938dc8af4cdb8f7.jpg'
                   ? 'text-white '
                   : ''
-              } md:text-[25px]`}
+              } `}
             >
               {stat.value}
             </Typography>
             <Typography
-              variant="h6"
-              className={`${
+              variant="body2"
+              className={`text-lg font-bold ${
                 staticBackgrounds[index] ===
                 'https://i.pinimg.com/736x/27/ab/89/27ab89c2730038168938dc8af4cdb8f7.jpg'
                   ? 'text-white'
                   : ''
-              } md:text-[15px]`}
+              }`}
             >
               {stat.label}
             </Typography>
