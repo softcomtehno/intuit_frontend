@@ -12,6 +12,7 @@ import { EnrollForm } from '~widgets/enroll-form';
 import { OpportunitiesList } from '~widgets/opportunities-list';
 import { FeedbackList } from '~widgets/feedback-list';
 import { ProgramCategory } from '~widgets/programm-category';
+import { SpeakerVideoList } from '~widgets/speaker-list';
 export const DegreePage = () => {
   const slug = useParams();
 
@@ -99,17 +100,12 @@ export const DegreePage = () => {
               { value: 'Документ', label: `${degreeData?.data.diploma}` },
             ]}
           />
-          <ProgramCategory degreeId={degreeData?.data.id}/>
+          <ProgramCategory degreeId={degreeData?.data.id} />
           <OpportunitiesList />
           <EnrollForm />
-          <Typography variant="h2" className="my-5">
-            Отзывы студентов
-          </Typography>
-
-          <FeedbackList></FeedbackList>
+          <SpeakerVideoList/>
         </div>
       )}
-      <FeedbackList></FeedbackList>
     </>
   );
 };

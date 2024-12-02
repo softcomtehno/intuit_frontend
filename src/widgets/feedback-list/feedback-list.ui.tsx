@@ -51,7 +51,6 @@ export const FeedbackList = () => {
               <SwiperSlide key={feedback.id}>
                 <FeedbackCard {...feedback} />
               </SwiperSlide>
-              
             )
           })}
         </Swiper>

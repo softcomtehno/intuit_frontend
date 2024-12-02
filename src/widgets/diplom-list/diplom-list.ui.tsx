@@ -14,9 +14,13 @@ export const DiplomList = () => {
 
   return (
     <div className="container-lg">
-      <Typography variant="h3" className="font-semibold">
-        {t('homepage.diploma.listTitle')}
-      </Typography>
+      <Typography
+          variant="h3"
+          component="h3"
+          className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+        >
+       {t('homepage.diploma.listTitle')}
+        </Typography>
       <Fancybox
         options={{
           Carousel: {
