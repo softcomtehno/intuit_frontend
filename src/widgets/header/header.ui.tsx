@@ -573,7 +573,7 @@ export const Header: React.FC = () => {
                 {activeIndex === index ? ( <ArrowDropDownIcon className='rotate-180 text-[#3e3e3e]'/>):( <ArrowDropDownIcon className='text-[#3e3e3e]'/>)}
               </button>
               {activeIndex === index && (
-                <div className="absolute   min-w-[240px] left-0 top-full bg-white mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[300px] overflow-y-scroll">
+                <div className="absolute  min-w-[260px] left-0 top-full bg-white mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[350px] overflow-y-scroll">
                   <ul className="space-y-1">
                     {item.items.map((subItem, subIndex) => (
                       <li key={subIndex} className='hover:bg-green hover:text-white hover:roun'>
