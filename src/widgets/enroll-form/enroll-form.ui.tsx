@@ -14,7 +14,6 @@ export const EnrollForm = () => {
   })
   console.log(window.location)
 
-  // Мутация с использованием tanstack/react-query
   const mutation = useMutation({
     mutationFn: () =>
       axios.post(
@@ -27,11 +26,11 @@ export const EnrollForm = () => {
         }
       ),
     onSuccess: () => {
-      alert(t('homepage.enrollForm.successMessage')) // Сообщение об успешной отправке
-      setFormData({ name: '', phone: '', email: '' }) // Сброс формы
+      alert(t('homepage.enrollForm.successMessage'))
+      setFormData({ name: '', phone: '', email: '' })
     },
     onError: () => {
-      alert(t('homepage.enrollForm.errorMessage')) // Сообщение об ошибке
+      alert(t('homepage.enrollForm.errorMessage'))
     },
   })
 
@@ -46,9 +45,13 @@ export const EnrollForm = () => {
 
   return (
     <div className="bg-blue p-5 rounded-lg w-full">
-      <Typography component="div" variant="h3" className="font-bold text-white">
-        {t('homepage.enrollForm.title')}
-      </Typography>
+      <Typography
+          variant="h3"
+          component="h3"
+          className="text-[2.5rem] font-semibold text-[white] lg:text-[40px] md:!text-[30px]"
+        >
+     {t('homepage.enrollForm.title')}
+        </Typography>
       <div>
         <div className="flex items-center gap-2 lg:flex-col">
           <fieldset className="text-xs flex gap-2 lg:flex-col">

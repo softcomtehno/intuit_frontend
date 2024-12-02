@@ -6,26 +6,28 @@ interface SpeakerVideoListProps {
   facultyId?: number;
 }
 
-export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({ facultyId }) => {
+export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
+  facultyId,
+}) => {
   const {
     data: filteredSpeakersData,
     isLoading: isFilteredLoading,
     isError: isFilteredError,
-  } = speakerQueries.useGetSpeakers(facultyId); 
+  } = speakerQueries.useGetSpeakers(facultyId);
 
   const {
     data: allSpeakersData,
     isLoading: isAllLoading,
     isError: isAllError,
-  } = speakerQueries.useGetSpeakers(); 
+  } = speakerQueries.useGetSpeakers();
 
   const isLoading = isFilteredLoading || isAllLoading;
-  const isError = isFilteredError && isAllError; 
+  const isError = isFilteredError && isAllError;
 
   const speakersData =
     filteredSpeakersData?.data?.length > 0
       ? filteredSpeakersData.data
-      : allSpeakersData?.data; 
+      : allSpeakersData?.data;
 
   if (isLoading) {
     return <div>Загрузка...</div>;
@@ -41,8 +43,12 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({ facultyId })
 
   return (
     <>
-      <Typography variant="h3" component="div" className="font-semibold">
-        Отзывы
+      <Typography
+        variant="h3"
+        component="h3"
+        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+      >
+        Отзывы студентов
       </Typography>
       <Box className="py-10 cursor-pointer grid grid-cols-5 gap-5 md:grid-cols-subgrid">
         {speakersData.map((item, i) => {

@@ -85,9 +85,13 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
 
   return (
     <div className="my-20 rounded-lg">
-      <Typography variant="h3" component="div" className="font-semibold">
-        {t('homepage.degrees.programs')}
-      </Typography>
+        <Typography
+          variant="h3"
+          component="h3"
+          className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+        >
+         {t('homepage.degrees.programs')}
+        </Typography>
       <div>
         <div className="flex gap-5 my-5 lg:flex-col items-center">
           <Select

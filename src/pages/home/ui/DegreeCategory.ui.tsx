@@ -14,7 +14,11 @@ import 'swiper/css/effect-fade';
 export const DegreeCategory = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { data: degreeData, isLoading, isError } = degreeQueries.useGetDegrees();
+  const {
+    data: degreeData,
+    isLoading,
+    isError,
+  } = degreeQueries.useGetDegrees();
 
   if (isLoading) {
     return <h1>{t('homepage.loading.loading')}</h1>;
@@ -25,7 +29,11 @@ export const DegreeCategory = () => {
 
   return (
     <div>
-      <Typography variant="h3" component="div" className="font-semibold">
+      <Typography
+        variant="h3"
+        component="h3"
+        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+      >
         {t('homepage.degrees.degreeCategory')}
       </Typography>
       <Swiper
@@ -60,8 +68,8 @@ export const DegreeCategory = () => {
                       variant="subtitle1"
                       className="leading-[20px] text-[16px] font-medium"
                     >
-                      {degree.programCount} 
-                      { " " + t('homepage.degrees.programCount')}
+                      {degree.programCount}
+                      {' ' + t('homepage.degrees.programCount')}
                     </Typography>
                   </div>
                   <div className="bg-green rounded-full p-2">

@@ -1,14 +1,18 @@
-import { Avatar, Card, Typography } from '@mui/material'
-import { specializationTypes } from '~entities/specialization'
+import { Avatar, Card, Typography } from '@mui/material';
+import { specializationTypes } from '~entities/specialization';
 
 export const CareerBlock = ({
   professions,
 }: specializationTypes.Specialization) => {
-  console.log(professions)
+  console.log(professions);
 
   return (
     <div className="my-10 rounded-xl">
-      <Typography variant="h3" className="font-semibold">
+      <Typography
+        variant="h3"
+        component="h3"
+        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+      >
         Кем вы станете
       </Typography>
       <Typography variant="body1">
@@ -24,9 +28,9 @@ export const CareerBlock = ({
               </Typography>
               <p className="font-medium">{prof.description}</p>
             </Card>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};

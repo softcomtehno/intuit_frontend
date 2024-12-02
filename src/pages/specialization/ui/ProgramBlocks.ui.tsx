@@ -18,9 +18,13 @@ const topics = [
 export default function ProgramBlocks() {
   return (
     <div className="my-10">
-      <Typography variant="h3" className="font-semibold text-center mb-8">
-        Что вы будете изучать
-      </Typography>
+      <Typography
+          variant="h3"
+          component="h3"
+          className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px] my-5"
+        >
+                Что вы будете изучать
+        </Typography>
       <div className="flex justify-between ">
         {topics.map((topic, index) => (
           <Card

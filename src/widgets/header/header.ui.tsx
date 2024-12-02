@@ -600,7 +600,7 @@ export const Header: React.FC = () => {
             </div>
           ))}
         </nav>
-        <div className="relative">
+        <div className="relative md:hidden">
           <button
             className="text-[black] text-lg font-semibold hover:text-gray-400 flex items-center"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}

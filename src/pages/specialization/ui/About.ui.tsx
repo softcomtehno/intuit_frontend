@@ -14,7 +14,6 @@ export const About = ({
         alignItems: 'center',
       }}
     >
-      {/* Текстовая информация */}
       <Box
         sx={{
           display: 'flex',
@@ -42,12 +41,10 @@ export const About = ({
             textAlign: { xs: 'justify', lg: 'left' },
           }}
         >
-          {/* Безопасный рендеринг HTML */}
           <div dangerouslySetInnerHTML={{ __html: subtext }} />
         </Typography>
       </Box>
 
-      {/* Фото */}
       <Box
         component="img"
         src={textPhoto}

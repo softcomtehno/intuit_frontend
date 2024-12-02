@@ -7,9 +7,13 @@ export const OpportunitiesList = () => {
 
   return (
     <div className="my-10">
-      <Typography variant="h3" component="div" className="font-semibold">
-        {t('homepage.opportunities.title')} {/* С нами ваши возможности <br /> безграничны */}
-      </Typography>
+      <Typography
+          variant="h3"
+          component="h3"
+          className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+        >
+          {t('homepage.opportunities.title')} 
+        </Typography>
       <div className="flex gap-5 justify-between mt-4 flex-wrap lg:gap-10 lg:justify-center">
         <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] transition-all duration-200 rounded-lg">
           <Typography
