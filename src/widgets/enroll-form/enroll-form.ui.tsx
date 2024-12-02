@@ -1,21 +1,19 @@
 import { Button, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { useParams } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useState } from 'react'
 
 export const EnrollForm = () => {
   const { t } = useTranslation()
-  const { slug } = useParams<{ slug: string }>() // Получаем slug из параметров маршрута
 
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
   })
-  console.log(window.location);
-  
+  console.log(window.location)
+
   // Мутация с использованием tanstack/react-query
   const mutation = useMutation({
     mutationFn: () =>
