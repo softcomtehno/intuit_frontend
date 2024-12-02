@@ -8,10 +8,11 @@ import { PartnersList } from '~widgets/partners-list';
 import { OpportunitiesList } from '~widgets/opportunities-list';
 import { DegreeCategory } from './ui/DegreeCategory.ui';
 // import { ProgramCategory } from './ui/ProgramCategory'
-import { ProgramCategory } from '~widgets/programm-category';
-import { AboutBlock } from './ui/AboutBlock.ui';
-import { ArticleList } from '~widgets/article-list/article-list.ui';
-import { Typography } from '@mui/material';
+import { ProgramCategory } from '~widgets/programm-category'
+import { AboutBlock } from './ui/AboutBlock.ui'
+import { ArticleList } from '~widgets/article-list/article-list.ui'
+import { Typography } from '@mui/material'
+import { EducationForm } from '~widgets/education-form'
 
 export function HomePage() {
   return (
@@ -41,6 +42,7 @@ export function HomePage() {
       <PartnersList />
       <EnrollForm />
       <SpeakerVideoList />
+      <EducationForm></EducationForm>
     </div>
   );
 }

@@ -85,25 +85,25 @@
       "professorStaff": "Professorial Teaching Staff"
     },
     "diploma": {
-    "listTitle": "Your Future Diploma",
-    "buttonText": "View",
-    "bachelor": {
-      "degree": "Bachelor's Degree",
-      "description": "State Bachelor's Diploma"
+      "listTitle": "Your Future Diploma",
+      "buttonText": "View",
+      "bachelor": {
+        "degree": "Bachelor's Degree",
+        "description": "State Bachelor's Diploma"
+      },
+      "master": {
+        "degree": "Master's Degree",
+        "description": "State Master's Diploma"
+      },
+      "postgraduate": {
+        "degree": "Postgraduate",
+        "description": "State Postgraduate Diploma"
+      },
+      "diplomaSupplement": {
+        "title": "Diploma Supplement",
+        "description": "Supplement to the diploma"
+      }
     },
-    "master": {
-      "degree": "Master's Degree",
-      "description": "State Master's Diploma"
-    },
-    "postgraduate": {
-      "degree": "Postgraduate",
-      "description": "State Postgraduate Diploma"
-    },
-    "diplomaSupplement": {
-      "title": "Diploma Supplement",
-      "description": "Supplement to the diploma"
-    }
-  },
     "buttons": {
       "viewButton": "View",
       "applyButton": "Apply"
@@ -124,6 +124,12 @@
       "buttons": {
         "submit": "Submit application"
       }
+    },
+    "education-form": {
+      "title": "Full-time",
+      "text": "You will attend lectures and seminars during the day 5-6 times a week, take tests and exams. The academic year begins on September 1 and is divided into 2 semesters.",
+      "secondTitle": "Сorrespondence",
+      "secondText": "In the correspondence course, you study most of the program on your own. Twice a year you come to the University for practice and the closing examination session."
     }
   },
   "degreePage": {
