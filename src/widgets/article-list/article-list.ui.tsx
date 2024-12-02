@@ -15,10 +15,10 @@ export const ArticleList = () => {
 
   return (
     <div>
-      <Typography variant="h3" className="font-semibold max-w-[750px] my-5">
+      <Typography variant="h3" className="font-semibold max-w-[750px] my-5 md:text-[30px]">
         {t('homepage.universityBlogArticles')}
       </Typography>
-      <div className="flex justify-between">
+      <div className="flex justify-between md:flex-col md:gap-5">
         {isSuccess && latestArticles.map((article) => (
           <ArticleCard article={article} key={article.id} />
         ))}

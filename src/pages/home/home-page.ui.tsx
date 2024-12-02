@@ -28,7 +28,7 @@ export function HomePage() {
         <DiplomList />
       </div>
       <div>
-        <Typography variant="h3" component="div" className="font-semibold">
+        <Typography variant="h3" component="div" className="font-semibold md:text-[30px]">
           Преподавательский состав
         </Typography>
         {/* <StaffButtonsSwiper /> */}

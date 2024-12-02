@@ -12,7 +12,7 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
       <Card
         variant="outlined"
   
-        className="w-[400px] max-h-[270px] h-[270px] flex flex-col justify-between bg-[#f7f9fd] p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer sm:w-[350px] sm:h-[300px]"
+        className="w-[400px] max-h-[270px] h-[270px] flex flex-col justify-between bg-[#f7f9fd] p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer sm:w-[350px] sm:h-[300px] md:w-full"
       >
         <Box className="flex flex-col gap-2">
           <Typography
