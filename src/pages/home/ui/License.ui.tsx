@@ -50,7 +50,7 @@ export const License = () => {
           </a>
           <a
             data-fancybox="gallery"
-            href="https://muit.makalabox.com/documents/Svidetelstvo.pdf"
+            href="https://muit.makalabox.com/documents/Svidetelstvo.png"
             className="block border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
           >
             <div className="flex flex-col items-center text-center">
