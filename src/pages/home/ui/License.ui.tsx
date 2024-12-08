@@ -1,11 +1,17 @@
-import React from 'react';
 import Fancybox from './Fancybox';
 import Gerb from '../../../assets/gerb.svg';
+import { Typography } from '@mui/material';
 
 export const License = () => {
   return (
     <div className="container mx-auto py-10">
-      <h2 className="text-2xl font-bold text-center mb-8">Документы</h2>
+      <Typography
+        variant="h3"
+        component="h3"
+        className="text-[2.5rem] mb-5 font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+      >
+        Документы
+      </Typography>
       <Fancybox
         options={{
           Carousel: {
@@ -13,23 +19,24 @@ export const License = () => {
           },
         }}
       >
-        <div className="flex justify-between">
-          <div className="max-w-md mx-auto mt-8 border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="flex justify-between gap-4">
+          <div className="max-w-md w-full border border-gray-300 rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-xl font-bold text-gray-800">
                 Бюджетные места
               </h3>
               <p className="text-sm text-gray-600 mt-4">
-                Международный Университет Инновационных Технологий имеет государственную лицензию и
-                аккредитацию, поэтому на ряде факультетов мы ежегодно выделяем
-                бюджетные места для самых талантливых студентов.
+                Международный Университет Инновационных Технологий имеет
+                государственную лицензию и аккредитацию, поэтому на ряде
+                факультетов мы ежегодно выделяем бюджетные места для самых
+                талантливых студентов.
               </p>
             </div>
           </div>
           <a
             data-fancybox="gallery"
-            href="https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%D0%B0.png"
-            className="block border border-gray rounded-lg p-4 bg-white shadow hover:shadow-lg transition-shadow duration-300"
+            href="https://muit.makalabox.com/documents/license.pdf"
+            className="block border border-gray-300 rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-24 h-24 mb-4 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl">
@@ -43,8 +50,8 @@ export const License = () => {
           </a>
           <a
             data-fancybox="gallery"
-            href="https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%D0%B0.png"
-            className="block border border-gray rounded-lg p-4 bg-white shadow hover:shadow-lg transition-shadow duration-300"
+            href="https://muit.makalabox.com/documents/Svidetelstvo.pdf"
+            className="block border border-gray-300 rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-24 h-24 mb-4 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">
