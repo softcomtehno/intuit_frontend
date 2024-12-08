@@ -539,8 +539,8 @@ export const Header: React.FC = () => {
     {
       label: 'Об Университете',
       items: [
-        { label: 'Преподавательский состав', link: '#' },
-        { label: 'Студенческая жизнь', link: '#' },
+        { label: 'История', link: '/history' },
+        { label: 'Видение', link: '/vision' },
       ],
     },
     {

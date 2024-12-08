@@ -14,6 +14,8 @@ import { paymentsPageRoute } from '~pages/payments'
 import { institutePageRoute } from '~pages/institute'
 import { specializationPageRoute } from '~pages/specialization'
 import { deparmentPageRoute } from '~pages/department'
+import { historyPageRoute } from '~pages/history'
+import { visionPageRoute } from '~pages/vision'
 
 
 
@@ -39,7 +41,9 @@ const router = createBrowserRouter([
           paymentsPageRoute,
           institutePageRoute,
           specializationPageRoute,
-          deparmentPageRoute
+          deparmentPageRoute,
+          historyPageRoute,
+          visionPageRoute
         ],
       },
     ],
