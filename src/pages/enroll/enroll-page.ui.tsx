@@ -5,15 +5,15 @@ import {
   ListItem,
   ListItemText,
   Typography,
-} from '@mui/material';
-import { IntroCard } from '~entities/intro';
+} from '@mui/material'
+import { IntroCard } from '~entities/intro'
 
 export const EnrollPage = () => {
   return (
     <div>
       <IntroCard
         description={
-          'Поступайте в «Синергию».Пройдите тест и узнайте, на кого вам лучше учиться'
+          'Поступайте в МУИТ».Пройдите тест и узнайте, на кого вам лучше учиться'
         }
         img={
           'https://synergy.ru/assets/template/v5/new3/images/s_quiz/abiturientam-lg.webp'
@@ -150,5 +150,5 @@ export const EnrollPage = () => {
         </CardContent>
       </Card>
     </div>
-  );
-};
+  )
+}

@@ -7,7 +7,7 @@ export const EducationForm = () => {
     <section className="my-10">
       <h2 className="text-5xl font-bold mb-10">Формы обучения</h2>
 
-      <div className="flex gap-5">
+      <div className="flex gap-5 md:flex-col">
         <EducationFormCard
           title={t('homepage.education-form.title')}
           text={t('homepage.education-form.text')}

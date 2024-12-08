@@ -1,17 +1,21 @@
 import WbSunnyIcon from '@mui/icons-material/WbSunny'
 import { Icon } from '@mui/material'
 
-export const EducationFormCard = ({ title, text }) => {
+interface props {
+  title: string
+  text: string
+}
+
+export const EducationFormCard = ({ title, text }: props) => {
   return (
-    <div className="p-5 w-full h-[170px] bg-gray rounded-lg flex flex-col justify-between">
+    <div className="p-5 w-full h-[auto] bg-gray rounded-lg flex flex-col justify-between">
       <div className="flex justify-between items-center">
-        <h4 className="text-3xl font-bold">{title}</h4>
+        <h4 className="text-3xl font-bold md:text-[25px]">{title}</h4>
         <div className="rounded-full bg-green p-2 ">
-        {/* <WbSunnyIcon ></WbSunnyIcon> */}
-        <Icon component={WbSunnyIcon} className=""></Icon>
+          <Icon component={WbSunnyIcon} className=""></Icon>
         </div>
       </div>
-      <p>{text}</p>
+      <p className='mt-5'>{text}</p>
     </div>
   )
 }
