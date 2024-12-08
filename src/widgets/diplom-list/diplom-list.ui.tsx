@@ -1,6 +1,7 @@
 import { Button, Card, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import Gerb from '../../assets/gerb.svg'
+import EGerb from '../../assets/eugerb.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 
@@ -157,7 +158,7 @@ export const DiplomList = () => {
                   </Button>
                 </div>
                 <img
-                  src={Gerb}
+                  src={EGerb}
                   alt=""
                   className="transition duration-200 max-h-[120px] "
                 />

@@ -13,6 +13,7 @@ import { AboutBlock } from './ui/AboutBlock.ui'
 import { ArticleList } from '~widgets/article-list/article-list.ui'
 import { Typography } from '@mui/material'
 import { EducationForm } from '~widgets/education-form'
+import { License } from './ui/License.ui';
 
 export function HomePage() {
   return (
@@ -21,6 +22,7 @@ export function HomePage() {
         <SwiperIntro />
       </h1>
       <DegreeCategory />
+      <License/>
       <ProgramCategory />
       <OpportunitiesList />
       <AboutBlock />
