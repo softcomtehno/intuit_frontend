@@ -20,7 +20,7 @@ export const License = () => {
         }}
       >
         <div className="flex justify-between gap-4">
-          <div className="max-w-md w-full border border-gray-300 rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]">
+          <div className="max-w-md w-full border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-xl font-bold text-gray-800">
                 Бюджетные места
@@ -36,7 +36,7 @@ export const License = () => {
           <a
             data-fancybox="gallery"
             href="https://muit.makalabox.com/documents/license.pdf"
-            className="block border border-gray-300 rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
+            className="block border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-24 h-24 mb-4 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl">
@@ -51,7 +51,7 @@ export const License = () => {
           <a
             data-fancybox="gallery"
             href="https://muit.makalabox.com/documents/Svidetelstvo.pdf"
-            className="block border border-gray-300 rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
+            className="block border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-24 h-24 mb-4 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">
