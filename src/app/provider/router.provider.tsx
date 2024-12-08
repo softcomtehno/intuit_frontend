@@ -13,6 +13,7 @@ import { newsPageRoute } from '~pages/news'
 import { paymentsPageRoute } from '~pages/payments'
 import { institutePageRoute } from '~pages/institute'
 import { specializationPageRoute } from '~pages/specialization'
+import { deparmentPageRoute } from '~pages/department'
 
 
 
@@ -37,7 +38,8 @@ const router = createBrowserRouter([
           newsPageRoute,
           paymentsPageRoute,
           institutePageRoute,
-          specializationPageRoute
+          specializationPageRoute,
+          deparmentPageRoute
         ],
       },
     ],

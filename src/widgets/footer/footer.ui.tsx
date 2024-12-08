@@ -12,16 +12,17 @@ import CallIcon from '@mui/icons-material/Call';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { degreeQueries } from '~entities/degree';
 
-const degreeSections = [
-  'Институты',
-  'Бакалавриат',
-  'Магистратура',
-  'Аспирантура',
-  'Колледж',
-  'Креатив',
-  'Курсы',
-];
+// const degreeSections = [
+//   'Институты',
+//   'Бакалавриат',
+//   'Магистратура',
+//   'Аспирантура',
+//   'Колледж',
+//   'Креатив',
+//   'Курсы',
+// ];
 const fieldsOfStudy = [
   'Медицина',
   'Психология',
@@ -78,6 +79,13 @@ const studentResources = ['Расписание', 'AVN', 'Moodle', 'Оплата
 
 export function Footer() {
   const [data, setData] = useState<ContactInfo>();
+
+  const {
+    data: degreeData,
+    isLoading,
+    isError,
+  } = degreeQueries.useGetDegrees();
+
 
   useEffect(() => {
     axios
@@ -240,9 +248,9 @@ export function Footer() {
           </p>
         </div>
         <ul className="flex justify-between pb-3 border-b border-gray">
-          {degreeSections.map((univer, index) => (
+          {degreeData?.data.map((univer, index) => (
             <li className="text-white" key={index}>
-              {univer}
+             <Link to={`/degree/${univer.slug}`}>{univer.title}</Link> 
             </li>
           ))}
         </ul>
@@ -291,8 +299,8 @@ export function Footer() {
           <ul>
             <h5 className="font-bold mt-5">График работы</h5>
             <li>Пн-пт {data.hoursWeekdays}</li>
-            <li>Сб {data.hoursSaturday}</li>
-            <li>Вс {data.hoursSunday}</li>
+            <li>Сб Выходной</li>
+            <li>Вс Выходной</li>
           </ul>
           <div>
             <h5 className="font-bold mt-5">По Всем вопросам</h5>
