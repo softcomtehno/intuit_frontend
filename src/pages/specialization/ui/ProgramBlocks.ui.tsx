@@ -29,7 +29,7 @@ export default function ProgramBlocks() {
         {topics.map((topic, index) => (
           <Card
             key={index}
-            className="shadow-lg min-w-[300px] max-w-[300px] hover:shadow-2xl transition-shadow duration-300 border border-gray"
+            className="min-w-[350px] max-w-[350px] hover:shadow-2xl transition-shadow duration-300 border border-gray"
           >
             <CardContent>
               <Typography variant="h5" className="font-bold mb-4">

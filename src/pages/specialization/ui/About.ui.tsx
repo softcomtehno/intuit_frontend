@@ -8,7 +8,7 @@ export const About = ({
 }: specializationTypes.Specialization) => {
   return (
     <Box
-      className="flex gap-10 my-12 lg:flex-col lg:items-center"
+      className="flex gap-10 my-12 lg:flex-col lg:items-center justify-between"
       component="section"
       sx={{
         alignItems: 'center',
@@ -16,6 +16,7 @@ export const About = ({
     >
       <Box
         sx={{
+          maxWidth:'750px',
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
@@ -31,7 +32,6 @@ export const About = ({
         >
           {text}
         </Typography>
-
         <Typography
           variant="body1"
           sx={{
@@ -44,14 +44,14 @@ export const About = ({
           <div dangerouslySetInnerHTML={{ __html: subtext }} />
         </Typography>
       </Box>
-
       <Box
         component="img"
         src={textPhoto}
         alt="Фото о профессии"
         sx={{
-          maxWidth: '400px',
+          maxWidth: '450px',
           borderRadius: '16px',
+          maxHeight:"300px",
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
           transition: 'transform 0.3s ease',
           '&:hover': {

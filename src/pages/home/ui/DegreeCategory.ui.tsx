@@ -49,7 +49,8 @@ export const DegreeCategory = () => {
           1024: { slidesPerView: 3.5, spaceBetween: 20 },
         }}
       >
-        {degreeData?.data.map((degree) => (
+        {degreeData?.data
+         .sort((a, b) => a.id - b.id).map((degree) => (
           <SwiperSlide key={degree.id}>
             <Card className="max-w-[320px]  p-4 border border-gray text-black/80 transition duration-200 rounded-lg hover:bg-green hover:text-white md:max-w-full">
               <CardActionArea onClick={() => navigate(`degree/${degree.slug}`)}>

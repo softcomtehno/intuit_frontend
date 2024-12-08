@@ -383,7 +383,6 @@
 </div> */
 }
 
-
 // import React, { useState } from "react";
 
 // interface MenuItem {
@@ -464,16 +463,16 @@
 //   );
 // };
 
-
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Typography from '@mui/material/Typography';
 import { setLanguage, getLanguage } from '~shared/lib/i18n/i18nHelper';
- import IntuitLogo from '../../assets/intuit-logo.png';
+import IntuitLogo from '../../assets/intuit-logo.png';
 import { Link } from 'react-router-dom';
 import { facultyQueries } from '~entities/faculties';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LanguageIcon from '@mui/icons-material/Language';
+import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
 
 export const Header: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -501,7 +500,11 @@ export const Header: React.FC = () => {
     ky: 'Кыргызча',
   };
 
-  const { data:facultyData, isLoading, isError } = facultyQueries.useGetFaculties()
+  const {
+    data: facultyData,
+    isLoading,
+    isError,
+  } = facultyQueries.useGetFaculties();
 
   if (isLoading) {
     return <div>Произошла Ошибка</div>;
@@ -518,16 +521,19 @@ export const Header: React.FC = () => {
   //   label: faculty.subtitle,
   //   link: `/${faculty.slug}`,
   // }));
-    // Фильтрация и сортировка институтов
+  // Фильтрация и сортировка институтов
 
-    const filteredAndSortedInstitutes = facultyData?.data
-      .sort((a: any, b: any) => a.subtitle.localeCompare(b.subtitle, 'ru')); // Сортировка по алфавиту
-  
-    // Формируем элементы меню для институтов
-    const instituteMenuItems = filteredAndSortedInstitutes?.map((institute: any) => ({
+  const filteredAndSortedInstitutes = facultyData?.data.sort((a: any, b: any) =>
+    a.subtitle.localeCompare(b.subtitle, 'ru')
+  ); // Сортировка по алфавиту
+
+  // Формируем элементы меню для институтов
+  const instituteMenuItems = filteredAndSortedInstitutes?.map(
+    (institute: any) => ({
       label: institute.subtitle,
       link: `/institutes/${institute.slug}`,
-    }));
+    })
+  );
 
   // Формируем общую структуру меню
   const headerItems = [
@@ -548,19 +554,17 @@ export const Header: React.FC = () => {
     },
   ];
 
-
-
   return (
-    <header className="bg-[white] fixed top-0 left-0 w-full z-50 shadow-md ">
+    <header className="bg-[white] fixed top-0 left-0 w-full z-50 border-b border-gray">
       <div className="container mx-auto px-6 py-2 flex justify-between items-center">
         <nav className="flex space-x-8 items-center">
           <Link to="/" className="flex items-center gap-1 mr-5">
-               <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
-               <p className="text-[10px] font-bold leading-[11px] ">
-                 МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
-                 ТЕХНОЛОГИЙ
-               </p>
-             </Link>
+            <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
+            <p className="text-[10px] font-bold leading-[11px] ">
+              МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
+              ТЕХНОЛОГИЙ
+            </p>
+          </Link>
           {headerItems.map((item, index) => (
             <div
               key={index}
@@ -568,15 +572,22 @@ export const Header: React.FC = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="text-black  text-lg font-semibold ">
+              <button className="text-black text-md font-medium">
                 {item.label}
-                {activeIndex === index ? ( <ArrowDropDownIcon className='rotate-180 text-[#3e3e3e]'/>):( <ArrowDropDownIcon className='text-[#3e3e3e]'/>)}
+                {activeIndex === index ? (
+                  <ExpandLessRoundedIcon className="text-[#3e3e3e]" />
+                ) : (
+                  <ExpandLessRoundedIcon className="text-[#3e3e3e] rotate-180" />
+                )}
               </button>
               {activeIndex === index && (
-                <div className="absolute  min-w-[260px] left-0 top-full bg-white mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[350px] overflow-y-scroll">
+                <div className="absolute  min-w-[260px] left-0 top-full bg-[#f4f5f6] mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[350px] overflow-y-scroll">
                   <ul className="space-y-1">
                     {item.items.map((subItem, subIndex) => (
-                      <li key={subIndex} className='hover:bg-green hover:text-white hover:roun'>
+                      <li
+                        key={subIndex}
+                        className="hover:bg-green hover:text-white hover:roun"
+                      >
                         <a
                           href={subItem.link}
                           className="block px-4 py-2 leading-5 hover:bg-gray-200 rounded-md"
@@ -593,11 +604,11 @@ export const Header: React.FC = () => {
         </nav>
         <div className="relative">
           <button
-            className="text-[black] text-lg font-semibold hover:text-gray-400 flex items-center"
+            className="text-[black] text-md font-meduim hover:text-gray-400 flex items-center"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
-            <LanguageIcon className='mr-2'/>
-             {currentLanguage}
+            {/* <LanguageIcon className="mr-2 font-light" /> */}
+            {currentLanguage}
             <svg
               className={`w-5 h-5 ml-2 transition-transform ${
                 isDropdownOpen ? 'rotate-180' : ''
