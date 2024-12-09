@@ -13,23 +13,87 @@ import Fancybox from '~widgets/diplom-list/Fancybox';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const documents = [
   {
-    title: 'Документы',
+    title: 'Положение ДОККО',
     urls: [
-      'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%D0%B0.png',
-      'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%9C%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0.png',
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%9F%D0%9E%D0%9B%D0%9E%D0%96%D0%95%D0%9D%D0%98%D0%95_%D0%BE_%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%D0%B5_%D0%9F%D0%9F%D0%A1_%D0%9C%D0%A3%D0%98%D0%A2_%D1%81_%D0%B8%D0%B7%D0%BC_2.pdf',
+        name: 'Положение о рейтинге профессорско-преподавательского состава МУИТ',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%A1%D0%B0%D0%BC%D0%BE%D0%BE%D1%86%D0%9C%D0%A3%D0%98%D0%A2%20(2).pdf',
+        name: 'Положение о самооценке в процессе аккредитации образовательной организации',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%D0%B5%20(1)%20(2).pdf',
+        name: 'ПОЛОЖЕНИЕ О ПРОВЕДЕНИИ ОТКРЫТОГО ЭЛЕКТРОННОГО МОНИТОРИНГА ПРОФЕССОРСКО-ПРЕПОДАВАТЕЛЬСКОГО СОСТАВА И СТРУКТУРНЫХ ПОДРАЗДЕЛЕНИЙ МУИТ',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%D0%90%D1%83%D0%B4%D0%B8%D1%82%D0%9C%D0%A3%D0%98%D0%A2%20(2).pdf',
+        name: 'ПОЛОЖЕНИЕ О СИСТЕМЕ ВНУТРЕННЕГО АУДИТА В МУИТ',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%D0%94%D0%9E%D0%9A%D0%9A%D0%9E%20(2).pdf',
+        name: 'ПОЛОЖЕНИЕ Департамента обеспечения и контроля качества образования МУИТ',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%D0%A3%D0%A2%D0%92%D0%95%D0%A0%D0%96%D0%94%D0%95%D0%9D%D0%9D%D0%AB%D0%99%20%D0%B4%D0%BE%D0%BA%20(2).pdf',
+        name: 'ПОЛОЖЕНИЕ О ПРОВЕДЕНИИ ОТКРЫТОГО ЭЛЕКТРОННОГО МОНИТОРИНГА ПРОФЕССОРСКО-ПРЕПОДАВАТЕЛЬСКОГО СОСТАВА ИСТРУКТУРНЫХ ПОДРАЗДЕЛЕНИЙ МуИТ',
+      },
     ],
   },
   {
-    title: 'Положение',
+    title: 'Планы ДОККО',
     urls: [
-      'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D%D%D0%9E.png',
-      'https://example.com/another-document.pdf',
+      {
+        url: 'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D%D0%9E.png',
+        name: 'ДОЛЖНОСТНАЯ ИНСТРУКЦИЯ',
+      },
+      {
+        url: 'https://example.com/another-document.pdf',
+        name: 'СИСТЕМА МЕНЕДЖМЕНТА КАЧЕСТВА',
+      },
+      {
+        url: 'https://example.com/another-document.pdf',
+        name: 'ПОЛИТИКА МЕЖДУНАРОДНОГО УНИВЕРСИТЕТА ИННОВАЦИОННЫХТЕХНОЛОГИЙ В ОБЛАСТИ ОБЕСПЕЧЕНИЯКАЧЕСТВАОБРАЗОВАНИЯ',
+      },
+      {
+        url: 'https://example.com/another-document.pdf',
+        name: 'СИСТЕМА МЕНЕДЖМЕНТА КАЧЕСТВА',
+      },
+      {
+        url: 'https://example.com/another-document.pdf',
+        name: 'СТРУКТУРНЫЕ ВЗАИМОДЕЙСТВИЯ ДОККОВ МУИТ. СТРУКТУРА, ВНУТРЕННИЕ И ВНЕШНИЕ НАПРАВЛЕНИЯДЕЯТЕЛЬНОСТИДОККО',
+      },
     ],
   },
   {
-    title: 'Документ 3',
+    title: 'Отчеты ДОККО',
     urls: [
-      'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B0.png',
+      {
+        url: 'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B0.png',
+        name: 'Диплом Специалиста',
+      },
+    ],
+  },
+  {
+    title: 'Положение МУИТ',
+    urls: [
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%9C%D0%A3%D0%98%D0%A2_%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%201.pdf',
+        name: 'СБОРНИК ПОЛОЖЕНИЙ, регламентирующих деятельность Международного университета инновационных технологий.Книга 1',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%9C%D0%A3%D0%98%D0%A2_%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%202.pdf',
+        name: 'СБОРНИК ПОЛОЖЕНИЙ, регламентирующих деятельность Международного университета инновационных технологий.Книга 2',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%9C%D0%A3%D0%98%D0%A2_%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%203.pdf',
+        name: 'СБОРНИК ПОЛОЖЕНИЙ, регламентирующих деятельность Международного университета инновационных технологий.Книга 3',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%204_%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%9C%D0%A3%D0%98%D0%A2.pdf',
+        name: 'СБОРНИК ПОЛОЖЕНИЙ, регламентирующих деятельность Международного университета инновационных технологий.Книга 4',
+      },
     ],
   },
 ];
@@ -44,18 +108,18 @@ export const DeparmentPage = () => {
       >
         Департамент качества образования
       </Typography>
-        <Typography
-          variant="body1"
-          className="text-gray-700 mb-10"
-          style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)' }}
-        >
-          Основной целью Департамента качества образования является координация
-          образовательного процесса и организация деятельности структурных
-          подразделений, отделов и служб университета по управлению и
-          обеспечению качества образования, с целью удовлетворения потребителей
-          (работодателей, студентов, родителей, общества и т.д.) и других
-          заинтересованных сторон.
-        </Typography>
+      <Typography
+        variant="body1"
+        className="text-gray-700 mb-10"
+        style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)' }}
+      >
+        Основной целью Департамента качества образования является координация
+        образовательного процесса и организация деятельности структурных
+        подразделений, отделов и служб университета по управлению и обеспечению
+        качества образования, с целью удовлетворения потребителей
+        (работодателей, студентов, родителей, общества и т.д.) и других
+        заинтересованных сторон.
+      </Typography>
       <Typography
         variant="h5"
         className="font-bold text-gray-800 mb-6"
@@ -130,14 +194,14 @@ export const DeparmentPage = () => {
             </AccordionSummary>
             <AccordionDetails>
               <ul className="list-disc pl-5">
-                {doc.urls.map((url, urlIndex) => (
+                {doc.urls.map((item, urlIndex) => (
                   <li key={urlIndex} className="mb-2">
                     <a
                       data-fancybox="gallery"
-                      href={url}
-                      className="text-blue  hover:text-blue-700"
+                      href={item.url}
+                      className="text-blue hover:text-blue-700"
                     >
-                      Открыть документ {urlIndex + 1}
+                      {item.name || `Открыть документ ${urlIndex + 1}`}
                     </a>
                   </li>
                 ))}

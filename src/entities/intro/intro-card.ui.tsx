@@ -16,15 +16,15 @@ export const IntroCard = ({ title, img, description }) => {
       >
         <Typography
           variant="h1"
-          className="font-bold text-white text-[70px] max-w-[750px] sm:text-[40px] md:text-center md:text-[30px]"
+          className="font-bold text-black text-[70px] max-w-[750px] sm:text-[40px] md:text-center md:text-[30px]"
         >
-          {title}
+          {/* {title} */}
         </Typography>
 
         <Box className="flex flex-col gap-5">
           <Typography
             variant="body1"
-            className="text-white text-xl max-w-[550px] font-bold md:text-center"
+            className="text-black text-xl max-w-[550px] font-bold md:text-center"
           >
             {description}
           </Typography>

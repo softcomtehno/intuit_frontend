@@ -6,11 +6,12 @@ import { SpeakerVideoList } from '~widgets/speaker-list';
 import { PartnersList } from '~widgets/partners-list';
 import { OpportunitiesList } from '~widgets/opportunities-list';
 import { DegreeCategory } from './ui/DegreeCategory.ui';
-import { ProgramCategory } from '~widgets/programm-category'
-import { AboutBlock } from './ui/AboutBlock.ui'
-import { ArticleList } from '~widgets/article-list/article-list.ui'
-import { Typography } from '@mui/material'
+import { ProgramCategory } from '~widgets/programm-category';
+import { AboutBlock } from './ui/AboutBlock.ui';
+import { ArticleList } from '~widgets/article-list/article-list.ui';
+import { Typography } from '@mui/material';
 import { License } from './ui/License.ui';
+import { NewsList } from '~widgets/news-list';
 
 export function HomePage() {
   return (
@@ -19,7 +20,7 @@ export function HomePage() {
         <SwiperIntro />
       </h1>
       <DegreeCategory />
-      <License/>
+      <License />
       <ProgramCategory />
       <OpportunitiesList />
       <AboutBlock />
@@ -32,13 +33,13 @@ export function HomePage() {
           component="h3"
           className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
         >
-          Преподавательский состав  
+          Преподавательский состав
         </Typography>
-        {/* <StaffButtonsSwiper /> */}
         <StaffList filterByRanks={['professor', 'doctor']} />
       </div>
-      <ArticleList />
+      <NewsList />
       <PartnersList />
+      <ArticleList />
       <EnrollForm />
       <SpeakerVideoList />
     </div>

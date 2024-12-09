@@ -6,6 +6,7 @@ import 'swiper/css/pagination'
 import { EffectFade, Navigation, Pagination } from 'swiper/modules'
 import { IntroCard } from '~entities/intro'
 import { useTranslation } from 'react-i18next'
+import Intro from "./intro.png";
 
 export const SwiperIntro = () => {
   const { t } = useTranslation()
@@ -21,14 +22,12 @@ export const SwiperIntro = () => {
         <SwiperSlide className="bg-center bg-cover">
           <IntroCard
             description={t('enrollPage.introCard.description')}
-            img={
-              'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_0_lg.webp'
-            }
+            img={Intro}
             title={t('enrollPage.introCard.title')}
           />
         </SwiperSlide>
 
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <IntroCard
             description={t('enrollPage.introCard.secondDescription')} // Добавьте соответствующий ключ из JSON для замены
             img={
@@ -46,7 +45,7 @@ export const SwiperIntro = () => {
             }
             title={t('enrollPage.introCard.thirdTitle')} // Добавьте соответствующий ключ из JSON для замены
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   )
