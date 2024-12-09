@@ -14,18 +14,18 @@ export const SpeakerVideo = ({ name, description, videoUrl, preview }) => {
   return (
     <>
       <Box
-        className="flex flex-col justify-between  bg-cover bg-no-repeat bg-center min-h-[350px] p-5 rounded-2xl"
+        className="flex flex-col justify-between  bg-cover bg-no-repeat bg-center min-h-[350px] p-1 rounded-2xl"
         sx={{ background: `url("${preview}")` }}
         onClick={() => setActive(true)}
       >
         <Button onClick={() => setActive(true)} className="self-end">
           <PlayCircleFilledRounded className="text-green" fontSize="large" />
         </Button>
-        <Box>
-          <Typography variant="body1" className="text-white font-bold">
+        <Box className="backdrop-blur-md bg-white/30 p-3">
+          <Typography variant="body1" className="text-black font-bold">
             {name}
           </Typography>
-          <Typography className="text-gray " variant="body2">
+          <Typography className="text-black font-medium" variant="body2">
             {description}
           </Typography>
         </Box>

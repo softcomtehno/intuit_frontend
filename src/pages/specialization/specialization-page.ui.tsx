@@ -8,6 +8,7 @@ import { specializationQueries } from '~entities/specialization/'
 import { useParams } from 'react-router-dom'
 import { CircularProgress, Typography } from '@mui/material'
 import ProgramBlocks from './ui/ProgramBlocks.ui.tsx'
+import { EducationForm } from '~widgets/education-form/education-form.ui.tsx'
 
 type RouteObject = {
   slug: string
@@ -47,6 +48,7 @@ export const SpecializationPage = () => {
         {/* <SkillsBlock {...specializationData.data} /> */}
         {/* <ProgramAccordion {...specializationData.data} /> */}
         <CareerBlock {...specializationData.data} />
+        <EducationForm/>
         <EnrollForm />
       </div>
     )
