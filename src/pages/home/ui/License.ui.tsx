@@ -20,7 +20,7 @@ export const License = () => {
         }}
       >
         <div className="flex justify-between gap-4">
-          <div className="max-w-md w-full border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]">
+          <div className="max-w-md w-full border border-gray rounded-lg bg-white p-2 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-xl font-bold text-gray-800">
                 Бюджетные места
@@ -36,33 +36,37 @@ export const License = () => {
           <a
             data-fancybox="gallery"
             href="https://muit.makalabox.com/documents/license.pdf"
-            className="block border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
+            className="flex items-center border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]"
           >
-            <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 mb-4 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl">
+            <div className="flex  items-center justify-center gap-3">
+              <div className="w-24 h-24 ">
                 <img src={Gerb} alt="" />
               </div>
+              <div>
               <h3 className="text-lg font-semibold text-gray-800">Лицензия</h3>
               <p className="text-sm text-gray-600 mt-2">
                 Нажмите, чтобы посмотреть документ.
               </p>
+              </div>
             </div>
           </a>
           <a
             data-fancybox="gallery"
             href="https://muit.makalabox.com/documents/Svidetelstvo.png"
-            className="block border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[200px]"
+            className="block border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]"
           >
-            <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 mb-4 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">
+            <div className="flex  items-center gap-3">
+              <div className="w-24 h-24">
                 <img src={Gerb} alt="" />
               </div>
+              <div>
               <h3 className="text-lg font-semibold text-gray-800">
                 Свидетельство
               </h3>
               <p className="text-sm text-gray-600 mt-2">
                 Нажмите, чтобы посмотреть документ.
               </p>
+              </div>
             </div>
           </a>
         </div>
