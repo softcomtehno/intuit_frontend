@@ -523,9 +523,8 @@ export const Header: React.FC = () => {
 
   const filteredAndSortedInstitutes = facultyData?.data.sort((a: any, b: any) =>
     a.subtitle.localeCompare(b.subtitle, 'ru')
-  ) // Сортировка по алфавиту
+  ) 
 
-  // Формируем элементы меню для институтов
   const instituteMenuItems = filteredAndSortedInstitutes?.map(
     (institute: any) => ({
       label: institute.subtitle,
@@ -533,7 +532,6 @@ export const Header: React.FC = () => {
     })
   )
 
-  // Формируем общую структуру меню
   const headerItems = [
     { label: 'Институты', items: instituteMenuItems },
     {
@@ -541,6 +539,7 @@ export const Header: React.FC = () => {
       items: [
         { label: 'История', link: '/history' },
         { label: 'Видение', link: '/vision' },
+        { label: 'Департамент качества образования', link: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya' },
       ],
     },
     {
@@ -579,19 +578,19 @@ export const Header: React.FC = () => {
                 )}
               </button>
               {activeIndex === index && (
-                <div className="absolute  min-w-[260px] left-0 top-full bg-[#f4f5f6] mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[350px] overflow-y-scroll">
+                <div className="absolute min-w-[260px] left-0 top-full bg-[#f4f5f6] mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[500px] overflow-y-scroll">
                   <ul className="space-y-1">
                     {item.items.map((subItem, subIndex) => (
                       <li
                         key={subIndex}
                         className="hover:bg-green hover:text-white hover:roun"
                       >
-                        <a
-                          href={subItem.link}
+                        <Link
+                          to={subItem.link}
                           className="block px-4 py-2 leading-5 hover:bg-gray-200 rounded-md"
-                        >
+                        > 
                           {subItem.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
