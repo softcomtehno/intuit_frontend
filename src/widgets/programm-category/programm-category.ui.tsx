@@ -163,7 +163,6 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
               count={totalPages}
               page={currentPage}
               onChange={handlePageChange}
-              color="primary"
               sx={{
                 '& .MuiPaginationItem-root.Mui-selected': {
                   color: 'white', // Цвет текста для выбранного элемента

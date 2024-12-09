@@ -48,7 +48,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery"
-              href="https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%D0%B0.png"
+              href="https://muit.makalabox.com/documents/%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC.pdf"
             >
               <Card className="transition duration-75 max-w-[420px] min-h-[200px] max-h-[200px] bg-[#f5f5f5] p-4 flex justify-evenly shadow-none rounded-lg  hover:cursor-pointer md:flex-col md:max-h-full md:gap-10 items-center">
                 <div className="flex flex-col justify-between">
@@ -108,7 +108,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-3"
-              href="https://intuit.kg/media/faculty/documents/%D0%B5%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0.pdf"
+              href="https://muit.makalabox.com/documents/%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC.pdf"
             >
               <Card className="transition duration-75 max-w-[420px] min-h-[200px] max-h-[200px] bg-[#f5f5f5] p-4 flex justify-evenly shadow-none rounded-lg  hover:cursor-pointer md:flex-col md:max-h-full md:gap-10 items-center">
                 <div className="flex flex-col justify-between">
@@ -138,7 +138,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-4"
-              href="https://intuit.kg/media/faculty/documents/%D0%B5%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0.pdf"
+              href="https://muit.makalabox.com/documents/%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC.pdf"
             >
               <Card className="transition duration-75 max-w-[420px] min-h-[200px] max-h-[200px] bg-[#f5f5f5] p-4 flex justify-evenly shadow-none rounded-lg  hover:cursor-pointer md:flex-col md:max-h-full md:gap-10 items-center">
                 <div className="flex flex-col justify-between">
