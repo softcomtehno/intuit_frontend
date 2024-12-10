@@ -110,7 +110,7 @@ export const DeparmentPage = () => {
       </Typography>
       <Typography
         variant="body1"
-        className="text-gray-700 mb-10"
+        className="text-gray-700 mb-10 text-justify"
         style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)' }}
       >
         Основной целью Департамента качества образования является координация
@@ -130,7 +130,7 @@ export const DeparmentPage = () => {
       <Box className="border border-gray rounded-lg p-6 mb-8 bg-white">
         <Typography
           variant="body1"
-          className="text-gray-700"
+          className="text-gray-700 text-justify"
           style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)' }}
         >
           Миссия МУИТ - подготовка конкурентоспособных специалистов, отвечающих
@@ -158,7 +158,7 @@ export const DeparmentPage = () => {
               <CardContent>
                 <Typography
                   variant="body2"
-                  className="text-gray-700"
+                  className="text-gray-700 text-justify"
                   style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1rem)' }}
                 >
                   {goal}

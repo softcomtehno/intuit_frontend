@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Container,
   Typography,
@@ -12,7 +11,7 @@ import {
   TableCell,
   TableBody,
   Paper,
-} from '@mui/material';
+} from '@mui/material'
 
 const bachelorPrograms = [
   {
@@ -110,7 +109,7 @@ const bachelorPrograms = [
     program: 'Физические процессы горного или нефтегазового производства',
     profile: '',
   },
-];
+]
 
 const postgraduateSpecialties = [
   {
@@ -146,7 +145,7 @@ const postgraduateSpecialties = [
   },
   { code: '08.00.10', specialty: 'Финансы, денежное обращение и кредит' },
   { code: '08.00.12', specialty: 'Бухгалтерский учет, статистика' },
-];
+]
 
 const masterPrograms = [
   {
@@ -178,7 +177,7 @@ const masterPrograms = [
     details:
       'Проектирование, расчет и сейсмостойкость зданий и сооружений, Менеджмент качества в строительстве',
   },
-];
+]
 const additionalCourses = [
   { course: 'Подготовка водителей категории «В» и «ВС»' },
   { course: 'Компьютерная грамотность по программированию' },
@@ -196,7 +195,7 @@ const additionalCourses = [
       'Кыргызский, Русский, Английский, Немецкий, Китайский, Японский языки',
   },
   { course: 'Практическая психология и развитие личности' },
-];
+]
 
 const structureItems = [
   { title: 'Ученый Совет' },
@@ -228,7 +227,7 @@ const structureItems = [
   { title: 'Научно-информационная библиотека' },
   { title: 'Медицинский пункт' },
   { title: 'Спортивно-оздоровительный комплекс' },
-];
+]
 
 export const HistoryPage = () => {
   return (
@@ -244,7 +243,7 @@ export const HistoryPage = () => {
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
           История Университета
         </Typography>
-        <Typography variant="body1" className="text-gray-600">
+        <Typography variant="body1" className="text-gray-600 text-justify">
           Международный университет инновационных технологий (создан в 2006 году
           как Академия инновационных технологий, далее - МУИТ, Университет) по
           своей организационно-правовой форме является учреждением, реализующим
@@ -269,7 +268,7 @@ export const HistoryPage = () => {
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
           Адрес и регистрационные данные
         </Typography>
-        <Typography variant="body1" className="text-gray-600">
+        <Typography variant="body1" className="text-gray-600 text-justify">
           Адрес: 720048, Кыргызская Республика, г. Бишкек, ул. Анкара, 1/17.
           Номер свидетельства: № 55786-3301-У-е; код ОКПО: 24275760. Регистрация
           в Министерстве юстиции Кыргызской Республики: 02.05.2017.
@@ -279,7 +278,7 @@ export const HistoryPage = () => {
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
           Лицензии и образовательные программы
         </Typography>
-        <Typography variant="body1" className="text-gray-600">
+        <Typography variant="body1" className="text-gray-600 text-justify">
           Университет осуществляет свою образовательную деятельность и готовит
           специалистов по программам высшего профессионального образования
           бакалавриата, магистратуры и аспирантуры на основании лицензий
@@ -311,9 +310,13 @@ export const HistoryPage = () => {
             <TableBody>
               {bachelorPrograms.map((program, index) => (
                 <TableRow key={index}>
-                  <TableCell>{program.code}</TableCell>
-                  <TableCell>{program.program}</TableCell>
-                  <TableCell>{program.profile}</TableCell>
+                  <TableCell className="text-justify">{program.code}</TableCell>
+                  <TableCell className="text-justify">
+                    {program.program}
+                  </TableCell>
+                  <TableCell className="text-justify">
+                    {program.profile}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -340,9 +343,13 @@ export const HistoryPage = () => {
             <TableBody>
               {masterPrograms.map((program, index) => (
                 <TableRow key={index}>
-                  <TableCell>{program.code}</TableCell>
-                  <TableCell>{program.program}</TableCell>
-                  <TableCell>{program.details}</TableCell>
+                  <TableCell className="text-justify">{program.code}</TableCell>
+                  <TableCell className="text-justify">
+                    {program.program}
+                  </TableCell>
+                  <TableCell className="text-justify">
+                    {program.details}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -366,8 +373,12 @@ export const HistoryPage = () => {
             <TableBody>
               {postgraduateSpecialties.map((specialty, index) => (
                 <TableRow key={index}>
-                  <TableCell>{specialty.code}</TableCell>
-                  <TableCell>{specialty.specialty}</TableCell>
+                  <TableCell className="text-justify">
+                    {specialty.code}
+                  </TableCell>
+                  <TableCell className="text-justify">
+                    {specialty.specialty}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -396,23 +407,25 @@ export const HistoryPage = () => {
         </TableContainer>
       </section>
       <section className="mb-10">
-      <Typography variant="h5" className="font-semibold text-gray-700 mb-6">
-        Структура МУИТ
-      </Typography>
-      <Grid container spacing={3}>
-        {structureItems.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-           
+        <Typography variant="h5" className="font-semibold text-gray-700 mb-6">
+          Структура МУИТ
+        </Typography>
+        <Grid container spacing={3}>
+          {structureItems.map((item, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <Card className="h-full display-flex flex-direction-column">
                 <CardContent className="flex-grow-1">
-                  <Typography variant="h6" className="font-medium text-gray-700 mb-2">
+                  <Typography
+                    variant="h6"
+                    className="font-medium text-gray-700 mb-2 "
+                  >
                     {item.title}
                   </Typography>
                 </CardContent>
               </Card>
-          </Grid>
-        ))}
-      </Grid>
+            </Grid>
+          ))}
+        </Grid>
       </section>
 
       <section className="mb-10">
@@ -431,11 +444,11 @@ export const HistoryPage = () => {
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
           Контактная информация
         </Typography>
-        <Typography variant="body1" className="text-gray-600">
+        <Typography variant="body1" className="text-gray-600 text-justify">
           Адрес: 720048, Кыргызская Республика, г. Бишкек, ул. Анкара, 1/17.
           Телефон: +996 (312) 590-599.
         </Typography>
       </section>
     </Container>
-  );
-};
+  )
+}

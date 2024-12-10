@@ -47,7 +47,7 @@ export const StaffCard = ({ name, description, image, slug }: staffTypes.Staff) 
           <Typography
             variant="h2"
             component="div"
-            className="text-[16px] font-semibold md:text-center"
+            className="text-[16px] font-semibold md:text-center text-justify"
           >
             {description}
           </Typography>

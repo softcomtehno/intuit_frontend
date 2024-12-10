@@ -71,7 +71,7 @@ export const TeacherPage = () => {
               >
                 {staffData.data.description}
               </Typography>
-              <div className="bg-green rounded-full   transition-all hover:scale-105">
+              <div className="bg-green rounded-md   transition-all hover:scale-105">
                 <a
                   href={staffData.data.whatsapp}
                   target="_blank"
@@ -81,7 +81,7 @@ export const TeacherPage = () => {
                   <span className="text-lg">WhatsApp</span>
                 </a>
               </div>
-              <div className="bg-[#32A9E1] rounded-full transition-all hover:scale-105">
+              <div className="bg-[#32A9E1] rounded-md transition-all hover:scale-105">
                 <a
                   href={staffData.data.telegram}
                   target="_blank"
@@ -93,7 +93,7 @@ export const TeacherPage = () => {
               </div>
               <div
                 style={gradientStyle}
-                className=" rounded-full transition-all hover:scale-105"
+                className=" rounded-md transition-all hover:scale-105"
               >
                 <a
                   href={staffData.data.instagram}
@@ -104,7 +104,7 @@ export const TeacherPage = () => {
                   <span className="text-lg">Instagram</span>
                 </a>
               </div>
-              <div className="bg-[#4867AA] rounded-full transition-all hover:scale-105">
+              <div className="bg-[#4867AA] rounded-md transition-all hover:scale-105">
                 <a
                   href={staffData.data.facebook}
                   target="_blank"
@@ -114,7 +114,7 @@ export const TeacherPage = () => {
                   <span className="text-lg">Facebook</span>
                 </a>
               </div>
-              <div className="bg-[#383838] rounded-full transition-all hover:scale-105">
+              <div className="bg-[#383838] rounded-md transition-all hover:scale-105">
                 <a
                   href={staffData.data.cv}
                   target="_blank"

@@ -42,7 +42,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
         >
           Об Институте
         </Typography>
-        <p className="mt-5 font-semibold leading-7">{subtext}</p>
+        <p className="mt-5 font-semibold leading-7 text-justify">{subtext}</p>
       </div>
 
       <div className="min-w-[45%] max-w-[45%] bg-[#e0e1e5] p-5 rounded-xl">
@@ -68,7 +68,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
             >
               {filteredAndSortedStaff.map((staff) => (
                 <SwiperSlide className="flex justify-center" key={staff.id}>
-                  <StaffCard {...staff} />
+                  <StaffCard  {...staff} />
                 </SwiperSlide>
               ))}
             </Swiper>

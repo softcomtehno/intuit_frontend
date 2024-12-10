@@ -50,7 +50,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
               color="text.secondary"
               className="line-clamp-3"
             >
-              <div dangerouslySetInnerHTML={{ __html: truncatedDescription }} />
+              <div className='text-justify' dangerouslySetInnerHTML={{ __html: truncatedDescription }} />
             </Typography>
           </CardContent>
         </CardActionArea>

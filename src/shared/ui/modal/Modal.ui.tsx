@@ -5,24 +5,24 @@ export function CustomModal({ active, setActive, children }) {
   return (
     <div
       onClick={() => setActive(false)}
-      className={`fixed duration-500 z-50 h-screen w-screen bg-[black]/30 top-0 left-0 flex  pointer-events-none items-center justify-center ${
-        active ? 'opacity-100 pointer-events-auto' : 'opacity-0'
-      }`}
+      className={`fixed z-50 inset-0 bg-black/70 flex items-center justify-center ${
+        active ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      } duration-300`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`p-[10px] duration-300 rounded bg-[white] min-w-[320px] md:w-[450px] flex flex-col gap-5 ${
+        className={`relative bg-white w-full h-full max-w-[90%] max-h-[90%] rounded-lg overflow-hidden flex flex-col ${
           active ? 'scale-100' : 'scale-0'
-        }`}
+        } duration-300`}
       >
-        <Box className="flex justify-between items-center">
-          <Typography className='font-medium' variant="h4">Отзыв</Typography>
+        <Box className="absolute top-3 right-3">
           <IconButton onClick={() => setActive(false)}>
-            <CancelRoundedIcon />
+            <CancelRoundedIcon className="text-white bg-black rounded-full" />
           </IconButton>
         </Box>
-
-        {children}
+        <Box className="flex-grow flex items-center justify-center">
+          {children}
+        </Box>
       </div>
     </div>
   )
