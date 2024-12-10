@@ -16,6 +16,11 @@ import { specializationPageRoute } from '~pages/specialization'
 import { deparmentPageRoute } from '~pages/department'
 import { historyPageRoute } from '~pages/history'
 import { visionPageRoute } from '~pages/vision'
+import { aboutPageRoute } from '~pages/about'
+import { collegesPageRoute } from '~pages/colleges'
+import { studentsPageRoute } from '~pages/students'
+import { applicantsPageRoute } from '~pages/applicants'
+import { admissionsPageRoute } from '~pages/admissions'
 
 
 
@@ -43,7 +48,12 @@ const router = createBrowserRouter([
           specializationPageRoute,
           deparmentPageRoute,
           historyPageRoute,
-          visionPageRoute
+          visionPageRoute,
+          aboutPageRoute,
+          collegesPageRoute,
+          studentsPageRoute,
+          applicantsPageRoute,
+          admissionsPageRoute
         ],
       },
     ],
