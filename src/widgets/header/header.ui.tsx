@@ -715,7 +715,7 @@ export const Header: React.FC = () => {
             <Link
               key={index}
               to={item.link}
-              className="text-black text-sm font-medium hover:text-gray-400 border rounded-full hover:bg-green hover:text-white border-gray p-2"
+              className="text-black text-sm font-medium hover:text-gray-400 border rounded-full hover:bg-green hover:scale-105 duration-200 hover:border-white hover:text-white border-gray p-2"
             >
               {item.label}
             </Link>
