@@ -463,17 +463,211 @@
 //   );
 // };
 
+// import React, { useState, useEffect } from 'react'
+// import { useTranslation } from 'react-i18next'
+// import { setLanguage, getLanguage } from '~shared/lib/i18n/i18nHelper'
+// import IntuitLogo from '../../assets/intuit-logo.png'
+// import { Link } from 'react-router-dom'
+// import { facultyQueries } from '~entities/faculties'
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+// import LanguageIcon from '@mui/icons-material/Language'
+
+// export const Header: React.FC = () => {
+//   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+//   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+//   const { i18n } = useTranslation()
+
+//   useEffect(() => {
+//     const savedLanguage = getLanguage()
+//     if (savedLanguage && savedLanguage !== i18n.language) {
+//       i18n.changeLanguage(savedLanguage)
+//     }
+//   }, [i18n])
+
+//   const handleMouseEnter = (index: number) => setActiveIndex(index)
+//   const handleMouseLeave = () => setActiveIndex(null)
+
+//   const handleLanguageChange = (lng: string) => {
+//     setLanguage(lng)
+//     window.location.reload()
+//   }
+
+//   const languageMap: { [key: string]: string } = {
+//     en: 'English',
+//     ru: 'Русский',
+//     ky: 'Кыргызча',
+//   }
+
+//   const {
+//     data: facultyData,
+//     isLoading,
+//     isError,
+//   } = facultyQueries.useGetFaculties()
+
+//   if (isLoading) {
+//     return <div>Произошла Ошибка</div>
+//   }
+//   if (isError) {
+//     return <div>Произошла Ошибка</div>
+//   }
+//   console.log('data', facultyData?.data)
+
+//   const currentLanguage = languageMap[i18n.language] || 'Language' // Отображать текущий язык
+
+//   // Формируем пункты меню "Институты" из данных
+//   // const institutes = facultyData.data.map((faculty: any) => ({
+//   //   label: faculty.subtitle,
+//   //   link: `/${faculty.slug}`,
+//   // }));
+//   // Фильтрация и сортировка институтов
+
+//   const filteredAndSortedInstitutes = facultyData?.data.sort((a: any, b: any) =>
+//     a.subtitle.localeCompare(b.subtitle, 'ru')
+//   ) 
+
+//   const instituteMenuItems = filteredAndSortedInstitutes?.map(
+//     (institute: any) => ({
+//       label: institute.subtitle,
+//       link: `/institutes/${institute.slug}`,
+//     })
+//   )
+
+//   const headerItems = [
+//     { label: 'Институты', items: instituteMenuItems },
+//     {
+//       label: 'Об Университете',
+//       items: [
+//         { label: 'История', link: '/history' },
+//         { label: 'Видение', link: '/vision' },
+//         { label: 'Департамент качества образования', link: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya' },
+//       ],
+//     },
+//     {
+//       label: 'Абитуриентам',
+//       items: [
+//         { label: 'Подобрать программу', link: '#' },
+//         { label: 'Направления', link: '#' },
+//       ],
+//     },
+//   ]
+
+//   return (
+//     <header className="bg-[white] fixed top-0 left-0 w-full z-50 border-b border-gray">
+//       <div className="container mx-auto px-6 py-2 flex justify-between items-center">
+//         <nav className="flex space-x-8 items-center">
+//           <Link to="/" className="flex items-center gap-1 mr-5">
+//             <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
+//             <p className="text-[10px] font-bold leading-[11px] ">
+//               МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
+//               ТЕХНОЛОГИЙ
+//             </p>
+//           </Link>
+//           {headerItems.map((item, index) => (
+//             <div
+//               key={index}
+//               className="relative group lg:hidden"
+//               onMouseEnter={() => handleMouseEnter(index)}
+//               onMouseLeave={handleMouseLeave}
+//             >
+//               <button className="text-black text-md font-medium">
+//                 {item.label}
+//                 {activeIndex === index ? (
+//                   <ArrowDropDownIcon className="rotate-180 text-[#3e3e3e]" />
+//                 ) : (
+//                   <ArrowDropDownIcon className="text-[#3e3e3e]" />
+//                 )}
+//               </button>
+//               {activeIndex === index && (
+//                 <div className="absolute min-w-[260px] left-0 top-full bg-[#f4f5f6] mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[500px] overflow-y-scroll">
+//                   <ul className="space-y-1">
+//                     {item.items.map((subItem, subIndex) => (
+//                       <li
+//                         key={subIndex}
+//                         className="hover:bg-green hover:text-white hover:roun"
+//                       >
+//                         <Link
+//                           to={subItem.link}
+//                           className="block px-4 py-2 leading-5 hover:bg-gray-200 rounded-md"
+//                         > 
+//                           {subItem.label}
+//                         </Link>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                 </div>
+//               )}
+//             </div>
+//           ))}
+//         </nav>
+//         <div className="relative md:hidden">
+//           <button
+//             className="text-[black] text-md font-meduim hover:text-gray-400 flex items-center"
+//             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+//           >
+//             <LanguageIcon className="mr-2" />
+//             {currentLanguage}
+//             <svg
+//               className={`w-5 h-5 ml-2 transition-transform ${
+//                 isDropdownOpen ? 'rotate-180' : ''
+//               }`}
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//               xmlns="http://www.w3.org/2000/svg"
+//             >
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth="2"
+//                 d="M19 9l-7 7-7-7"
+//               ></path>
+//             </svg>
+//           </button>
+
+//           {isDropdownOpen && (
+//             <div className="absolute right-0 mt-2 bg-white text-gray-800 rounded-md shadow-lg z-50">
+//               <ul className="py-2">
+//                 <li>
+//                   <button
+//                     className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
+//                     onClick={() => handleLanguageChange('ru')}
+//                   >
+//                     Русский
+//                   </button>
+//                 </li>
+//                 <li>
+//                   <button
+//                     className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
+//                     onClick={() => handleLanguageChange('en')}
+//                   >
+//                     English
+//                   </button>
+//                 </li>
+//                 <li>
+//                   <button
+//                     className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
+//                     onClick={() => handleLanguageChange('ky')}
+//                   >
+//                     Кыргызча
+//                   </button>
+//                 </li>
+//               </ul>
+//             </div>
+//           )}
+//         </div>
+//       </div>
+//     </header>
+//   )
+// }
+
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { setLanguage, getLanguage } from '~shared/lib/i18n/i18nHelper'
 import IntuitLogo from '../../assets/intuit-logo.png'
 import { Link } from 'react-router-dom'
-import { facultyQueries } from '~entities/faculties'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import LanguageIcon from '@mui/icons-material/Language'
 
 export const Header: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const { i18n } = useTranslation()
 
@@ -483,9 +677,6 @@ export const Header: React.FC = () => {
       i18n.changeLanguage(savedLanguage)
     }
   }, [i18n])
-
-  const handleMouseEnter = (index: number) => setActiveIndex(index)
-  const handleMouseLeave = () => setActiveIndex(null)
 
   const handleLanguageChange = (lng: string) => {
     setLanguage(lng)
@@ -498,110 +689,41 @@ export const Header: React.FC = () => {
     ky: 'Кыргызча',
   }
 
-  const {
-    data: facultyData,
-    isLoading,
-    isError,
-  } = facultyQueries.useGetFaculties()
-
-  if (isLoading) {
-    return <div>Произошла Ошибка</div>
-  }
-  if (isError) {
-    return <div>Произошла Ошибка</div>
-  }
-  console.log('data', facultyData?.data)
-
-  const currentLanguage = languageMap[i18n.language] || 'Language' // Отображать текущий язык
-
-  // Формируем пункты меню "Институты" из данных
-  // const institutes = facultyData.data.map((faculty: any) => ({
-  //   label: faculty.subtitle,
-  //   link: `/${faculty.slug}`,
-  // }));
-  // Фильтрация и сортировка институтов
-
-  const filteredAndSortedInstitutes = facultyData?.data.sort((a: any, b: any) =>
-    a.subtitle.localeCompare(b.subtitle, 'ru')
-  ) 
-
-  const instituteMenuItems = filteredAndSortedInstitutes?.map(
-    (institute: any) => ({
-      label: institute.subtitle,
-      link: `/institutes/${institute.slug}`,
-    })
-  )
+  const currentLanguage = languageMap[i18n.language] || 'Language'
 
   const headerItems = [
-    { label: 'Институты', items: instituteMenuItems },
-    {
-      label: 'Об Университете',
-      items: [
-        { label: 'История', link: '/history' },
-        { label: 'Видение', link: '/vision' },
-        { label: 'Департамент качества образования', link: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya' },
-      ],
-    },
-    {
-      label: 'Абитуриентам',
-      items: [
-        { label: 'Подобрать программу', link: '#' },
-        { label: 'Направления', link: '#' },
-      ],
-    },
+    { label: 'Приемная комиссия 2025', link: '/admissions' },
+    { label: 'Абитуриентам', link: '/applicants' },
+    { label: 'Институты', link: '/institutes' },
+    { label: 'Колледжи', link: '/colleges' },
+    { label: 'Студентам', link: '/students' },
+    { label: 'Об Университете', link: '/about' },
   ]
 
   return (
     <header className="bg-[white] fixed top-0 left-0 w-full z-50 border-b border-gray">
       <div className="container mx-auto px-6 py-2 flex justify-between items-center">
-        <nav className="flex space-x-8 items-center">
+        <nav className="flex gap-2 items-center">
           <Link to="/" className="flex items-center gap-1 mr-5">
             <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
-            <p className="text-[10px] font-bold leading-[11px] ">
+            <p className="text-[10px] font-bold leading-[11px]">
               МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
               ТЕХНОЛОГИЙ
             </p>
           </Link>
           {headerItems.map((item, index) => (
-            <div
+            <Link
               key={index}
-              className="relative group lg:hidden"
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
+              to={item.link}
+              className="text-black text-sm font-medium hover:text-gray-400 border rounded-full hover:bg-green hover:text-white border-gray p-2"
             >
-              <button className="text-black text-md font-medium">
-                {item.label}
-                {activeIndex === index ? (
-                  <ArrowDropDownIcon className="rotate-180 text-[#3e3e3e]" />
-                ) : (
-                  <ArrowDropDownIcon className="text-[#3e3e3e]" />
-                )}
-              </button>
-              {activeIndex === index && (
-                <div className="absolute min-w-[260px] left-0 top-full bg-[#f4f5f6] mt-[-2px] text-gray-800 rounded-md shadow-lg group-hover:block max-h-[500px] overflow-y-scroll">
-                  <ul className="space-y-1">
-                    {item.items.map((subItem, subIndex) => (
-                      <li
-                        key={subIndex}
-                        className="hover:bg-green hover:text-white hover:roun"
-                      >
-                        <Link
-                          to={subItem.link}
-                          className="block px-4 py-2 leading-5 hover:bg-gray-200 rounded-md"
-                        > 
-                          {subItem.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+              {item.label}
+            </Link>
           ))}
         </nav>
         <div className="relative md:hidden">
           <button
-            className="text-[black] text-md font-meduim hover:text-gray-400 flex items-center"
+            className="text-[black] text-md   font-medium hover:text-gray-400 flex items-center"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
             <LanguageIcon className="mr-2" />
@@ -627,30 +749,16 @@ export const Header: React.FC = () => {
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 bg-white text-gray-800 rounded-md shadow-lg z-50">
               <ul className="py-2">
-                <li>
-                  <button
-                    className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
-                    onClick={() => handleLanguageChange('ru')}
-                  >
-                    Русский
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
-                    onClick={() => handleLanguageChange('en')}
-                  >
-                    English
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
-                    onClick={() => handleLanguageChange('ky')}
-                  >
-                    Кыргызча
-                  </button>
-                </li>
+                {Object.entries(languageMap).map(([key, label]) => (
+                  <li key={key}>
+                    <button
+                      className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
+                      onClick={() => handleLanguageChange(key)}
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
           )}
