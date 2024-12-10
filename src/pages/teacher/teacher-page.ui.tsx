@@ -8,6 +8,8 @@ import {
 import { Typography } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { staffQueries } from '~entities/staff'
+import teacherImg from './img/teacher-bg.jpg'
+import './index.css'
 
 export const TeacherPage = () => {
   const { slug } = useParams()
@@ -40,38 +42,40 @@ export const TeacherPage = () => {
   if (isSuccess) {
     return (
       <section
-        className="bg-cover bg-center  flex items-center justify-center py-20 bg-no-repeat w-full"
-        style={{
-          backgroundImage:
-            'url("https://propowerpoint.ru/fony/den-uchitelya/6.jpg")',
-        }}
+        className=" rounded-lg flex items-center justify-center py-10 mb-5 t w-full teacher"
+        // style={{
+        //   backgroundImage: `url(${teacherImg})`,
+        // }}
       >
         <div className="container mx-auto">
-          <div className="flex flex-col items-center justify-center mt-40 gap-10">
+          <div className="flex  items-center justify-center  gap-10">
             <div className="flex flex-col items-center justify-center gap-10">
-              <div className="flex justify-center w-36 border-3 border-solid border-black rounded-full shadow-lg">
+              <div className="flex justify-center  border-3 border-solid border-black rounded-full shadow-lg">
                 <img
                   src={staffData.data.image}
                   alt="User Avatar"
-                  className="w-36 h-36 border-3 border-solid border-black rounded-full shadow-lg"
+                  className=" w-[500px] rounded-lg  border-3 border-solid border-black  shadow-lg"
                 />
               </div>
-              <Typography variant="h4" className="font-bold text-white md:text-center">
+            </div>
+            <div className="flex flex-col  justify-center  gap-5 ">
+              <Typography
+                variant="h4"
+                className="font-bold text-white md:text-center"
+              >
                 {staffData.data.name}
               </Typography>
               <Typography
                 variant="body1"
-                className="text-center text-white text-lg max-w-md"
+                className="text-center text-white text-lg max-w-md self-center"
               >
                 {staffData.data.description}
               </Typography>
-            </div>
-            <div className="flex flex-wrap justify-center gap-5 ">
-              <div className="bg-green rounded-full transition-all hover:scale-105">
+              <div className="bg-green rounded-full   transition-all hover:scale-105">
                 <a
                   href={staffData.data.whatsapp}
                   target="_blank"
-                  className="flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
+                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
                 >
                   <WhatsApp className="mr-2" />
                   <span className="text-lg">WhatsApp</span>
@@ -81,7 +85,7 @@ export const TeacherPage = () => {
                 <a
                   href={staffData.data.telegram}
                   target="_blank"
-                  className="flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
+                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
                 >
                   <Telegram className="mr-2" />
                   <span className="text-lg">Telegram</span>
@@ -94,7 +98,7 @@ export const TeacherPage = () => {
                 <a
                   href={staffData.data.instagram}
                   target="_blank"
-                  className="flex items-center justify-around transition-all text-white m-1 py-3 px-5 w-1/6  "
+                  className="pointer flex items-center justify-around transition-all text-white m-1 py-3 px-5 w-1/6  "
                 >
                   <Instagram className="mr-2" />
                   <span className="text-lg">Instagram</span>
@@ -104,7 +108,7 @@ export const TeacherPage = () => {
                 <a
                   href={staffData.data.facebook}
                   target="_blank"
-                  className="flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
+                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
                 >
                   <Facebook className="mr-2" />
                   <span className="text-lg">Facebook</span>
@@ -114,7 +118,7 @@ export const TeacherPage = () => {
                 <a
                   href={staffData.data.cv}
                   target="_blank"
-                  className="flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
+                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
                 >
                   <ContactPage className="mr-2" />
                   <span className="text-lg">Резюме</span>
