@@ -726,7 +726,7 @@ export const Header: React.FC = () => {
             className="text-[black] text-md   font-medium hover:text-gray-400 flex items-center"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
-            <LanguageIcon className="mr-2" />
+            {/* <LanguageIcon className="mr-2" /> */}
             {currentLanguage}
             <svg
               className={`w-5 h-5 ml-2 transition-transform ${
