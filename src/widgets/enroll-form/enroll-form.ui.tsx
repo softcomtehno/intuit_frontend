@@ -44,7 +44,7 @@ export const EnrollForm = () => {
   }
 
   return (
-    <div className="bg-blue p-5 rounded-lg w-full">
+    <div className="bg-blue p-5 rounded-lg w-full mt-5">
       <Typography
           variant="h3"
           component="h3"
