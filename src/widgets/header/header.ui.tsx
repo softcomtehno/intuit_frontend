@@ -692,7 +692,7 @@ export const Header: React.FC = () => {
   const currentLanguage = languageMap[i18n.language] || 'Language'
 
   const headerItems = [
-    { label: 'Приемная комиссия 2025', link: '/admissions' },
+    // { label: 'Приемная комиссия 2025', link: '/admissions' },
     { label: 'Абитуриентам', link: '/applicants' },
     { label: 'Институты', link: '/institutes' },
     { label: 'Колледжи', link: '/colleges' },
