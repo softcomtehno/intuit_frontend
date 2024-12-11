@@ -1,30 +1,35 @@
-import { Typography, Container, Box, Link } from '@mui/material';
+import { Typography, Container, Box } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const AboutPage = () => {
   const links = [
     {
       title: 'История университета',
       description: 'Узнайте больше о богатой истории нашего университета.',
-      url: 'https://muit.makalabox.com/history',
+      url: '/history', // Внутренний маршрут
       image: 'https://via.placeholder.com/64',
+      isExternal: false,
     },
     {
       title: 'Видение университета',
       description: 'Наша миссия и цели в современном образовании.',
-      url: 'https://muit.makalabox.com/vision',
+      url: '/vision', // Внутренний маршрут
       image: 'https://via.placeholder.com/64',
+      isExternal: false,
     },
     {
       title: 'Департамент качества образования',
       description: 'Контроль и улучшение качества образовательных процессов.',
-      url: 'https://muit.makalabox.com/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya/',
+      url: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya/', // Внутренний маршрут
       image: 'https://via.placeholder.com/64',
+      isExternal: false,
     },
     {
       title: 'Рейтинг преподавательского состава',
       description: 'Посмотрите рейтинг лучших преподавателей университета.',
-      url: 'https://rating.makalabox.com/',
+      url: 'https://rating.makalabox.com/', // Внешний маршрут
       image: 'https://via.placeholder.com/64',
+      isExternal: true,
     },
   ];
 
@@ -91,22 +96,33 @@ export const AboutPage = () => {
               >
                 {link.description}
               </Typography>
-              <Link
-                href={link.url}
-                target="_blank"
-                rel="noopener"
-                underline="none"
-                sx={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  color: 'primary.main',
-                  '&:hover': {
-                    textDecoration: 'underline',
-                  },
-                }}
-              >
-                Перейти
-              </Link>
+              {link.isExternal ? (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#1976d2',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Перейти
+                </a>
+              ) : (
+                <RouterLink
+                  to={link.url}
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#1976d2',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Перейти
+                </RouterLink>
+              )}
             </Box>
           </Box>
         ))}
