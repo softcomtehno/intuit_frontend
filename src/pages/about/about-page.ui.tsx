@@ -1,4 +1,13 @@
-import { Typography, Container, Box } from '@mui/material';
+import {
+  Typography,
+  Container,
+  Box,
+  Grid,
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+} from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
 export const AboutPage = () => {
@@ -32,6 +41,39 @@ export const AboutPage = () => {
       isExternal: true,
     },
   ];
+  const structureItems = [
+    { title: 'Ученый Совет' },
+    { title: 'Совет по менеджменту качества образования' },
+    { title: 'Совет по государственному языку' },
+    { title: 'Учебно-методический совет' },
+    { title: 'Совет молодых ученых' },
+    { title: 'Департамент по обеспечению и контролю качества образования' },
+    { title: 'Учебное управление' },
+    { title: 'Институт цифровой трансформации и программирования' },
+    { title: 'Институт дизайна, архитектуры и текстиля' },
+    { title: 'Институт строительства и инновационных технологий' },
+    { title: 'Институт энергетики и транспорта' },
+    { title: 'Институт экономики и менеджмента' },
+    {
+      title: 'Российско-кыргызский институт автоматизации управления и бизнеса',
+    },
+    { title: 'Институт межкультурной коммуникации и психологии' },
+    { title: 'Институт дистанционного образования' },
+    { title: 'Кафедра «Философии и общественных наук»' },
+    { title: 'Кафедра «Рекреация, физкультура и спорт»' },
+    { title: 'Высшая школа экономики и менеджмента' },
+    { title: 'Школа креативной индустрии' },
+    { title: 'Центр повышения квалификации и дополнительного образования' },
+    { title: 'Центр поддержки технологий и инноваций' },
+    { title: 'Молодежный центр' },
+    { title: 'Центр компетенции по электронным закупкам' },
+    { title: 'Центр трудоустройства и карьеры' },
+    { title: 'Студенческий центр программирования' },
+    { title: 'Учебно-научно-производственные лаборатории' },
+    { title: 'Научно-информационная библиотека' },
+    { title: 'Медицинский пункт' },
+    { title: 'Спортивно-оздоровительный комплекс' },
+  ];
 
   return (
     <Container maxWidth="lg" className="py-10 px-4">
@@ -42,7 +84,34 @@ export const AboutPage = () => {
       >
         Об университете
       </Typography>
-
+      <section className="mb-10">
+        <Typography variant="h5" className="font-semibold text-gray-700 mb-6">
+          Структура МУИТ
+        </Typography>
+        <Grid container spacing={3}>
+          {structureItems.map((item, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Card className="h-full flex flex-col">
+                <CardContent className="flex-grow">
+                  <Typography className="font-base text-gray-700 mb-4">
+                    {item.title}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    size="small"
+                    color="primary"
+                    variant="contained"
+                    href={`#/${item.title.replace(/\s+/g, '-').toLowerCase()}`}
+                  >
+                    Узнать подробнее
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </section>
       <Box
         display="flex"
         flexDirection="column"
