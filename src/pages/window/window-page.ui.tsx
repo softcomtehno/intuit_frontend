@@ -28,16 +28,23 @@ export const WindowPage = () => {
       </Typography>
 
       <Typography className="text-gray-600 mb-6">
-        В целях реализации Концепции цифровой трансформации "Цифровой Кыргызстан 2019-2023" и обеспечения
-        качественного, своевременного оказания услуг, в МУИТ автоматизированы следующие виды услуг:
+        В целях реализации Концепции цифровой трансформации "Цифровой Кыргызстан
+        2019-2023" и обеспечения качественного, своевременного оказания услуг, в
+        МУИТ автоматизированы следующие виды услуг:
       </Typography>
 
       <TableContainer component={Paper} className="mb-8">
         <Table>
           <TableHead className="bg-gray-100">
             <TableRow>
-              <TableCell><Typography className="font-semibold">Услуга</Typography></TableCell>
-              <TableCell><Typography className="font-semibold">Срок выполнения</Typography></TableCell>
+              <TableCell>
+                <Typography className="font-semibold">Услуга</Typography>
+              </TableCell>
+              <TableCell>
+                <Typography className="font-semibold">
+                  Срок выполнения
+                </Typography>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -52,8 +59,8 @@ export const WindowPage = () => {
       </TableContainer>
 
       <Typography className="text-gray-600 mb-4">
-        Готовые справки можно получить в кабинете "Единое окно" (Учебное управление, каб. 346). При себе иметь
-        документ, удостоверяющий личность.
+        Готовые справки можно получить в кабинете "Единое окно" (Учебное
+        управление, каб. 346). При себе иметь документ, удостоверяющий личность.
       </Typography>
 
       <Typography className="text-gray-600 mb-6">
@@ -62,16 +69,15 @@ export const WindowPage = () => {
         Для студентов заочной формы обучения: +996-709-988-758
       </Typography>
 
-      <Grid container justifyContent="center">
-        <Button
-          variant="contained"
-          color="primary"
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2"
-          onClick={() => window.location.href = '/apply-for-document'}
+      <div>
+        <a
+        target='_blank'
+          href="http://178.217.169.139:3000/lms/login"
+          className=" border  p-2 rounded bg-green text-white border-white"
         >
           Подать заявку на справку
-        </Button>
-      </Grid>
+        </a>
+      </div>
     </Container>
   );
 };

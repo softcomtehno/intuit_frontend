@@ -9,35 +9,40 @@ import {
   Button,
 } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import RatingImg from "./rating.jpg";
+import VisionImg from "./vision.webp";
+import HistoryImg from "./history.jpg";
+import EducationImg from "./education.jpg";
+
 
 export const AboutPage = () => {
   const links = [
     {
       title: 'История университета',
       description: 'Узнайте больше о богатой истории нашего университета.',
-      url: '/history', // Внутренний маршрут
-      image: 'https://via.placeholder.com/64',
+      url: '/history', 
+      image: HistoryImg,
       isExternal: false,
     },
     {
       title: 'Видение университета',
       description: 'Наша миссия и цели в современном образовании.',
-      url: '/vision', // Внутренний маршрут
-      image: 'https://via.placeholder.com/64',
+      url: '/vision', 
+      image: VisionImg,
       isExternal: false,
     },
     {
       title: 'Департамент качества образования',
       description: 'Контроль и улучшение качества образовательных процессов.',
-      url: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya/', // Внутренний маршрут
-      image: 'https://via.placeholder.com/64',
+      url: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya/', 
+      image: EducationImg,
       isExternal: false,
     },
     {
       title: 'Рейтинг преподавательского состава',
       description: 'Посмотрите рейтинг лучших преподавателей университета.',
-      url: 'https://rating.makalabox.com/', // Внешний маршрут
-      image: 'https://via.placeholder.com/64',
+      url: 'https://rating.makalabox.com/',
+      image: RatingImg,
       isExternal: true,
     },
   ];
@@ -127,7 +132,7 @@ export const AboutPage = () => {
               border: '1px solid #e0e0e0',
               borderRadius: '8px',
               padding: '16px',
-              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+
               transition: 'transform 0.2s',
               '&:hover': {
                 transform: 'translateY(-4px)',
@@ -143,6 +148,7 @@ export const AboutPage = () => {
                 height: 64,
                 borderRadius: '8px',
                 marginRight: '16px',
+                objectFit:"cover"
               }}
             />
             <Box>
@@ -151,7 +157,6 @@ export const AboutPage = () => {
                 sx={{
                   fontWeight: '500',
                   color: 'text.primary',
-                  marginBottom: '4px',
                 }}
               >
                 {link.title}
@@ -160,7 +165,7 @@ export const AboutPage = () => {
                 variant="body2"
                 sx={{
                   color: 'text.secondary',
-                  marginBottom: '8px',
+
                 }}
               >
                 {link.description}

@@ -3,39 +3,83 @@ import {
   Container,
   Box,
   Link,
+  Tabs,
+  Tab,
+  Button,
 } from '@mui/material';
+import { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const StudentsPage = () => {
   const links = [
-    { 
-      title: 'Единое окно', 
+    {
+      title: 'Единое окно',
       description: 'Централизованный доступ ко всем сервисам.',
-      url: 'https://example.com/dashboard', 
-      image: 'https://via.placeholder.com/64'
+      url: '/window',
+      image: 'https://via.placeholder.com/64',
+      isExternal: false,
     },
-    { 
-      title: 'Расписание', 
-      description: 'Посмотрите актуальное расписание занятий.',
-      url: 'https://example.com/schedule', 
-      image: 'https://via.placeholder.com/64'
-    },
-    { 
-      title: 'НИБ', 
+    {
+      title: 'НИБ',
       description: 'Научно-исследовательская база.',
-      url: 'https://example.com/nib', 
-      image: 'https://via.placeholder.com/64'
+      url: 'https://lib-intuit.online/',
+      image: 'https://via.placeholder.com/64',
+      isExternal: true,
     },
-    { 
-      title: 'Moodle', 
+    {
+      title: 'Moodle',
       description: 'Система управления обучением.',
-      url: 'https://example.com/moodle', 
-      image: 'https://via.placeholder.com/64'
+      url: 'https://moodle.intuit.kg/',
+      image: 'https://via.placeholder.com/64',
+      isExternal: true,
     },
-    { 
-      title: 'Makalabox', 
-      description: 'это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
-      url: 'https://makalabox.com', 
-      image: 'https://via.placeholder.com/64'
+    {
+      title: 'Makalabox',
+      description:
+        'это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
+      url: 'https://makalabox.com',
+      image: 'https://via.placeholder.com/64',
+      isExternal: true,
+    },
+  ];
+
+  const [activeTab, setActiveTab] = useState('bachelor');
+
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
+
+  const tabs = [
+    {
+      label: 'Бакалавриат',
+      value: 'bachelor',
+      courses: [
+        { name: '1 курс', url: '/bachelor/1' },
+        { name: '2 курс', url: '/bachelor/2' },
+        { name: '3 курс', url: '/bachelor/3' },
+        { name: '4 курс', url: '/bachelor/4' },
+      ],
+    },
+    {
+      label: 'Магистратура',
+      value: 'master',
+      courses: [
+        { name: '1 курс', url: '/master/1' },
+        { name: '2 курс', url: '/master/2' },
+      ],
+    },
+    {
+      label: 'Аспирантура',
+      value: 'postgraduate',
+      courses: [
+        { name: '1 курс', url: '/postgraduate/1' },
+        { name: '2 курс', url: '/postgraduate/2' },
+      ],
+    },
+    {
+      label: 'PHD',
+      value: 'phd',
+      courses: [{ name: '1 курс', url: '/phd/1' }],
     },
   ];
 
@@ -46,13 +90,52 @@ export const StudentsPage = () => {
         className="font-bold text-center mb-8 text-gray-800"
         style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
       >
+        Расписание
+      </Typography>
+      <Tabs
+        value={activeTab}
+        onChange={handleTabChange}
+        className="text-green"
+        TabIndicatorProps={{
+          style: { backgroundColor: 'green' }, // Нижняя линия
+        }}
+      >
+        {tabs.map((tab) => (
+          <Tab
+            key={tab.value}
+            className="text-black"
+            label={tab.label}
+            value={tab.value}
+          />
+        ))}
+      </Tabs>
+      <Box className="flex" gap={2} mt={4}>
+        {tabs
+          .find((tab) => tab.value === activeTab)
+          ?.courses.map((course, index) => (
+            <Button
+              key={index}
+              variant="contained"
+              className="bg-green shadow-none px-10"
+              component={RouterLink}
+              to={course.url}
+              sx={{ textTransform: 'none' }}
+            >
+              {course.name}
+            </Button>
+          )) || <Typography>Нет доступных курсов</Typography>}
+      </Box>
+      <Typography
+        variant="h4"
+        className="font-bold text-center mb-8 text-gray-800"
+        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
+      >
         Студентам
       </Typography>
-
-      <Box 
-        display="flex" 
-        flexDirection="column" 
-        gap={2} 
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap={2}
         className="notion-like-embed"
       >
         {links.map((link, index) => (
@@ -102,22 +185,33 @@ export const StudentsPage = () => {
               >
                 {link.description}
               </Typography>
-              <Link
-                href={link.url}
-                target="_blank"
-                rel="noopener"
-                underline="none"
-                sx={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  color: 'primary.main',
-                  '&:hover': {
-                    textDecoration: 'underline',
-                  },
-                }}
-              >
-                Перейти
-              </Link>
+              {link.isExternal ? (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#1976d2',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Перейти
+                </a>
+              ) : (
+                <RouterLink
+                  to={link.url}
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#1976d2',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Перейти
+                </RouterLink>
+              )}
             </Box>
           </Box>
         ))}
