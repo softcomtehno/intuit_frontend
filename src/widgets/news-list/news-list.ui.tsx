@@ -5,14 +5,14 @@ import { useState } from 'react'
 export const NewsList = () => {
   const { data, isError, isLoading } = newsQueries.useGetNews()
   const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 3 
+  const itemsPerPage = 3
 
   if (isLoading) return <div>Загрузка...</div>
   if (isError) return <div>Ошибка при загрузке новостей</div>
   if (!data?.data) return <div>Нет данных</div>
 
   const startIndex = (currentPage - 1) * itemsPerPage
-  const currentNews = data.data.slice(startIndex, startIndex + itemsPerPage)
+  const currentNews = data.data.results.slice(startIndex, startIndex + itemsPerPage)
   const totalPages = Math.ceil(data.data.length / itemsPerPage)
 
   return (
