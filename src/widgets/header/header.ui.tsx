@@ -692,7 +692,7 @@ export const Header: React.FC = () => {
   const currentLanguage = languageMap[i18n.language] || 'Language'
 
   const headerItems = [
-    { label: 'Приемная комиссия 2025', link: '/admissions' },
+    // { label: 'Приемная комиссия 2025', link: '/admissions' },
     { label: 'Абитуриентам', link: '/applicants' },
     { label: 'Институты', link: '/institutes' },
     { label: 'Колледжи', link: '/colleges' },
@@ -723,7 +723,7 @@ export const Header: React.FC = () => {
         </nav>
         <div className="relative md:hidden">
           <button
-            className="text-[black] text-md   font-medium hover:text-gray-400 flex items-center"
+            className="text-[black] text-md font-medium hover:text-gray-400 flex items-center"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
             {/* <LanguageIcon className="mr-2" /> */}
@@ -745,7 +745,6 @@ export const Header: React.FC = () => {
               ></path>
             </svg>
           </button>
-
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 bg-white text-gray-800 rounded-md shadow-lg z-50">
               <ul className="py-2">

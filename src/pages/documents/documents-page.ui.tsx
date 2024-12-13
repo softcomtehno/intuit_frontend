@@ -27,7 +27,6 @@ export const DocumentsPage = () => {
       title: 'Документ 3',
       url: 'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B0.png',
     },
-    // Добавьте больше документов, если нужно
   ];
   return (
     <Container maxWidth="lg" className="py-10 px-4">
