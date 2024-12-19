@@ -85,7 +85,7 @@ export const AboutPage = () => {
       <Typography
         variant="h4"
         className="font-bold text-center mb-8 text-gray-800"
-        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
+        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.4rem)' }}
       >
         Об университете
       </Typography>
@@ -93,7 +93,7 @@ export const AboutPage = () => {
         display="flex"
         flexDirection="column"
         gap={2}
-        className="notion-like-embed"
+        className="notion-like-embed embed code notion-like-embed  mb-20"
       >
         {links.map((link, index) => (
           <Box
@@ -174,7 +174,7 @@ export const AboutPage = () => {
         ))}
       </Box>
       <section className="mb-10">
-        <Typography variant="h5" className="font-semibold text-gray-700 mb-6">
+        <Typography variant="h5" className="font-bold text-black text-xxl mb-5">
           Структура МУИТ
         </Typography>
         <Grid container spacing={3}>
@@ -191,6 +191,7 @@ export const AboutPage = () => {
                     size="small"
                     color="primary"
                     variant="contained"
+                    className='shadow-none'
                     href={`#/${item.title.replace(/\s+/g, '-').toLowerCase()}`}
                   >
                     Узнать подробнее
