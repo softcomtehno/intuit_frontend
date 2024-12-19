@@ -45,6 +45,13 @@ export const AboutPage = () => {
       image: RatingImg,
       isExternal: true,
     },
+    {
+      title: 'CSSTEAP',
+      description: 'Centre for Space Science and Technology Education in Asia and the Pacific',
+      url: '/cssteapun',
+      image: RatingImg,
+      isExternal: false,
+    },
   ];
   const structureItems = [
     { title: 'Ученый Совет' },
