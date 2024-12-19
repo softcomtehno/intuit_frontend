@@ -53,6 +53,8 @@ export const AboutPage = () => {
       isExternal: false,
     },
   ];
+
+  
   const structureItems = [
     { title: 'Ученый Совет' },
     { title: 'Совет по менеджменту качества образования' },
