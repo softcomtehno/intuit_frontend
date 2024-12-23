@@ -22,6 +22,7 @@ import { studentsPageRoute } from '~pages/students'
 import { applicantsPageRoute } from '~pages/applicants'
 import { admissionsPageRoute } from '~pages/admissions'
 import { windowPageRoute } from '~pages/window/window-page.route'
+import { teapunPageRoute } from '~pages/teapun'
 
 
 
@@ -55,7 +56,8 @@ const router = createBrowserRouter([
           studentsPageRoute,
           applicantsPageRoute,
           admissionsPageRoute,
-          windowPageRoute
+          windowPageRoute,
+          teapunPageRoute
         ],
       },
     ],

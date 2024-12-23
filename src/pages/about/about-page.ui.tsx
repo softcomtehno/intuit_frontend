@@ -45,7 +45,16 @@ export const AboutPage = () => {
       image: RatingImg,
       isExternal: true,
     },
+    {
+      title: 'CSSTEAP',
+      description: 'Centre for Space Science and Technology Education in Asia and the Pacific',
+      url: '/cssteapun',
+      image: RatingImg,
+      isExternal: false,
+    },
   ];
+
+  
   const structureItems = [
     { title: 'Ученый Совет' },
     { title: 'Совет по менеджменту качества образования' },
@@ -85,43 +94,15 @@ export const AboutPage = () => {
       <Typography
         variant="h4"
         className="font-bold text-center mb-8 text-gray-800"
-        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
+        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.4rem)' }}
       >
         Об университете
       </Typography>
-      <section className="mb-10">
-        <Typography variant="h5" className="font-semibold text-gray-700 mb-6">
-          Структура МУИТ
-        </Typography>
-        <Grid container spacing={3}>
-          {structureItems.map((item, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-              <Card className="h-full flex flex-col">
-                <CardContent className="flex-grow">
-                  <Typography className="font-base text-gray-700 mb-4">
-                    {item.title}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button
-                    size="small"
-                    color="primary"
-                    variant="contained"
-                    href={`#/${item.title.replace(/\s+/g, '-').toLowerCase()}`}
-                  >
-                    Узнать подробнее
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </section>
       <Box
         display="flex"
         flexDirection="column"
         gap={2}
-        className="notion-like-embed"
+        className="notion-like-embed embed code notion-like-embed  mb-20"
       >
         {links.map((link, index) => (
           <Box
@@ -201,6 +182,35 @@ export const AboutPage = () => {
           </Box>
         ))}
       </Box>
+      <section className="mb-10">
+        <Typography variant="h5" className="font-bold text-black text-xxl mb-5">
+          Структура МУИТ
+        </Typography>
+        <Grid container spacing={3}>
+          {structureItems.map((item, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Card className="h-full flex flex-col">
+                <CardContent className="flex-grow">
+                  <Typography className="font-base text-gray-700 mb-4">
+                    {item.title}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    size="small"
+                    color="primary"
+                    variant="contained"
+                    className='shadow-none'
+                    href={`#/${item.title.replace(/\s+/g, '-').toLowerCase()}`}
+                  >
+                    Узнать подробнее
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </section>
     </Container>
   );
 };
