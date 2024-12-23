@@ -2,8 +2,8 @@ import { NewsCard, newsQueries } from '~entities/news'
 import { Typography, Pagination } from '@mui/material'
 import { useState } from 'react'
 
-export const NewsList = () => {
-  const { data, isError, isLoading } = newsQueries.useGetNews()
+export const NewsList = ({ id }) => {
+  const { data, isError, isLoading } = newsQueries.useGetNewsInstitutes(id)
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3
 
@@ -12,7 +12,10 @@ export const NewsList = () => {
   if (!data?.data) return <div>Нет данных</div>
 
   const startIndex = (currentPage - 1) * itemsPerPage
-  const currentNews = data.data.results.slice(startIndex, startIndex + itemsPerPage)
+  const currentNews = data.data.results.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  )
   const totalPages = Math.ceil(data.data.length / itemsPerPage)
 
   return (
