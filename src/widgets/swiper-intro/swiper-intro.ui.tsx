@@ -6,7 +6,7 @@ import 'swiper/css/pagination'
 import { EffectFade, Navigation, Pagination } from 'swiper/modules'
 import { IntroCard } from '~entities/intro'
 import { useTranslation } from 'react-i18next'
-import Intro from "./intro.png";
+import Intro from "./iiio.png";
 
 export const SwiperIntro = () => {
   const { t } = useTranslation()
