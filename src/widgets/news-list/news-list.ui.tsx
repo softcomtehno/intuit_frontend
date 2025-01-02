@@ -2,8 +2,11 @@ import { NewsCard, newsQueries } from '~entities/news'
 import { Typography, Pagination } from '@mui/material'
 import { useState } from 'react'
 
-export const NewsList = ({ id }) => {
-  const { data, isError, isLoading } = newsQueries.useGetNewsInstitutes(id)
+export const NewsList = ({ id = null }) => {
+  // Определяем, какой запрос использовать
+  const { data, isError, isLoading } = id
+    ? newsQueries.useGetNewsInstitutes(id)
+    : newsQueries.useGetNews()
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3
 
@@ -43,8 +46,8 @@ export const NewsList = ({ id }) => {
           className="rounded-lg shadow-md p-2"
           sx={{
             '& .MuiPaginationItem-root.Mui-selected': {
-              color: 'white', // Цвет текста для выбранного элемента
-              backgroundColor: '#00956F', // Зелёный фон для выбранного элемента
+              color: 'white',
+              backgroundColor: '#00956F',
             },
           }}
         />
