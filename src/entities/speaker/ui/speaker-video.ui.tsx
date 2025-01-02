@@ -1,21 +1,18 @@
-import { Box, Button, IconButton, Modal, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { PlayCircleFilledRounded } from '@mui/icons-material/'
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded'
+import { MaterialModal } from '~shared/ui/modal'
+import { useState } from 'react'
 
-export const SpeakerVideo = ({
-  name,
-  description,
-  videoUrl,
-  preview,
-  open,
-  handleOpen,
-  handleClose,
-}) => {
-  const getYouTubeEmbedUrl = (url) => {
-    const videoId = url.split('v=')[1]?.split('&')[0]
-    return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : ''
-  }
-
+export const SpeakerVideo = ({ name, description, preview, videoUrl }) => {
+  // const getYouTubeEmbedUrl = (url) => {
+  //   const videoId = url.split('v=')[1]?.split('&')[0]
+  //   return videoId
+  //     ? `https://www.youtube.com/embed/${videoId}?rel=0`
+  //     : 'https://www.youtube.com/watch?v=2Y-Xa1h77KI'
+  // }
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
   return (
     <>
       <Box
@@ -71,7 +68,7 @@ export const SpeakerVideo = ({
           </Typography>
         </Box>
       </Box>
-      <Modal
+      {/* <Modal
         open={open}
         onClose={handleClose}
         BackdropProps={{
@@ -100,7 +97,7 @@ export const SpeakerVideo = ({
             }}
           >
             <Typography className="font-medium" variant="h4">
-              Отзыв
+              Отзыв {name}
             </Typography>
             <IconButton onClick={handleClose}>
               <CancelRoundedIcon />
@@ -121,7 +118,12 @@ export const SpeakerVideo = ({
             allowFullScreen
           ></iframe>
         </Box>
-      </Modal>
+      </Modal> */}
+      <MaterialModal
+        videoUrl={videoUrl}
+        handleClose={handleClose}
+        open={open}
+      ></MaterialModal>
     </>
   )
 }

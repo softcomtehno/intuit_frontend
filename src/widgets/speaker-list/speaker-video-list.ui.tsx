@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { speakerQueries } from '~entities/speaker'
 import { SpeakerVideo } from '~entities/speaker'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -13,7 +13,7 @@ interface SpeakerVideoListProps {
 }
 
 export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
-  facultyId,
+  facultyId = null,
 }) => {
   const {
     data: filteredSpeakersData,
@@ -26,9 +26,7 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
     isLoading: isAllLoading,
     isError: isAllError,
   } = speakerQueries.useGetSpeakers()
-  const [open, setOpen] = useState(false)
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+
 
   const isLoading = isFilteredLoading || isAllLoading
   const isError = isFilteredError && isAllError
@@ -49,6 +47,8 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
   if (!speakersData || speakersData.length === 0) {
     return <div>Нет данных для отображения</div>
   }
+
+  console.log(allSpeakersData)
 
   return (
     <>
@@ -72,9 +72,7 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
             <SwiperSlide key={i}>
               <SpeakerVideo
                 {...item}
-                open={open}
-                handleOpen={handleOpen}
-                handleClose={handleClose}
+                
               ></SpeakerVideo>
             </SwiperSlide>
           )
