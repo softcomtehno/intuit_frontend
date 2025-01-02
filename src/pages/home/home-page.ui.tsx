@@ -1,17 +1,17 @@
-import StaffList from '~widgets/staff-list/staff-list.ui';
-import { SwiperIntro } from '~widgets/swiper-intro';
-import { EnrollForm } from '~widgets/enroll-form';
-import { DiplomList } from '~widgets/diplom-list';
-import { SpeakerVideoList } from '~widgets/speaker-list';
-import { PartnersList } from '~widgets/partners-list';
-import { OpportunitiesList } from '~widgets/opportunities-list';
-import { DegreeCategory } from './ui/DegreeCategory.ui';
-import { ProgramCategory } from '~widgets/programm-category';
-import { AboutBlock } from './ui/AboutBlock.ui';
-import { ArticleList } from '~widgets/article-list/article-list.ui';
-import { Typography } from '@mui/material';
-import { License } from './ui/License.ui';
-import { NewsList } from '~widgets/news-list';
+import StaffList from '~widgets/staff-list/staff-list.ui'
+import { SwiperIntro } from '~widgets/swiper-intro'
+import { EnrollForm } from '~widgets/enroll-form'
+import { DiplomList } from '~widgets/diplom-list'
+import { SpeakerVideoList } from '~widgets/speaker-list'
+import { PartnersList } from '~widgets/partners-list'
+import { OpportunitiesList } from '~widgets/opportunities-list'
+import { DegreeCategory } from './ui/DegreeCategory.ui'
+import { ProgramCategory } from '~widgets/programm-category'
+import { AboutBlock } from './ui/AboutBlock.ui'
+import { ArticleList } from '~widgets/article-list/article-list.ui'
+import { Typography } from '@mui/material'
+import { License } from './ui/License.ui'
+import { NewsList } from '~widgets/news-list'
 
 export function HomePage() {
   return (
@@ -35,7 +35,7 @@ export function HomePage() {
         >
           Преподавательский состав
         </Typography>
-        <StaffList filterByRanks={['professor', 'doctor']} />
+        <StaffList filterByRanks={['doctor ', 'professor']} />
       </div>
       <NewsList />
       <PartnersList />
@@ -43,5 +43,5 @@ export function HomePage() {
       <EnrollForm />
       <SpeakerVideoList />
     </div>
-  );
+  )
 }
