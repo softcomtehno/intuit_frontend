@@ -48,7 +48,6 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
     return <div>Нет данных для отображения</div>
   }
 
-  console.log(allSpeakersData)
 
   return (
     <>

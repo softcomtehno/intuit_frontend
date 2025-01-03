@@ -12,7 +12,6 @@ export const EnrollForm = () => {
     phone: '',
     email: '',
   })
-  console.log(window.location)
 
   const mutation = useMutation({
     mutationFn: () =>
@@ -46,12 +45,12 @@ export const EnrollForm = () => {
   return (
     <div className="bg-blue p-5 rounded-lg w-full mt-5">
       <Typography
-          variant="h3"
-          component="h3"
-          className="text-[2.5rem] font-semibold text-[white] lg:text-[40px] md:!text-[30px]"
-        >
-     {t('homepage.enrollForm.title')}
-        </Typography>
+        variant="h3"
+        component="h3"
+        className="text-[2.5rem] font-semibold text-[white] lg:text-[40px] md:!text-[30px]"
+      >
+        {t('homepage.enrollForm.title')}
+      </Typography>
       <div>
         <div className="flex items-center gap-2 lg:flex-col">
           <fieldset className="text-xs flex gap-2 lg:flex-col">

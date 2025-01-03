@@ -18,11 +18,10 @@ const StaffList: React.FC<StaffListProps> = ({
   filterByFaculty,
 }) => {
   const { t } = useTranslation()
-  const [selectedPosition, setSelectedPosition] = useState<number | null>(null)
+  const [selectedPosition, setSelectedPosition] = useState<number | null>(29)
 
   const {
     data: staffData,
-    isSuccess: isStaffSuccess,
     isError: isStaffError,
     isLoading: isStaffLoading,
   } = staffQueries.useGetStaffs()
@@ -41,24 +40,11 @@ const StaffList: React.FC<StaffListProps> = ({
     return <div>{t('homepage.loading.error')}</div>
   }
 
-  const filteredAndSortedStaff = isStaffSuccess
-    ? staffData.data
-        .filter((staff: staffTypes.Staff) => {
-          const rankMatches =
-            !filterByRanks || filterByRanks.includes(staff.rank)
-          const facultyMatches =
-            !filterByFaculty || staff.faculty.includes(filterByFaculty)
-          const positionMatches =
-            selectedPosition === null ||
-            staff.position?.level === selectedPosition
-          return rankMatches && facultyMatches && positionMatches
-        })
-        .sort((a: staffTypes.Staff, b: staffTypes.Staff) => b.status - a.status)
-    : []
-
-  if (!filteredAndSortedStaff.length) {
-    return <div>{t('homepage.noResults')}</div>
-  }
+  const filterData = staffData?.data.filter((staff) => {
+    if (staff.position.id == selectedPosition) {
+      return staff
+    }
+  })
 
   return (
     <div>
@@ -79,17 +65,11 @@ const StaffList: React.FC<StaffListProps> = ({
                 <Button
                   key={position.id}
                   className={` ${
-                    selectedPosition === position.level
+                    selectedPosition === position.id
                       ? 'bg-blue text-white'
                       : 'bg-green'
                   }`}
-                  onClick={() =>
-                    setSelectedPosition(
-                      selectedPosition === position.level
-                        ? null
-                        : position.level
-                    )
-                  }
+                  onClick={() => setSelectedPosition(position.id)}
                 >
                   {position.title}
                 </Button>
@@ -107,11 +87,12 @@ const StaffList: React.FC<StaffListProps> = ({
         slidesPerView={2.5}
         pagination={{ clickable: true }}
       >
-        {filteredAndSortedStaff.map((staff: staffTypes.Staff) => (
-          <SwiperSlide key={staff.id} className="shadow-lg rounded-lg">
-            <StaffCard {...staff} />
-          </SwiperSlide>
-        ))}
+        {filterData &&
+          filterData.map((staff: staffTypes.staff) => (
+            <SwiperSlide key={staff.id} className="shadow-lg rounded-lg">
+              <StaffCard {...staff} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   )

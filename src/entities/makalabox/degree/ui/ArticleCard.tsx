@@ -4,23 +4,33 @@ import {
   CardContent,
   CardMedia,
   Typography,
-} from '@mui/material';
-import { articleTypes } from '..';
+} from '@mui/material'
+import { articleTypes } from '..'
+import { useNavigate } from 'react-router-dom'
 
-type ArticleCardProps = { article: articleTypes.Article };
+type ArticleCardProps = { article: articleTypes.Article }
 
 export const ArticleCard = (props: ArticleCardProps) => {
   const truncateText = (text: string, maxLength: number) => {
-    return text.length > maxLength
-      ? text.substring(0, maxLength) + '...'
-      : text;
-  };
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text
+  }
+
+  const navigate = useNavigate()
+
   return (
     <Card className="shadow-none border border-gray" sx={{ maxWidth: 365 }}>
-      <a
-        href={`https://makalabox.com/article/${props.article.id}/`}
-        target="_blank"
-        rel="noopener noreferrer"
+      <div
+        className="pointer"
+        onClick={() =>
+          window.open(
+            `https://makalabox.com/article/${props.article.id}/`,
+            '_blank',
+            'noopener, noreferrer'
+          )
+        }
+        // href={`https://makalabox.com/article/${props.article.id}/`}
+        // target="_blank"
+        // rel="noopener noreferrer"
       >
         <CardActionArea>
           <CardMedia
@@ -50,7 +60,7 @@ export const ArticleCard = (props: ArticleCardProps) => {
             </Typography>
           </CardContent>
         </CardActionArea>
-      </a>
+      </div>
     </Card>
-  );
-};
+  )
+}
