@@ -35,7 +35,7 @@ export function HomePage() {
         >
           Преподавательский состав
         </Typography>
-        <StaffList filterByRanks={['professor', 'doctor ']} />
+        <StaffList />
       </div>
       <NewsList />
       <PartnersList />

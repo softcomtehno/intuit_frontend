@@ -13,10 +13,7 @@ interface StaffListProps {
   filterByFaculty?: number // Например: 3
 }
 
-const StaffList: React.FC<StaffListProps> = ({
-  filterByRanks,
-  filterByFaculty,
-}) => {
+const StaffList: React.FC<StaffListProps> = () => {
   const { t } = useTranslation()
   const [selectedPosition, setSelectedPosition] = useState<number | null>(29)
 
