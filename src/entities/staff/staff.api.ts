@@ -8,7 +8,6 @@ export const getStaffDetailsQuery = (string: string) => {
   return apiClient.get(`university/staffs/${string}/`);
 };
 
-
 export const getSortStaffs = (faculty:string) => {
   const params = new URLSearchParams();
 
@@ -18,3 +17,7 @@ export const getSortStaffs = (faculty:string) => {
 
   return apiClient.get(`university/staffs/?${params.toString()}`);
 };
+
+export const getStaffLevels = () =>{
+  return apiClient.get('university/staffs/positions/')
+}

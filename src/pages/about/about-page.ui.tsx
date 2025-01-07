@@ -52,6 +52,13 @@ export const AboutPage = () => {
       image: RatingImg,
       isExternal: false,
     },
+    {
+      title: 'Ректорат',
+      description: 'Узнайте больше о нашем Ректорате',
+      url: '/head',
+      image: "https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg",
+      isExternal: false,
+    },
   ];
 
   
@@ -182,7 +189,7 @@ export const AboutPage = () => {
           </Box>
         ))}
       </Box>
-      <section className="mb-10">
+      {/* <section className="mb-10">
         <Typography variant="h5" className="font-bold text-black text-xxl mb-5">
           Структура МУИТ
         </Typography>
@@ -210,7 +217,7 @@ export const AboutPage = () => {
             </Grid>
           ))}
         </Grid>
-      </section>
+      </section> */}
     </Container>
   );
 };
