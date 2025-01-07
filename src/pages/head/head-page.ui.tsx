@@ -23,39 +23,39 @@ export const HeadPage = () => {
     },
     {
       title: 'План ректората апрель-июль 2021',
-      link: 'https://muit.makalabox.com/documents/rectorate_april_2021.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_april_2021.pdf',
     },
     {
       title: 'План заседаний ректората ноябрь 2021',
-      link: 'https://muit.makalabox.com/documents/rectorate_november_2022.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_november_2022.pdf',
     },
     {
       title: 'План заседаний ректората декабрь 2021 - январь 2022',
-      link: 'https://muit.makalabox.com/documents/rectorate_december_2022.docx',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_december_2022.docx',
     },
     {
       title: 'План заседаний ректората февраль - июль 2022',
-      link: 'https://muit.makalabox.com/documents/rectorate_febraury_2022.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_febraury_2022.pdf',
     },
     {
       title: 'План заседаний ректората октябрь 2022 - январь 2023',
-      link: 'https://muit.makalabox.com/documents/rectorate_octember_2023.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_octember_2023.pdf',
     },
     {
       title: 'План заседаний ректората январь - август 2023',
-      link: 'https://muit.makalabox.com/documents/rectorate_january_2023.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_january_2023.pdf',
     },
     {
       title: 'План заседаний ректората август - декабрь 2023',
-      link: 'https://muit.makalabox.com/documents/rectorate_august_2023.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_august_2023.pdf',
     },
     {
       title: 'План заседаний ректората январь-август 2024',
-      link: 'https://muit.makalabox.com/documents/rectorate_january_2024.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_january_2024.pdf',
     },
     {
       title: 'План заседаний ректората август - декабрь 2024',
-      link: 'https://muit.makalabox.com/documents/rectorate_august_2024.pdf',
+      link: 'https://muit.makalabox.com/documents/head/rectorate_august_2024.pdf',
     },
   ];
 
