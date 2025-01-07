@@ -1,45 +1,53 @@
-import { Box, Typography } from '@mui/material';
-import { speakerQueries } from '~entities/speaker';
-import { SpeakerVideo } from '~entities/speaker';
+import { Typography } from '@mui/material'
+import { speakerQueries } from '~entities/speaker'
+import { SpeakerVideo } from '~entities/speaker'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Scrollbar } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/scrollbar'
+import './index.css'
+import { useState } from 'react'
 
 interface SpeakerVideoListProps {
-  facultyId?: number;
+  facultyId?: number
 }
 
 export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
-  facultyId,
+  facultyId = null,
 }) => {
   const {
     data: filteredSpeakersData,
     isLoading: isFilteredLoading,
     isError: isFilteredError,
-  } = speakerQueries.useGetSpeakers(facultyId);
+  } = speakerQueries.useGetSpeakers(facultyId)
 
   const {
     data: allSpeakersData,
     isLoading: isAllLoading,
     isError: isAllError,
-  } = speakerQueries.useGetSpeakers();
+  } = speakerQueries.useGetSpeakers()
 
-  const isLoading = isFilteredLoading || isAllLoading;
-  const isError = isFilteredError && isAllError;
+
+  const isLoading = isFilteredLoading || isAllLoading
+  const isError = isFilteredError && isAllError
 
   const speakersData =
     filteredSpeakersData?.data?.length > 0
       ? filteredSpeakersData.data
-      : allSpeakersData?.data;
+      : allSpeakersData?.data
 
   if (isLoading) {
-    return <div>Загрузка...</div>;
+    return <div>Загрузка...</div>
   }
 
   if (isError) {
-    return <div>Ошибка загрузки данных</div>;
+    return <div>Ошибка загрузки данных</div>
   }
 
   if (!speakersData || speakersData.length === 0) {
-    return <div>Нет данных для отображения</div>;
+    return <div>Нет данных для отображения</div>
   }
+
 
   return (
     <>
@@ -50,18 +58,25 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
       >
         Отзывы студентов
       </Typography>
-      <Box className="py-10 cursor-pointer grid grid-cols-5 gap-5 md:grid-cols-subgrid">
+
+      <Swiper
+        className="py-10 pointer"
+        slidesPerView={5}
+        scrollbar={{}}
+        modules={[Scrollbar]}
+        spaceBetween={30} // Увеличиваем расстояние между элементами
+      >
         {speakersData.map((item, i) => {
-          if (i <= 4) {
-            return (
-              <div className="flex justify-center" key={i}>
-                <SpeakerVideo {...item} />
-              </div>
-            );
-          }
-          return null;
+          return (
+            <SwiperSlide key={i}>
+              <SpeakerVideo
+                {...item}
+                
+              ></SpeakerVideo>
+            </SwiperSlide>
+          )
         })}
-      </Box>
+      </Swiper>
     </>
-  );
-};
+  )
+}

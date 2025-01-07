@@ -13,7 +13,6 @@ export const PartnersList = () => {
     isError,
   } = partnersQueries.useGetPartners()
 
-  console.log(partnersData)
   if (isLoading) {
     return <div>{t('homepage.loading.loading')}</div>
   }

@@ -1,9 +1,10 @@
-import { Typography } from '@mui/material';
-import { facultyApi, facultyQueries } from '~entities/faculties';
-import { IntroCard } from '~entities/intro';
-import { EnrollForm } from '~widgets/enroll-form';
-import { FacultyCard } from '~widgets/faculty-card';
-import { OpportunitiesList } from '~widgets/opportunities-list';
+import { Typography } from '@mui/material'
+import { facultyApi, facultyQueries } from '~entities/faculties'
+import { IntroCard } from '~entities/intro'
+import { EnrollForm } from '~widgets/enroll-form'
+import { FacultyCard } from '~widgets/faculty-card'
+import { OpportunitiesList } from '~widgets/opportunities-list'
+import intro from './img/intro.png'
 
 // const institutes = [
 //   { name: 'Институт Цифровой Трансформации и Программирования', programs: 15 },
@@ -21,15 +22,19 @@ import { OpportunitiesList } from '~widgets/opportunities-list';
 // ];
 
 export const InstitutesPage = () => {
-  const { data:facultyData, isLoading, isError } = facultyQueries.useGetFaculties()
+  const {
+    data: facultyData,
+    isLoading,
+    isError,
+  } = facultyQueries.useGetFaculties()
 
   if (isLoading) {
-    return <div>Произошла Ошибка</div>;
+    return <div>Произошла Ошибка</div>
   }
   if (isError) {
-    return <div>Произошла Ошибка</div>;
+    return <div>Произошла Ошибка</div>
   }
-  console.log('data', facultyData?.data);
+  console.log('data', facultyData?.data)
 
   return (
     <div className="my-5 mb-10">
@@ -37,9 +42,7 @@ export const InstitutesPage = () => {
         description={
           'С университетом МУИТ вы получаете качественное образование и востребованные в современном мире профессии.'
         }
-        img={
-          'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_2_lg.webp'
-        }
+        img={intro}
         title={'Институты '}
       ></IntroCard>
       <div className="my-5">
@@ -60,5 +63,5 @@ export const InstitutesPage = () => {
       <OpportunitiesList />
       <EnrollForm />
     </div>
-  );
-};
+  )
+}
