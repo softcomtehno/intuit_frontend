@@ -59,7 +59,7 @@ export const HeadPage = () => {
     },
     {
       title: 'План заседаний ректората январь - август 2025',
-      link: 'https://muit.makalabox.com/documents/head/rectorat_januar_2025.pdf'
+      link: 'https://muit.makalabox.com/documents/head/rectorate_januar_2025.pdf'
     }
   ];
 
