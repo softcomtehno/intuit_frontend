@@ -1,19 +1,16 @@
 import { Typography } from '@mui/material'
-import { speakerQueries } from '~entities/speaker'
-import { SpeakerVideo } from '~entities/speaker'
+import { speakerQueries, SpeakerVideo } from '~entities/speaker'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Scrollbar } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/scrollbar'
 import './index.css'
-import { useState } from 'react'
 
 interface SpeakerVideoListProps {
   facultyId?: number
 }
 
 export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
-  facultyId = null,
 }) => {
   const {
     data: filteredSpeakersData,
@@ -26,7 +23,6 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
     isLoading: isAllLoading,
     isError: isAllError,
   } = speakerQueries.useGetSpeakers()
-
 
   const isLoading = isFilteredLoading || isAllLoading
   const isError = isFilteredError && isAllError
@@ -48,7 +44,6 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
     return <div>Нет данных для отображения</div>
   }
 
-
   return (
     <>
       <Typography
@@ -69,10 +64,7 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
         {speakersData.map((item, i) => {
           return (
             <SwiperSlide key={i}>
-              <SpeakerVideo
-                {...item}
-                
-              ></SpeakerVideo>
+              <SpeakerVideo {...item}></SpeakerVideo>
             </SwiperSlide>
           )
         })}
