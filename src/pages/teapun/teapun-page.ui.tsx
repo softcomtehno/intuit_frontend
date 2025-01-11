@@ -70,8 +70,9 @@ export const TeapunPage = () => {
         <Grid container spacing={4}>
           {documents.map((document, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
+              <a href={document.link}  data-fancybox="gallery">
               <Card>
-                <CardActionArea href={document.link} target="_blank">
+                <CardActionArea>
                   <CardContent>
                     <Box display="flex" alignItems="center">
                       <IconButton>
@@ -84,6 +85,7 @@ export const TeapunPage = () => {
                   </CardContent>
                 </CardActionArea>
               </Card>
+            </a>
             </Grid>
           ))}
         </Grid>
