@@ -11,6 +11,7 @@ interface SpeakerVideoListProps {
 }
 
 export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
+  facultyId,
 }) => {
   const {
     data: filteredSpeakersData,
