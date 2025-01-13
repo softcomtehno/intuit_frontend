@@ -38,8 +38,7 @@ const documents = [
       {
         url: 'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%9C%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0.png',
         name: 'Положения о проведении открытого электронного мониторинга профессорско-преподавательского состава и структурных подразделений МУИТ',
-      }
-      
+      },
     ],
   },
   {
@@ -69,9 +68,7 @@ const documents = [
   },
   {
     title: 'Отчеты ДОККО',
-    urls: [
-
-    ],
+    urls: [],
   },
   {
     title: 'Положение МУИТ',
@@ -92,7 +89,36 @@ const documents = [
         url: 'https://muit.makalabox.com/documents/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%204_%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%9C%D0%A3%D0%98%D0%A2.pdf',
         name: 'Сборник положений, регламентирующих деятельность Международного Университета Инновационных Технологий. Книга 4',
       },
-    ]
+    ],
+  },
+  {
+    title: 'Результаты рейтинга ППС и Структурных подразделений',
+    urls: [
+      {
+        url: 'https://muit.makalabox.com/documents/rating/rating_2017.pdf',
+        name: 'Рейтинг ППС и СП - 2017',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/rating/rating_2018.pdf',
+        name: 'Рейтинг ППС и СП - 2018',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/rating/rating_2019.pdf',
+        name: 'Рейтинг ППС и СП - 2019',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/rating/rating_2022.pdf',
+        name: 'Рейтинг ППС и СП - 2022',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/rating/rating_2023.pdf',
+        name: 'Рейтинг ППС и СП - 2023',
+      },
+      {
+        url: 'https://muit.makalabox.com/documents/rating/rating_2024.pdf',
+        name: 'Рейтинг ППС и СП - 2024',
+      },
+    ],
   },
 ];
 
