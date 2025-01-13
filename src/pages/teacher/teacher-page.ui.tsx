@@ -8,7 +8,6 @@ import {
 import { Typography } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { staffQueries } from '~entities/staff'
-import teacherImg from './img/teacher-bg.jpg'
 import './index.css'
 
 export const TeacherPage = () => {
@@ -37,16 +36,9 @@ export const TeacherPage = () => {
     return <div>Данные не загружены</div>
   }
 
-  console.log(staffData)
-
   if (isSuccess) {
     return (
-      <section
-        className=" rounded-lg flex items-center justify-center py-10 mb-5 t w-full teacher"
-        // style={{
-        //   backgroundImage: `url(${teacherImg})`,
-        // }}
-      >
+      <section className=" rounded-lg flex items-center justify-center py-10 mb-5 t w-full teacher">
         <div className="container mx-auto">
           <div className="flex  items-center justify-center  gap-10">
             <div className="flex flex-col items-center justify-center gap-10">

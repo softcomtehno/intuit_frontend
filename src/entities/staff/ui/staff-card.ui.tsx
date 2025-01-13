@@ -1,10 +1,8 @@
 import {
-  Box,
   Button,
   Card,
   CardContent,
   CardMedia,
-  Divider,
   Typography,
 } from '@mui/material';
 import { staffTypes } from '..';

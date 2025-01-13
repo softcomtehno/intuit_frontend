@@ -1,7 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
 import { useState } from 'react'
-import { createPortal } from 'react-dom'
-import { CustomModal } from '~shared/ui/modal'
 import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
 import { Quizizz } from '~widgets/quizizz'
 

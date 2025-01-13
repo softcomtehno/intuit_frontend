@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { StaffCard, staffQueries, staffTypes } from '~entities/staff'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -8,12 +8,7 @@ import 'swiper/css/pagination'
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
 
-interface StaffListProps {
-  filterByRanks?: string[] // Например: ["professor", "doctor"]
-  filterByFaculty?: number // Например: 3
-}
-
-const StaffList: React.FC<StaffListProps> = () => {
+const StaffList = () => {
   const { t } = useTranslation()
   const [selectedPosition, setSelectedPosition] = useState<number | null>(29)
 
