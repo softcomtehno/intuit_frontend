@@ -24,6 +24,7 @@ import { admissionsPageRoute } from '~pages/admissions'
 import { windowPageRoute } from '~pages/window/window-page.route'
 import { teapunPageRoute } from '~pages/teapun'
 import { headPageRoute } from '~pages/head'
+import { eduManagementPageRoute } from '~pages/edu-managemant'
 
 function BubbleError() {
   const error = useRouteError()
@@ -57,7 +58,8 @@ const router = createBrowserRouter([
           admissionsPageRoute,
           windowPageRoute,
           teapunPageRoute,
-          headPageRoute
+          headPageRoute,
+          eduManagementPageRoute
         ],
       },
     ],
