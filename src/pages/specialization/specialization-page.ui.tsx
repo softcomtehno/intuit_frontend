@@ -26,6 +26,7 @@ export const SpecializationPage = () => {
     isSuccess,
     isError,
   } = specializationQueries.useGetSpecialization(slug)
+  console.log(specializationData)
 
   if (isLoading) {
     return (
@@ -33,9 +34,9 @@ export const SpecializationPage = () => {
         <CircularProgress className="text-blue" />
         <Typography variant="h6">Загрузка</Typography>
       </div>
-    );
+    )
   }
-  
+
   if (isError) {
     return <div>Error</div>
   }
@@ -44,11 +45,11 @@ export const SpecializationPage = () => {
       <div className="my-5">
         <SpecializationBanner {...specializationData.data} />
         <About {...specializationData.data} />
-        <ProgramBlocks/>
+        <ProgramBlocks />
         {/* <SkillsBlock {...specializationData.data} /> */}
         {/* <ProgramAccordion {...specializationData.data} /> */}
         <CareerBlock {...specializationData.data} />
-        <EducationForm/>
+        <EducationForm />
         <EnrollForm />
       </div>
     )

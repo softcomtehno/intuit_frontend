@@ -1,5 +1,5 @@
-import { Breadcrumbs, Card, Typography, Link, } from '@mui/material';
-import { specializationTypes } from '~entities/specialization';
+import { Breadcrumbs, Card, Typography, Link } from '@mui/material'
+import { specializationTypes } from '~entities/specialization'
 
 export const SpecializationBanner = ({
   title,
@@ -7,6 +7,7 @@ export const SpecializationBanner = ({
   trainingForm,
   diploma,
   photo,
+  educationLevel,
 }: specializationTypes.Specialization) => {
   return (
     <div
@@ -17,7 +18,7 @@ export const SpecializationBanner = ({
       // }}
     >
       <div>
-        <Breadcrumbs aria-label="breadcrumb" >
+        <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="black" href="/">
             Главная
           </Link>
@@ -42,7 +43,7 @@ export const SpecializationBanner = ({
         <Card className="shadow-none min-w-[250px] p-5 rounded-2xl min-h-[100px] max-h-[50px] z-10">
           <p className="">Уровень</p>
           <Typography variant="h6" className="font-semibold">
-            Бакалавриат
+            {educationLevel[0]}
           </Typography>
         </Card>
         <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
@@ -56,7 +57,7 @@ export const SpecializationBanner = ({
           <Typography variant="h6" className="font-semibold">
             {trainingForm}
           </Typography>
-        </Card>   
+        </Card>
         <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
           <p className="">Результат</p>
           <Typography variant="h6" className="font-semibold">
@@ -64,11 +65,11 @@ export const SpecializationBanner = ({
           </Typography>
         </Card>
       </div>
-      {/* <img
-        className="absolute right-[150px] top-0 h-[400px] lg:static lg:h-auto"
-        src={Ramzik}
+      <img
+        className="absolute right-[150px] top-0 h-[200px] w-[200px] lg:static lg:h-auto"
+        src={photo}
         alt=""
-      /> */}
+      />
     </div>
-  );
-};
+  )
+}
