@@ -4,12 +4,14 @@ import {  getProgramBySlugQuery, getProgramsQuery } from './programs.api';
 const keys = {
   root: () => ['program'],
   getProgramBySlug: (slug: string) => [...keys.root(), slug] as const,
+  getPrograms: (degreeId?: number, facultyId?: number) => ['program', degreeId, facultyId],
 };
 
-export function useGetPrograms() {
+
+export function useGetPrograms(degreeId?: number, facultyId?: number) {
   return useQuery({
-    queryKey: keys.root(),
-    queryFn: getProgramsQuery,
+    queryKey: keys.getPrograms(degreeId, facultyId),
+    queryFn: () => getProgramsQuery(degreeId, facultyId), 
   });
 }
 

@@ -21,7 +21,7 @@ export const SkillsBlock = ({
         В итоге вы освоите следующие навыки и инструменты
       </Typography>
 
-      <div className="flex gap-20">
+      <div className="flex gap-20 md:flex-col">
         <div className="p-5  border-t mt-5 border-gray">
           <List>
             {skills.map((chunk, chunkIndex) => (
@@ -35,7 +35,7 @@ export const SkillsBlock = ({
                 />
               </ListItem>
             ))}
-          </List>
+          </List>   
         </div>
         <div className="border-t mt-5 border-gray  flex flex-wrap  gap-5 items-start  pt-5">
           {tools.map((tool, i) => (

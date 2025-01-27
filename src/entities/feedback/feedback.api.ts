@@ -1,10 +1,9 @@
-import axios from 'axios'
-
-const API_URL = 'https://intuit.makalabox.com/api/'
+import apiClient from '~shared/lib/api/apiClient'
 
 export const getFeedbackQuery = () => {
-  return axios.get(`${API_URL}university/student-reviews`)
+  return apiClient.get('university/student-reviews')
 }
+
 export const getFeedbackDetailsQuery = (id: number) => {
-  return axios.get(`${API_URL}university/student-reviews/${id}/`)
+  return apiClient.get(`university/student-reviews/${id}/`)
 }

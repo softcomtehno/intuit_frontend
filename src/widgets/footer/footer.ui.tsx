@@ -12,18 +12,17 @@ import CallIcon from '@mui/icons-material/Call';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { degreeQueries } from '~entities/degree';
 
-const degreeSections = [
-  'Колледж',
-  'Бакалавриат',
-  'Магистратура',
-  'Второе высшее',
-  'Специалитет',
-  'Аспирантура',
-  'Креатив',
-  'Курсы',
-  'Факультеты',
-];
+// const degreeSections = [
+//   'Институты',
+//   'Бакалавриат',
+//   'Магистратура',
+//   'Аспирантура',
+//   'Колледж',
+//   'Креатив',
+//   'Курсы',
+// ];
 const fieldsOfStudy = [
   'Медицина',
   'Психология',
@@ -81,6 +80,13 @@ const studentResources = ['Расписание', 'AVN', 'Moodle', 'Оплата
 export function Footer() {
   const [data, setData] = useState<ContactInfo>();
 
+  const {
+    data: degreeData,
+    isLoading,
+    isError,
+  } = degreeQueries.useGetDegrees();
+
+
   useEffect(() => {
     axios
       .get('https://intuit.makalabox.com/api/university/university-info/1/')
@@ -94,123 +100,144 @@ export function Footer() {
   return (
     <footer className="bg-[#0d1140] text-white py-5 ">
       <div className=" max-w-[95%] mx-auto hidden lg:block">
-      <div className="flex items-center gap-1 mb-5">
+        <div className="flex items-center gap-1 mb-5">
           <img src={IntuitLogo} alt="Intuit" className="h-[58px]" />
           <p className="text-xs font-semibold leading-3">
             МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
             ТЕХНОЛОГИЙ
           </p>
         </div>
-        <Accordion className='bg-blue/40 text-white rounded-md my-1' defaultExpanded>
+        {/* <Accordion
+          className="bg-blue/40 text-white rounded-md my-1"
+          defaultExpanded
+        >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon className='text-white' />}
+            expandIcon={<ExpandMoreIcon className="text-white" />}
             aria-controls="panel1-content"
             id="panel1-header"
           >
             Институты
           </AccordionSummary>
           <AccordionDetails>
-          {fieldsOfStudy.map((title, index) => (
+            {fieldsOfStudy.map((title, index) => (
               <li className="my-1" key={index}>
                 {title}
               </li>
             ))}
           </AccordionDetails>
         </Accordion>
-        <Accordion className='bg-blue/40 text-white rounded-md my-1'>
+        <Accordion className="bg-blue/40 text-white rounded-md my-1">
           <AccordionSummary
-           expandIcon={<ExpandMoreIcon className='text-white' />}
+            expandIcon={<ExpandMoreIcon className="text-white" />}
             aria-controls="panel2-content"
             id="panel2-header"
           >
             Абитуриентам
           </AccordionSummary>
           <AccordionDetails>
-          {degreeSections.map((univer, index) => (
-            <li  key={index}>
-              {univer}
-            </li>
-          ))}
+            {degreeSections.map((univer, index) => (
+              <li key={index}>{univer}</li>
+            ))}
           </AccordionDetails>
         </Accordion>
-        <Accordion className='bg-blue/40 text-white rounded-md my-1'>
+        <Accordion className="bg-blue/40 text-white rounded-md my-1">
           <AccordionSummary
-           expandIcon={<ExpandMoreIcon className='text-white' />}
+            expandIcon={<ExpandMoreIcon className="text-white" />}
             aria-controls="panel2-content"
             id="panel2-header"
           >
             Студентам
           </AccordionSummary>
           <AccordionDetails>
-          {degreeSections.map((univer, index) => (
-            <li  key={index}>
-              {univer}
-            </li>
-          ))}
+            {degreeSections.map((univer, index) => (
+              <li key={index}>{univer}</li>
+            ))}
           </AccordionDetails>
         </Accordion>
-        <Accordion className='bg-blue/40 text-white rounded-md my-1'>
+        <Accordion className="bg-blue/40 text-white rounded-md my-1">
           <AccordionSummary
-           expandIcon={<ExpandMoreIcon className='text-white' />}
+            expandIcon={<ExpandMoreIcon className="text-white" />}
             aria-controls="panel3-content"
             id="panel3-header"
           >
-           Об Университете
+            Об Университете
           </AccordionSummary>
           <AccordionDetails>
-          {universityInfo.map((title, index) => (
+            {universityInfo.map((title, index) => (
               <li className="my-1" key={index}>
                 {title}
               </li>
             ))}
           </AccordionDetails>
-          
         </Accordion>
-        <Accordion className='bg-blue/40 text-white rounded-md my-1'>
+        <Accordion className="bg-blue/40 text-white rounded-md my-1">
           <AccordionSummary
-           expandIcon={<ExpandMoreIcon className='text-white' />}
+            expandIcon={<ExpandMoreIcon className="text-white" />}
             aria-controls="panel3-content"
             id="panel3-header"
           >
-           Приемная коммисия
+            Приемная коммисия
           </AccordionSummary>
           <AccordionDetails>
             <p>г. Бишкек ул. Анкара 1/17</p>
-            <Button variant='outlined' className='text-white my-2 w-full' startIcon={<CallIcon/>}>+996 (312) 46-79-14</Button>
-            <Button variant='outlined' className='text-white my-2 w-full' startIcon={<CallIcon/>}>+996 (312) 46-79-14</Button>
-          </AccordionDetails>
-          
-        </Accordion>
-        <Button
+            <Button
               variant="outlined"
-              className="w-full my-3 duration-300  font-bold text-white bg-green hover:border-green"
+              className="text-white my-2 w-full"
+              startIcon={<CallIcon />}
             >
-              Обратная связь
+              +996 (312) 46-79-14
             </Button>
-            <div className='flex justify-between'>
-                <Link className=' border border-white rounded px-3' to={data.facebook}>
-                  <IconButton className="text-white">
-                    <FacebookRoundedIcon />
-                  </IconButton>
-                </Link>
-                <Link className=' border border-white rounded px-3' to={data.whatsapp}>
-                  <IconButton className="text-white">
-                    <WhatsAppIcon />
-                  </IconButton>
-                </Link>
-                <Link className=' border border-white rounded px-3' to={data.instagram}>
-                  <IconButton className="text-white">
-                    <InstagramIcon />
-                  </IconButton>
-                </Link>
+            <Button
+              variant="outlined"
+              className="text-white my-2 w-full"
+              startIcon={<CallIcon />}
+            >
+              +996 (312) 46-79-14
+            </Button>
+          </AccordionDetails>
+        </Accordion> */}
+        <Button
+          variant="outlined"
+          className="w-full my-3 duration-300  font-bold text-white bg-green hover:border-green"
+        >
+          Обратная связь
+        </Button>
+        <div className="flex justify-between">
+          <Link
+            className=" border border-white rounded px-3"
+            to={data.facebook}
+          >
+            <IconButton className="text-white">
+              <FacebookRoundedIcon />
+            </IconButton>
+          </Link>
+          <Link
+            className=" border border-white rounded px-3"
+            to={data.whatsapp}
+          >
+            <IconButton className="text-white">
+              <WhatsAppIcon />
+            </IconButton>
+          </Link>
+          <Link
+            className=" border border-white rounded px-3"
+            to={data.instagram}
+          >
+            <IconButton className="text-white">
+              <InstagramIcon />
+            </IconButton>
+          </Link>
 
-                <Link className=' border border-white rounded px-3' to={data.telegram}>
-                  <IconButton className="text-white">
-                    <TelegramIcon />
-                  </IconButton>
-                </Link>
-              </div>
-              <p className='my-3 text-center'>&copy; 2024 Intuit</p>
+          <Link
+            className=" border border-white rounded px-3"
+            to={data.telegram}
+          >
+            <IconButton className="text-white">
+              <TelegramIcon />
+            </IconButton>
+          </Link>
+        </div>
+        <p className="my-3 text-center">&copy; 2024 Intuit</p>
       </div>
       <div className=" max-w-[80%] mx-auto lg:hidden">
         <div className="flex items-center gap-1 mb-5">
@@ -221,13 +248,13 @@ export function Footer() {
           </p>
         </div>
         <ul className="flex justify-between pb-3 border-b border-gray">
-          {degreeSections.map((univer, index) => (
+          {degreeData?.data.map((univer, index) => (
             <li className="text-white" key={index}>
-              {univer}
+             <Link to={`/degree/${univer.slug}`}>{univer.title}</Link> 
             </li>
           ))}
         </ul>
-        <div className="flex justify-between">
+        {/* <div className="flex justify-between">
           <ul>
             <h4 className="font-bold mt-6">Факультеты</h4>
             {fieldsOfStudy.map((title, index) => (
@@ -260,10 +287,10 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
-        <h4 className="border-b border-gray font-bold mt-7 pb-3">
+        </div> */}
+        {/* <h4 className="border-b border-gray font-bold mt-7 pb-3">
           Приемная коммисия
-        </h4>
+        </h4> */}
         <div className="flex justify-between mt-6">
           <ul>
             <h5 className="font-bold mt-5">Адрес</h5>
@@ -272,8 +299,8 @@ export function Footer() {
           <ul>
             <h5 className="font-bold mt-5">График работы</h5>
             <li>Пн-пт {data.hoursWeekdays}</li>
-            <li>Сб {data.hoursSaturday}</li>
-            <li>Вс {data.hoursSunday}</li>
+            <li>Сб Выходной</li>
+            <li>Вс Выходной</li>
           </ul>
           <div>
             <h5 className="font-bold mt-5">По Всем вопросам</h5>

@@ -1,35 +1,46 @@
 import { Breadcrumbs, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export const InstituteBanner = () => {
+type FacultyPageType = {
+  title: string;
+  banner: string;
+  programCount:number;
+};
+export const InstituteBanner: React.FC<FacultyPageType> = ({
+  title,
+  banner,
+  programCount
+}) => {
+  console.log(banner);
+  
   return (
-    <div className="bg-[#f5f5f5] p-7 rounded-2xl flex  justify-between">
-      <div className="flex flex-col justify-between min-h-[400px] ">
+    <div className="bg-[#f5f5f5] p-7 rounded-2xl flex md:flex-col ">
+      <div className="flex flex-col justify-between min-h-[300px] ">
         <div>
           <Breadcrumbs aria-label="breadcrumb">
             <Link color="inherit" to="/">
               Главная
             </Link>
             <Link to="/institutes/">Институты</Link>
-            <Typography color="text.primary">Breadcrumbs</Typography>
+            <Typography color="text.primary" className='capitalize'>{title}</Typography>
           </Breadcrumbs>
           <Typography
             variant="h1"
             component="h1"
-            className="text-[2.5rem] font-bold mt-7 text-[#333] max-w-[800px]"
+            className="text-[2rem] max-w-[500px] font-semibold text-[#333] mt-7 lg:text-[40px]  md:!text-[30px] "
           >
-            Институт Цифровой Трансформации и Программирования
+            {title}
           </Typography>
         </div>
         <div className="self-start border py-1 px-7 rounded-lg">
-          15 Программ
+          {programCount} Программ
         </div>
       </div>
-      <img
-        className="h-[350px] rotate-[45deg] self-end"
-        src="https://sys3.ru/synergy-ru/content/faculties/new3_big/programmirovanie.svg"
+      {/* <img
+        className="h-[350px] rotate-[45deg] self-end lg:max-h-[250px]"
+        src={banner}
         alt=""
-      />
+      /> */}
     </div>
   );
 };

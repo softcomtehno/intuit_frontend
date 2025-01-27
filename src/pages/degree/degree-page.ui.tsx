@@ -1,31 +1,31 @@
-import InfoBlock from './ui/info-block.ui' // Adjusted import statement
+import InfoBlock from './ui/info-block.ui'; // Adjusted import statement
 import {
   Breadcrumbs,
   Button,
   CircularProgress,
   Link,
   Typography,
-} from '@mui/material'
-import { FeedbackList } from '~widgets/feedback-list'
-import { useParams } from 'react-router-dom'
-import { degreeQueries } from '~entities/degree'
-import { EnrollForm } from '~widgets/enroll-form'
-import { OpportunitiesList } from '~widgets/opportunities-list'
-import { InstagramEmbed } from 'react-social-media-embed';
-
+} from '@mui/material';
+import { useParams } from 'react-router-dom';
+import { degreeQueries } from '~entities/degree';
+import { EnrollForm } from '~widgets/enroll-form';
+import { OpportunitiesList } from '~widgets/opportunities-list';
+import { FeedbackList } from '~widgets/feedback-list';
+import { ProgramCategory } from '~widgets/programm-category';
+import { SpeakerVideoList } from '~widgets/speaker-list';
 export const DegreePage = () => {
-  const slug = useParams()
+  const slug = useParams();
 
   const {
     data: degreeData,
     isLoading,
     isError,
-  } = degreeQueries.useGetDegree(String(slug.slug))
+  } = degreeQueries.useGetDegree(String(slug.slug));
 
   console.log(degreeData);
-  
+
   if (isError) {
-    return <div>Произошла Ошибка</div>
+    return <div>Произошла Ошибка</div>;
   }
 
   if (isLoading) {
@@ -34,7 +34,7 @@ export const DegreePage = () => {
         <CircularProgress className="text-blue" />
         <Typography variant="h6">Загрузка</Typography>
       </div>
-    )
+    );
   }
 
   return (
@@ -42,35 +42,41 @@ export const DegreePage = () => {
       {!isLoading && (
         <div className="my-10">
           <div
-            className="bg-cover bg-center min-h-[500px] rounded-2xl p-10 flex flex-col justify-between"
+            className="bg-cover bg-center min-h-[300px] rounded-2xl p-5 flex flex-col justify-between"
+            // style={{
+            //   backgroundImage: `url(${degreeData?.data.banner})`,
+            // }}
             style={{
-              backgroundImage: `url(${degreeData?.data.banner})`,
+              background: `linear-gradient(200deg, rgba(42,33,115,1) 0%, rgba(0,149,111,1) 100%)`,
             }}
           >
             <div>
-              <Breadcrumbs aria-label="breadcrumb">
-                <Link underline="hover" color="inherit" href="/">
+              <Breadcrumbs aria-label="breadcrumb" className="text-[white]">
+                <Link underline="hover" color="white" href="/">
                   Главная
                 </Link>
-                <Typography color="text.primary">
+                <Typography color="text.primary" className="text-[white]">
                   {degreeData?.data.title}
                 </Typography>
               </Breadcrumbs>
-              <Typography variant="h2" className="font-semibold md:text-[40px]">
+              <Typography
+                variant="h2"
+                className="text-[white] font-semibold md:text-[40px]"
+              >
                 {degreeData?.data.title}
               </Typography>
             </div>
             <div>
               <Typography
                 variant="body1"
-                className="text-lg font-medium max-w-[320px] my-2"
+                className="text-lg font-bold max-w-[320px] my-2 text-[white] "
               >
                 Пройдите тест и узнайте, на кого вам лучше учиться
               </Typography>
               <Button
                 variant="contained"
                 size="large"
-                className="bg-blue  shadow-none"
+                className="bg-blue shadow-none px-[45px]"
               >
                 Подобрать программу
               </Button>
@@ -80,6 +86,7 @@ export const DegreePage = () => {
             title={degreeData?.data.text}
             description={degreeData?.data.subtext}
             tags={['Выпускники', 'Бакалавриат']}
+            diplomaPhoto={degreeData?.data.diplomaPhoto}
             stats={[
               { value: `${degreeData?.data.programCount}`, label: 'программ' },
               {
@@ -93,24 +100,12 @@ export const DegreePage = () => {
               { value: 'Документ', label: `${degreeData?.data.diploma}` },
             ]}
           />
-          <Typography variant="h2">Программы обучения</Typography>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla
-            alias voluptates facilis, molestiae veritatis amet laborum eligendi
-            totam similique incidunt earum cum corporis autem cupiditate eveniet
-            nesciunt officia inventore deserunt sunt! Iure quae officia
-            mollitia, facere aperiam debitis quo. Eum minima expedita accusamus
-            qui repudiandae. Sit mollitia nemo culpa?
-          </p>
+          <ProgramCategory degreeId={degreeData?.data.id} />
           <OpportunitiesList />
           <EnrollForm />
-          <Typography variant="h2" className="my-5">
-            Отзывы студентов
-          </Typography>
-
-          <FeedbackList></FeedbackList>
+          <SpeakerVideoList/>
         </div>
       )}
     </>
-  )
-}
+  );
+};

@@ -1,11 +1,16 @@
-import axios from 'axios';
+import apiClient from '~shared/lib/api/apiClient';
 
-const API_URL = 'https://intuit.makalabox.com/api/university/';
+// export function getProgramsQuery() {
+//   return apiClient.get('university/programs/');
+// }
+export function getProgramsQuery(degreeId?: number, facultyId?: number) {
+  const params: any = {};
+  if (degreeId) params.educationLevel = degreeId;
+  if (facultyId) params.faculty = facultyId;
 
-export function getProgramsQuery() {
-  return axios.get(`${API_URL}programs/`);
+  return apiClient.get('university/programs/', { params });
 }
 
 export function getProgramBySlugQuery(slug: string) {
-  return axios.get(`${API_URL}programs/${slug}/`);
+  return apiClient.get(`university/programs/${slug}/`);
 }

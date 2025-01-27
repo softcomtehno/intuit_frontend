@@ -1,8 +1,11 @@
 import { Box } from '@mui/material'
 import Marquee from 'react-fast-marquee'
 import { PartnerCard, partnersQueries } from '~entities/partner'
+import { useTranslation } from 'react-i18next'
 
 export const PartnersList = () => {
+  const { t } = useTranslation()
+
   const {
     data: partnersData,
     isLoading,
@@ -10,12 +13,11 @@ export const PartnersList = () => {
     isError,
   } = partnersQueries.useGetPartners()
 
-  console.log(partnersData)
   if (isLoading) {
-    return <div>Загрузка</div>
+    return <div>{t('homepage.loading.loading')}</div>
   }
   if (isError) {
-    return <div>Ошибка загрузки</div>
+    return <div>{t('homepage.loading.error')}</div>
   }
   if (isSuccess) {
     return (

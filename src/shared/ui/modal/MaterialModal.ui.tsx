@@ -1,45 +1,68 @@
+import { IconButton, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded'
 import Modal from '@mui/material/Modal'
-import { CloseRounded } from '@mui/icons-material'
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-}
-
-export const MaterialModal = ({ children, open, setOpen }) => {
-  const handleClose = () => setOpen(false)
-
+export const MaterialModal = ({ videoUrl, open, handleClose }) => {
+  const getYouTubeEmbedUrl = (url) => {
+    if (url) {
+      const videoId = url.split('v=')[1]?.split('&')[0]
+      return videoId
+        ? `https://www.youtube.com/embed/${videoId}?rel=0`
+        : 'https://www.youtube.com/watch?v=2Y-Xa1h77KI'
+    }
+  }
   return (
-    <div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+    <Modal
+      open={open}
+      onClose={handleClose}
+      BackdropProps={{
+        style: {
+          backgroundColor: 'rgba(0, 0, 0, 0.05)', // Черный с прозрачностью 50%
+          border: 'none',
+        },
+      }}
+    >
+      <Box
+        sx={{
+          width: '800px', // Фиксированная ширина модального окна
+          height: '500px', // Высота соответствует соотношению 16:9
+          maxWidth: '100%', // Чтобы не выходить за границы экрана
+          margin: '50px auto',
+          padding: 3,
+          background: 'white',
+        }}
       >
-        <Box sx={style}>
-          <Box>
-            <CloseRounded
-              onClick={() => setOpen(false)}
-              color='grey'
-              sx={{
-                position: 'absolute',
-                right: 16,
-                top: 16,
-                cursor: 'pointer',
-              }}
-            ></CloseRounded>
-          </Box>
-          <Box>{children}</Box>
+        <Box
+          className="flex justify-between items-center w-full"
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Typography className="font-medium" variant="h4">
+            Отзыв
+          </Typography>
+          <IconButton onClick={handleClose}>
+            <CancelRoundedIcon />
+          </IconButton>
         </Box>
-      </Modal>
-    </div>
+        <iframe
+          src={getYouTubeEmbedUrl(videoUrl)}
+          title="YouTube video player"
+          frameBorder="0"
+          style={{
+            width: '100%',
+            height: '80%',
+            borderRadius: '8px', // Закруглённые углы
+            marginTop: '30px',
+          }}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </Box>
+    </Modal>
   )
 }

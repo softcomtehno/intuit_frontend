@@ -1,42 +1,17 @@
 import StaffList from '~widgets/staff-list/staff-list.ui'
-import StaffButtonsSwiper from './ui/StaffCategory.ui'
 import { SwiperIntro } from '~widgets/swiper-intro'
 import { EnrollForm } from '~widgets/enroll-form'
 import { DiplomList } from '~widgets/diplom-list'
-import { FeedbackList, FeedbackVideoList } from '~widgets/feedback-list'
+import { SpeakerVideoList } from '~widgets/speaker-list'
 import { PartnersList } from '~widgets/partners-list'
 import { OpportunitiesList } from '~widgets/opportunities-list'
 import { DegreeCategory } from './ui/DegreeCategory.ui'
-import { ProgramCategory } from './ui/ProgramCategory'
+import { ProgramCategory } from '~widgets/programm-category'
 import { AboutBlock } from './ui/AboutBlock.ui'
-import { articleQueries } from '~entities/makalabox/degree'
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from '@mui/material'
 import { ArticleList } from '~widgets/article-list/article-list.ui'
-import { Quizizz } from '~widgets/quizizz'
-
-const news = {
-  image:
-    'https://intuit.kg/media/news/images/banners/WhatsApp_Image_2024-05-31_at_14.03.57.jpeg',
-  title: 'Международная межвузовская научно-практическая конференция',
-  description: '31 мая 2024 г. 17:06',
-  link: '#',
-}
-
-const profession = {
-  title:
-    'Преподавание иностранного языка (английский язык) в образовательных организациях',
-  degree: 'Бакалавриат',
-  faculties: 'Институт межкультурной коммуникации и психологии',
-  url: 'specialization/professiya-prodakt-menedzher',
-}
+import { Typography } from '@mui/material'
+import { License } from './ui/License.ui'
+import { NewsList } from '~widgets/news-list'
 
 export function HomePage() {
   return (
@@ -44,8 +19,8 @@ export function HomePage() {
       <h1 className="my-5 font-medium">
         <SwiperIntro />
       </h1>
-      <ArticleList />
       <DegreeCategory />
+      <License />
       <ProgramCategory />
       <OpportunitiesList />
       <AboutBlock />
@@ -53,13 +28,20 @@ export function HomePage() {
         <DiplomList />
       </div>
       <div>
-        <StaffButtonsSwiper />
+        <Typography
+          variant="h3"
+          component="h3"
+          className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+        >
+          Преподавательский состав
+        </Typography>
         <StaffList />
       </div>
+      <NewsList />
       <PartnersList />
+      <ArticleList />
       <EnrollForm />
-      <ArticleList/>
-      <FeedbackVideoList />
+      <SpeakerVideoList />
     </div>
   )
 }

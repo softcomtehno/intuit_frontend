@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { specializationTypes } from '~entities/specialization';
 
 export const About = ({
@@ -7,16 +7,58 @@ export const About = ({
   textPhoto,
 }: specializationTypes.Specialization) => {
   return (
-    <div className="flex gap-5 my-10">
-      <div className="flex flex-col gap-4">
-        <Typography variant="h3" className="font-semibold">
+    <Box
+      className="flex gap-10 my-12 lg:flex-col lg:items-center justify-between"
+      component="section"
+      sx={{
+        alignItems: 'center',
+      }}
+    >
+      <Box
+        sx={{
+          maxWidth:'750px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+        }}
+      >
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: 'bold',
+            color: 'primary.main',
+            textAlign: { xs: 'center', lg: 'left' },
+          }}
+        >
           {text}
         </Typography>
-        <p className="text-lg font-medium">
+        <Typography
+          variant="body1"
+          sx={{
+            fontSize: '1.125rem',
+            color: 'text.secondary',
+            lineHeight: 1.75,
+            textAlign: { xs: 'justify', lg: 'left' },
+          }}
+        >
           <div dangerouslySetInnerHTML={{ __html: subtext }} />
-        </p>
-      </div>
-      <img className="rounded-2xl" src={`${textPhoto}`} alt="" />
-    </div>
+        </Typography>
+      </Box>
+      <Box
+        component="img"
+        src={textPhoto}
+        alt="Фото о профессии"
+        sx={{
+          maxWidth: '450px',
+          borderRadius: '16px',
+          maxHeight:"300px",
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+          transition: 'transform 0.3s ease',
+          '&:hover': {
+            transform: 'scale(1.05)',
+          },
+        }}
+      />
+    </Box>
   );
 };
