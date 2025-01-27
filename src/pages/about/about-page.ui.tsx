@@ -59,6 +59,13 @@ export const AboutPage = () => {
       image: "https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg",
       isExternal: false,
     },
+    {
+      title: 'Учебное управление',
+      description: 'Ознакомьтесь  с нашим учебным управлением',
+      url: '/educatiion-management',
+      image: "https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg",
+      isExternal: false,
+    },
   ];
 
   
