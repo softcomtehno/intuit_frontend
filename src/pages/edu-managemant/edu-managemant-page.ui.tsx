@@ -2,11 +2,38 @@ import {
   Typography,
   Container,
   Box,
-  List,
-  ListItem,
-  ListItemText,
-  Link,
-} from '@mui/material';
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+
+const docs = [
+  {
+    title: 'Инспектордук кызматтык нускамасы',
+    url: 'https://muit.makalabox.com/documents/edu/a.pdf',
+  },
+  {
+    title: 'менеджеринин кызматтык нускамасы',
+    url: 'https://muit.makalabox.com/documents/edu/b.pdf',
+  },
+  {
+    title: 'Норма времени',
+    url: 'https://muit.makalabox.com/documents/edu/c.pdf',
+  },
+  {
+    title: 'ОКУУ БАШКАРМАЛЫГЫНЫН БАШЧЫСЫНЫН КЫЗМАТТЫК НУСКАМАСЫ',
+    url: 'https://muit.makalabox.com/documents/edu/d.pdf',
+  },
+  {
+    title: 'окуу борборунун менеджеринин кызматтык нускамасы',
+    url: 'https://muit.makalabox.com/documents/edu/e.pdf',
+  },
+  {
+    title: 'План работы',
+    url: 'https://muit.makalabox.com/documents/edu/f.pdf',
+  },
+]
 
 export const EduManagementPage = () => {
   return (
@@ -21,112 +48,28 @@ export const EduManagementPage = () => {
 
       <Box mb={4}>
         <Typography variant="h6" className="font-semibold mb-2">
-          Контакты:
-        </Typography>
-        <List>
-          <ListItem>
-            <ListItemText
-              primary="Сапарбаева Анара Макеновна"
-              secondary="Начальник учебного управления"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Телефон" secondary="+996772124457" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Email" secondary="anar_75@list.ru" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Адрес" secondary="г.Бишкек, ул.Анкара 1/17, МУИТ каб. 346б" />
-          </ListItem>
-
-          <ListItem>
-            <ListItemText
-              primary="Уметалиева Бермет Раимкуловна"
-              secondary="Заместитель начальника учебного управления"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Телефон" secondary="+996559888789" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Email" secondary="bermet.raimkulovna@mail.ru" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Адрес" secondary="МУИТ каб. 346а" />
-          </ListItem>
-
-          <ListItem>
-            <ListItemText
-              primary="Миталипов Темирлан Нурмаматович"
-              secondary="Директор центра карьеры и трудоустройства"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Телефон" secondary="+996778111300" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Email" secondary="tmitalipov@mail.ru" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Адрес" secondary="МУИТ каб. 309" />
-          </ListItem>
-
-          <ListItem>
-            <ListItemText
-              primary="Кыйсаева Барчын Жыргалбековна"
-              secondary="Старший инспектор по работе со студентами"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Телефон" secondary="+996707980788" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Email" secondary="gule-huwgel@mail.ru" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Адрес" secondary="МУИТ каб. 346а" />
-          </ListItem>
-
-          <ListItem>
-            <ListItemText
-              primary="Единное окно УК МУИТ"
-              secondary={
-                <Link href="http://178.217.169.139:3000/lms/login" target="_blank" rel="noopener">
-                  http://178.217.169.139:3000/lms/login
-                </Link>
-              }
-            />
-          </ListItem>
-
-          <ListItem>
-            <ListItemText
-              primary="Эркинбек кызы Гулиза"
-              secondary="Менеджер дистанционного обучения УК МУИТ"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Телефон" secondary="+996709988758" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Email" secondary="guzi_95kg@mail.ru" />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="Адрес" secondary="МУИТ каб. 346а" />
-          </ListItem>
-        </List>
-      </Box>
-
-      <Box mb={4}>
-        <Typography variant="h6" className="font-semibold mb-2">
           Задачи учебного управления:
         </Typography>
         <Typography>
           <ul>
-            <li>Координация работы структур, обеспечивающих организацию и проведение учебного процесса;</li>
-            <li>Организация учебного процесса на основе Государственных образовательных стандартов (ГОС) высшего профессионального образования и рабочих учебных планов;</li>
-            <li>Контроль за выполнением рабочих учебных планов, правомерность вносимых в них изменений решением ученого совета университета;</li>
-            <li>Расчет штатов профессорско-преподавательского и учебно-вспомогательного составов на основе определенных критериев и норм;</li>
+            <li>
+              Координация работы структур, обеспечивающих организацию и
+              проведение учебного процесса;
+            </li>
+            <li>
+              Организация учебного процесса на основе Государственных
+              образовательных стандартов (ГОС) высшего профессионального
+              образования и рабочих учебных планов;
+            </li>
+            <li>
+              Контроль за выполнением рабочих учебных планов, правомерность
+              вносимых в них изменений решением ученого совета университета;
+            </li>
+            <li>
+              Расчет штатов профессорско-преподавательского и
+              учебно-вспомогательного составов на основе определенных критериев
+              и норм;
+            </li>
           </ul>
         </Typography>
       </Box>
@@ -137,22 +80,12 @@ export const EduManagementPage = () => {
         </Typography>
         <Typography>
           <ul>
-            <li>Учебное управление - рабочий орган ректората, взаимодействующий с институтами, центрами, библиотеками и другими подразделениями университета;</li>
+            <li>
+              Учебное управление - рабочий орган ректората, взаимодействующий с
+              институтами, центрами, библиотеками и другими подразделениями
+              университета;
+            </li>
             <li>Работа с документами и регламентами учебного процесса;</li>
-          </ul>
-        </Typography>
-      </Box>
-
-      <Box mb={4}>
-        <Typography variant="h6" className="font-semibold mb-2">
-          Основополагающие учебно-нормативные документы:
-        </Typography>
-        <Typography>
-          <ul>
-            <li>График учебного процесса;</li>
-            <li>Положения учебного управления;</li>
-            <li>Регламент учебного процесса МУИТ;</li>
-            <li>Инструкции по проведению ГАК;</li>
           </ul>
         </Typography>
       </Box>
@@ -163,13 +96,50 @@ export const EduManagementPage = () => {
         </Typography>
         <Typography>
           <ul>
-            <li>Отдел по работе со студентами: организация учета, оформление документов, архивирование данных;</li>
-            <li>Отдел по расписанию: составление и сопровождение расписания учебных занятий;</li>
-            <li>Отдел дистанционного обучения: координация работы системы Moodle;</li>
-            <li>Центр карьеры и трудоустройства: помощь выпускникам в трудоустройстве;</li>
+            <li>
+              Отдел по работе со студентами: организация учета, оформление
+              документов, архивирование данных;
+            </li>
+            <li>
+              Отдел по расписанию: составление и сопровождение расписания
+              учебных занятий;
+            </li>
+            <li>
+              Отдел дистанционного обучения: координация работы системы Moodle;
+            </li>
+            <li>
+              Центр карьеры и трудоустройства: помощь выпускникам в
+              трудоустройстве;
+            </li>
           </ul>
         </Typography>
       </Box>
+
+      <Box mb={4}>
+        <Typography variant="h6" className="font-semibold mb-2">
+          Основополагающие учебно-нормативные документы:
+        </Typography>
+        <Accordion className="mb-4 border border-gray shadow-none rounded">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography className="text-gray-800 font-semibold">
+              Документы
+            </Typography>
+          </AccordionSummary>
+          {docs.map((doc, index) => (
+            <AccordionDetails key={index}>
+              <li key={index} className="mb-2">
+                <a
+                  data-fancybox="gallery"
+                  href={doc.url}
+                  className="text-blue hover:text-blue-700"
+                >
+                  {doc.title || `Открыть документ ${index + 1}`}
+                </a>
+              </li>
+            </AccordionDetails>
+          ))}
+        </Accordion>
+      </Box>
     </Container>
-  );
-};
+  )
+}
