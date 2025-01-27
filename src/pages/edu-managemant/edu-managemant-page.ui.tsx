@@ -14,7 +14,7 @@ const docs = [
     url: 'https://muit.makalabox.com/documents/edu/a.pdf',
   },
   {
-    title: 'менеджеринин кызматтык нускамасы',
+    title: 'Менеджеринин кызматтык нускамасы',
     url: 'https://muit.makalabox.com/documents/edu/b.pdf',
   },
   {
@@ -22,11 +22,11 @@ const docs = [
     url: 'https://muit.makalabox.com/documents/edu/c.pdf',
   },
   {
-    title: 'ОКУУ БАШКАРМАЛЫГЫНЫН БАШЧЫСЫНЫН КЫЗМАТТЫК НУСКАМАСЫ',
+    title: 'Окуу башкармалыгынын башчысынын кызматтык нускамасы',
     url: 'https://muit.makalabox.com/documents/edu/d.pdf',
   },
   {
-    title: 'окуу борборунун менеджеринин кызматтык нускамасы',
+    title: 'Окуу борборунун менеджеринин кызматтык нускамасы',
     url: 'https://muit.makalabox.com/documents/edu/e.pdf',
   },
   {
