@@ -45,8 +45,8 @@ export const SpecializationPage = () => {
       <div className="my-5">
         <SpecializationBanner {...specializationData.data} />
         <About {...specializationData.data} />
-        <ProgramBlocks />
-        {/* <SkillsBlock {...specializationData.data} /> */}
+        <ProgramBlocks {...specializationData.data} />
+        <SkillsBlock {...specializationData.data} />
         {/* <ProgramAccordion {...specializationData.data} /> */}
         <CareerBlock {...specializationData.data} />
         <EducationForm />
