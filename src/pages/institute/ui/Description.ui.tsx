@@ -24,13 +24,13 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
     isSuccess,
     isError,
     isLoading,
-  } = staffQueries.useSoftStaffs(String(id));
+  } = staffQueries.useGetStaffs(String(id));
 
-  const filteredAndSortedStaff = isSuccess
-  ? staffData.data.sort((a: staffTypes.Staff, b: staffTypes.Staff) => {
-        return b.status - a.status; // Сортировка по убыванию значения status
-      })
-  : [];
+  // const filteredAndSortedStaff = isSuccess
+  // ? staffData.data.sort((a: staffTypes.Staff, b: staffTypes.Staff) => {
+  //       return b.status - a.status; // Сортировка по убыванию значения status
+  //     })
+  // : [];
   
   return (
     <div className="flex gap-5 my-10">
@@ -60,13 +60,13 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
 
           {isSuccess && staffData?.data?.length > 0 ? (
             <Swiper
-              className="py-10 px-1 staff-list"
+              className="py-20 px-1 staff-list"
               modules={[Pagination]}
               spaceBetween={20}
               slidesPerView={1}
               pagination={{ clickable: true }}
             >
-              {filteredAndSortedStaff.map((staff) => (
+              {staffData.data.map((staff) => (
                 <SwiperSlide className="flex justify-center" key={staff.id}>
                   <StaffCard  {...staff} />
                 </SwiperSlide>
