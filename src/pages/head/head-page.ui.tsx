@@ -7,9 +7,9 @@ import {
   CardActionArea,
   Grid,
   IconButton,
-} from '@mui/material';
-import { FileCopy as FileIcon } from '@mui/icons-material';
-import Fancybox from '~widgets/diplom-list/Fancybox';
+} from '@mui/material'
+import { FileCopy as FileIcon } from '@mui/icons-material'
+import Fancybox from '~widgets/diplom-list/Fancybox'
 
 export const HeadPage = () => {
   const documents = [
@@ -59,9 +59,13 @@ export const HeadPage = () => {
     },
     {
       title: 'План заседаний ректората январь - август 2025',
-      link: 'https://muit.makalabox.com/documents/head/rectorate_januar_2025.pdf'
-    }
-  ];
+      link: 'https://muit.makalabox.com/documents/head/rectorate_januar_2025.pdf',
+    },
+    {
+      title: 'План заседаний ректората на 2020-2021',
+      link: 'https://muit.makalabox.com/documents/head/План заседаний ректората на 2020-2021.pdf',
+    },
+  ]
 
   return (
     <Container maxWidth="lg" className="py-10">
@@ -91,7 +95,7 @@ export const HeadPage = () => {
         <Grid container spacing={4}>
           {documents.map((document, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-                <a href={document.link} data-fancybox="gallery">
+              <a href={document.link} data-fancybox="gallery">
                 <Card>
                   <CardActionArea>
                     <CardContent>
@@ -106,11 +110,11 @@ export const HeadPage = () => {
                     </CardContent>
                   </CardActionArea>
                 </Card>
-            </a>
-              </Grid>
+              </a>
+            </Grid>
           ))}
         </Grid>
       </Fancybox>
     </Container>
-  );
-};
+  )
+}
