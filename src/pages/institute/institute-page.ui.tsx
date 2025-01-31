@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { EnrollForm } from '~widgets/enroll-form'
 import { OpportunitiesList } from '~widgets/opportunities-list'
-import StaffList from '~widgets/staff-list/staff-list.ui'
+// import StaffList from '~widgets/staff-list/staff-list.ui'
 import { InstituteBanner } from './ui/InstituteBanner.ui'
 import { facultyQueries } from '~entities/faculties'
 import { CircularProgress, Typography } from '@mui/material'
@@ -13,19 +13,16 @@ import { SpeakerVideoList } from '~widgets/speaker-list'
 
 export const InstitutePage = () => {
   const slug = useParams()
-  
+
   const {
     data: facultyData,
     isError,
     isLoading,
   } = facultyQueries.useGetFaculty(String(slug.slug))
-  const id = facultyData?.data.id
-  console.log(id)
 
   if (isError) {
     return <div>Произошла Ошибка</div>
   }
-  console.log(facultyData)
 
   if (isLoading) {
     return (
@@ -53,7 +50,7 @@ export const InstitutePage = () => {
       <ProgramCategory facultyId={facultyData?.data.id} />
       <EnrollForm />
       <OpportunitiesList />
-      <NewsList id={id} />
+      <NewsList id={facultyData?.data.id} />
       <SpeakerVideoList facultyId={facultyData?.data.id} />
     </div>
   )

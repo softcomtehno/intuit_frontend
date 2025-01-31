@@ -34,7 +34,6 @@ export const InstitutesPage = () => {
   if (isError) {
     return <div>Произошла Ошибка</div>
   }
-  console.log('data', facultyData?.data)
 
   return (
     <div className="my-5 mb-10">

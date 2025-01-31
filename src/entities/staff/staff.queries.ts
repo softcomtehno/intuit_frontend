@@ -9,11 +9,13 @@ const keys = {
   root: () => ['staff'],
   staff: (slug: string) => [...keys.root(), 'bySlug', slug] as const,
   position: () => [keys.root(), 'positions'] as const,
+  institute: (facultyId: number) =>
+    [keys.root(), 'facultyId', facultyId] as const,
 }
-export const useGetStaffs = () => {
+export const useGetStaffs = (facultyId: number) => {
   return useQuery({
-    queryKey: keys.root(),
-    queryFn: getStaffQuery,
+    queryKey: keys.institute(facultyId),
+    queryFn: () => getStaffQuery(facultyId),
   })
 }
 export const useGetStaffDetail = (slug: string) => {

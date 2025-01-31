@@ -1,37 +1,26 @@
-import React from 'react';
-import { Typography } from '@mui/material';
-import { StaffCard, staffQueries, staffTypes } from '~entities/staff';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import React from 'react'
+import { Typography } from '@mui/material'
+import { StaffCard, staffQueries } from '~entities/staff'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 interface DescriptionCardProps {
-  subtitle: string;
-  text: string;
-  subtext: string;
-  id: number;
+  subtitle: string
+  text: string
+  subtext: string
+  id: number
 }
 
-const DescriptionCard: React.FC<DescriptionCardProps> = ({
-  subtitle,
-  text,
-  subtext,
-  id,
-}) => {
+const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
   const {
-    data: staffData = [], // Предотвращение ошибок, если данные отсутствуют
+    data: staffData,
     isSuccess,
     isError,
     isLoading,
-  } = staffQueries.useGetStaffs(String(id));
+  } = staffQueries.useGetStaffs(id)
 
-  // const filteredAndSortedStaff = isSuccess
-  // ? staffData.data.sort((a: staffTypes.Staff, b: staffTypes.Staff) => {
-  //       return b.status - a.status; // Сортировка по убыванию значения status
-  //     })
-  // : [];
-  
   return (
     <div className="flex gap-5 my-10">
       <div className="p-5 bg-white shadow-lg rounded-lg max-w-[55%]">
@@ -68,7 +57,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
             >
               {staffData.data.map((staff) => (
                 <SwiperSlide className="flex justify-center" key={staff.id}>
-                  <StaffCard  {...staff} />
+                  <StaffCard {...staff} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -78,7 +67,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DescriptionCard;
+export default DescriptionCard
