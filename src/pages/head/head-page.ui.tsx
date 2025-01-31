@@ -63,7 +63,23 @@ export const HeadPage = () => {
     },
     {
       title: 'План заседаний ректората на 2020-2021',
-      link: 'https://muit.makalabox.com/documents/head/План заседаний ректората на 2020-2021.pdf',
+      link: 'https://muit.makalabox.com/documents/head/plan_rectorate_1.pdf',
+    },
+    {
+      title: 'План заседаний ректората на 2021-2022',
+      link: 'https://muit.makalabox.com/documents/head/plan_rectorate_2.pdf',
+    },
+    {
+      title: 'План заседаний ректората на 2022-2023',
+      link: 'https://muit.makalabox.com/documents/head/plan_rectorate_3.pdf',
+    },
+    {
+      title: 'План заседаний ректората на 2023-2024',
+      link: 'https://muit.makalabox.com/documents/head/plan_rectorate_4.pdf',
+    },
+    {
+      title: 'План заседаний ректората на 2024-2025',
+      link: 'https://muit.makalabox.com/documents/head/plan_rectorate_5.pdf',
     },
   ]
 
