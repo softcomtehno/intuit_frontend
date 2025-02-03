@@ -60,7 +60,7 @@ export const AboutPage = () => {
       isExternal: false,
     },
     {
-      title: 'ПОЛОЖЕНИЯ PHD',
+      title: 'PHD',
       description: 'Ознакомьтесь  с нашим положением PHD',
       url: '/phd',
       image:
