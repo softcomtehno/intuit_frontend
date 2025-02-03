@@ -1,35 +1,31 @@
-import {
-  Button,
-  CircularProgress,
-  Typography,
-  Pagination,
-} from '@mui/material';
-import Select from 'react-select';
-import { ProfessionCard } from '~entities/profession';
-import { useTranslation } from 'react-i18next';
-import { programQueries } from '~entities/programs';
-import { facultyQueries } from '~entities/faculties';
-import { degreeQueries } from '~entities/degree';
-import { useState } from 'react';
+import { Button, CircularProgress, Typography, Pagination } from '@mui/material'
+import Select from 'react-select'
+import { ProfessionCard } from '~entities/profession'
+import { useTranslation } from 'react-i18next'
+import { programQueries } from '~entities/programs'
+import { facultyQueries } from '~entities/faculties'
+import { degreeQueries } from '~entities/degree'
+import { useState } from 'react'
+import { FacultySchema } from '~entities/faculties/faculty.types'
 
 export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const {
     data: serverData,
     isLoading,
     isError,
-  } = programQueries.useGetPrograms(degreeId, facultyId);
+  } = programQueries.useGetPrograms(degreeId, facultyId)
   const {
     data: facultyData,
     isFacultyLoading,
     isFacultyError,
-  } = facultyQueries.useGetFaculties();
+  } = facultyQueries.useGetFaculties()
   const {
     data: degreeData,
     isDegreeLoading,
     isDegreeError,
-  } = degreeQueries.useGetDegrees();
+  } = degreeQueries.useGetDegrees()
 
   const sortedFaculties =
     facultyData?.data
@@ -37,7 +33,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       .map((faculty) => ({
         value: faculty.id,
         label: faculty.titleRu || faculty.title,
-      })) || [];
+      })) || []
 
   const sortedDegrees =
     degreeData?.data
@@ -45,56 +41,56 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       .map((degree) => ({
         value: degree.id,
         label: degree.titleRu || degree.title,
-      })) || [];
+      })) || []
 
-  const [selectedDegree, setSelectedDegree] = useState(degreeId || null);
-  const [selectedFaculty, setSelectedFaculty] = useState(facultyId || null);
+  const [selectedDegree, setSelectedDegree] = useState(degreeId || null)
+  const [selectedFaculty, setSelectedFaculty] = useState(facultyId || null)
 
-  const professions = propdata || serverData;
+  const professions = propdata || serverData
 
   const filteredProfessions = professions?.data.filter((profession) => {
     const matchesDegree = selectedDegree
       ? profession.educationLevel.some((level) => level.id === selectedDegree)
-      : true;
+      : true
     const matchesFaculty = selectedFaculty
       ? profession.faculty.some((faculty) => faculty.id === selectedFaculty)
-      : true;
-    return matchesDegree && matchesFaculty;
-  });
+      : true
+    return matchesDegree && matchesFaculty
+  })
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
 
   const totalPages = Math.ceil(
     (filteredProfessions?.length || 0) / itemsPerPage
-  );
+  )
   const paginatedProfessions = filteredProfessions?.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
-  );
+  )
 
   const handleDegreeChange = (selectedOption) => {
-    setSelectedDegree(selectedOption?.value || null);
-    setCurrentPage(1); // Reset page when filters change
-  };
+    setSelectedDegree(selectedOption?.value || null)
+    setCurrentPage(1) // Reset page when filters change
+  }
 
   const handleFacultyChange = (selectedOption) => {
-    setSelectedFaculty(selectedOption?.value || null);
-    setCurrentPage(1); // Reset page when filters change
-  };
+    setSelectedFaculty(selectedOption?.value || null)
+    setCurrentPage(1) // Reset page when filters change
+  }
 
   const handleClearFilters = () => {
-    setSelectedDegree(null);
-    setSelectedFaculty(null);
-    setCurrentPage(1); // Reset page when filters are cleared
-  };
+    setSelectedDegree(null)
+    setSelectedFaculty(null)
+    setCurrentPage(1) // Reset page when filters are cleared
+  }
 
   const handlePageChange = (event, value) => {
-    setCurrentPage(value);
-  };
+    setCurrentPage(value)
+  }
 
   if (isError) {
-    return <div>Произошла ошибка</div>;
+    return <div>Произошла ошибка</div>
   }
 
   if (isLoading || isDegreeLoading || isFacultyLoading) {
@@ -103,7 +99,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
         <CircularProgress className="text-blue" />
         <Typography variant="h6">Загрузка</Typography>
       </div>
-    );
+    )
   }
 
   return (
@@ -134,7 +130,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
             onChange={handleFacultyChange}
             value={
               sortedFaculties.find(
-                (faculty) => faculty.value === selectedFaculty
+                (faculty: FacultySchema) => faculty.value === selectedFaculty
               ) || null
             }
           />
@@ -146,7 +142,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
             Очистить
           </Button>
         </div>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 lg:justify-center">
           {paginatedProfessions?.map((profession, index) => (
             <ProfessionCard
               key={index}
@@ -165,8 +161,8 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
               onChange={handlePageChange}
               sx={{
                 '& .MuiPaginationItem-root.Mui-selected': {
-                  color: 'white', // Цвет текста для выбранного элемента
-                  backgroundColor: '#00956F', // Зелёный фон для выбранного элемента
+                  color: 'white',
+                  backgroundColor: '#00956F',
                 },
               }}
             />
@@ -174,5 +170,5 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}

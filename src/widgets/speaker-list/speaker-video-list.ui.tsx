@@ -59,6 +59,11 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
         className="py-10 pointer"
         slidesPerView={5}
         scrollbar={{}}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.5,
+          },
+        }}
         modules={[Scrollbar]}
         spaceBetween={30} // Увеличиваем расстояние между элементами
       >

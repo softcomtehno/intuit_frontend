@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
 import { Quizizz } from '~widgets/quizizz'
 
-export const IntroCard = ({ title, img, description }) => {
+export const IntroCard = ({ img, description }) => {
   const [modal, setModal] = useState(false)
 
   return (

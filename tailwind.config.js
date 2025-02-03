@@ -20,6 +20,7 @@ export default {
       md: { max: '767px' },
       lg: { max: '1023px' },
       xl: { max: '1439px' },
+      'xl-max': '1340px', // Specific width for xl-max screens
     },
     container: {
       center: true,
@@ -29,9 +30,6 @@ export default {
         lg: '100px',
         xl: '100px',
         '2xl': '100px',
-      },
-      screens: {
-        'xl-max': '1340px', // Specific width for xl-max screens
       },
     },
     extend: {},

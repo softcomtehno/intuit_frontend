@@ -19,7 +19,7 @@ export const License = () => {
           },
         }}
       >
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between gap-4 lg:flex-col">
           <div className="max-w-md w-full border border-gray rounded-lg bg-white p-2 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-xl font-bold text-gray-800">

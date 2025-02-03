@@ -52,7 +52,7 @@ const StatsCard: React.FC<StatsCardProps> = ({ count, label, color = 'blue' }) =
 
 export const Stats = () => {
   return (
-      <div className="flex justify-between flex-wrap my-5">
+      <div className="flex justify-between flex-wrap my-5 lg:justify-center lg:gap-3">
         <StatsCard count={2007} label="Год основания" />
         <StatsCard count={8} label="Институтов" color="green" />
         <StatsCard count={120} label="Преподавателей" color="purple" />
