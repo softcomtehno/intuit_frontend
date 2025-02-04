@@ -9,14 +9,30 @@ import {
   Typography,
   Container,
   Box,
+  CircularProgress,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 export const DocumentPage = () => {
   const { slug } = useParams()
 
-  const { data: documentData } = documentQueries.useGetDetailsDocuments(slug)
-  console.log(documentData)
+  const {
+    data: documentData,
+    isError,
+    isLoading,
+  } = documentQueries.useGetDetailsDocuments(slug)
+  if (isError) {
+    return <div>Произошла Ошибка</div>
+  }
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
+        <CircularProgress className="text-blue" />
+        <Typography variant="h6">Загрузка</Typography>
+      </div>
+    )
+  }
 
   return (
     <Container maxWidth="lg" className="py-10">
