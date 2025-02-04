@@ -8,7 +8,6 @@ import {
   AccordionDetails,
   Typography,
   Container,
-  Box,
   CircularProgress,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -41,7 +40,7 @@ export const DocumentPage = () => {
         className="font-bold text-center mb-8 text-gray-800"
         style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
       >
-        Докторантура PHD
+        {documentData?.data.title}
       </Typography>
       <div
         className="my-10"
