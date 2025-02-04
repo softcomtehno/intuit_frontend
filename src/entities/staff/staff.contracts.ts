@@ -14,7 +14,7 @@ export const StaffSchema = z.object({
   youtube: z.string(),
   curriculumVitae: z.string(),
   cv: z.string(),
-  position: z.number(),
+  position: z.object({ id: z.number() }),
   faculty: z.array(z.number()),
 })
 

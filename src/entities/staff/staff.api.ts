@@ -1,6 +1,6 @@
 import apiClient from '~shared/lib/api/apiClient'
 
-export const getStaffQuery = (facultyId: number) => {
+export const getStaffQuery = (facultyId?: number) => {
   const url = facultyId
     ? `university/staffs/?faculty=${facultyId}`
     : `university/staffs/`
