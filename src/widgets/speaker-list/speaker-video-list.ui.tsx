@@ -63,6 +63,9 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
           0: {
             slidesPerView: 1.5,
           },
+          1024: {
+            slidesPerView: 5,
+          },
         }}
         modules={[Scrollbar]}
         spaceBetween={30} // Увеличиваем расстояние между элементами

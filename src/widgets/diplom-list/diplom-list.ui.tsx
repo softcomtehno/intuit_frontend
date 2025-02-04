@@ -4,11 +4,11 @@ import Gerb from '../../assets/gerb.svg'
 import EGerb from '../../assets/eugerb.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
+import Fancybox from '~widgets/diplom-list/Fancybox'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
-import Fancybox from '~widgets/diplom-list/Fancybox'
 
 export const DiplomList = () => {
   const { t } = useTranslation()
@@ -34,7 +34,6 @@ export const DiplomList = () => {
           modules={[Pagination]}
           spaceBetween={20}
           slidesPerView={3}
-          centeredSlides={true}
           pagination={{ clickable: true }}
           breakpoints={{
             360: {
