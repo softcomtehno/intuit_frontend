@@ -26,6 +26,7 @@ import { teapunPageRoute } from '~pages/teapun'
 import { headPageRoute } from '~pages/head'
 import { eduManagementPageRoute } from '~pages/edu-managemant'
 import { phdPageRoute } from '~pages/phd'
+import { documentPageRoute } from '~pages/document'
 
 function BubbleError() {
   const error = useRouteError()
@@ -61,7 +62,8 @@ const router = createBrowserRouter([
           teapunPageRoute,
           headPageRoute,
           eduManagementPageRoute,
-          phdPageRoute
+          phdPageRoute,
+          documentPageRoute,
         ],
       },
     ],

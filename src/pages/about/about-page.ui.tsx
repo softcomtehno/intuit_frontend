@@ -4,8 +4,12 @@ import RatingImg from './rating.jpg'
 import VisionImg from './vision.webp'
 import HistoryImg from './history.jpg'
 import EducationImg from './education.jpg'
+import { documentQueries, documentTypes } from '~entities/document'
 
 export const AboutPage = () => {
+  const { data: documentData } = documentQueries.useGetDocuments()
+  console.log(documentData)
+
   const links = [
     {
       title: 'История университета',
@@ -160,6 +164,46 @@ export const AboutPage = () => {
             </Box>
           </Box>
         ))}
+        {documentData?.data.map(
+          (document: documentTypes.DocumentSchema, i: number) => (
+            <Box
+              key={i}
+              className="flex items-center rounded-[8px] p-[16px] border border-[#e0e0e0] transition-transform duration-200 hover:translate-y-[-4px]"
+            >
+              <Box
+                component="img"
+                src={document.photo}
+                alt={document.title}
+                className="w-[64px] h-[64px] rounded-[8px] mr-[16px] object-cover"
+              />
+              <Box>
+                <Typography variant="h6" className="font-medium text-primary">
+                  {document.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: 'text.secondary',
+                  }}
+                >
+                  {document.subtitle}
+                </Typography>
+
+                <RouterLink
+                  to={`/document/${document.slug}`}
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#1976d2',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Перейти
+                </RouterLink>
+              </Box>
+            </Box>
+          )
+        )}
       </Box>
     </Container>
   )

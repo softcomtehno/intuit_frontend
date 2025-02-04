@@ -149,7 +149,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-4"
-              href="https://muit.makalabox.com/documents/https://muit.makalabox.com/documents/diploms/diplom_en.pdf"
+              href="https://muit.makalabox.com/documents/diploms/diplom_en.pdf"
               className="lg:flex lg:justify-center"
             >
               <Card className="transition duration-75 max-w-[420px] min-h-[200px] max-h-[200px] bg-[#f5f5f5] p-4 flex justify-evenly shadow-none rounded-lg  hover:cursor-pointer md:flex-col-reverse md:max-h-full md:gap-10 items-center ">
