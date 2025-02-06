@@ -25,13 +25,7 @@ export const AboutPage = () => {
       image: VisionImg,
       isExternal: false,
     },
-    {
-      title: 'Департамент качества образования',
-      description: 'Контроль и улучшение качества образовательных процессов.',
-      url: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya/',
-      image: EducationImg,
-      isExternal: false,
-    },
+
     {
       title: 'Рейтинг преподавательского состава',
       description: 'Посмотрите рейтинг лучших преподавателей университета.',

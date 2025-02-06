@@ -8,10 +8,8 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-} from '@mui/material';
-import Fancybox from '~widgets/diplom-list/Fancybox';
-import  ExpandMoreIcon  from '@mui/icons-material/ExpandMore';
-
+} from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 export const DocumentsPage = () => {
   const documents = [
@@ -27,7 +25,7 @@ export const DocumentsPage = () => {
       title: 'Документ 3',
       url: 'https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B0.png',
     },
-  ];
+  ]
   return (
     <Container maxWidth="lg" className="py-10 px-4">
       <Typography
@@ -100,28 +98,27 @@ export const DocumentsPage = () => {
         ))}
       </Grid>
 
-        {documents.map((doc, index) => (
-          <Accordion
-            key={index}
-            className="mb-4 border border-blue-500 rounded-lg"
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography className="text-gray-800 font-semibold">
-                {doc.title}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <a
-                data-fancybox="gallery"
-                href={doc.url}
-                className="block text-blue-500 underline hover:text-blue-700"
-              >
-                Открыть {doc.title}
-              </a>
-            </AccordionDetails>
-          </Accordion>
-        ))}
-    
+      {documents.map((doc, index) => (
+        <Accordion
+          key={index}
+          className="mb-4 border border-blue-500 rounded-lg"
+        >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography className="text-gray-800 font-semibold">
+              {doc.title}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <a
+              data-fancybox="gallery"
+              href={doc.url}
+              className="block text-blue-500 underline hover:text-blue-700"
+            >
+              Открыть {doc.title}
+            </a>
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </Container>
-  );
-};
+  )
+}
