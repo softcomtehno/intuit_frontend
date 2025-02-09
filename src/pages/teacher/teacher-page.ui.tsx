@@ -6,7 +6,7 @@ import {
   ContactPage,
 } from '@mui/icons-material'
 import { Typography } from '@mui/material'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { staffQueries } from '~entities/staff'
 import './index.css'
 
@@ -107,14 +107,14 @@ export const TeacherPage = () => {
                 </a>
               </div>
               <div className="bg-[#383838] rounded-md transition-all hover:scale-105">
-                <a
-                  href={staffData.data.cv}
+                <Link
+                  to={'cv'}
                   target="_blank"
                   className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
                 >
                   <ContactPage className="mr-2" />
                   <span className="text-lg">Резюме</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
