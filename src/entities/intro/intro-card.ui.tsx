@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from '@mui/material'
 import { useState } from 'react'
 import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
+import { EventList } from '~widgets/events-list'
 import { Quizizz } from '~widgets/quizizz'
 
 export const IntroCard = ({ img, description }) => {
@@ -12,12 +13,13 @@ export const IntroCard = ({ img, description }) => {
         className="container  h-[500px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right "
         style={{ backgroundImage: `url(${img})` }}
       >
-        <Typography
+        {/* <Typography
           variant="h1"
           className="font-bold text-black text-[70px] max-w-[750px] sm:text-[40px] md:text-center md:text-[30px]"
         >
-          {/* {title} */}
-        </Typography>
+          {title}
+        </Typography> */}
+        <EventList></EventList>
 
         <Box className="flex flex-col gap-5">
           <Typography
