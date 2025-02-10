@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 
 export const License = () => {
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-10 ">
       <Typography
         variant="h3"
         component="h3"

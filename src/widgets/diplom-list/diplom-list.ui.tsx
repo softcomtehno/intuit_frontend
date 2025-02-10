@@ -82,7 +82,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-2"
-              href="https://intuit.kg/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%9C%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0.png"
+              href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
               className="lg:flex lg:justify-center"
             >
               <Card className="transition duration-75 max-w-[420px] min-h-[200px] max-h-[200px] bg-[#f5f5f5] p-4 flex justify-evenly shadow-none rounded-lg  hover:cursor-pointer md:flex-col-reverse md:max-h-full md:gap-10 items-center">
@@ -149,7 +149,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-4"
-              href="https://muit.makalabox.com/documents/diploma/euro.pdf"
+              href="https://muit.makalabox.com/documents/diploms/diplom_en.pdf"
               className="lg:flex lg:justify-center"
             >
               <Card className="transition duration-75 max-w-[420px] min-h-[200px] max-h-[200px] bg-[#f5f5f5] p-4 flex justify-evenly shadow-none rounded-lg  hover:cursor-pointer md:flex-col-reverse md:max-h-full md:gap-10 items-center ">

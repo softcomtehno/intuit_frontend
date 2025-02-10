@@ -103,7 +103,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
   }
 
   return (
-    <div className="my-20 rounded-lg">
+    <div className="my-20 rounded-lg ">
       <Typography
         variant="h3"
         component="h3"

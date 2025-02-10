@@ -13,7 +13,6 @@ import { newsPageRoute } from '~pages/news'
 import { paymentsPageRoute } from '~pages/payments'
 import { institutePageRoute } from '~pages/institute'
 import { specializationPageRoute } from '~pages/specialization'
-import { deparmentPageRoute } from '~pages/department'
 import { historyPageRoute } from '~pages/history'
 import { visionPageRoute } from '~pages/vision'
 import { aboutPageRoute } from '~pages/about'
@@ -24,8 +23,8 @@ import { admissionsPageRoute } from '~pages/admissions'
 import { windowPageRoute } from '~pages/window/window-page.route'
 import { teapunPageRoute } from '~pages/teapun'
 import { headPageRoute } from '~pages/head'
-import { eduManagementPageRoute } from '~pages/edu-managemant'
-import { phdPageRoute } from '~pages/phd'
+import { documentPageRoute } from '~pages/document'
+import { teacherPageCvRoute } from '~pages/teacher/teacher-page.route'
 
 function BubbleError() {
   const error = useRouteError()
@@ -49,7 +48,6 @@ const router = createBrowserRouter([
           paymentsPageRoute,
           institutePageRoute,
           specializationPageRoute,
-          deparmentPageRoute,
           historyPageRoute,
           visionPageRoute,
           aboutPageRoute,
@@ -60,8 +58,8 @@ const router = createBrowserRouter([
           windowPageRoute,
           teapunPageRoute,
           headPageRoute,
-          eduManagementPageRoute,
-          phdPageRoute
+          documentPageRoute,
+          teacherPageCvRoute,
         ],
       },
     ],

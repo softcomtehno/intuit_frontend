@@ -6,7 +6,7 @@ export const AboutBlock = () => {
   const { t } = useTranslation()
 
   return (
-    <div>
+    <div >
       <Typography
         variant="h3"
         component="h3"

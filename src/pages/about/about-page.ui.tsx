@@ -4,8 +4,12 @@ import RatingImg from './rating.jpg'
 import VisionImg from './vision.webp'
 import HistoryImg from './history.jpg'
 import EducationImg from './education.jpg'
+import { documentQueries, documentTypes } from '~entities/document'
 
 export const AboutPage = () => {
+  const { data: documentData } = documentQueries.useGetDocuments()
+  console.log(documentData)
+
   const links = [
     {
       title: 'История университета',
@@ -21,13 +25,7 @@ export const AboutPage = () => {
       image: VisionImg,
       isExternal: false,
     },
-    {
-      title: 'Департамент качества образования',
-      description: 'Контроль и улучшение качества образовательных процессов.',
-      url: '/departament-obespecheniya-i-kontrolya-kachestva-obrazovaniya/',
-      image: EducationImg,
-      isExternal: false,
-    },
+
     {
       title: 'Рейтинг преподавательского состава',
       description: 'Посмотрите рейтинг лучших преподавателей университета.',
@@ -47,22 +45,6 @@ export const AboutPage = () => {
       title: 'Ректорат',
       description: 'Узнайте больше о нашем Ректорате',
       url: '/head',
-      image:
-        'https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg',
-      isExternal: false,
-    },
-    {
-      title: 'Учебное управление',
-      description: 'Ознакомьтесь  с нашим учебным управлением',
-      url: '/educatiion-management',
-      image:
-        'https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg',
-      isExternal: false,
-    },
-    {
-      title: 'PHD',
-      description: 'Ознакомьтесь  с нашим положением PHD',
-      url: '/phd',
       image:
         'https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg',
       isExternal: false,
@@ -99,6 +81,7 @@ export const AboutPage = () => {
                 transform: 'translateY(-4px)',
               },
             }}
+            className="md:flex md:flex-col"
           >
             <Box
               component="img"
@@ -112,13 +95,14 @@ export const AboutPage = () => {
                 objectFit: 'cover',
               }}
             />
-            <Box>
+            <Box className="md:flex md:flex-col md:items-center md:gap-3">
               <Typography
                 variant="h6"
                 sx={{
                   fontWeight: '500',
                   color: 'text.primary',
                 }}
+                className="text-center"
               >
                 {link.title}
               </Typography>
@@ -127,6 +111,7 @@ export const AboutPage = () => {
                 sx={{
                   color: 'text.secondary',
                 }}
+                className="text-center"
               >
                 {link.description}
               </Typography>
@@ -160,6 +145,50 @@ export const AboutPage = () => {
             </Box>
           </Box>
         ))}
+        {documentData?.data.map(
+          (document: documentTypes.DocumentSchema, i: number) => (
+            <Box
+              key={i}
+              className="flex items-center rounded-[8px] p-[16px] border border-[#e0e0e0] transition-transform duration-200 hover:translate-y-[-4px] md:flex md:flex-col "
+            >
+              <Box
+                component="img"
+                src={document.photo}
+                alt={document.title}
+                className="w-[64px] h-[64px] rounded-[8px] mr-[16px] object-cover"
+              />
+              <Box className="md:flex md:flex-col md:items-center md:gap-3">
+                <Typography
+                  variant="h6"
+                  className="font-medium text-primary md:text-center"
+                >
+                  {document.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: 'text.secondary',
+                  }}
+                  className="text-center"
+                >
+                  {document.subtitle}
+                </Typography>
+
+                <RouterLink
+                  to={`/document/${document.slug}`}
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#1976d2',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Перейти
+                </RouterLink>
+              </Box>
+            </Box>
+          )
+        )}
       </Box>
     </Container>
   )
