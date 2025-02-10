@@ -41,7 +41,7 @@ const StaffList = () => {
   })
 
   return (
-    <div>
+    <>
       {/* Навигация по стажу */}
       <div className="position-navigation flex justify-start my-4 lg:hidden">
         {isPositionsSuccess && (
@@ -75,7 +75,7 @@ const StaffList = () => {
       <div>
         <Select
           value={selectedPosition}
-          className="mt-5 hidden lg:block"
+          className="mt-5 hidden lg:block md:max-w-[90%]"
           onChange={(e) => setSelectedPosition(e.target.value)}
         >
           {positionsData?.data.map(
@@ -110,7 +110,7 @@ const StaffList = () => {
             </SwiperSlide>
           ))}
       </Swiper>
-    </div>
+    </>
   )
 }
 

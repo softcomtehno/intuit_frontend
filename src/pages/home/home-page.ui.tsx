@@ -24,10 +24,10 @@ export function HomePage() {
       <ProgramCategory />
       <OpportunitiesList />
       <AboutBlock />
-      <div className="my-20">
+      <div className="my-20 ">
         <DiplomList />
       </div>
-      <div>
+      <div className="container">
         <Typography
           variant="h3"
           component="h3"
