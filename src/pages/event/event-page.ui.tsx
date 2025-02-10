@@ -1,7 +1,8 @@
-import React from 'react'
+import { useParams } from 'react-router-dom'
+import { eventQueries } from '~entities/events'
 
 export const EventPage = () => {
-  return (
-    <div>EventPage</div>
-  )
+  const { slug } = useParams()
+  const { data, isLoading, isError } = eventQueries.useGetEventDetail(slug)
+  return <div>EventPage</div>
 }
