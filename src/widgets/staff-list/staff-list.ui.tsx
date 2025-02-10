@@ -42,13 +42,12 @@ const StaffList = () => {
 
   return (
     <>
-      {/* Навигация по стажу */}
       <div className="position-navigation flex justify-start my-4 lg:hidden">
         {isPositionsSuccess && (
           <ButtonGroup
             sx={{
               '& .MuiButtonGroup-grouped:not(:last-of-type)': {
-                borderRight: '1px solid green', // Зеленый цвет
+                borderRight: '1px solid green', 
               },
             }}
             variant="contained"
