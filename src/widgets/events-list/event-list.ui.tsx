@@ -25,7 +25,7 @@ export const EventList = () => {
       <Box className="w-full overflow-hidden my-10">
         <Marquee
           direction="left"
-          speed={150}
+          speed={100}
           pauseOnHover={true}
           className="mb-3 "
         >

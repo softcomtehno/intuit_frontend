@@ -10,7 +10,7 @@ export const IntroCard = ({ img, description }) => {
   return (
     <>
       <section
-        className="container  h-[500px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right "
+        className="container border border-[gray]  h-[350px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right text-left "
         style={{ backgroundImage: `url(${img})` }}
       >
         {/* <Typography
@@ -19,9 +19,9 @@ export const IntroCard = ({ img, description }) => {
         >
           {title}
         </Typography> */}
-        <EventList></EventList>
+        {/* <EventList></EventList> */}
 
-        <Box className="flex flex-col gap-5">
+        <Box className="flex flex-col justify-between h-[100%] gap-5">
           <Typography
             variant="body1"
             className="text-black text-xl max-w-[550px] font-bold md:text-center"

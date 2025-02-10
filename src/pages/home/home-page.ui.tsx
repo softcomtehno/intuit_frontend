@@ -12,10 +12,12 @@ import { ArticleList } from '~widgets/article-list/article-list.ui'
 import { Typography } from '@mui/material'
 import { License } from './ui/License.ui'
 import { NewsList } from '~widgets/news-list'
+import { EventList } from '~widgets/events-list'
 
 export function HomePage() {
   return (
     <div>
+      <EventList/>
       <h1 className="my-5 font-medium">
         <SwiperIntro />
       </h1>
