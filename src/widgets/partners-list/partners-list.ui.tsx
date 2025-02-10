@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import Marquee from 'react-fast-marquee'
-import { PartnerCard, partnersQueries } from '~entities/partner'
+import { PartnerCard, partnersQueries, partnersTypes } from '~entities/partner'
 import { useTranslation } from 'react-i18next'
 
 export const PartnersList = () => {
@@ -29,11 +29,15 @@ export const PartnersList = () => {
           className="mb-3 "
         >
           {partnersData &&
-            partnersData.data.map((partner, i) => {
-              if (i % 2 == 0) {
-                return <PartnerCard key={partner.id} {...partner}></PartnerCard>
+            partnersData.data.map(
+              (partner: partnersTypes.Partner, i: number) => {
+                if (i % 2 == 0) {
+                  return (
+                    <PartnerCard key={partner.id} {...partner}></PartnerCard>
+                  )
+                }
               }
-            })}
+            )}
         </Marquee>
 
         <Marquee
@@ -43,11 +47,15 @@ export const PartnersList = () => {
           className="pb-5"
         >
           {partnersData &&
-            partnersData.data.map((partner, i) => {
-              if (i % 2 == 1) {
-                return <PartnerCard key={partner.id} {...partner}></PartnerCard>
+            partnersData.data.map(
+              (partner: partnersTypes.Partner, i: number) => {
+                if (i % 2 == 1) {
+                  return (
+                    <PartnerCard key={partner.id} {...partner}></PartnerCard>
+                  )
+                }
               }
-            })}
+            )}
         </Marquee>
       </Box>
     )
