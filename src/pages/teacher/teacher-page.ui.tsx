@@ -40,7 +40,7 @@ export const TeacherPage = () => {
     return (
       <section className=" rounded-lg flex items-center justify-center py-10 mb-5 t w-full teacher">
         <div className="container mx-auto">
-          <div className="flex  items-center justify-center  gap-10">
+          <div className="flex  items-center justify-center  gap-10 md:flex-col">
             <div className="flex flex-col items-center justify-center gap-10">
               <div className="flex justify-center  border-3 border-solid border-black rounded-full shadow-lg">
                 <img
