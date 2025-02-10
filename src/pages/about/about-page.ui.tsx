@@ -81,6 +81,7 @@ export const AboutPage = () => {
                 transform: 'translateY(-4px)',
               },
             }}
+            className="md:flex md:flex-col"
           >
             <Box
               component="img"
@@ -94,13 +95,14 @@ export const AboutPage = () => {
                 objectFit: 'cover',
               }}
             />
-            <Box>
+            <Box className="md:flex md:flex-col md:items-center md:gap-3">
               <Typography
                 variant="h6"
                 sx={{
                   fontWeight: '500',
                   color: 'text.primary',
                 }}
+                className="text-center"
               >
                 {link.title}
               </Typography>
@@ -109,6 +111,7 @@ export const AboutPage = () => {
                 sx={{
                   color: 'text.secondary',
                 }}
+                className="text-center"
               >
                 {link.description}
               </Typography>
@@ -146,7 +149,7 @@ export const AboutPage = () => {
           (document: documentTypes.DocumentSchema, i: number) => (
             <Box
               key={i}
-              className="flex items-center rounded-[8px] p-[16px] border border-[#e0e0e0] transition-transform duration-200 hover:translate-y-[-4px]"
+              className="flex items-center rounded-[8px] p-[16px] border border-[#e0e0e0] transition-transform duration-200 hover:translate-y-[-4px] md:flex md:flex-col "
             >
               <Box
                 component="img"
@@ -154,8 +157,11 @@ export const AboutPage = () => {
                 alt={document.title}
                 className="w-[64px] h-[64px] rounded-[8px] mr-[16px] object-cover"
               />
-              <Box>
-                <Typography variant="h6" className="font-medium text-primary">
+              <Box className="md:flex md:flex-col md:items-center md:gap-3">
+                <Typography
+                  variant="h6"
+                  className="font-medium text-primary md:text-center"
+                >
                   {document.title}
                 </Typography>
                 <Typography
@@ -163,6 +169,7 @@ export const AboutPage = () => {
                   sx={{
                     color: 'text.secondary',
                   }}
+                  className="text-center"
                 >
                   {document.subtitle}
                 </Typography>

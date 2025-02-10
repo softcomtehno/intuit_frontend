@@ -1,14 +1,6 @@
-import {
-  Typography,
-  Container,
-  Box,
-  Link,
-  Tabs,
-  Tab,
-  Button,
-} from '@mui/material';
-import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Typography, Container, Box, Tabs, Tab, Button } from '@mui/material'
+import { useState } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 
 export const StudentsPage = () => {
   const links = [
@@ -41,13 +33,13 @@ export const StudentsPage = () => {
       image: 'https://via.placeholder.com/64',
       isExternal: true,
     },
-  ];
+  ]
 
-  const [activeTab, setActiveTab] = useState('bachelor');
+  const [activeTab, setActiveTab] = useState('bachelor')
 
   const handleTabChange = (event, newValue) => {
-    setActiveTab(newValue);
-  };
+    setActiveTab(newValue)
+  }
 
   const tabs = [
     {
@@ -81,7 +73,7 @@ export const StudentsPage = () => {
       value: 'phd',
       courses: [{ name: '1 курс', url: '/phd/1' }],
     },
-  ];
+  ]
 
   return (
     <Container maxWidth="lg" className="py-10 px-4">
@@ -99,17 +91,18 @@ export const StudentsPage = () => {
         TabIndicatorProps={{
           style: { backgroundColor: 'green' }, // Нижняя линия
         }}
+        variant="scrollable"
       >
         {tabs.map((tab) => (
           <Tab
             key={tab.value}
-            className="text-black"
+            className="text-black "
             label={tab.label}
             value={tab.value}
           />
         ))}
       </Tabs>
-      <Box className="flex" gap={2} mt={4}>
+      <Box className="flex md:flex-col m-10" gap={2} mt={4}>
         {tabs
           .find((tab) => tab.value === activeTab)
           ?.courses.map((course, index) => (
@@ -153,6 +146,7 @@ export const StudentsPage = () => {
                 transform: 'translateY(-4px)',
               },
             }}
+            className="md:flex md:flex-col"
           >
             <Box
               component="img"
@@ -165,7 +159,7 @@ export const StudentsPage = () => {
                 marginRight: '16px',
               }}
             />
-            <Box>
+            <Box className="md:flex md:flex-col md:items-center">
               <Typography
                 variant="h6"
                 sx={{
@@ -217,5 +211,5 @@ export const StudentsPage = () => {
         ))}
       </Box>
     </Container>
-  );
-};
+  )
+}
