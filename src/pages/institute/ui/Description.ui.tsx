@@ -31,7 +31,10 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
         >
           Об Институте
         </Typography>
-        <p className="mt-5 font-semibold leading-7 text-justify">{subtext}</p>
+        <div
+          className="mt-5 text-justify"
+          dangerouslySetInnerHTML={{ __html: subtext }}
+        ></div>
       </div>
 
       <div className="min-w-[45%] max-w-[45%] bg-[#e0e1e5] p-5 rounded-xl">
