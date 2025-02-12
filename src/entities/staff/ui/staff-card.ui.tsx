@@ -17,7 +17,7 @@ export const StaffCard = ({
 
   return (
     <div
-      onClick={() => navigate(`teachers/${slug}`)}
+      onClick={() => navigate(`/teachers/${slug}`)}
       className="cursor-pointer"
     >
       <Card
@@ -25,10 +25,10 @@ export const StaffCard = ({
       min-w-[500px] max-w-[500px] min-h-[220px] max-h-[240px] p-3 shadow-md rounded-md bg-white 
       lg:max-w-full lg:min-w-full lg:min-h-[400px] lg:max-h-[400px]"
       >
-        <div className="flex mih-h-[140px] max-h-[140px]  lg:flex-col ">
+        <div className="flex mih-h-[140px] max-h-[140px]  lg:flex-col lg:items-center lg:max-h-[auto]">
           <CardMedia
             component="img"
-            className="max-w-[110px] min-h-[150px] max-h-[140px] rounded-xl"
+            className="max-w-[110px] min-h-[150px] max-h-[150px] rounded-xl lg:max-w-[auto] lg:max-h-none"
             image={image}
             alt={name}
           />
@@ -39,14 +39,14 @@ export const StaffCard = ({
             <Typography
               component="div"
               variant="h5"
-              className="text-[20px] font-semibold leading-6 "
+              className="text-[20px] font-semibold leading-6 lg:text-center"
             >
               {name}
             </Typography>
             <Typography
               variant="h2"
               component="div"
-              className="text-[16px] font-semibold"
+              className="text-[16px] font-semibold lg:text-center"
             >
               {truncateText(description, 100)}
             </Typography>
@@ -59,7 +59,6 @@ export const StaffCard = ({
             </Button>
           </CardContent>
         </div>
-        <div></div>
       </Card>
     </div>
   )

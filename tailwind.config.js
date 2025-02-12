@@ -15,12 +15,12 @@ export default {
       gray: '#CFD1DF',
     },
     screens: {
-      xs: { max: '359px' },
-      sm: { max: '479px' },
-      md: { max: '767px' },
-      lg: { max: '1023px' },
       xl: { max: '1439px' },
       'xl-max': '1340px', // Specific width for xl-max screens
+      lg: { max: '1023px' },
+      md: { max: '767px' },
+      sm: { max: '479px' },
+      xs: { max: '359px' },
     },
     container: {
       center: true,

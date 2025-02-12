@@ -52,7 +52,7 @@ export const EnrollForm = () => {
         {t('homepage.enrollForm.title')}
       </Typography>
       <div>
-        <div className="flex items-center gap-2 lg:flex-col">
+        <div className="flex items-center gap-2 xl:flex-col">
           <fieldset className="text-xs flex gap-2 lg:flex-col">
             <fieldset className="my-5">
               <input

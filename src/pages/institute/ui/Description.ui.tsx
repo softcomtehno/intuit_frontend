@@ -22,26 +22,13 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
   } = staffQueries.useGetStaffs(id)
 
   return (
-    <div className="flex gap-5 my-10">
-      <div className="p-5 bg-white shadow-lg rounded-lg max-w-[55%]">
+    <div className="my-10 md:flex md:flex-col md:items-center">
+      {/* Блок с преподавателями (справа) */}
+      <div className="w-[550px] bg-[#e0e1e5] p-5 rounded-xl float-right ml-5 lg:w-full items-center ">
         <Typography
           variant="h3"
           component="h3"
-          className="text-[2rem] max-w-[500px] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
-        >
-          Об Институте
-        </Typography>
-        <div
-          className="mt-5 text-justify"
-          dangerouslySetInnerHTML={{ __html: subtext }}
-        ></div>
-      </div>
-
-      <div className="min-w-[45%] max-w-[45%] bg-[#e0e1e5] p-5 rounded-xl">
-        <Typography
-          variant="h3"
-          component="h3"
-          className="text-[2rem] max-w-[500px] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+          className="text-[2rem] font-semibold text-[#333] "
         >
           Ведущие преподаватели
         </Typography>
@@ -69,6 +56,21 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
           )}
         </div>
       </div>
+
+      {/* Левый блок с текстом */}
+      <div className="p-5 bg-white shadow-lg rounded-lg text-justify">
+        <Typography
+          variant="h3"
+          component="h3"
+          className="text-[2rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+        >
+          Об Институте
+        </Typography>
+        <div dangerouslySetInnerHTML={{ __html: subtext }}></div>
+      </div>
+
+      {/* Очистка обтекания, чтобы текст дальше шел на всю ширину */}
+      <div className="clear-both"></div>
     </div>
   )
 }

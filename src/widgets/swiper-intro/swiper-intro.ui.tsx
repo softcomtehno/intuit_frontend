@@ -26,26 +26,6 @@ export const SwiperIntro = () => {
             title={t('enrollPage.introCard.title')}
           />
         </SwiperSlide>
-
-        {/* <SwiperSlide>
-          <IntroCard
-            description={t('enrollPage.introCard.secondDescription')} // Добавьте соответствующий ключ из JSON для замены
-            img={
-              'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_2_lg.webp'
-            }
-            title={t('enrollPage.introCard.secondTitle')} // Добавьте соответствующий ключ из JSON для замены
-          />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <IntroCard
-            description={t('enrollPage.introCard.thirdDescription')} // Добавьте соответствующий ключ из JSON для замены
-            img={
-              'https://synergy.ru/assets/template/v5/new3/images/s_main_banner/main_banner_1_lg.webp'
-            }
-            title={t('enrollPage.introCard.thirdTitle')} // Добавьте соответствующий ключ из JSON для замены
-          />
-        </SwiperSlide> */}
       </Swiper>
     </>
   )

@@ -1,7 +1,7 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Paper, Typography } from '@mui/material'
 import { useState } from 'react'
 import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
-import { EventList } from '~widgets/events-list'
+// import { EventList } from '~widgets/events-list'
 import { Quizizz } from '~widgets/quizizz'
 
 export const IntroCard = ({ img, description }) => {
@@ -9,8 +9,11 @@ export const IntroCard = ({ img, description }) => {
 
   return (
     <>
-      <section
-        className="container border border-[gray]  h-[350px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right text-left "
+      <Paper
+        elevation={1}
+        className="container   h-[350px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right text-left 
+        border-opacity-95 border-[1px] border-[gray]
+        "
         style={{ backgroundImage: `url(${img})` }}
       >
         {/* <Typography
@@ -37,7 +40,7 @@ export const IntroCard = ({ img, description }) => {
             Подобрать программу
           </Button>
         </Box>
-      </section>
+      </Paper>
       <MaterialModal open={modal} setOpen={setModal}>
         <Quizizz></Quizizz>
       </MaterialModal>
