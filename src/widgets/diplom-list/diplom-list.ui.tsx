@@ -1,17 +1,17 @@
-import { Button, Card, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
-import Gerb from '../../assets/gerb.svg';
-import EGerb from '../../assets/eugerb.svg';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import Fancybox from '~widgets/diplom-list/Fancybox';
+import { Button, Card, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
+import Gerb from '../../assets/gerb.svg'
+import EGerb from '../../assets/eugerb.svg'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import Fancybox from '~widgets/diplom-list/Fancybox'
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 
 export const DiplomList = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <div className="container-lg">
@@ -48,7 +48,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery"
-              href="https://muit.makalabox.com/documents/diplom/diplom.pdf"
+              href="https://muit.makalabox.com/documents/diploma/bakalavr.pdf"
               className="lg:flex lg:justify-center"
             >
               <Card
@@ -193,7 +193,7 @@ export const DiplomList = () => {
         </Swiper>
       </Fancybox>
     </div>
-  );
-};
+  )
+}
 
-export default DiplomList;
+export default DiplomList
