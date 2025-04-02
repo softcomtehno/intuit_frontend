@@ -195,5 +195,4 @@ export const DiplomList = () => {
     </div>
   )
 }
-
 export default DiplomList
