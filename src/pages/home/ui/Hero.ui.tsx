@@ -1,20 +1,19 @@
-import { Container, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
-import { HeroCarousel } from './heroCarousel/HeroCarousel';
+import { Container, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
+import { HeroCarousel } from './heroCarousel/HeroCarousel'
 
 export const HomeHero = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const premList = [
     '9 институтов',
     'Современные образовательные программы',
     'Преподаватели с реальным опытом',
-  ];
+  ]
 
   return (
     <section
       className="r-sm:mx-2 r-sm:h-[360px] mx-5 bg-white rounded-3xl r-sm:mb-16 mb-20 relative overflow-hidden"
       style={{
-        background: '#00956F',
         background:
           'linear-gradient(6deg, rgba(0, 149, 111, 1) 100%, rgba(42, 33, 115, 0.7) 0%)',
       }}
@@ -60,5 +59,5 @@ export const HomeHero = () => {
         </Container>
       </div>
     </section>
-  );
-};
+  )
+}

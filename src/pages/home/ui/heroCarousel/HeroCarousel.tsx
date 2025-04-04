@@ -7,12 +7,7 @@ export const HeroCarousel: React.FC = () => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm')) // 🟢 Перемещено выше
 
-  const {
-    data: eventsData,
-    isLoading,
-    isSuccess,
-    isError,
-  } = eventQueries.useGetEvents()
+  const { data: eventsData, isLoading, isError } = eventQueries.useGetEvents()
 
   if (isLoading) {
     return <div>Загрузка</div>
@@ -21,14 +16,12 @@ export const HeroCarousel: React.FC = () => {
     return <div>Ошибка</div>
   }
 
-
-  
   return (
     <div className="w-full overflow-hidden">
       <Marquee direction="left" speed={100} className="mb-3 overflow-x-none">
         <div className="flex items-center r-sm:gap-3 r-sm:ml-3 gap-4 ml-4">
-          {eventsData.data.map((carusel) => (
-            <div key={carusel.id}>
+          {eventsData.data.map((carusel, i) => (
+            <div key={i}>
               {!isMobile ? (
                 <div className="flex items-center justify-between backdrop-blur-xl bg-white/30 p-2 rounded-lg w-[400px] h-[100px] text-white">
                   <div>
