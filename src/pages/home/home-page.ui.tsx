@@ -14,13 +14,12 @@ import { License } from './ui/License.ui'
 import { NewsList } from '~widgets/news-list'
 import { EventList } from '~widgets/events-list'
 
+import { HomeHero } from './ui/Hero.ui'
+
 export function HomePage() {
   return (
     <div>
-      <EventList/>
-      <h1 className="my-5 font-medium">
-        <SwiperIntro />
-      </h1>
+      <HomeHero/>
       <DegreeCategory />
       <License />
       <ProgramCategory />

@@ -21,8 +21,8 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   description,
   slug,
 }) => {
-  const truncatedDescription =
-    description.length > 120 ? description.slice(0, 120) + '...' : description;
+  // const truncatedDescription =
+  //   description.length > 120 ? description.slice(0, 120) + '...' : description;
 
   const truncatedTitle = title.length > 65 ? title.slice(0, 65) + '...' : title;
 
@@ -50,7 +50,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
               color="text.secondary"
               className="line-clamp-3"
             >
-              <div className='text-justify' dangerouslySetInnerHTML={{ __html: truncatedDescription }} />
+              <div className='text-justify line-clamp-2' dangerouslySetInnerHTML={{ __html: description }} />
             </Typography>
           </CardContent>
         </CardActionArea>
