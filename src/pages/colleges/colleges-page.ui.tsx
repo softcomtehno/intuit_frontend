@@ -5,9 +5,9 @@ import {
   CardMedia,
   CardContent,
   Link,
-} from '@mui/material';
-import ComtehnoLogo from './comtehno-logo.png'; // Add appropriate logos
-import InnovativeCollegeLogo from './innovative-college-logo.png';
+} from '@mui/material'
+import ComtehnoLogo from './comtehno-logo.png' // Add appropriate logos
+import InnovativeCollegeLogo from './innovative-college-logo.png'
 
 export const CollegesPage = () => {
   return (
@@ -74,7 +74,7 @@ export const CollegesPage = () => {
         </Link>
 
         <Link
-          href="https://example.com/innovative-college"
+          href="https://itec.kg/"
           className="no-underline"
           target="_blank"
           rel="noopener"
@@ -126,5 +126,5 @@ export const CollegesPage = () => {
         востребована на рынке труда.
       </Typography>
     </Container>
-  );
-};
+  )
+}

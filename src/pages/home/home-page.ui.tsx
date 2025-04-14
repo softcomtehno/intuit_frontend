@@ -1,5 +1,5 @@
 import StaffList from '~widgets/staff-list/staff-list.ui'
-import { SwiperIntro } from '~widgets/swiper-intro'
+// import { SwiperIntro } from '~widgets/swiper-intro'
 import { EnrollForm } from '~widgets/enroll-form'
 import { DiplomList } from '~widgets/diplom-list'
 import { SpeakerVideoList } from '~widgets/speaker-list'
@@ -12,23 +12,22 @@ import { ArticleList } from '~widgets/article-list/article-list.ui'
 import { Typography } from '@mui/material'
 import { License } from './ui/License.ui'
 import { NewsList } from '~widgets/news-list'
-import { EventList } from '~widgets/events-list'
+// import { EventList } from '~widgets/events-list'
 
 import { HomeHero } from './ui/Hero.ui'
 
 export function HomePage() {
   return (
     <div>
-      <HomeHero/>
+      <HomeHero />
       <DegreeCategory />
       <ProgramCategory />
       <OpportunitiesList />
       <AboutBlock />
-   
 
-        <DiplomList />
-    
-        <PartnersList />
+      <DiplomList />
+
+      <PartnersList />
       <div className="container">
         <Typography
           variant="h3"

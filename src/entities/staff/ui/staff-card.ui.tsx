@@ -17,7 +17,7 @@ export const StaffCard = ({
 
   return (
     <div
-      onClick={() => navigate(`teachers/${slug}`)}
+      onClick={() => navigate(`/teachers/${slug}`)}
       className="cursor-pointer"
     >
       <Card
