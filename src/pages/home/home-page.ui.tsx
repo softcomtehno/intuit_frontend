@@ -21,13 +21,14 @@ export function HomePage() {
     <div>
       <HomeHero/>
       <DegreeCategory />
-      <License />
       <ProgramCategory />
       <OpportunitiesList />
       <AboutBlock />
-      <div className="my-20 ">
+   
+
         <DiplomList />
-      </div>
+    
+        <PartnersList />
       <div className="container">
         <Typography
           variant="h3"
@@ -38,11 +39,11 @@ export function HomePage() {
         </Typography>
         <StaffList />
       </div>
-      <NewsList />
-      <PartnersList />
-      <ArticleList />
       <EnrollForm />
+      <ArticleList />
       <SpeakerVideoList />
+      <License />
+      <NewsList />
     </div>
   )
 }
