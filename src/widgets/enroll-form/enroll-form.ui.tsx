@@ -1,8 +1,8 @@
 import { Button, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 export const EnrollForm = () => {
   const { t } = useTranslation()
@@ -13,33 +13,32 @@ export const EnrollForm = () => {
     email: '',
   })
 
-  const mutation = useMutation({
-    mutationFn: () =>
-      axios.post(
-        'https://intuit.makalabox.com/api/university/user-application/',
-        {
-          user: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          slug: window.location, // Передаем slug в теле запроса
-        }
-      ),
-    onSuccess: () => {
-      alert(t('homepage.enrollForm.successMessage'))
-      setFormData({ name: '', phone: '', email: '' })
-    },
-    onError: () => {
-      alert(t('homepage.enrollForm.errorMessage'))
-    },
-  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = () => {
-    mutation.mutate()
+  const handleSubmit = async () => {
+    setIsSubmitting(true)
+    try {
+      await axios.post(
+        'https://intuit.makalabox.com/api/university/user-application/',
+        {
+          user: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          slug: window.location.href,
+        }
+      )
+      toast.success(t('homepage.enrollForm.successMessage'))
+      setFormData({ name: '', phone: '', email: '' })
+    } catch (error) {
+      toast.error(t('homepage.enrollForm.errorMessage'))
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -95,9 +94,9 @@ export const EnrollForm = () => {
             variant="contained"
             className="shadow-none h-[51px] w-full bg-green"
             onClick={handleSubmit}
-            disabled={mutation.isLoading}
+            disabled={isSubmitting}
           >
-            {mutation.isLoading
+            {isSubmitting
               ? t('homepage.enrollForm.buttons.submitting')
               : t('homepage.enrollForm.buttons.submit')}
           </Button>
