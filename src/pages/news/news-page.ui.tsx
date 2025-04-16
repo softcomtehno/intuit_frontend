@@ -9,6 +9,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { FacultySchema } from '~entities/news/news.types'
+import { t } from 'i18next'
 
 export const NewsPage = () => {
   const { slug } = useParams()
@@ -25,10 +26,10 @@ export const NewsPage = () => {
   console.log(newsData)
 
   if (isLoading) {
-    return <div>Загрузка</div>
+    return <div>{t("loading.loading")}</div>
   }
   if (isError) {
-    return <div>Ошибка</div>
+    return <div>{t("loading.error")}</div>
   }
   if (isSuccess) {
     return (
@@ -72,7 +73,7 @@ export const NewsPage = () => {
           </Box>
 
           <Box className="col-span-1 p-5">
-            <Typography variant="h4">Другие Новости</Typography>
+            <Typography variant="h4">{t("news-page.otherNews")}</Typography>
             <NewsRecomendationList></NewsRecomendationList>
           </Box>
         </section>

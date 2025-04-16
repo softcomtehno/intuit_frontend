@@ -11,223 +11,216 @@ import {
   TableCell,
   TableBody,
   Paper,
-} from '@mui/material'
+} from "@mui/material";
+import { t } from "i18next";
 
 const bachelorPrograms = [
   {
-    code: '510200',
-    program: 'Прикладная математика и информатика',
-    profile: 'Программирование и компьютерные технологии',
+    code: t("HistoryPage.code1"),
+    program: t("HistoryPage.program1"),
+    profile: t("HistoryPage.profile1"),
   },
   {
-    code: '530300',
-    program: 'Психология',
-    profile:
-      'Психология в инновационной деятельности, Психология образования, Психология служебной деятельности',
+    code: t("HistoryPage.code2"),
+    program: t("HistoryPage.program2"),
+    profile: t("HistoryPage.profile2"),
   },
   {
-    code: '531100',
-    program: 'Лингвистика',
-    profile:
-      'Лингвистика и новые информационные технологии, Перевод и переводоведение',
+    code: t("HistoryPage.code3"),
+    program: t("HistoryPage.program3"),
+    profile: t("HistoryPage.profile3"),
   },
   {
-    code: '531200',
-    program: 'Компьютерная лингвистика',
-    profile:
-      'Компьютерная лингвистика; Межкультурная коммуникация и автоматизированная система перевода',
+    code: t("HistoryPage.code4"),
+    program: t("HistoryPage.program4"),
+    profile: t("HistoryPage.profile4"),
   },
   {
-    code: '570400',
-    program: 'Дизайн',
-    profile: 'Дизайн интерьера, Дизайн одежды',
+    code: t("HistoryPage.code5"),
+    program: t("HistoryPage.program5"),
+    profile: t("HistoryPage.profile5"),
   },
   {
-    code: '570020',
-    program: 'Дизайн',
-    profile: 'Анимационный дизайн, Моушн дизайн, Гейм дизайн',
+    code: t("HistoryPage.code6"),
+    program: t("HistoryPage.program6"),
+    profile: t("HistoryPage.profile6"),
   },
   {
-    code: '580100',
-    program: 'Экономика',
-    profile:
-      'Инновационное управление финансами на предприятии, Финансы и кредит, Бухгалтерский учет, анализ и аудит, 1С Технологии автоматизации бизнес процессов, Бизнес – анализ и прогнозирование в организациях, Налоги и налогообложение, Экономическая безопасность, Банковское дело и современные финансовые технологии',
+    code: t("HistoryPage.code7"),
+    program: t("HistoryPage.program7"),
+    profile: t("HistoryPage.profile7"),
   },
   {
-    code: '580200',
-    program: 'Менеджмент',
-    profile:
-      'Менеджмент инновационной деятельности, Менеджмент в гостиничном и ресторанном бизнесе',
+    code: t("HistoryPage.code8"),
+    program: t("HistoryPage.program8"),
+    profile: t("HistoryPage.profile8"),
   },
   {
-    code: '590100',
-    program: 'Информационная безопасность',
-    profile:
-      'Безопасность автоматизированных систем; Безопасность телекоммуникационных систем',
+    code: t("HistoryPage.code9"),
+    program: t("HistoryPage.program9"),
+    profile: t("HistoryPage.profile9"),
   },
   {
-    code: '640200',
-    program: 'Электроэнергетика и электротехника',
-    profile: 'Электроснабжение, Альтернативные источники энергии',
+    code: t("HistoryPage.code10"),
+    program: t("HistoryPage.program10"),
+    profile: t("HistoryPage.profile10"),
   },
   {
-    code: '670200',
-    program: 'Эксплуатация транспортно-технологических машин и комплексов',
-    profile: 'Автомобильный сервис, Автомобильное хозяйство',
+    code: t("HistoryPage.code11"),
+    program: t("HistoryPage.program11"),
+    profile: t("HistoryPage.profile11"),
   },
   {
-    code: '710200',
-    program: 'Информационные системы и технологии',
-    profile:
-      'Информационные системы и технологии в управлении; Информационные системы и технологии в таможенном деле; Информационные системы и технологии в банковском деле; Информационные системы и технологии в строительстве',
+    code: t("HistoryPage.code12"),
+    program: t("HistoryPage.program12"),
+    profile: t("HistoryPage.profile2"),
   },
   {
-    code: '710300',
-    program: 'Прикладная информатика по областям',
-    profile:
-      'Программное обеспечение компьютерных систем; Прикладная информатика в архитектуре; Прикладная информатика в экономике; Прикладная информатика в компьютерном дизайне; Прикладная информатика в организации безопасности дорожного движения',
+    code: t("HistoryPage.code13"),
+    program: t("HistoryPage.program13"),
+    profile: t("HistoryPage.profile13"),
   },
   {
-    code: '710400',
-    program: 'Программная инженерия',
-    profile: 'Разработка программно-информационных систем',
+    code: t("HistoryPage.code14"),
+    program: t("HistoryPage.program14"),
+    profile: t("HistoryPage.profile14"),
   },
   {
-    code: '740700',
-    program: 'Технология и конструирование изделий легкой промышленности',
-    profile: 'Конструирование швейных изделий',
-  },
-  { code: '750200', program: 'Дизайн архитектурной среды', profile: '' },
-  {
-    code: '750500',
-    program: 'Строительство',
-    profile:
-      'Промышленное и гражданское строительство, Проектирование зданий, Производство строительных материалов, изделий и конструкций, БИМ-технологии информационного моделирования зданий',
+    code: t("HistoryPage.code15"),
+    program: t("HistoryPage.program15"),
+    profile: t("HistoryPage.profile15"),
   },
   {
-    code: '630004',
-    program: 'Физические процессы горного или нефтегазового производства',
-    profile: '',
+    code: t("HistoryPage.code16"),
+    program: t("HistoryPage.program16"),
+    profile: t("HistoryPage.profile16"),
   },
-]
+  {
+    code: t("HistoryPage.code17"),
+    program: t("HistoryPage.program17"),
+    profile: t("HistoryPage.profile17"),
+  },
+  {
+    code: t("HistoryPage.code18"),
+    program: t("HistoryPage.program18"),
+    profile: t("HistoryPage.profile18"),
+  },
+];
 
 const postgraduateSpecialties = [
   {
-    code: '01.01.09',
-    specialty: 'Дискретная математика и математическая кибернетика',
-  },
-  { code: '01.02.04', specialty: 'Механика деформируемого твердого тела' },
-  {
-    code: '05.13.01',
-    specialty:
-      'Системный анализ, управление и обработка информации (по отраслям)',
+    code: t("HistoryPage.postgraduateSpecialties.code1"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty1"),
   },
   {
-    code: '05.13.18',
-    specialty:
-      'Математическое моделирование, численные методы и комплексы программ',
+    code: t("HistoryPage.postgraduateSpecialties.code2"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty2"),
   },
   {
-    code: '05.23.01',
-    specialty: 'Строительные конструкции, здания и сооружения',
-  },
-  { code: '05.23.05', specialty: 'Строительные материалы и изделия' },
-  { code: '05.23.07', specialty: 'Гидротехническое строительство' },
-  { code: '05.23.17', specialty: 'Строительная механика' },
-  {
-    code: '05.20.02',
-    specialty: 'Электротехнологии и электрооборудование в сельском хозяйстве',
+    code: t("HistoryPage.postgraduateSpecialties.code3"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty3"),
   },
   {
-    code: '08.00.05',
-    specialty:
-      'Экономика и управление народным хозяйством (по отраслям и сферам деятельности)',
+    code: t("HistoryPage.postgraduateSpecialties.code4"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty4"),
   },
-  { code: '08.00.10', specialty: 'Финансы, денежное обращение и кредит' },
-  { code: '08.00.12', specialty: 'Бухгалтерский учет, статистика' },
-]
+  {
+    code: t("HistoryPage.postgraduateSpecialties.code5"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty5"),
+  },
+  {
+    code: t("HistoryPage.postgraduateSpecialties.code6"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty6"),
+  },
+  {
+    code: t("HistoryPage.postgraduateSpecialties.code7"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty7"),
+  },
+  {
+    code: t("HistoryPage.postgraduateSpecialties.code8"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty8"),
+  },
+  {
+    code: t("HistoryPage.postgraduateSpecialties.code9"),
+    specialty: t("HistoryPage.postgraduateSpecialties.specialty9"),
+  },
+];
 
 const masterPrograms = [
   {
-    code: '580100',
-    program: 'Экономика',
-    details:
-      'Инновационное управление финансами предприятий, Бухгалтерский учет, анализ и аудит, Налоговый консалтинг, Международный бизнес, Международная торговля, Оценка бизнеса и корпоративные финансы, Современное банковское дело и модели управления, Электронный бизнес, Информационная бизнес-аналитика',
+    code: t("HistoryPage.masterPrograms.code1"),
+    program: t("HistoryPage.masterPrograms.program1"),
+    details: t("HistoryPage.masterPrograms.details1"),
   },
   {
-    code: '580200',
-    program: 'Менеджмент',
-    details:
-      'Менеджмент инновационной деятельности в научно – технической и производственной сферах',
+    code: t("HistoryPage.masterPrograms.code2"),
+    program: t("HistoryPage.masterPrograms.program2"),
+    details: t("HistoryPage.masterPrograms.details2"),
   },
   {
-    code: '640200',
-    program: 'Электроэнергетика и электротехника',
-    details: 'Оптимизация развивающихся систем электроснабжения',
+    code: t("HistoryPage.masterPrograms.code3"),
+    program: t("HistoryPage.masterPrograms.program3"),
+    details: t("HistoryPage.masterPrograms.details3"),
   },
   {
-    code: '710200',
-    program: 'Информационные системы и технологии',
-    details:
-      'Информационные технологии в управлении, Информационные технологии в бухгалтерском учете',
+    code: t("HistoryPage.masterPrograms.code4"),
+    program: t("HistoryPage.masterPrograms.program4"),
+    details: t("HistoryPage.masterPrograms.details4"),
   },
   {
-    code: '750500',
-    program: 'Строительство',
-    details:
-      'Проектирование, расчет и сейсмостойкость зданий и сооружений, Менеджмент качества в строительстве',
+    code: t("HistoryPage.masterPrograms.code5"),
+    program: t("HistoryPage.masterPrograms.program5"),
+    details: t("HistoryPage.masterPrograms.details5"),
   },
-]
-const additionalCourses = [
-  { course: 'Подготовка водителей категории «В» и «ВС»' },
-  { course: 'Компьютерная грамотность по программированию' },
-  { course: 'Курсы по фундаментальным дисциплинам программ по отраслям' },
-  { course: 'Кройка и шитье, Швея' },
-  { course: 'Штукатурщик – маляр, Бетонщик, Кладчик, Арматурщик' },
-  { course: 'Наладчик по контрольно-измерительным приборам и автоматике' },
-  { course: 'Электромонтажник по распределительным сетям и вторичным цепям' },
-  { course: 'Слесарь по контрольно-измерительным приборам и автоматике' },
-  { course: 'Электрогазосварщик' },
-  { course: 'Охрана труда и техника безопасности' },
-  { course: 'Основы бухгалтерского учета (1С бухгалтерия 8.2)' },
-  {
-    course:
-      'Кыргызский, Русский, Английский, Немецкий, Китайский, Японский языки',
-  },
-  { course: 'Практическая психология и развитие личности' },
-]
+];
 
+const additionalCourses = [
+  { course: t("HistoryPage.additionalCourses.course1") },
+  { course: t("HistoryPage.additionalCourses.course2") },
+  { course: t("HistoryPage.additionalCourses.course3") },
+  { course: t("HistoryPage.additionalCourses.course4") },
+  { course: t("HistoryPage.additionalCourses.course5") },
+  { course: t("HistoryPage.additionalCourses.course6") },
+  { course: t("HistoryPage.additionalCourses.course7") },
+  { course: t("HistoryPage.additionalCourses.course8") },
+  { course: t("HistoryPage.additionalCourses.course9") },
+  { course: t("HistoryPage.additionalCourses.course10") },
+  { course: t("HistoryPage.additionalCourses.course11") },
+  { course: t("HistoryPage.additionalCourses.course12") },
+  { course: t("HistoryPage.additionalCourses.course13") },
+];
 const structureItems = [
-  { title: 'Ученый Совет' },
-  { title: 'Совет по менеджменту качества образования' },
-  { title: 'Совет по государственному языку' },
-  { title: 'Учебно-методический совет' },
-  { title: 'Совет молодых ученых' },
-  { title: 'Департамент по обеспечению и контролю качества образования' },
-  { title: 'Учебное управление' },
-  { title: 'Институт цифровой трансформации и программирования' },
-  { title: 'Институт дизайна, архитектуры и текстиля' },
-  { title: 'Институт строительства и инновационных технологий' },
-  { title: 'Институт энергетики и транспорта' },
-  { title: 'Институт экономики и менеджмента' },
-  { title: 'Российско-кыргызский институт автоматизации управления и бизнеса' },
-  { title: 'Институт межкультурной коммуникации и психологии' },
-  { title: 'Институт дистанционного образования' },
-  { title: 'Кафедра «Философии и общественных наук»' },
-  { title: 'Кафедра «Рекреация, физкультура и спорт»' },
-  { title: 'Высшая школа экономики и менеджмента' },
-  { title: 'Школа креативной индустрии' },
-  { title: 'Центр повышения квалификации и дополнительного образования' },
-  { title: 'Центр поддержки технологий и инноваций' },
-  { title: 'Молодежный центр' },
-  { title: 'Центр компетенции по электронным закупкам' },
-  { title: 'Центр трудоустройства и карьеры' },
-  { title: 'Студенческий центр программирования' },
-  { title: 'Учебно-научно-производственные лаборатории' },
-  { title: 'Научно-информационная библиотека' },
-  { title: 'Медицинский пункт' },
-  { title: 'Спортивно-оздоровительный комплекс' },
-]
+  { title: t("HistoryPage.structureItems.title1") },
+  { title: t("HistoryPage.structureItems.title2") },
+  { title: t("HistoryPage.structureItems.title3") },
+  { title: t("HistoryPage.structureItems.title4") },
+  { title: t("HistoryPage.structureItems.title5") },
+  { title: t("HistoryPage.structureItems.title6") },
+  { title: t("HistoryPage.structureItems.title7") },
+  { title: t("HistoryPage.structureItems.title8") },
+  { title: t("HistoryPage.structureItems.title9") },
+  { title: t("HistoryPage.structureItems.title10") },
+  { title: t("HistoryPage.structureItems.title11") },
+  { title: t("HistoryPage.structureItems.title12") },
+  { title: t("HistoryPage.structureItems.title13") },
+  { title: t("HistoryPage.structureItems.title14") },
+  { title: t("HistoryPage.structureItems.title15") },
+  { title: t("HistoryPage.structureItems.title16") },
+  { title: t("HistoryPage.structureItems.title17") },
+  { title: t("HistoryPage.structureItems.title18") },
+  { title: t("HistoryPage.structureItems.title19") },
+  { title: t("HistoryPage.structureItems.title20") },
+  { title: t("HistoryPage.structureItems.title21") },
+  { title: t("HistoryPage.structureItems.title22") },
+  { title: t("HistoryPage.structureItems.title23") },
+  { title: t("HistoryPage.structureItems.title24") },
+  { title: t("HistoryPage.structureItems.title25") },
+  { title: t("HistoryPage.structureItems.title26") },
+  { title: t("HistoryPage.structureItems.title27") },
+  { title: t("HistoryPage.structureItems.title28") },
+  { title: t("HistoryPage.structureItems.title29") },
+];
+
 
 export const HistoryPage = () => {
   return (
@@ -235,75 +228,50 @@ export const HistoryPage = () => {
       <Typography
         variant="h4"
         className="font-bold text-center mb-8 text-gray-800"
-        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
+        style={{ fontSize: "clamp(1.5rem, 5vw, 2.5rem)" }}
       >
-        Международный университет инновационных технологий (МУИТ)
+        {t("HistoryPage.InternationalUniversity")}
       </Typography>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          История Университета
+          {t("HistoryPage.history")}
         </Typography>
         <Typography variant="body1" className="text-gray-600 text-justify">
-          Международный университет инновационных технологий (создан в 2006 году
-          как Академия инновационных технологий, далее - МУИТ, Университет) по
-          своей организационно-правовой форме является учреждением, реализующим
-          образовательные программы высшего профессионального образования.
-          Адрес: 720048, Кыргызская Республика, г.Бишкек, ул.Анкара, 1/17 Номер
-          свидетельства государственной регистрации/перерегистрации юридического
-          лица: № 55786-3301-У-е; код ОКПО 24275760; ГПЮ № 0025883.
-          Идентификационный налоговый номер: 00308200610153. Дата
-          регистрации/перерегистрации в Министерстве юстиции Кыргызской
-          Республики 02.05.2017 г. Университет действует на основании Закона
-          Кыргызской Республики «Об образовании», Гражданского кодекса КР,
-          Закона КР «О лицензировании», Устава МУИТ и других нормативных актов.
-          В соответствии с Постановлением Правительства Кыргызской Республики
-          «Об установлении двухуровневой структуры высшего профессионального
-          образования в Кыргызской Республике» от 23 августа 2011 года №496 и
-          приказа Министерства образования и науки Кыргызской Республики от 16
-          апреля 2012 года №244/1 с 2012 года Университет перешел на
-          двухуровневую структуру высшего образования.
+          {t("HistoryPage.content")}
         </Typography>
       </section>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Адрес и регистрационные данные
+          {t("HistoryPage.adress")}
         </Typography>
         <Typography variant="body1" className="text-gray-600 text-justify">
-          Адрес: 720048, Кыргызская Республика, г. Бишкек, ул. Анкара, 1/17.
-          Номер свидетельства: № 55786-3301-У-е; код ОКПО: 24275760. Регистрация
-          в Министерстве юстиции Кыргызской Республики: 02.05.2017.
+          {t("HistoryPage.location")}
         </Typography>
       </section>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Лицензии и образовательные программы
+          {t("HistoryPage.Educational")}
         </Typography>
         <Typography variant="body1" className="text-gray-600 text-justify">
-          Университет осуществляет свою образовательную деятельность и готовит
-          специалистов по программам высшего профессионального образования
-          бакалавриата, магистратуры и аспирантуры на основании лицензий
-          Министерства образования и науки Кыргызской Республики № LD150000763
-          от 07.08.2015г., (бакалавриат, специалитет) LD150001054 № 1-18-1 от
-          04.12.2015г., №LD 160000749 № 1-19 от 01.11.2016г. (магистратура),
-          LE150000095 от 13.11.2014г., LE150001566 от 07.08.2015г., LF150000373
-          от 23.09.2015г. (краткосрочные курсы повышения квалификации и
-          дополнительного образования).
+          {t("HistoryPage.content2")}
         </Typography>
       </section>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Программы бакалавриата
+          {t("HistoryPage.bachelor")}
         </Typography>
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className="font-bold text-gray-700">Код</TableCell>
                 <TableCell className="font-bold text-gray-700">
-                  Программа
+                  {t("HistoryPage.code")}
                 </TableCell>
                 <TableCell className="font-bold text-gray-700">
-                  Профиль
+                  {t("HistoryPage.programma")}
+                </TableCell>
+                <TableCell className="font-bold text-gray-700">
+                  {t("HistoryPage.profil")}
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -325,18 +293,20 @@ export const HistoryPage = () => {
       </section>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Программы магистратуры
+          {t("HistoryPage.master")}
         </Typography>
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className="font-bold text-gray-700">Код</TableCell>
                 <TableCell className="font-bold text-gray-700">
-                  Программа
+                  {t("HistoryPage.code")}
                 </TableCell>
                 <TableCell className="font-bold text-gray-700">
-                  Программы
+                  {t("HistoryPage.programma")}
+                </TableCell>
+                <TableCell className="font-bold text-gray-700">
+                  {t("HistoryPage.programms")}
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -358,15 +328,17 @@ export const HistoryPage = () => {
       </section>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Научные специальности аспирантуры
+          {t("HistoryPage.doctoral")}
         </Typography>
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className="font-bold text-gray-700">Код</TableCell>
                 <TableCell className="font-bold text-gray-700">
-                  Специальность
+                  {t("HistoryPage.code")}
+                </TableCell>
+                <TableCell className="font-bold text-gray-700">
+                  {t("HistoryPage.specialty")}
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -387,13 +359,15 @@ export const HistoryPage = () => {
       </section>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Курсы дополнительного образования
+          {t("HistoryPage.continuing")}
         </Typography>
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className="font-bold text-gray-700">Курс</TableCell>
+                <TableCell className="font-bold text-gray-700">
+                  {t("HistoryPage.course")}
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -408,7 +382,7 @@ export const HistoryPage = () => {
       </section>
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-6">
-          Структура МУИТ
+          {t("HistoryPage.structure")}
         </Typography>
         <Grid container spacing={3}>
           {structureItems.map((item, index) => (
@@ -430,25 +404,20 @@ export const HistoryPage = () => {
 
       <section className="mb-10">
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Финансирование и Профессорско-преподавательский состав
+          {t("HistoryPage.funding")}
         </Typography>
         <Typography variant="body1" className="text-gray-600">
-          Университет имеет плановые сметы доходов и расходов, которые
-          корректируются каждый год. В настоящее время состав ППС МУИТ включает
-          120 человек.
+          {t("HistoryPage.title")}
         </Typography>
       </section>
-
-      {/* Контактная информация */}
       <section>
         <Typography variant="h5" className="font-semibold text-gray-700 mb-4">
-          Контактная информация
+          {t("HistoryPage.contact")}
         </Typography>
         <Typography variant="body1" className="text-gray-600 text-justify">
-          Адрес: 720048, Кыргызская Республика, г. Бишкек, ул. Анкара, 1/17.
-          Телефон: +996 (312) 590-599.
+          {t("HistoryPage.location2")}
         </Typography>
       </section>
     </Container>
-  )
-}
+  );
+};

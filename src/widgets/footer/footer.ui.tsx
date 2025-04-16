@@ -13,6 +13,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { degreeQueries } from '~entities/degree';
+import { t } from 'i18next';
 
 // const degreeSections = [
 //   'Институты',
@@ -24,17 +25,17 @@ import { degreeQueries } from '~entities/degree';
 //   'Курсы',
 // ];
 const fieldsOfStudy = [
-  'Медицина',
-  'Психология',
-  'Юриспруденция',
-  'Программирование',
-  'Игровая индустрия и киберспорт',
-  'Дизайн',
-  'Клиническая психология',
-  'Педагогика',
-  'Менеджмент',
-  'Экономика',
-  'Информационные технологии',
+  t('footer.fields.medical'),
+  t('footer.fields.psychology'),
+  t('footer.fields.law'),
+  t('footer.fields.programming'),
+  t('footer.fields.gamingEsports'),
+  t('footer.fields.design'),
+  t('footer.fields.clinicalPsychology'),
+  t('footer.fields.pedagogy'),
+  t('footer.fields.management'),
+  t('footer.fields.economics'),
+  t('footer.fields.it'),
 ];
 
 const categories = [

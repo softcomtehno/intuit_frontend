@@ -1,4 +1,5 @@
 import { Typography, Box } from '@mui/material';
+import { t } from 'i18next';
 import { specializationTypes } from '~entities/specialization';
 
 export const About = ({
@@ -47,7 +48,7 @@ export const About = ({
       <Box
         component="img"
         src={textPhoto}
-        alt="Фото о профессии"
+        alt={t("specialization.professionPhoto")}
         sx={{
           maxWidth: '450px',
           borderRadius: '16px',

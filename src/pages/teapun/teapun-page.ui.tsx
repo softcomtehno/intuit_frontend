@@ -11,34 +11,30 @@ import {
 } from '@mui/material';
 import { FileCopy as FileIcon } from '@mui/icons-material';
 import Fancybox from '~widgets/diplom-list/Fancybox';
+import { t } from 'i18next';
 
 export const TeapunPage = () => {
   const documents = [
     {
-      title:
-        ' Справочный документ к 24-му заседанию Совета управляющих (Background document for 24th meeting of the Governing Board)',
+      titleKey: t("teapenPage.documentTitle1"),
       link: 'https://muit.makalabox.com/documents/24th%20GB_Meeting_Dec_12_2019_Minutes_removed.pdf',
     },
     {
-      title:
-        'Справочный документ к 25-му заседанию Совета управляющих (Background document for 25th meeting of the Governing Board)',
+      titleKey: t("teapenPage.documentTitle2"),
       link: 'https://muit.makalabox.com/documents/25th%20GB_Meeting_Dec_10_2020_removed.pdf',
     },
     {
-      title:
-        'Справочный документ к 26-му заседанию Совета управляющих (Background document for 26th meeting of the Governing Board)',
+      titleKey: t("teapenPage.documentTitle3"),
       link: 'https://muit.makalabox.com/documents/26th%20GB_Meeting_Dec_22_2021_removed_removed.pdf',
     },
     {
-      title:
-        'Справочный документ к 27-му заседанию Совета управляющих (Background document for 27th meeting of the Governing Board)',
+      titleKey: t("teapenPage.documentTitle4"),
       link: 'https://muit.makalabox.com/documents/27th%20GB_Meeting_Dec_14_2022_removed_removed.pdf',
     },
     {
-      title:
-        'Справочный документ к 28-му заседанию Совета управляющих (Background document for 28th meeting of the Governing Board)',
+      titleKey: t("teapenPage.documentTitle5"),
       link: 'https://muit.makalabox.com/documents/28TH%20GB_Meeting_Dec_12_2023_removed_removed.pdf',
-    },
+    }
   ];
 
   return (
@@ -56,9 +52,7 @@ export const TeapunPage = () => {
         className="text-gray-700 mb-10 text-justify"
         style={{ fontSize: 'clamp(0.9rem, 2vw, 1.2rem)' }}
       >
-        Ознакомьтесь с нашими ресурсами и документами, относящимися к Учебному
-        центру космической науки и техники. Перейдите по ссылкам ниже, чтобы
-        просмотреть или загрузить файлы.
+        {t("teapenPage.title")}
       </Typography>
       <Fancybox
         options={{

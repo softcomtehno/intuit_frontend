@@ -1,39 +1,40 @@
 import { Typography, Container, Box, Tabs, Tab, Button } from '@mui/material'
+import { t } from 'i18next';
 import { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 
 export const StudentsPage = () => {
+ 
   const links = [
     {
-      title: 'Единое окно',
-      description: 'Централизованный доступ ко всем сервисам.',
-      url: '/window',
-      image: 'https://via.placeholder.com/64',
+      title: t("studentsPage.windowTitle"),
+      description: t("studentsPage.windowDescription"),
+      url: "/window",
+      image: "https://via.placeholder.com/64",
       isExternal: false,
     },
     {
-      title: 'НИБ',
-      description: 'Научно-исследовательская база.',
-      url: 'https://lib-intuit.online/',
-      image: 'https://via.placeholder.com/64',
+      title: t("studentsPage.nibTitle"),
+      description: t("studentsPage.nibDescription"),
+      url: "https://lib-intuit.online/",
+      image: "https://via.placeholder.com/64",
       isExternal: true,
     },
     {
-      title: 'Moodle',
-      description: 'Система управления обучением.',
-      url: 'https://moodle.intuit.kg/',
-      image: 'https://via.placeholder.com/64',
+      title: t("studentsPage.moodleTitle"),
+      description: t("studentsPage.moodleDescription"),
+      url: "https://moodle.intuit.kg/",
+      image: "https://via.placeholder.com/64",
       isExternal: true,
     },
     {
-      title: 'Makalabox',
-      description:
-        'это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
-      url: 'https://makalabox.com',
-      image: 'https://via.placeholder.com/64',
+      title: t("studentsPage.makalaboxTitle"),
+      description: t("studentsPage.makalaboxDescription"),
+      url: "https://makalabox.com",
+      image: "https://via.placeholder.com/64",
       isExternal: true,
     },
-  ]
+  ];
 
   const [activeTab, setActiveTab] = useState('bachelor')
 
@@ -43,37 +44,37 @@ export const StudentsPage = () => {
 
   const tabs = [
     {
-      label: 'Бакалавриат',
-      value: 'bachelor',
+      label: t("studentsPage.tabs.bachelor"),
+      value: "bachelor",
       courses: [
-        { name: '1 курс', url: '/bachelor/1' },
-        { name: '2 курс', url: '/bachelor/2' },
-        { name: '3 курс', url: '/bachelor/3' },
-        { name: '4 курс', url: '/bachelor/4' },
+        { name: t("studentsPage.tabs.course1"), url: "/bachelor/1" },
+        { name: t("studentsPage.tabs.course2"), url: "/bachelor/2" },
+        { name: t("studentsPage.tabs.course3"), url: "/bachelor/3" },
+        { name: t("studentsPage.tabs.course4"), url: "/bachelor/4" },
       ],
     },
     {
-      label: 'Магистратура',
-      value: 'master',
+      label: t("studentsPage.tabs.master"),
+      value: "master",
       courses: [
-        { name: '1 курс', url: '/master/1' },
-        { name: '2 курс', url: '/master/2' },
+        { name: t("studentsPage.tabs.course1"), url: "/master/1" },
+        { name: t("studentsPage.tabs.course2"), url: "/master/2" },
       ],
     },
     {
-      label: 'Аспирантура',
-      value: 'postgraduate',
+      label: t("studentsPage.tabs.postgraduate"),
+      value: "postgraduate",
       courses: [
-        { name: '1 курс', url: '/postgraduate/1' },
-        { name: '2 курс', url: '/postgraduate/2' },
+        { name: t("studentsPage.tabs.course1"), url: "/postgraduate/1" },
+        { name: t("studentsPage.tabs.course2"), url: "/postgraduate/2" },
       ],
     },
     {
-      label: 'PHD',
-      value: 'phd',
-      courses: [{ name: '1 курс', url: '/phd/1' }],
+      label: t("studentsPage.tabs.phd"),
+      value: "phd",
+      courses: [{ name: t("studentsPage.tabs.course1"), url: "/phd/1" }],
     },
-  ]
+  ];
 
   return (
     <Container maxWidth="lg" className="py-10 px-4">

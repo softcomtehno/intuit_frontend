@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom'
 import { CircularProgress, Typography } from '@mui/material'
 // import ProgramBlocks from './ui/ProgramBlocks.ui.tsx'
 import { EducationForm } from '~widgets/education-form/education-form.ui.tsx'
+import { t } from 'i18next'
 
 type RouteObject = {
   slug: string
@@ -18,7 +19,7 @@ export const SpecializationPage = () => {
   const { slug } = useParams<RouteObject>()
 
   if (!slug) {
-    return <div>Неправильный адрес {slug}</div>
+    return <div>{t("specialization.invalidAddress")} {slug}</div>
   }
   const {
     data: specializationData,
@@ -32,13 +33,13 @@ export const SpecializationPage = () => {
     return (
       <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
         <CircularProgress className="text-blue" />
-        <Typography variant="h6">Загрузка</Typography>
+        <Typography variant="h6">{t("loading.loading")}</Typography>
       </div>
     )
   }
 
   if (isError) {
-    return <div>Error</div>
+    return <div>{t("loading.error")}</div>
   }
   if (isSuccess) {
     return (
