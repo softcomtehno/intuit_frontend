@@ -71,18 +71,18 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
 
   const handleDegreeChange = (selectedOption) => {
     setSelectedDegree(selectedOption?.value || null)
-    setCurrentPage(1) // Reset page when filters change
+    setCurrentPage(1) 
   }
 
   const handleFacultyChange = (selectedOption) => {
     setSelectedFaculty(selectedOption?.value || null)
-    setCurrentPage(1) // Reset page when filters change
+    setCurrentPage(1) 
   }
 
   const handleClearFilters = () => {
     setSelectedDegree(null)
     setSelectedFaculty(null)
-    setCurrentPage(1) // Reset page when filters are cleared
+    setCurrentPage(1) 
   }
 
   const handlePageChange = (event, value) => {
@@ -90,14 +90,14 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
   }
 
   if (isError) {
-    return <div>Произошла ошибка</div>
+    return <div>{t("loading.error")}</div>
   }
 
   if (isLoading || isDegreeLoading || isFacultyLoading) {
     return (
       <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
         <CircularProgress className="text-blue" />
-        <Typography variant="h6">Загрузка</Typography>
+        <Typography variant="h6">{t("loading.loading")}</Typography>
       </div>
     )
   }
@@ -139,7 +139,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
             className="shadow-none bg-blue text-white px-10 max-w-[250px] lg:w-full"
             onClick={handleClearFilters}
           >
-            Очистить
+            {t("loading.clear")}
           </Button>
         </div>
         <div className="flex flex-wrap gap-4 lg:justify-center">

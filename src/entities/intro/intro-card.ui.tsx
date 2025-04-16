@@ -4,6 +4,18 @@ import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
 import { EventList } from '~widgets/events-list'
 import { Quizizz } from '~widgets/quizizz'
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 650,
+  height: 500,
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 4,
+}
+
 export const IntroCard = ({ img, description }) => {
   const [modal, setModal] = useState(false)
 
@@ -13,14 +25,6 @@ export const IntroCard = ({ img, description }) => {
         className="container border border-[gray]  h-[350px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right text-left "
         style={{ backgroundImage: `url(${img})` }}
       >
-        {/* <Typography
-          variant="h1"
-          className="font-bold text-black text-[70px] max-w-[750px] sm:text-[40px] md:text-center md:text-[30px]"
-        >
-          {title}
-        </Typography> */}
-        {/* <EventList></EventList> */}
-
         <Box className="flex flex-col justify-between h-[100%] gap-5">
           <Typography
             variant="body1"
@@ -38,9 +42,9 @@ export const IntroCard = ({ img, description }) => {
           </Button>
         </Box>
       </section>
-      <MaterialModal open={modal} setOpen={setModal}>
+      {/* <MaterialModal open={modal} setOpen={setModal}>
         <Quizizz></Quizizz>
-      </MaterialModal>
+      </MaterialModal> */}
     </>
   )
 }

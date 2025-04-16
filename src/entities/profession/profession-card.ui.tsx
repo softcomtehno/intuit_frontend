@@ -1,20 +1,19 @@
-import { Box, Button, Card, Typography } from '@mui/material'
-import { ChevronRightRounded } from '@mui/icons-material'
-import { Link, useNavigate } from 'react-router-dom'
+import { Box, Button, Card, Typography } from '@mui/material';
+import { ChevronRightRounded } from '@mui/icons-material';
+import { Link, useNavigate } from 'react-router-dom';
 
 const capitalizeFirstLetter = (text) => {
-  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
-}
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+};
 
 export const ProfessionCard = ({ degree, faculties, title, url }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    // <Link to={`/specialization/${url}`}>
     <div onClick={() => navigate(`/specialization/${url}`)}>
       <Card
         variant="outlined"
-        className="w-[400px] max-h-[270px] h-[270px] flex flex-col justify-between bg-[#f7f9fd] p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xl cursor-pointer 
+        className="w-[400px] max-h-[250px] min-h-[250px] flex flex-col justify-between  p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xs cursor-pointer 
         md:w-[350px] md:h-[300px] "
       >
         <Box className="flex flex-col gap-2">
@@ -38,18 +37,11 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
               className="bg-green text-white border-green prof-card__btn_first transition-all text-sm"
               endIcon={<ChevronRightRounded />}
             >
-              Подробнее
+              Узнать больше
             </Button>
           </Link>
-          {/* <Button
-            variant="outlined"
-            className="text-green prof-card__btn_last transition-all border-green text-sm"
-          >
-            Поступить
-          </Button> */}
         </Box>
       </Card>
     </div>
-    // </Link>
-  )
-}
+  );
+};

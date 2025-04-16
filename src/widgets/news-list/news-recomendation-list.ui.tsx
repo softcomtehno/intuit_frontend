@@ -1,4 +1,5 @@
 import { Box } from '@mui/material'
+import { t } from 'i18next'
 import { newsQueries, NewsRecomendationCard } from '~entities/news'
 
 export const NewsRecomendationList = () => {
@@ -11,10 +12,10 @@ export const NewsRecomendationList = () => {
   console.log(newsRecomendationList)
 
   if (isError) {
-    return <div>Error</div>
+    return <div>{t("loading.error")}</div>
   }
   if (isLoading) {
-    return <div>Loading</div>
+    return <div>{t("loading.error")}</div>
   }
   if (isSuccess) {
     return (

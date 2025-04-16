@@ -18,7 +18,7 @@ const bachelorPrograms = [
   {
     code: t("HistoryPage.code1"),
     program: t("HistoryPage.program1"),
-    profile: t("HistoryPage.profile1"),
+    profile: t("HiistoryPage.profile1"),
   },
   {
     code: t("HistoryPage.code2"),

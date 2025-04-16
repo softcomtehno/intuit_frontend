@@ -1,5 +1,6 @@
 {
   "homepage": {
+    "title": "International University of Innovative Technologies",
      "programs": "programs",
      "studyForms": "Forms of study",
     "resume": "Resume",
@@ -8,6 +9,8 @@
     "universityBlogArticles": "University Blog Articles",
     "TeachingStaff": "Teaching Staff",
     "HeadPage": {
+       "name": "Mambetkulov Ormon",
+        "learningExperience": "I really enjoy the learning experience here — no boring lectures, just practice! Everything is to the point and immediately applicable in practice.",
       "rectoratePlans": {
         "2020-2021": "Rectorate Plan 2020-2021",
         "march2021": "Rectorate Plan March 2021",
@@ -43,7 +46,8 @@
       "error": "Error",
       "dataLoading": "Data is being loaded",
       "dataNotLoaded": "Data not loaded",
-       "fileUpload": "File Upload"
+       "fileUpload": "File Upload",
+        "clear": "Clear"
     },
     "opportunities": {
       "title": "With us, your opportunities are limitless",
@@ -394,7 +398,8 @@
     }
   },
   "news-page": {
-    "otherNews": "Other News"
+    "otherNews": "Other News",
+     "news": "News"
   },
   "paymentsPage": {
     "code": "Code",
@@ -591,7 +596,22 @@
       "pedagogy": "Pedagogy",
       "management": "Management",
       "economics": "Economics",
-      "it": "Information Technology"
+      "it": "Information Technology",
+       "universityTitle": "INTERNATIONAL <br /> UNIVERSITY <br /> OF INNOVATIVE <br /> TECHNOLOGIES",
+        "feedback": "Feedback",
+        "address": "Address",
+         "workSchedule": "Working Hours",
+         "workScheduleList": {
+          "weekdays": "Mon-Fri ",
+          "saturday": "Sat Closed",
+          "sunday": "Sun Closed"
+        },
+         "forAllQuestions": "For all inquiries",
+          "admissionsOffice": "Admissions Office",
+          "socialMedia": "We are on social media"
     }
+  },
+  "reviews": {
+     "studentReviews": "Student Reviews"
   }
 }

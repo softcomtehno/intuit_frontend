@@ -1,35 +1,33 @@
-import StaffList from '~widgets/staff-list/staff-list.ui'
-import { SwiperIntro } from '~widgets/swiper-intro'
-import { EnrollForm } from '~widgets/enroll-form'
-import { DiplomList } from '~widgets/diplom-list'
-import { SpeakerVideoList } from '~widgets/speaker-list'
-import { PartnersList } from '~widgets/partners-list'
-import { OpportunitiesList } from '~widgets/opportunities-list'
-import { DegreeCategory } from './ui/DegreeCategory.ui'
-import { ProgramCategory } from '~widgets/programm-category'
-import { AboutBlock } from './ui/AboutBlock.ui'
-import { ArticleList } from '~widgets/article-list/article-list.ui'
-import { Typography } from '@mui/material'
-import { License } from './ui/License.ui'
-import { NewsList } from '~widgets/news-list'
-import { EventList } from '~widgets/events-list'
-import { t } from 'i18next'
+import StaffList from '~widgets/staff-list/staff-list.ui';
+import { SwiperIntro } from '~widgets/swiper-intro';
+import { EnrollForm } from '~widgets/enroll-form';
+import { DiplomList } from '~widgets/diplom-list';
+import { SpeakerVideoList } from '~widgets/speaker-list';
+import { PartnersList } from '~widgets/partners-list';
+import { OpportunitiesList } from '~widgets/opportunities-list';
+import { DegreeCategory } from './ui/DegreeCategory.ui';
+import { ProgramCategory } from '~widgets/programm-category';
+import { AboutBlock } from './ui/AboutBlock.ui';
+import { ArticleList } from '~widgets/article-list/article-list.ui';
+import { Typography } from '@mui/material';
+import { License } from './ui/License.ui';
+import { NewsList } from '~widgets/news-list';
+import { EventList } from '~widgets/events-list';
+
+import { HomeHero } from './ui/Hero.ui';
+import { t } from 'i18next';
 
 export function HomePage() {
+
   return (
     <div>
-      <EventList/>
-      <h1 className="my-5 font-medium">
-        <SwiperIntro />
-      </h1>
+      <HomeHero />  
       <DegreeCategory />
-      <License />
       <ProgramCategory />
       <OpportunitiesList />
       <AboutBlock />
-      <div className="my-20 ">
-        <DiplomList />
-      </div>
+      <DiplomList />
+      <PartnersList />
       <div className="container">
         <Typography
           variant="h3"
@@ -40,11 +38,11 @@ export function HomePage() {
         </Typography>
         <StaffList />
       </div>
-      <NewsList />
-      <PartnersList />
-      <ArticleList />
       <EnrollForm />
+      <ArticleList />
       <SpeakerVideoList />
+      <License />
+      <NewsList />
     </div>
-  )
+  );
 }

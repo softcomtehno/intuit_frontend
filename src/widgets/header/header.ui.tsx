@@ -22,6 +22,7 @@ export const Header: React.FC = () => {
     setLanguage(lng)
     window.location.reload()
   }
+
   const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
   }
@@ -44,105 +45,41 @@ export const Header: React.FC = () => {
     { label: 'Колледжи', link: '/colleges' },
     { label: 'Студентам', link: '/students' },
     { label: 'Об Университете', link: '/about' },
+    { label: 'For International Students', link: '/institutes/kitajsko-kyrgyzskij-institut-innovacionnyh-tehnolo/' },
   ]
 
   return (
-    <>
-      <header className="bg-[white] fixed top-0 left-0 w-full z-50 border-b border-gray ">
-        <div className="container  px-6 py-2">
-          <nav className="flex gap-2 items-center justify-between">
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center gap-1 mr-5">
-                <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
-                <p className="text-[10px] font-bold leading-[11px]">
-                  МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
-                  ТЕХНОЛОГИЙ
-                </p>
-              </Link>
-              <div className="flex gap-3 ">
-                {headerItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.link}
-                    className="lg:hidden text-black text-sm font-medium hover:text-gray-400 border rounded-full hover:bg-green hover:scale-105 duration-200 hover:border-white hover:text-white border-gray p-2"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+    <header className="bg-white fixed top-0 left-0 w-full z-50 border-b border-gray">
+      <div className="container px-6 py-2">
+        <nav className="flex gap-2 items-center justify-between">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center gap-1 mr-5">
+              <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
+              <p className="text-[10px] font-bold leading-[11px]">
+                МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
+                ТЕХНОЛОГИЙ
+              </p>
+            </Link>
+            <div className="flex gap-3">
+              {headerItems.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.link}
+                  className="lg:hidden text-black text-xs font-medium hover:text-gray-400 border rounded-full hover:bg-green  duration-200  hover:border-white hover:text-white border-gray/60 p-2"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
+          </div>
 
-            <div className="flex items-center ">
-              <div className="relative hidden lg:flex">
-                <button
-                  className="text-[black] text-md font-medium hover:text-gray-400 flex items-center"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                >
-                  {/* <LanguageIcon className="mr-2" /> */}
-                  {currentLanguage}
-                  <svg
-                    className={`w-5 h-5 ml-2 transition-transform ${
-                      isDropdownOpen ? 'rotate-180' : ''
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </button>
-                {isDropdownOpen && (
-                  <div className="absolute top-5 mt-2 bg-white text-gray-800 rounded-md shadow-lg z-50">
-                    <ul className="py-2">
-                      {Object.entries(languageMap).map(([key, label]) => (
-                        <li key={key}>
-                          <button
-                            className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
-                            onClick={() => handleLanguageChange(key)}
-                          >
-                            {label}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-              <div className="hidden lg:block ">
-                <IconButton onClick={handleMenuOpen}>
-                  <MenuIcon className="text-black" />
-                </IconButton>
-                <Menu
-                  anchorEl={anchorEl}
-                  open={Boolean(anchorEl)}
-                  onClose={handleMenuClose}
-                  className="mt-12 "
-                >
-                  {headerItems.map((item, index) => (
-                    <MenuItem key={index} onClick={handleMenuClose}>
-                      <Link
-                        to={item.link}
-                        className="text-black text-sm font-medium"
-                      >
-                        {item.label}
-                      </Link>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </div>
-            </div>
-            <div className="relative lg:hidden">
+          <div className="flex items-center">
+            {/* Desktop language dropdown */}
+            <div className="relative hidden lg:flex">
               <button
-                className="text-[black] text-md font-medium hover:text-gray-400 flex items-center"
+                className="text-black text-md font-medium hover:text-gray-400 flex items-center"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                {/* <LanguageIcon className="mr-2" /> */}
                 {currentLanguage}
                 <svg
                   className={`w-5 h-5 ml-2 transition-transform ${
@@ -162,12 +99,12 @@ export const Header: React.FC = () => {
                 </svg>
               </button>
               {isDropdownOpen && (
-                <div className="mt-2 bg-white text-gray-800 rounded-md shadow-lg z-50">
-                  <ul className="py-2">
+                <div className="absolute left-0 top-full mt-2 min-w-[120px] bg-white text-gray-800 rounded-md shadow-lg z-50 p-2">
+                  <ul className="space-y-1">
                     {Object.entries(languageMap).map(([key, label]) => (
                       <li key={key}>
                         <button
-                          className="block px-4 py-2 hover:bg-green hover:text-white w-full text-left"
+                          className="block w-full px-4 py-2 text-left hover:bg-green hover:text-white rounded-md"
                           onClick={() => handleLanguageChange(key)}
                         >
                           {label}
@@ -178,9 +115,75 @@ export const Header: React.FC = () => {
                 </div>
               )}
             </div>
-          </nav>
-        </div>
-      </header>
-    </>
+
+            {/* Mobile menu */}
+            <div className="hidden lg:block">
+              <IconButton onClick={handleMenuOpen}>
+                <MenuIcon className="text-black" />
+              </IconButton>
+              <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+                className="mt-12"
+              >
+                {headerItems.map((item, index) => (
+                  <MenuItem key={index} onClick={handleMenuClose}>
+                    <Link
+                      to={item.link}
+                      className="text-black text-sm font-medium"
+                    >
+                      {item.label}
+                    </Link>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </div>
+          </div>
+
+          {/* Mobile language dropdown */}
+          <div className="relative lg:hidden">
+            <button
+              className="text-black text-md font-medium hover:text-gray-400 flex items-center"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              {currentLanguage}
+              <svg
+                className={`w-5 h-5 ml-2 transition-transform ${
+                  isDropdownOpen ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute left-0 top-full mt-2 min-w-[120px] bg-white text-gray-800 rounded-md shadow-lg z-50 p-2">
+                <ul className="space-y-1">
+                  {Object.entries(languageMap).map(([key, label]) => (
+                    <li key={key}>
+                      <button
+                        className="block w-full px-4 py-2 text-left hover:bg-green hover:text-white rounded-md"
+                        onClick={() => handleLanguageChange(key)}
+                      >
+                        {label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </nav>
+      </div>
+    </header>
   )
 }

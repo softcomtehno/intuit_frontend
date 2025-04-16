@@ -11,7 +11,6 @@ export const EventPage = () => {
   if (isError || !data)
     return <Alert severity="error">{t("homepage.eventError")}</Alert>;
 
-  console.log('data', data);
 
   return (
     <div className="max-w-3xl mx-auto p-5">

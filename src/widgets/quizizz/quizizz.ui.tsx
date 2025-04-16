@@ -8,6 +8,9 @@ import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import FormControl from '@mui/material/FormControl'
 import TextField from '@mui/material/TextField'
+import { Close } from '@mui/icons-material'
+import { Typography } from '@mui/material'
+import apiClient from '~shared/lib/api/apiClient'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -17,25 +20,11 @@ interface TabPanelProps {
 
 function CustomTabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props
-
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
+    <div role="tabpanel" hidden={value !== index} {...other}>
       {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   )
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  }
 }
 
 const questions = [
@@ -58,25 +47,17 @@ const questions = [
     question: 'Какой формат обучения вам подходит?',
     options: ['Очно', 'Заочно'],
   },
-  {
-    question: 'Вас интересуют бюджетные места?',
-    options: ['Да', 'Нет'],
-  },
-  {
-    question: 'Нужно ли трудоустройство?',
-    options: ['Да', 'Нет'],
-  },
+  { question: 'Вас интересуют бюджетные места?', options: ['Да', 'Нет'] },
+  { question: 'Нужно ли трудоустройство?', options: ['Да', 'Нет'] },
 ]
 
-
-export const Quizizz = () => {
+export const Quizizz = ({ onClose }) => {
   const [value, setValue] = React.useState(0)
   const [answers, setAnswers] = React.useState(questions.map(() => ''))
-  const [hoveredOption, setHoveredOption] = React.useState('')
   const [contactInfo, setContactInfo] = React.useState({
     phoneNumber: '',
     emailAddress: '',
-    whatsappNumber: '',
+    userName: '',
   })
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -89,89 +70,64 @@ export const Quizizz = () => {
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
   ) => {
-    const { value } = event.target
     const updatedAnswers = [...answers]
-    updatedAnswers[index] = value
+    updatedAnswers[index] = event.target.value
     setAnswers(updatedAnswers)
-    if (value !== '' && index < questions.length - 1) {
+    if (index < questions.length - 1) {
       setValue(index + 1)
-    } else if (index === questions.length - 1) {
+    } else {
       setValue(questions.length)
     }
-  }
-
-  const handleMouseEnter = (option: string) => {
-    setHoveredOption(option)
-  }
-
-  const handleMouseLeave = () => {
-    setHoveredOption('')
   }
 
   const handleContactInfoChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const { name, value } = event.target
-    setContactInfo((prevInfo) => ({
-      ...prevInfo,
-      [name]: value,
-    }))
+    setContactInfo({ ...contactInfo, [event.target.name]: event.target.value })
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log('Submitted Answers:', answers)
-    console.log('Contact Information:', contactInfo)
+    const slug = window.location.href
+    try {
+      await apiClient.post('/university/user-application/', {
+        user: contactInfo.userName,
+        phone: contactInfo.phoneNumber,
+        email: contactInfo.emailAddress,
+        slug,
+      })
+      alert(`Заявка успешно отправлена! Путь: ${slug}`)
+    } catch (error) {
+      console.error('Ошибка при отправке:', error)
+      alert('Ошибка при отправке заявки')
+    }
   }
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          {questions.map((_, index) => (
-            <Tab key={index} label={index + 1} {...a11yProps(index)} />
-          ))}
-          <Tab
-            key="contact"
-            label="Contact"
-            disabled={answers.includes('')}
-            {...a11yProps(questions.length)}
-          />
-        </Tabs>
-      </Box>
+      <div style={{ display: 'flex', justifyContent: 'end' }}>
+        <Close sx={{ cursor: 'pointer' }} onClick={() => onClose(false)} />
+      </div>
+      <Tabs value={value} onChange={handleChange} aria-label="quiz tabs">
+        {questions.map((_, index) => (
+          <Tab key={index} label={index + 1} />
+        ))}
+        <Tab label="Контактные данные" disabled={answers.includes('')} />
+      </Tabs>
       {questions.map((question, index) => (
         <CustomTabPanel key={index} value={value} index={index}>
-          <FormControl component="fieldset">
+          <FormControl>
+            <Typography variant="h6">{question.question}</Typography>
             <RadioGroup
-              name={`question${index}`}
               value={answers[index]}
               onChange={(e) => handleOptionChange(e, index)}
             >
-              {question.options.map((option, optIndex) => (
+              {question.options.map((option) => (
                 <FormControlLabel
-                  key={optIndex}
+                  key={option}
                   value={option}
-                  control={
-                    <Radio
-                      sx={{
-                        '&:hover': { color: 'primary.main' },
-                        color:
-                          hoveredOption === option ? 'primary.main' : 'default',
-                      }}
-                      onMouseEnter={() => handleMouseEnter(option)}
-                      onMouseLeave={handleMouseLeave}
-                    />
-                  }
+                  control={<Radio />}
                   label={option}
-                  sx={{
-                    '&:hover .MuiTypography-root': {
-                      color: 'primary.main',
-                    },
-                  }}
                 />
               ))}
             </RadioGroup>
@@ -179,40 +135,38 @@ export const Quizizz = () => {
         </CustomTabPanel>
       ))}
       <CustomTabPanel value={value} index={questions.length}>
-        <Box sx={{ p: 3 }}>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              name="phoneNumber"
-              label="Phone Number"
-              value={contactInfo.phoneNumber}
-              onChange={handleContactInfoChange}
-              fullWidth
-              margin="normal"
-              required
-            />
-            <TextField
-              name="emailAddress"
-              label="Email Address"
-              value={contactInfo.emailAddress}
-              onChange={handleContactInfoChange}
-              fullWidth
-              margin="normal"
-              required
-            />
-            <TextField
-              name="whatsappNumber"
-              label="WhatsApp Number"
-              value={contactInfo.whatsappNumber}
-              onChange={handleContactInfoChange}
-              fullWidth
-              margin="normal"
-              required
-            />
-            <Button type="submit" variant="contained" color="primary">
-              Submit
-            </Button>
-          </form>
-        </Box>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            name="phoneNumber"
+            label="Телефон"
+            value={contactInfo.phoneNumber}
+            onChange={handleContactInfoChange}
+            fullWidth
+            required
+            sx={{ mb: 2 }}
+          />
+          <TextField
+            name="emailAddress"
+            label="Email"
+            value={contactInfo.emailAddress}
+            onChange={handleContactInfoChange}
+            fullWidth
+            required
+            sx={{ mb: 2 }}
+          />
+          <TextField
+            name="userName"
+            label="User"
+            value={contactInfo.userName}
+            onChange={handleContactInfoChange}
+            fullWidth
+            required
+            sx={{ mb: 2 }}
+          />
+          <Button type="submit" variant="contained" color="primary">
+            Отправить
+          </Button>
+        </form>
       </CustomTabPanel>
     </Box>
   )
