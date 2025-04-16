@@ -45,6 +45,7 @@ export const Header: React.FC = () => {
     { label: 'Колледжи', link: '/colleges' },
     { label: 'Студентам', link: '/students' },
     { label: 'Об Университете', link: '/about' },
+    { label: 'For International Students', link: '/institutes/kitajsko-kyrgyzskij-institut-innovacionnyh-tehnolo/' },
   ]
 
   return (
@@ -64,7 +65,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={index}
                   to={item.link}
-                  className="lg:hidden text-black text-sm font-medium hover:text-gray-400 border rounded-full hover:bg-green hover:scale-105 duration-200 hover:border-white hover:text-white border-gray p-2"
+                  className="lg:hidden text-black text-xs font-medium hover:text-gray-400 border rounded-full hover:bg-green  duration-200  hover:border-white hover:text-white border-gray/60 p-2"
                 >
                   {item.label}
                 </Link>
