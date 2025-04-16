@@ -109,5 +109,7 @@ body {
 
 
 
-
+.review-slide .swiper-slide{
+  background: none;
+}
 

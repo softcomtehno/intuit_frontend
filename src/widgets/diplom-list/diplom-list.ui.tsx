@@ -14,7 +14,14 @@ export const DiplomList = () => {
   const { t } = useTranslation();
 
   return (
-    <div className=" my-10">
+    <div className=" my-20">
+            <Typography
+        variant="h3"
+        component="h3"
+        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+      >
+        Ваш будущий диплом
+      </Typography>
       <Fancybox
         options={{
           Carousel: {
@@ -25,7 +32,7 @@ export const DiplomList = () => {
         <Swiper
           className="py-10 px-1 diplom-list"
           modules={[Pagination]}
-          spaceBetween={10}
+     
           slidesPerView={3}
           pagination={{ clickable: true }}
           breakpoints={{
@@ -46,13 +53,13 @@ export const DiplomList = () => {
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 md:min-h-[250px]"
+    md:flex-col-reverse  md:gap-6 min-h-[190px]"
               >
                 <div className="flex flex-col justify-between h-full text-left">
                   <div>
                     <Typography
                       variant="h4"
-                      className="font-bold text-[26px] leading-8 text-blue-900 group-hover:text-blue"
+                      className="font-bold text-[20px] leading-8 text-blue-900 group-hover:text-blue"
                     >
                       {t('homepage.diploma.bachelor.degree')}
                     </Typography>
@@ -82,17 +89,17 @@ export const DiplomList = () => {
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 md:min-h-[250px]"
+    md:flex-col-reverse  md:gap-6 min-h-[190px]"
               >
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col justify-between text-left">
                   <div>
                     <Typography
                       variant="h4"
-                      className="font-semibold text-[27px] leading-8"
+                      className="font-semibold text-[20px] leading-8"
                     >
                       {t('homepage.diploma.master.degree')}
                     </Typography>
-                    <Typography className="font-medium ">
+                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium md:px-4">
                       {t('homepage.diploma.master.description')}
                     </Typography>
                   </div>
@@ -116,17 +123,17 @@ export const DiplomList = () => {
             >
                <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 md:min-h-[250px]"
+    md:flex-col-reverse  md:gap-6 min-h-[190px]"
               >
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col justify-between text-left">
                   <div>
-                    <Typography
+                  <Typography
                       variant="h4"
-                      className="font-semibold text-[27px] leading-8"
+                      className="font-semibold text-[20px] leading-8"
                     >
                       {t('homepage.diploma.postgraduate.degree')}
                     </Typography>
-                    <Typography className="font-medium ">
+                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium md:px-4">
                       {t('homepage.diploma.postgraduate.description')}
                     </Typography>
                   </div>
@@ -155,17 +162,17 @@ export const DiplomList = () => {
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 md:min-h-[250px]"
+    md:flex-col-reverse  md:gap-6 min-h-[190px]"
               >
-                <div className="flex flex-col justify-between lg:items-center">
+                <div className="flex flex-col justify-between lg:items-center text-left">
                   <div>
                     <Typography
                       variant="h4"
-                      className="font-semibold text-[27px] leading-8"
+                      className="font-semibold text-[18px] leading-5"
                     >
                       {t('homepage.diploma.diplomaSupplement.title')}
                     </Typography>
-                    <Typography className="font-medium ">
+                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium md:px-4">
                       {t('homepage.diploma.diplomaSupplement.description')}
                     </Typography>
                   </div>

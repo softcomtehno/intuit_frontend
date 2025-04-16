@@ -71,18 +71,18 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
 
   const handleDegreeChange = (selectedOption) => {
     setSelectedDegree(selectedOption?.value || null)
-    setCurrentPage(1) // Reset page when filters change
+    setCurrentPage(1) 
   }
 
   const handleFacultyChange = (selectedOption) => {
     setSelectedFaculty(selectedOption?.value || null)
-    setCurrentPage(1) // Reset page when filters change
+    setCurrentPage(1) 
   }
 
   const handleClearFilters = () => {
     setSelectedDegree(null)
     setSelectedFaculty(null)
-    setCurrentPage(1) // Reset page when filters are cleared
+    setCurrentPage(1) 
   }
 
   const handlePageChange = (event, value) => {

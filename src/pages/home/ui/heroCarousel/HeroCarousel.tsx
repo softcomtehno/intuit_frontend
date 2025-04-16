@@ -20,18 +20,16 @@ export const HeroCarousel: React.FC = () => {
   if (isError) {
     return <div>Ошибка</div>
   }
-
-
   
   return (
     <div className="w-full overflow-hidden">
-      <Marquee direction="left" speed={100} className="mb-3 overflow-x-none">
+      <Marquee direction="left" speed={100} className=" overflow-x-none">
         <div className="flex items-center r-sm:gap-3 r-sm:ml-3 gap-4 ml-4">
           {eventsData.data.map((carusel) => (
             <div key={carusel.id}>
               {!isMobile ? (
                 <div className="flex items-center justify-between backdrop-blur-xl bg-white/30 p-2 rounded-lg w-[400px] h-[100px] text-white">
-                  <div>
+                  <div className="flex flex-col gap-5 items-start">
                     <Typography
                       sx={{
                         overflow: 'hidden',
@@ -40,13 +38,13 @@ export const HeroCarousel: React.FC = () => {
                         maxWidth: '220px',
                       }}
                       variant="h3"
-                      className="mb-2 text-lg font-normal"
+                      className="mb-2 text-[14px] font-normal"
                     >
                       {carusel.title}
                     </Typography>
                     <Link
                       to={`/event/${carusel.slug}`}
-                      className="bg-primary inline-flex items-center text-white text-sm px-3 py-1 rounded transition"
+                      className="bg-blue inline-flex items-center text-white text-sm px-3 py-1 rounded transition"
                     >
                       Перейти
                     </Link>
