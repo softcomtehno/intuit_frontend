@@ -50,32 +50,59 @@ export const StudentsPage = () => {
       label: 'Бакалавриат',
       value: 'bachelor',
       courses: [
-        { name: '1 курс', url: '/bachelor/1' },
-        { name: '2 курс', url: '/bachelor/2' },
-        { name: '3 курс', url: '/bachelor/3' },
-        { name: '4 курс', url: '/bachelor/4' },
+        {
+          name: '1 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzk1vYoQxwwQEeuU4xl6vOpoF5p4WAhu9vhBsrFtgTorAPR53qN8Tc1-4MKXRv6Q/pubhtml',
+        },
+        {
+          name: '2 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzk1vYoQxwwQEeuU4xl6vOpoF5p4WAhu9vhBsrFtgTorAPR53qN8Tc1-4MKXRv6Q/pubhtml',
+        },
+        {
+          name: '3 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTOARZbGiedEuBTdzibA6aTghDrmlLvgp_WlYNzedpKuo5vgT6Zh95g6rXO2NmWlQ/pubhtml',
+        },
+        {
+          name: '4 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSpgPVSXNOXlPhvBmhj3nqVF8jQ_DR9LruujVIsgVWRD-wSZGos7WuCVdkKA3Owkw/pubhtml',
+        },
+        {
+          name: '5 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR9qD8WMd8LDqt--z-2t5y2boHek_N1K3298__gHEareric_w9KBbOqSgLKc5F7mQ/pubhtml',
+        },
       ],
     },
     {
       label: 'Магистратура',
       value: 'master',
       courses: [
-        { name: '1 курс', url: '/master/1' },
-        { name: '2 курс', url: '/master/2' },
+        {
+          name: '1 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT9fvjm4YPKrQWpfJaQiKhwdjMQFVciC1G--hHxl7Y8i81lUKKmbHswQpKUOuzUdl-TJ9qB9qoDF2q/pubhtml',
+        },
+        {
+          name: '2 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT9fvjm4YPKrQWpfJaQiKhwdjMQFVciC1G--hHxl7Y8i81lUKKmbHswQpKUOuzUdl-TJ9qB9qoDF2q/pubhtml',
+        },
       ],
     },
     {
       label: 'Аспирантура',
       value: 'postgraduate',
       courses: [
-        { name: '1 курс', url: '/postgraduate/1' },
-        { name: '2 курс', url: '/postgraduate/2' },
+        { name: '1 курс', url: 'https://intuit.kg/timetable/' },
+        { name: '2 курс', url: 'https://intuit.kg/timetable/' },
       ],
     },
     {
       label: 'PHD',
       value: 'phd',
-      courses: [{ name: '1 курс', url: '/phd/1' }],
+      courses: [
+        {
+          name: '1 курс',
+          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSb42z48iYPJtBvR7eIrm7r-60-7KW7vngcwAaDH95EDHY5AG7PdpTa5nVMHiODoyo17D6X1-HkHNSY/pubhtml',
+        },
+      ],
     },
   ]
 
