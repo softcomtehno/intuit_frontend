@@ -44,14 +44,13 @@ export const DegreeCategory = () => {
         <div className="flex">
           <PrevButton
             swiperRef={swiperRef}
-            className="absolute left-[-35px] bottom-[40%] z-20"
+            className="absolute left-[0px] bottom-[-5%] z-20"
           />
           <NextButton
             swiperRef={swiperRef}
-            className="absolute right-[-35px] bottom-[40%] z-20"
+            className="absolute right-[0px] bottom-[-5%] z-20"
           />
         </div>
-
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)}
           className="py-10 px-1 degree-list text-left"
