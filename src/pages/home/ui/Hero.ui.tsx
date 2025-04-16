@@ -49,14 +49,14 @@ export const HomeHero = () => {
               </div>
             </div>
           <div className="w-[450px] md:w-full">
-                <img className="r-lg:hidden h-[300px] md:w-full md:h-auto object-cover" src="/ormon2.png" alt="Hero" />
+                {/* <img className="r-lg:hidden h-[300px] md:w-full md:h-auto object-cover" src="/ormon2.png" alt="Hero" />
                 <div className="bg-white/30  rounded-md inset-10 p-2 border border-black/30">
                   <h3 className="text-black/70 ">Мамбеткулов Ормон</h3>
                   <p className="text-xs">
   Мне очень нравится обучение здесь — никаких скучных лекций, только практика! Всё по делу и сразу применимо на практике.
 </p>
 
-                </div>
+                </div> */}
             {/* <Swiper
               className="py-10 px-1 bg-transparent review-slide"
               modules={[Pagination]}
