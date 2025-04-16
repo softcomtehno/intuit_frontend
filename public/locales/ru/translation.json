@@ -36,6 +36,7 @@
     "degrees": {
       "degreeCategory": "Направления обучения",
       "collegesCount": "институты",
+      "colleges": "Колледжи",
       "programCount": "направлений",
       "programs": "Программы обучения",
       "selectDegreePlaceholder": "Выберите уровень образования",

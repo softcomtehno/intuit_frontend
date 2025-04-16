@@ -36,6 +36,7 @@
     "degrees": {
       "degreeCategory": "Fields of Study",
       "collegesCount": "faculties",
+       "colleges": "Colleges",
       "programCount": "programs",
       "programs": "Programs of Study",
       "selectDegreePlaceholder": "Select Education Level",

@@ -36,6 +36,7 @@
     "degrees": {
       "degreeCategory": "Окуу багыттары",
       "collegesCount": "институттар",
+       "colleges": "Колледждер",
       "programCount": "программалар",
       "programs": "Окуу программалары",
       "selectDegreePlaceholder": "Билим деңгээлин тандаңыз",
