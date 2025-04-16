@@ -1,4 +1,10 @@
-import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+} from '@mui/material';
 import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
 import { degreeQueries } from '~entities/degree';
 import { useNavigate } from 'react-router-dom';
@@ -13,6 +19,16 @@ import 'swiper/css/pagination';
 import { useRef } from 'react';
 import PrevButton from '~shared/ui/swiper/PrevButton.ui';
 import NextButton from '~shared/ui/swiper/NextButton.ui';
+import {
+  Book,
+  Briefcase,
+  Code,
+  ExternalLink,
+  Globe,
+  GraduationCap,
+  School,
+  University,
+} from 'lucide-react';
 
 export const DegreeCategory = () => {
   const { t } = useTranslation();
@@ -31,6 +47,20 @@ export const DegreeCategory = () => {
     return <h1>{t('homepage.loading.error')}</h1>;
   }
 
+  const getIconById = (id: number) => {
+    const icons = [
+      <Code className="text-black/60" />,
+      <Briefcase className="text-black/60" />,
+      <Book className="text-black/60" />,
+      <Globe className="text-black/60" />,
+      <GraduationCap className="text-black/60" />,
+      <University className="text-black/60" />,
+    ];
+    return icons[id % icons.length];
+  };
+
+  console.log(degreeData?.data);
+
   return (
     <div>
       <Typography
@@ -41,18 +71,7 @@ export const DegreeCategory = () => {
         {t('homepage.degrees.degreeCategory')}
       </Typography>
       <div className="relative">
-        <div className="flex">
-          <PrevButton
-            swiperRef={swiperRef}
-            className="absolute left-[0px] bottom-[-5%] z-20"
-          />
-          <NextButton
-            swiperRef={swiperRef}
-            className="absolute right-[0px] bottom-[-5%] z-20"
-          />
-        </div>
         <Swiper
-          onSwiper={(swiper: any) => (swiperRef.current = swiper)}
           className="py-10 px-1 degree-list text-left"
           modules={[Pagination]}
           spaceBetween={5}
@@ -72,31 +91,49 @@ export const DegreeCategory = () => {
               <SwiperSlide key={degree.id}>
                 <Card
                   onClick={() => navigate(`degree/${degree.slug}`)}
-                  className="max-w-[350px] text-left p-4 border border-gray text-black/80 transition duration-200 rounded-md hover:cursor-pointer shadow-none hover:bg-green hover:text-white md:max-w-full"
+                  className={`relative overflow-hidden max-w-[350px] text-left p-4 border-2 border-white hover:border-green text-black/80 transition 
+    duration-200 rounded-md hover:cursor-pointer shadow-none bg-cover bg-center text-white hover:text-white 
+    md:max-w-full flex flex-col justify-between`}
+                  style={{
+                    backgroundImage: `url('https://i.pinimg.com/736x/fa/b2/23/fab223bc9433fc53d1ddb189d766f6db.jpg')`,
+                  }}
                 >
-                  <Typography variant="h6" className="font-bold">
-                    {degree.title}
-                  </Typography>
-                  <CardContent className="p-0 pt-10 flex items-end justify-between">
-                    <div>
-                      <Typography
-                        variant="subtitle1"
-                        className="leading-[20px] text-[16px] font-medium"
-                      >
-                        {t('homepage.degrees.collegesCount')}
-                      </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        className="leading-[20px] text-[16px] font-medium"
-                      >
-                        {degree.programCount}
-                        {' ' + t('homepage.degrees.programCount')}
-                      </Typography>
-                    </div>
-                    <div className="bg-green rounded-full p-2">
-                      <AccountBalanceRoundedIcon className="text-white text-[35px]" />
-                    </div>
-                  </CardContent>
+                  <div className="absolute inset-0 bg-green/40 backdrop-blur-[5px] backdrop-brightness-60 z-0" />
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <Typography
+                      variant="h6"
+                      className="font-bold text-lg flex items-center gap-1 text-black/80"
+                    >
+                      {degree.title}
+                      {getIconById(degree.id)}
+                    </Typography>
+                    <CardContent className="p-0 pt-5 flex items-end justify-between text-black/70 font-medium">
+                      <div>
+                        <Typography
+                          variant="subtitle1"
+                          className="leading-[20px] text-[16px] font-medium"
+                        >
+                          {degree.facultyCount}
+                          {' ' + t('homepage.degrees.collegesCount')}
+                        </Typography>
+                        <Typography
+                          variant="subtitle1"
+                          className="leading-[20px] text-[16px] font-medium"
+                        >
+                          {degree.programCount}
+                          {' ' + t('homepage.degrees.programCount')}
+                        </Typography>
+                      </div>
+                      <div>
+                        <Button className="bg-blue/60 text-white/90 font-semibold text-xs flex items-center gap-1">
+                          <p>Узнать больше</p>
+                          <p>
+                            <ExternalLink size={18} />
+                          </p>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </div>
                 </Card>
               </SwiperSlide>
             ))}

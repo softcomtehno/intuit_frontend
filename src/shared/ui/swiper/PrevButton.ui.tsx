@@ -7,7 +7,7 @@ const PrevButton = ({ swiperRef, className }: SwiperButtonProps) => {
     <button
       onClick={() => swiperRef.current?.slidePrev()}
       className={clsx(
-        "bg-blue text-white py-2 px-4 rounded hover:bg-purple-700 transition",
+        "bg-blue/80 text-white py-2 px-4 rounded  transition",
         className
       )}
     >

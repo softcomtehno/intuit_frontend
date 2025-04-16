@@ -15,7 +15,7 @@ export const OpportunitiesList = () => {
           {t('homepage.opportunities.title')} 
         </Typography>
       <div className="flex gap-5 justify-between mt-4 flex-wrap lg:gap-10 lg:justify-center">
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] transition-all duration-200 rounded-lg">
+        <Card className=" rounded-md max-w-[280px] p-5 shadow-green bg-[#f5f5f5] transition-all duration-200 ">
           <Typography
             variant="h6"
             component="div"
@@ -38,7 +38,7 @@ export const OpportunitiesList = () => {
             </li>
           </ul>
         </Card>
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200">
+        <Card className=" rounded-md max-w-[280px] p-5 shadow-green bg-[#f5f5f5]  transition-all duration-200">
           <Typography
             variant="h6"
             component="div"
@@ -61,7 +61,7 @@ export const OpportunitiesList = () => {
             </li>
           </ul>
         </Card>
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200">
+        <Card className=" rounded-md max-w-[280px] p-5 shadow-green bg-[#f5f5f5]  transition-all duration-200">
           <Typography
             variant="h6"
             component="div"
@@ -84,7 +84,7 @@ export const OpportunitiesList = () => {
             </li>
           </ul>
         </Card>
-        <Card className="max-w-[280px] p-5 shadow-none bg-[#f5f5f5] rounded-lg transition-all duration-200">
+        <Card className=" rounded-md max-w-[280px] p-5 shadow-green bg-[#f5f5f5]  transition-all duration-200">
           <Typography
             variant="h6"
             component="div"
