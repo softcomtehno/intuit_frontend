@@ -7,11 +7,13 @@ export function GenericLayout() {
   return (
     <>
       <ScrollTop />
-      <Header />
-      <div className="container mt-20">
-        <Outlet />
+      <div className="min-h-screen flex flex-col justify-between">
+        <Header />
+        <div className="container mt-20">
+          <Outlet />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }

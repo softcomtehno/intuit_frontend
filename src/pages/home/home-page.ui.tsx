@@ -19,7 +19,7 @@ import { HomeHero } from './ui/Hero.ui';
 export function HomePage() {
   return (
     <div>
-      <HomeHero />
+      <HomeHero />  
       <DegreeCategory />
       <ProgramCategory />
       <OpportunitiesList />

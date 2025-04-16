@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 import {
   Card,
   CardContent,
   CardMedia,
   Typography,
   CardActionArea,
-} from '@mui/material';
-import { Link } from 'react-router-dom';
+} from '@mui/material'
+import { Link } from 'react-router-dom'
 
 interface NewsCardProps {
-  image: string;
-  title: string;
-  description: string;
-  slug: string;
+  image: string
+  title: string
+  description: string
+  slug: string
 }
 
 export const NewsCard: React.FC<NewsCardProps> = ({
@@ -24,7 +24,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   // const truncatedDescription =
   //   description.length > 120 ? description.slice(0, 120) + '...' : description;
 
-  const truncatedTitle = title.length > 65 ? title.slice(0, 65) + '...' : title;
+  const truncatedTitle = title.length > 65 ? title.slice(0, 65) + '...' : title
 
   return (
     <Link to={`/news/${slug}`}>
@@ -50,11 +50,14 @@ export const NewsCard: React.FC<NewsCardProps> = ({
               color="text.secondary"
               className="line-clamp-3"
             >
-              <div className='text-justify line-clamp-2' dangerouslySetInnerHTML={{ __html: description }} />
+              <div
+                className="text-justify line-clamp-2"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
             </Typography>
           </CardContent>
         </CardActionArea>
       </Card>
     </Link>
-  );
-};
+  )
+}

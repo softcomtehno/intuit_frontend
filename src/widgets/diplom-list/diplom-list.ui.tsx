@@ -1,17 +1,17 @@
-import { Button, Card, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
-import Gerb from '../../assets/gerb.svg';
-import EGerb from '../../assets/eugerb.svg';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import Fancybox from '~widgets/diplom-list/Fancybox';
+import { Button, Card, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
+import Gerb from '../../assets/gerb.svg'
+import EGerb from '../../assets/eugerb.svg'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import Fancybox from '~widgets/diplom-list/Fancybox'
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 
 export const DiplomList = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <div className=" my-20">
@@ -48,7 +48,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery"
-              href="https://muit.makalabox.com/documents/diplom/diplom.pdf"
+              href="https://muit.makalabox.com/documents/%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC.pdf"
               className="lg:flex lg:justify-center"
             >
               <Card
@@ -121,7 +121,7 @@ export const DiplomList = () => {
               href="https://muit.makalabox.com/documents/%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC.pdf"
               className="lg:flex lg:justify-center"
             >
-               <Card
+              <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
     md:flex-col-reverse  md:gap-6 min-h-[190px]"
               >
@@ -195,7 +195,7 @@ export const DiplomList = () => {
         </Swiper>
       </Fancybox>
     </div>
-  );
-};
+  )
+}
 
-export default DiplomList;
+export default DiplomList

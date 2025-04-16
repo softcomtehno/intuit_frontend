@@ -84,5 +84,5 @@ export const HomeHero = () => {
         </Container>
       </div>
     </section>
-  );
-};
+  )
+}
