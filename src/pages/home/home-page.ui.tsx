@@ -15,8 +15,10 @@ import { NewsList } from '~widgets/news-list';
 import { EventList } from '~widgets/events-list';
 
 import { HomeHero } from './ui/Hero.ui';
+import { t } from 'i18next';
 
 export function HomePage() {
+
   return (
     <div>
       <HomeHero />  
@@ -32,7 +34,7 @@ export function HomePage() {
           component="h3"
           className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
         >
-          Преподавательский состав
+          {t("homepage.TeachingStaff")}
         </Typography>
         <StaffList />
       </div>

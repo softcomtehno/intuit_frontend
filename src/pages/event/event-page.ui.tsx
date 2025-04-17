@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { eventQueries } from '~entities/events';
 import { Typography, Card, CircularProgress, Alert } from '@mui/material';
+import { t } from 'i18next';
 
 export const EventPage = () => {
   const { slug } = useParams();
@@ -8,7 +9,7 @@ export const EventPage = () => {
 
   if (isLoading) return <CircularProgress className="block mx-auto mt-10" />;
   if (isError || !data)
-    return <Alert severity="error">Ошибка загрузки события</Alert>;
+    return <Alert severity="error">{t("homepage.eventError")}</Alert>;
 
 
   return (
@@ -30,7 +31,7 @@ export const EventPage = () => {
         />
 
         <Typography variant="caption" className="mt-2 text-gray-500 block">
-          Дата создания: {new Date(data.data.createdAt).toLocaleDateString()}
+          {t("homepage.creationDate")} {new Date(data.data.createdAt).toLocaleDateString()}
         </Typography>
       </Card>
     </div>

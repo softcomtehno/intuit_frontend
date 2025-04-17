@@ -8,6 +8,7 @@ import {
 } from '@mui/material'
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded'
 import { specializationTypes } from '~entities/specialization'
+import { t } from 'i18next'
 
 export const SkillsBlock = ({
   skills,
@@ -18,7 +19,7 @@ export const SkillsBlock = ({
   return (
     <div>
       <Typography variant="h3" className="font-semibold">
-        В итоге вы освоите следующие навыки и инструменты
+        {t("specialization.skillsAndTools")}
       </Typography>
 
       <div className="flex gap-20 md:flex-col">

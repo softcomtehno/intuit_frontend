@@ -28,36 +28,20 @@ export const NewsCard: React.FC<NewsCardProps> = ({
 
   return (
     <Link to={`/news/${slug}`}>
-      <Card className="shadow-none border border-gray max-w-sm h-[450px] flex flex-col justify-between">
-        <CardActionArea className="h-full flex flex-col">
-          <CardMedia
-            className="h-60"
-            component="img"
-            image={image}
-            title={truncatedTitle}
+     <div className="border border-[gray]/30 max-w-sm h-[300px] min-h-[350px] flex flex-col justify-between shadow-none rounded-sm  overflow-hidden">
+        <div className="flex flex-col h-full">
+          <img
+            src={image}
+            alt={title}
+            className="h-60 w-full object-cover"
           />
-          <CardContent className="flex flex-col justify-between flex-grow">
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="div"
-              className="text-base font-bold line-clamp-2"
-            >
+          <div className="flex flex-col justify-between flex-grow p-4">
+            <h3 className="text-base text-left font-bold line-clamp-2">
               {truncatedTitle}
-            </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              className="line-clamp-3"
-            >
-              <div
-                className="text-justify line-clamp-2"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+            </h3>
+          </div>
+        </div>
+      </div>
     </Link>
   )
 }

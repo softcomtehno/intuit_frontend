@@ -6,6 +6,7 @@ import { Navigation, Pagination as SwiperPagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import { t } from 'i18next'
 
 export const NewsList = ({ id = null }) => {
   const { data, isError, isLoading, isSuccess } = id
@@ -20,11 +21,13 @@ export const NewsList = ({ id = null }) => {
 
   const totalPages = Math.ceil(data.data.results.length)
 
+
+  
   if (isSuccess && data.data.results.length > 0) {
     return (
       <div>
         <Typography variant="h3" component="div" className="font-semibold">
-          Новости
+          {t("news-page.news")}
         </Typography>
 
         <Swiper
@@ -42,7 +45,7 @@ export const NewsList = ({ id = null }) => {
               slidesPerView: 2,
             },
             768: {
-              slidesPerView: 2.5,
+              slidesPerView:3,
             },
           }}
         >

@@ -5,6 +5,7 @@ import VisionImg from './vision.webp'
 import HistoryImg from './history.jpg'
 import EducationImg from './education.jpg'
 import { documentQueries, documentTypes } from '~entities/document'
+import { t } from 'i18next'
 
 export const AboutPage = () => {
   const { data: documentData } = documentQueries.useGetDocuments()
@@ -12,44 +13,41 @@ export const AboutPage = () => {
 
   const links = [
     {
-      title: 'История университета',
-      description: 'Узнайте больше о богатой истории нашего университета.',
+      title: t('aboutPage.links.historyTitle'),
+      description: t('aboutPage.links.historyDescription'),
       url: '/history',
       image: HistoryImg,
       isExternal: false,
     },
     {
-      title: 'Видение университета',
-      description: 'Наша миссия и цели в современном образовании.',
+      title: t('aboutPage.links.visionTitle'),
+      description: t('aboutPage.links.visionDescription'),
       url: '/vision',
       image: VisionImg,
       isExternal: false,
     },
-
     {
-      title: 'Рейтинг преподавательского состава',
-      description: 'Посмотрите рейтинг лучших преподавателей университета.',
+      title: t('aboutPage.links.ratingTitle'),
+      description: t('aboutPage.links.ratingDescription'),
       url: 'https://rating.makalabox.com/',
       image: RatingImg,
       isExternal: true,
     },
     {
-      title: 'CSSTEAP',
-      description:
-        'Centre for Space Science and Technology Education in Asia and the Pacific',
+      title: t('aboutPage.links.cssteapTitle'),
+      description: t('aboutPage.links.cssteapDescription'),
       url: '/cssteapun',
       image: RatingImg,
       isExternal: false,
     },
     {
-      title: 'Ректорат',
-      description: 'Узнайте больше о нашем Ректорате',
+      title: t('aboutPage.links.headTitle'),
+      description: t('aboutPage.links.headDescription'),
       url: '/head',
-      image:
-        'https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg',
+      image: 'https://i.pinimg.com/736x/32/97/2d/32972d6da61a2463e1de505863e67840.jpg',
       isExternal: false,
     },
-  ]
+  ];
 
   return (
     <Container maxWidth="lg" className="py-10 px-4">
@@ -127,7 +125,7 @@ export const AboutPage = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  Перейти
+                  {t("aboutPage.go")}
                 </a>
               ) : (
                 <RouterLink
@@ -139,7 +137,7 @@ export const AboutPage = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  Перейти
+                  {t("aboutPage.go")}
                 </RouterLink>
               )}
             </Box>
@@ -183,7 +181,7 @@ export const AboutPage = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  Перейти
+                 {t("aboutPage.go")}
                 </RouterLink>
               </Box>
             </Box>

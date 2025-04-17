@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
+import { t } from 'i18next'
 import { useState } from 'react'
 import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
 import { EventList } from '~widgets/events-list'
@@ -38,7 +39,7 @@ export const IntroCard = ({ img, description }) => {
             className="bg-green shadow-none self-start md:mx-auto"
             onClick={() => setModal(true)}
           >
-            Подобрать программу
+           {t("institutesPage.pickProgram")}
           </Button>
         </Box>
       </section>

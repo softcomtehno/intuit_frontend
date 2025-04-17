@@ -1,4 +1,5 @@
 import { Breadcrumbs, Card, Typography, Link } from '@mui/material'
+import { t } from 'i18next'
 import { specializationTypes } from '~entities/specialization'
 
 export const SpecializationBanner = ({
@@ -22,7 +23,7 @@ export const SpecializationBanner = ({
       <div>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="black" href="/">
-            Главная
+            {t('specialization.home')}
           </Link>
           <Typography color="black">{title}</Typography>
         </Breadcrumbs>
@@ -42,27 +43,27 @@ export const SpecializationBanner = ({
         </Button> */}
       </div>
       <div className="flex gap-10 justify-between lg:flex-col lg:mt-10">
-        <Card className="shadow-none min-w-[150px] p-5 rounded-2xl min-h-[100px] max-h-[50px] z-10">
-          <p className="">Уровень</p>
-          <Typography variant="h6" className="font-semibold text-[18px]">
+        <Card className="shadow-none min-w-[250px] p-5 rounded-2xl min-h-[100px] max-h-[50px] z-10">
+          <p className="">{t('specialization.level')}</p>
+          <Typography variant="h6" className="font-semibold">
             {educationLevel[0]}
           </Typography>
         </Card>
-        <Card className="shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">Срок обучения</p>
-          <Typography variant="h6" className="font-semibold text-[18px]">
+        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+          <p className="">{t('specialization.studyDuration')}</p>
+          <Typography variant="h6" className="font-semibold">
             {studyPeriod}
           </Typography>
         </Card>
-        <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">Формат</p>
-          <Typography variant="h6" className="font-semibold text-[18px]">
+        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+          <p className="">{t('specialization.format')}</p>
+          <Typography variant="h6" className="font-semibold">
             {trainingForm}
           </Typography>
         </Card>
-        <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">Результат</p>
-          <Typography variant="h6" className="font-semibold text-[18px]">
+        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+          <p className="">{t('specialization.result')}</p>
+          <Typography variant="h6" className="font-semibold">
             {diploma}
           </Typography>
         </Card>

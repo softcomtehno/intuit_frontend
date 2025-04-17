@@ -7,11 +7,11 @@
 /* Profession Card */
 
 .prof-card:hover .prof-card__text {
-  color: white !important;
+  color: #2a2173 !important;
 }
 .prof-card:hover .prof-card__btn_first {
-  background-color: white !important;
-  color: #00956f !important;
+  background-color: #2b2173a7 !important;
+  color: white !important;
 }
 .prof-card:hover .prof-card__btn_last {
   background-color: unset !important;
