@@ -5,7 +5,7 @@ export const EducationForm = () => {
   const { t } = useTranslation()
   return (
     <section className="my-10">
-      <h2 className="text-5xl font-bold mb-10">Формы обучения</h2>
+      <h2 className="text-5xl font-bold mb-10">{t("homepage.studyForms")}</h2>
 
       <div className="flex gap-5 md:flex-col">
         <EducationFormCard

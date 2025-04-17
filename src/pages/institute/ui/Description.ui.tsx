@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { t } from 'i18next'
 
 interface DescriptionCardProps {
   subtitle: string
@@ -30,7 +31,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
           component="h3"
           className="text-[2rem] font-semibold text-[#333] "
         >
-          Ведущие преподаватели
+          {t("descriptionPage.leadingTeachers")}
         </Typography>
 
         <div className="flex justify-center py-5">
@@ -64,7 +65,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
           component="h3"
           className="text-[2rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
         >
-          Об Институте
+          {t("descriptionPage.aboutInstitute")}
         </Typography>
         <div dangerouslySetInnerHTML={{ __html: subtext }}></div>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import { t } from 'i18next';
 interface StatsCardProps {
   count: number;
   label: string;
@@ -53,10 +54,10 @@ const StatsCard: React.FC<StatsCardProps> = ({ count, label, color = 'blue' }) =
 export const Stats = () => {
   return (
       <div className="flex justify-between flex-wrap my-5 lg:justify-center lg:gap-3">
-        <StatsCard count={2007} label="Год основания" />
-        <StatsCard count={8} label="Институтов" color="green" />
-        <StatsCard count={120} label="Преподавателей" color="purple" />
-        <StatsCard count={20000} label="Выпускников" color="red" />
-      </div>
+      <StatsCard count={2007} label={t('homepage.Stats.yearOfEstablishment')} />
+      <StatsCard count={8} label={t('homepage.Stats.institutes')} color="green" />
+      <StatsCard count={120} label={t('homepage.Stats.facultyMembers')} color="purple" />
+      <StatsCard count={20000} label={t('homepage.Stats.graduates')} color="red" />
+    </div>
   );
 };

@@ -8,6 +8,7 @@ import {
   feedbackQueries,
   feedbackTypes,
 } from '~entities/feedback'
+import { t } from 'i18next'
 
 export const FeedbackList = () => {
   const {
@@ -18,10 +19,10 @@ export const FeedbackList = () => {
   } = feedbackQueries.useGetFeedbacks()
 
   if (isLoading) {
-    return <div>Загрузка Файлов</div>
+    return <div>{t("loading.fileUpload")}</div>
   }
   if (isError) {
-    return <div>Ошибка</div>
+    return <div>{t("loading.error")}</div>
   }
   if (isSuccess) {
     return (

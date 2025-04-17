@@ -2,6 +2,7 @@ import { IconButton, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded'
 import Modal from '@mui/material/Modal'
+import { t } from 'i18next'
 
 export const MaterialModal = ({ videoUrl, open, handleClose }) => {
   const getYouTubeEmbedUrl = (url) => {
@@ -42,7 +43,7 @@ export const MaterialModal = ({ videoUrl, open, handleClose }) => {
           }}
         >
           <Typography className="font-medium" variant="h4">
-            Отзыв
+            {t("windowPage.review")}
           </Typography>
           <IconButton onClick={handleClose}>
             <CancelRoundedIcon />

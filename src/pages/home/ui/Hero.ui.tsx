@@ -20,10 +20,10 @@ export const HomeHero = () => {
   } = facultyQueries.useGetFaculties();
 
   if (isLoading) {
-    return <div>Произошла Ошибка</div>;
+    return <div>{t("loading.loading")}</div>;
   }
   if (isError) {
-    return <div>Произошла Ошибка</div>;
+    return <div>{t("loading.error")}</div>;
   }
 
   console.log(facultyData?.data, 'facultyData?.data');
@@ -52,10 +52,15 @@ export const HomeHero = () => {
             </div>
           <div className="w-[450px] md:w-full flex flex-col items-center">
                 <img className="r-lg:hidden h-[300px] md:w-full md:h-auto object-cover" src="/imagee.png" alt="Hero" />
+<<<<<<< HEAD
+                <div className="bg-white/30  rounded-md inset-10 p-2 border border-black/30">
+                  <h3 className="text-black/70 ">{t("homepage.HeadPage.name")}</h3>
+=======
                 {/* <div className="bg-white/30  rounded-md inset-10 p-2 border border-black/30">
                   <h3 className="text-black/70 ">Мамбеткулов Ормон</h3>
+>>>>>>> 15e16227ccb2ebdf646e67acc9f93ffcd2d48775
                   <p className="text-xs">
-  Мне очень нравится обучение здесь — никаких скучных лекций, только практика! Всё по делу и сразу применимо на практике.
+                  {t("homepage.HeadPage.learningExperience")}
 </p>
                 </div> */}
             {/* <Swiper

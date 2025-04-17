@@ -1,6 +1,7 @@
-import { Card } from '@mui/material'
-import CodeIcon from '../../assets/code-icon.svg'
-import { Link } from 'react-router-dom'
+import { Card } from '@mui/material';
+import CodeIcon from '../../assets/code-icon.svg';
+import { Link } from 'react-router-dom';
+import { t } from 'i18next';
 
 type FacultyCardProps = {
   instituteName: string
@@ -19,7 +20,7 @@ export const FacultyCard: React.FC<FacultyCardProps> = ({
         <h3 className="font-bold min-h-[51px] text-lg">{instituteName}</h3>
         <div className="flex justify-between min-h-[90px]">
           <div className="self-end px-6 py-1 border border-gray rounded-full text-sm">
-            {programCount} программ
+            {programCount} {t("homepage.programs")}
           </div>
           <img
             className="h-[40px] w-[40px] rounded-full self-end"

@@ -9,6 +9,7 @@ import { Typography } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
 import { staffQueries } from '~entities/staff'
 import './index.css'
+import { t } from 'i18next'
 
 export const TeacherPage = () => {
   const { slug } = useParams()
@@ -30,10 +31,10 @@ export const TeacherPage = () => {
   }
 
   if (isLoading) {
-    return <div>Идёт загрузка данных</div>
+    return <div>{t("loading.dataLoading")}</div>
   }
   if (isError) {
-    return <div>Данные не загружены</div>
+    return <div>{t("loading.dataNotLoaded")}</div>
   }
 
   if (isSuccess) {
@@ -113,7 +114,7 @@ export const TeacherPage = () => {
                   className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
                 >
                   <ContactPage className="mr-2" />
-                  <span className="text-lg">Резюме</span>
+                  <span className="text-lg">{t("homepage.resume")}</span>
                 </Link>
               </div>
             </div>
