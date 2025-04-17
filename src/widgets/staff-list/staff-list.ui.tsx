@@ -34,12 +34,17 @@ const StaffList = () => {
     return <div>{t('homepage.loading.error')}</div>
   }
 
-  const filterData = staffData?.data.filter((staff: Staff) => {
-    if (staff.position.id == selectedPosition) {
-      return staff
-    }
+  const filterData = staffData?.data
+  .filter((staff: Staff) => staff.position.id === selectedPosition)
+  .sort((a, b) => {
+    if (a.id === 35) return -1
+    if (b.id === 35) return 1
+    return 0
   })
 
+
+  console.log(staffData?.data);
+  
   return (
     <>
       <div className="position-navigation flex justify-start my-4 lg:hidden">
