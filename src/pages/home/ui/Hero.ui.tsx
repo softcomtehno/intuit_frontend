@@ -26,6 +26,8 @@ export const HomeHero = () => {
     return <div>Произошла Ошибка</div>;
   }
 
+  console.log(facultyData?.data, 'facultyData?.data');
+
   return (
     <section className="r-sm:mx-2 r-sm:h-[360px] mx-5  rounded-md r-sm:mb-16 mb-20 relative overflow-hidden bg-[url('https://i.pinimg.com/736x/a3/60/b5/a360b54df5ce5ed246810e679292af7e.jpg')] bg-cover ">
       <div className="relative py-5  r-md:py-6 px-4">

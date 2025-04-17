@@ -20,6 +20,8 @@ export const NewsList = ({ id = null }) => {
 
   const totalPages = Math.ceil(data.data.results.length)
 
+
+  
   if (isSuccess && data.data.results.length > 0) {
     return (
       <div>
@@ -42,7 +44,7 @@ export const NewsList = ({ id = null }) => {
               slidesPerView: 2,
             },
             768: {
-              slidesPerView: 2.5,
+              slidesPerView:3,
             },
           }}
         >
