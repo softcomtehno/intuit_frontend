@@ -41,7 +41,7 @@ export const License = () => {
                 <img src={Gerb} alt="" />
               </div>
               <div>
-              <h3 className="text-lg font-semibold text-gray-800">{t("homepage.License.Licenses")}</h3>
+              <h3 className="text-lg font-semibold text-gray-800">{t("homepage.License.licenses")}</h3>
               <p className="text-sm text-gray-600 mt-2">
                 {t("homepage.License.viewDocument")}
               </p>
