@@ -9,6 +9,8 @@ export const SpecializationBanner = ({
   diploma,
   photo,
   educationLevel,
+  phoneNumber,
+  contractPrice,
 }: specializationTypes.Specialization) => {
   return (
     <div
@@ -21,7 +23,7 @@ export const SpecializationBanner = ({
       <div>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="black" href="/">
-            {t("specialization.home")}
+            {t('specialization.home')}
           </Link>
           <Typography color="black">{title}</Typography>
         </Breadcrumbs>
@@ -42,29 +44,45 @@ export const SpecializationBanner = ({
       </div>
       <div className="flex gap-10 justify-between lg:flex-col lg:mt-10">
         <Card className="shadow-none min-w-[250px] p-5 rounded-2xl min-h-[100px] max-h-[50px] z-10">
-          <p className="">{t("specialization.level")}</p>
+          <p className="">{t('specialization.level')}</p>
           <Typography variant="h6" className="font-semibold">
             {educationLevel[0]}
           </Typography>
         </Card>
         <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">{t("specialization.studyDuration")}</p>
+          <p className="">{t('specialization.studyDuration')}</p>
           <Typography variant="h6" className="font-semibold">
             {studyPeriod}
           </Typography>
         </Card>
         <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">{t("specialization.format")}</p>
+          <p className="">{t('specialization.format')}</p>
           <Typography variant="h6" className="font-semibold">
             {trainingForm}
           </Typography>
         </Card>
         <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">{t("specialization.result")}</p>
+          <p className="">{t('specialization.result')}</p>
           <Typography variant="h6" className="font-semibold">
             {diploma}
           </Typography>
         </Card>
+        {phoneNumber && (
+          <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+            <p className="">Номер Телефона</p>
+            <Typography variant="h6" className="font-semibold text-[18px]">
+              {phoneNumber}
+            </Typography>
+          </Card>
+        )}
+        {contractPrice && (
+          <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+            <p className="">Стоимость Контракта</p>
+            <Typography variant="h6" className="font-semibold text-[18px]">
+              {contractPrice}
+            </Typography>
+          </Card>
+        )}
       </div>
       <img
         className="absolute right-[150px] top-0 h-[200px] w-[200px] lg:static lg:h-auto"

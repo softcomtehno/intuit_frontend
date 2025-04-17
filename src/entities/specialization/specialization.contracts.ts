@@ -36,4 +36,6 @@ export const SpecializationSchema = z.object({
   diploma: z.string(),
   educationLevel: z.array(z.number()),
   faculty: z.array(z.number()),
+  phoneNumber: z.string().optional(),
+  contractPrice: z.string().optional(),
 })

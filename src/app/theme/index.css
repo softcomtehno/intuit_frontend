@@ -4,8 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* Profession Card */
 
 .prof-card:hover .prof-card__text {
@@ -45,7 +43,7 @@
   width: 10px;
   height: 6px;
   display: inline-block;
-  background: #2A2173;
+  background: #2a2173;
   margin: 0 5px;
   border-radius: 20px;
   transition: opacity 0.5s, background-color 0.5s, width 0.5s;
@@ -72,8 +70,6 @@ td {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #9ca3af; /* Темнее при наведении */
 }
-
-
 
 .swiper {
   width: 100%;
@@ -107,9 +103,6 @@ body {
   height: 100%;
 }
 
-
-
-.review-slide .swiper-slide{
+.review-slide .swiper-slide {
   background: none;
 }
-
