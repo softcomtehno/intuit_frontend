@@ -49,7 +49,7 @@ export function Footer() {
       <div className=" max-w-[95%] mx-auto hidden lg:block">
         <div className="flex items-center gap-1 mb-5">
           <img src={IntuitLogo} alt="Intuit" className="h-[58px]" />
-          <p className="text-xs font-semibold leading-3">
+          <p className="text-xs font-semibold leading-3 max-w-[100px]">
             {t("footer.fields.universityTitle")}
           </p>
         </div>

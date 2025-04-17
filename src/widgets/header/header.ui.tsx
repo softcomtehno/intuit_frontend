@@ -44,7 +44,7 @@ export const Header: React.FC = () => {
     { label: t("enrollPage.introCard.title"), link: '/applicants' },
     { label: t("homepage.degrees.collegesCount"), link: '/institutes' },
     { label: t("homepage.degrees.colleges"), link: '/colleges' },
-    { label: t("enrollPage.introCard.secondTitle"), link: '/students' },
+    { label: t("degreePage.header.students"), link: '/students' },
     { label: t("homepage.aboutUniversity.title"), link: '/about' },
     { label: 'For International Students', link: '/institutes/kitajsko-kyrgyzskij-institut-innovacionnyh-tehnolo/' },
   ]
@@ -56,9 +56,8 @@ export const Header: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-1 mr-5">
               <img src={IntuitLogo} alt="Intuit" className="h-[50px]" />
-              <p className="text-[10px] font-bold leading-[11px]">
-                МЕЖДУНАРОДНЫЙ <br /> УНИВЕРСИТЕТ <br /> ИННОВАЦИОННЫХ <br />
-                ТЕХНОЛОГИЙ
+              <p className="text-[10px] font-bold leading-[11px] max-w-[100px]">
+               {t("degreePage.header.universityTitle")}
               </p>
             </Link>
             <div className="flex gap-3">

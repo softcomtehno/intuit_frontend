@@ -142,7 +142,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
             {t("loading.clear")}
           </Button>
         </div>
-        <div className="flex flex-wrap gap-4 lg:justify-center">
+        <div className="flex flex-wrap justify-between gap-7 lg:gap-4  lg:justify-center">
           {paginatedProfessions?.map((profession, index) => (
             <ProfessionCard
               key={index}

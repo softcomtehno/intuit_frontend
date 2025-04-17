@@ -24,7 +24,7 @@ export const StudentsPage = () => {
     },
     {
       title: 'Moodle',
-      description: 'Система управления обучением.',
+      description: t("studentsPage.moodleDescription"),
       url: 'https://moodle.intuit.kg/',
       image: 'https://via.placeholder.com/64',
       isExternal: true,
@@ -55,7 +55,7 @@ export const StudentsPage = () => {
         { name: t("studentsPage.tabs.course3"), url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTOARZbGiedEuBTdzibA6aTghDrmlLvgp_WlYNzedpKuo5vgT6Zh95g6rXO2NmWlQ/pubhtml' },
         { name: t("studentsPage.tabs.course4"), url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSpgPVSXNOXlPhvBmhj3nqVF8jQ_DR9LruujVIsgVWRD-wSZGos7WuCVdkKA3Owkw/pubhtml' },
         {
-          name: '5 курс',
+          name: t("studentsPage.tabs.fifthYear"),
           url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR9qD8WMd8LDqt--z-2t5y2boHek_N1K3298__gHEareric_w9KBbOqSgLKc5F7mQ/pubhtml',
         },
       ],
@@ -79,7 +79,7 @@ export const StudentsPage = () => {
     {
       label: 'PHD',
       value: 'phd',
-      courses: [{ name: '1 курс', url:  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSb42z48iYPJtBvR7eIrm7r-60-7KW7vngcwAaDH95EDHY5AG7PdpTa5nVMHiODoyo17D6X1-HkHNSY/pubhtml' }],
+      courses: [{ name: t("studentsPage.tabs.course1"), url:  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSb42z48iYPJtBvR7eIrm7r-60-7KW7vngcwAaDH95EDHY5AG7PdpTa5nVMHiODoyo17D6X1-HkHNSY/pubhtml' }],
     },
   ];
 
@@ -90,7 +90,7 @@ export const StudentsPage = () => {
         className="font-bold text-center mb-8 text-gray-800"
         style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
       >
-        Расписание
+        {t("studentsPage.schedule")}
       </Typography>
       <Tabs
         value={activeTab}
@@ -124,14 +124,14 @@ export const StudentsPage = () => {
             >
               {course.name}
             </Button>
-          )) || <Typography>Нет доступных курсов</Typography>}
+          )) || <Typography>{t("studentsPage.noAvailableCourses")}</Typography>}
       </Box>
       <Typography
         variant="h4"
         className="font-bold text-center mb-8 text-gray-800"
         style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
       >
-        Студентам
+        {t("studentsPage.forStudents")}
       </Typography>
       <Box
         display="flex"
@@ -199,7 +199,7 @@ export const StudentsPage = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  Перейти
+                  {t("aboutPage.go")}
                 </a>
               ) : (
                 <RouterLink
@@ -211,7 +211,7 @@ export const StudentsPage = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  Перейти
+                    {t("aboutPage.go")}
                 </RouterLink>
               )}
             </Box>

@@ -1,16 +1,16 @@
 {
   "homepage": {
     "title": "International University of Innovative Technologies",
-     "programs": "programs",
-     "studyForms": "Forms of study",
+    "programs": "programs",
+    "studyForms": "Forms of study",
     "resume": "Resume",
     "eventError": "Failed to load event",
     "creationDate": "Creation Date",
     "universityBlogArticles": "University Blog Articles",
     "TeachingStaff": "Teaching Staff",
     "HeadPage": {
-       "name": "Mambetkulov Ormon",
-        "learningExperience": "I really enjoy the learning experience here — no boring lectures, just practice! Everything is to the point and immediately applicable in practice.",
+      "name": "Mambetkulov Ormon",
+      "learningExperience": "I really enjoy the learning experience here — no boring lectures, just practice! Everything is to the point and immediately applicable in practice.",
       "rectoratePlans": {
         "2020-2021": "Rectorate Plan 2020-2021",
         "march2021": "Rectorate Plan March 2021",
@@ -36,7 +36,7 @@
     "degrees": {
       "degreeCategory": "Fields of Study",
       "collegesCount": "faculties",
-       "colleges": "Colleges",
+      "colleges": "Colleges",
       "programCount": "programs",
       "programs": "Programs of Study",
       "selectDegreePlaceholder": "Select Education Level",
@@ -47,8 +47,8 @@
       "error": "Error",
       "dataLoading": "Data is being loaded",
       "dataNotLoaded": "Data not loaded",
-       "fileUpload": "File Upload",
-        "clear": "Clear"
+      "fileUpload": "File Upload",
+      "clear": "Clear"
     },
     "opportunities": {
       "title": "With us, your opportunities are limitless",
@@ -122,6 +122,7 @@
       "professorStaff": "Professorial Teaching Staff"
     },
     "diploma": {
+        "yourFutureDiploma": "Your future diploma",
       "listTitle": "Your Future Diploma",
       "buttonText": "View",
       "bachelor": {
@@ -372,9 +373,11 @@
       "currentPage": "{degreeData.data.title}"
     },
     "header": {
+       "students": "For students",
       "title": "{degreeData.data.title}",
       "description": "Take a test and find out which field suits you best",
-      "button": "Find a Program"
+      "button": "Find a Program",
+      "universityTitle": "INTERNATIONAL UNIVERSITY OF INNOVATIVE TECHNOLOGIES"
     },
     "infoBlock": {
       "tags": ["Graduates", "Bachelor’s"],
@@ -400,7 +403,7 @@
   },
   "news-page": {
     "otherNews": "Other News",
-     "news": "News"
+    "news": "News"
   },
   "paymentsPage": {
     "code": "Code",
@@ -532,16 +535,20 @@
       "course1": "1st year",
       "course2": "2nd year",
       "course3": "3rd year",
-      "course4": "4th year"
-    }
+      "course4": "4th year",
+      "fifthYear": "5th year"
+    },
+     "schedule": "Schedule",
+      "noAvailableCourses": "No available courses",
+       "forStudents": "For students"
   },
   "teapenPage": {
-  "documentTitle1": "Background document for 24th meeting of the Governing Board",
-  "documentTitle2": "Background document for 25th meeting of the Governing Board",
-  "documentTitle3": "Background document for 26th meeting of the Governing Board",
-  "documentTitle4": "Background document for 27th meeting of the Governing Board",
-  "documentTitle5": "Background document for 28th meeting of the Governing Board",
-  "title": " Explore our resources and documents related to the Space Science and Technology Education Centre. Click on the links below to view or download the files."
+    "documentTitle1": "Background document for 24th meeting of the Governing Board",
+    "documentTitle2": "Background document for 25th meeting of the Governing Board",
+    "documentTitle3": "Background document for 26th meeting of the Governing Board",
+    "documentTitle4": "Background document for 27th meeting of the Governing Board",
+    "documentTitle5": "Background document for 28th meeting of the Governing Board",
+    "title": " Explore our resources and documents related to the Space Science and Technology Education Centre. Click on the links below to view or download the files."
   },
   "vision": {
     "title": "VISION AND MISSION",
@@ -549,18 +556,18 @@
     "text": "IITU is an open-type higher education institution capable of perceiving, accumulating, creating, and disseminating new knowledge and innovative business proposals, providing scientific and educational services using modern technologies, training competitive specialists who meet the requirements and expectations of consumers, society, and the state, demonstrating a commitment to integration into the global educational community and implementing a policy of sustainable innovative development in practice.",
     "text2": "IITU’s mission",
     "text3": "Training competitive specialists who meet the requirements and expectations of stakeholders, possess innovative technologies, and are capable of effectively solving engineering and socio-economic problems of modern society.",
-     "goal": "Strategic Goal of IITU",
-      "description": "Modernization of the educational and training complex through the enhancement of the scientific potential of the teaching staff, the introduction of information technologies for learning, and educational programs across a wide range of fields and specialties, meeting the requirements of innovative economic development, modern needs of individuals, society, and the state, through integration into the international scientific and educational space.",
-      "heading": "Tasks of IITU",
-      "primary": "Maintain close cooperation with employers regarding the modernization of curricula, ensuring internship placements, improving the quality of specialist training, evaluating learning outcomes, and facilitating graduate employment.",
-      "primary2": "Develop and implement innovative educational programs and forms of training that are relevant to the labor market, aimed at replenishing the country's production sector with in-demand specialists.",
-      "primary3": "Enhance and deepen scientific activities to develop applied and fundamental research, expand master's programs and postgraduate studies as the foundation for creating an innovative research and educational complex.",
-      "primary4": "Improve the material and technical base of educational and scientific activities, as well as the material infrastructure supporting the social life of students, faculty, and staff.",
-      "primary5": "Explore ways to increase the university's income through educational and innovative activities, including targeted training of specialists, providing consulting and engineering services, technology transfer, and distance learning.",
-      "primary6": "Continue to develop and strengthen long-term relationships between MUIIT and its strategic partners within the country and the international academic, scientific, and business communities in educational and scientific-technical activities.",
-      "primary7": "Create an environment that ensures a high level of information culture within the university community and beyond, establishing a foundation for the information-technology support of educational-scientific and administrative-management activities.",
-      "primary8": "Create a foundation for transitioning to a trilingual (Kyrgyz, Russian, and English) education system, expanding students' opportunities to learn foreign languages, both European and Asian, at a level that meets modern standards.",
-      "primary9": "Improve the system for enhancing the qualifications of faculty members through master's and postgraduate programs, as well as establish a 'Young Teacher's School.'"
+    "goal": "Strategic Goal of IITU",
+    "description": "Modernization of the educational and training complex through the enhancement of the scientific potential of the teaching staff, the introduction of information technologies for learning, and educational programs across a wide range of fields and specialties, meeting the requirements of innovative economic development, modern needs of individuals, society, and the state, through integration into the international scientific and educational space.",
+    "heading": "Tasks of IITU",
+    "primary": "Maintain close cooperation with employers regarding the modernization of curricula, ensuring internship placements, improving the quality of specialist training, evaluating learning outcomes, and facilitating graduate employment.",
+    "primary2": "Develop and implement innovative educational programs and forms of training that are relevant to the labor market, aimed at replenishing the country's production sector with in-demand specialists.",
+    "primary3": "Enhance and deepen scientific activities to develop applied and fundamental research, expand master's programs and postgraduate studies as the foundation for creating an innovative research and educational complex.",
+    "primary4": "Improve the material and technical base of educational and scientific activities, as well as the material infrastructure supporting the social life of students, faculty, and staff.",
+    "primary5": "Explore ways to increase the university's income through educational and innovative activities, including targeted training of specialists, providing consulting and engineering services, technology transfer, and distance learning.",
+    "primary6": "Continue to develop and strengthen long-term relationships between MUIIT and its strategic partners within the country and the international academic, scientific, and business communities in educational and scientific-technical activities.",
+    "primary7": "Create an environment that ensures a high level of information culture within the university community and beyond, establishing a foundation for the information-technology support of educational-scientific and administrative-management activities.",
+    "primary8": "Create a foundation for transitioning to a trilingual (Kyrgyz, Russian, and English) education system, expanding students' opportunities to learn foreign languages, both European and Asian, at a level that meets modern standards.",
+    "primary9": "Improve the system for enhancing the qualifications of faculty members through master's and postgraduate programs, as well as establish a 'Young Teacher's School.'"
   },
   "windowPage": {
     "services": {
@@ -574,16 +581,16 @@
       "oneDay": "1 working day",
       "threeDays": "3 working days"
     },
-     "servicesWindow": "Services in 'Single Window' Mode",
-      "digitalTransformationConcept": "In order to implement the Digital Transformation Concept 'Digital Kyrgyzstan 2019-2023' and ensure high-quality, timely provision of services, the following services have been automated at the MUIT:",
-       "service": "Service",
-         "executionTime": "Execution Time",
-          "readyCertificates": "Ready certificates can be obtained at the 'Single Window' office (Academic Department, Room 346). You must have an ID document with you.",
-          "general": "Contact phones for inquiries: 0312 46-79-15",
-          "fullTime": "For full-time students: +996-707-980-788",
-          "partTime": "For part-time students: +996-709-988-758",
-           "applyForCertificate": "Apply for a certificate",
-           "review": "Review"
+    "servicesWindow": "Services in 'Single Window' Mode",
+    "digitalTransformationConcept": "In order to implement the Digital Transformation Concept 'Digital Kyrgyzstan 2019-2023' and ensure high-quality, timely provision of services, the following services have been automated at the MUIT:",
+    "service": "Service",
+    "executionTime": "Execution Time",
+    "readyCertificates": "Ready certificates can be obtained at the 'Single Window' office (Academic Department, Room 346). You must have an ID document with you.",
+    "general": "Contact phones for inquiries: 0312 46-79-15",
+    "fullTime": "For full-time students: +996-707-980-788",
+    "partTime": "For part-time students: +996-709-988-758",
+    "applyForCertificate": "Apply for a certificate",
+    "review": "Review"
   },
   "footer": {
     "fields": {
@@ -598,21 +605,78 @@
       "management": "Management",
       "economics": "Economics",
       "it": "Information Technology",
-       "universityTitle": "INTERNATIONAL <br /> UNIVERSITY <br /> OF INNOVATIVE <br /> TECHNOLOGIES",
-        "feedback": "Feedback",
-        "address": "Address",
-         "workSchedule": "Working Hours",
-         "workScheduleList": {
-          "weekdays": "Mon-Fri ",
-          "saturday": "Sat Closed",
-          "sunday": "Sun Closed"
-        },
-         "forAllQuestions": "For all inquiries",
-          "admissionsOffice": "Admissions Office",
-          "socialMedia": "We are on social media"
+      "universityTitle": "INTERNATIONAL UNIVERSITY OF INNOVATIVE  TECHNOLOGIES",
+      "feedback": "Feedback",
+      "address": "Address",
+      "workSchedule": "Working Hours",
+      "workScheduleList": {
+        "weekdays": "Mon-Fri ",
+        "saturday": "Sat Closed",
+        "sunday": "Sun Closed"
+      },
+      "forAllQuestions": "For all inquiries",
+      "admissionsOffice": "Admissions Office",
+      "socialMedia": "We are on social media"
     }
   },
   "reviews": {
-     "studentReviews": "Student Reviews"
+    "studentReviews": "Student Reviews"
+  },
+  "applicantsPage": {
+    "admission": "Admission",
+    "admissionInfo": "At IUIT, you can apply for state-funded places (if your ORT score is over 200 or you have a gold certificate), as well as for paid contract-based education.",
+    "paymentBenefits": "Payment benefits are provided to persons with disabilities of group I and II, orphans, and children under guardianship. The amount and period of the benefits are determined by the IUIT commission.",
+    "registrationAndSelection": "Registration and Selection",
+    "electronicRegistration": "Electronic registration is carried out exclusively in a remote format on the portals.",
+    "documentsForElectronicRegistration": "Documents for electronic registration",
+    "documentsList": [
+      "Scan copy of the passport",
+      "Scan copy of the education document",
+      "Electronic version of the 3x4 cm photo",
+      "Scan copies of documents granting benefits",
+      "Scan copy of the ORT certificate (for citizens of the Kyrgyz Republic)"
+    ],
+     "additionalInfo": "Additional Information",
+    "additionalNotes": "• Medical certificate form No. 086-U is not required.\n• IUIT does not have dormitories.\n• The full list of specialties is available in the IUIT brochure."
+  },
+  "aboutPage": {
+    "links": {
+    "historyTitle": "University History",
+    "historyDescription": "Learn more about the rich history of our university.",
+    "visionTitle": "University Vision",
+    "visionDescription": "Our mission and goals in modern education.",
+    "ratingTitle": "Faculty Rating",
+    "ratingDescription": "See the rating of the university's top lecturers.",
+    "cssteapTitle": "CSSTEAP",
+    "cssteapDescription": "Centre for Space Science and Technology Education in Asia and the Pacific",
+    "headTitle": "Rectorate",
+    "headDescription": "Learn more about our Rectorate"
+  },
+   "go": "Go"
+  },
+  "institutesPage": {
+    "introCard": {
+      "title": "Institutes",
+      "description": "With IUIT University, you receive quality education and professions in demand in the modern world."
+    },
+     "pickProgram": "Choose a program"
+  },
+  "collegesPage": {
+     "after9Or11": "After the 9th or 11th grade, students can enter colleges to receive vocational education. Colleges offer both practical and theoretical knowledge that helps prepare specialists in various fields. It's a great choice for those who want to start a career or continue their education at a university.",
+     "comtehnoCard": {
+      "title": "Bishkek College of Computer Systems and Technologies",
+      "description": "The college offers programs in programming, management, design, and other in-demand professions.",
+      "moreInfo": "More details on the website: https://comtehno.kg/"
+    },
+    "itecCard": {
+      "title": "College of Innovative Technologies and Economics",
+      "description": "This college trains students for professions in economics, design, IT, and management.",
+      "moreInfo": "More details on the website: https://itec.kg/"
+    },
+      "careerOpportunities": "These colleges offer great opportunities to start a career in in-demand fields such as IT, management, economics, and design. You can develop your skills and get a profession that will be in demand in the job market."
+  },
+  "descriptionPage": {
+    "aboutInstitute": "About the Institute",
+     "leadingTeachers": "Leading teachers"
   }
 }
