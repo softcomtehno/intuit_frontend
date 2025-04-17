@@ -14,7 +14,7 @@ interface DescriptionCardProps {
   id: number
 }
 
-const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
+const DescriptionCard: React.FC<DescriptionCardProps> = ({ text, id }) => {
   const {
     data: staffData,
     isSuccess,
@@ -31,7 +31,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
           component="h3"
           className="text-[2rem] font-semibold text-[#333] "
         >
-          {t("descriptionPage.leadingTeachers")}
+          {t('descriptionPage.leadingTeachers')}
         </Typography>
 
         <div className="flex justify-center py-5">
@@ -65,9 +65,9 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ subtext, id }) => {
           component="h3"
           className="text-[2rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
         >
-          {t("descriptionPage.aboutInstitute")}
+          {t('descriptionPage.aboutInstitute')}
         </Typography>
-        <div dangerouslySetInnerHTML={{ __html: subtext }}></div>
+        <div dangerouslySetInnerHTML={{ __html: text }}></div>
       </div>
 
       {/* Очистка обтекания, чтобы текст дальше шел на всю ширину */}
