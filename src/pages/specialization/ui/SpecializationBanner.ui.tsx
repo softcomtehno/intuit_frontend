@@ -8,6 +8,8 @@ export const SpecializationBanner = ({
   diploma,
   photo,
   educationLevel,
+  phoneNumber,
+  contractPrice,
 }: specializationTypes.Specialization) => {
   return (
     <div
@@ -40,30 +42,46 @@ export const SpecializationBanner = ({
         </Button> */}
       </div>
       <div className="flex gap-10 justify-between lg:flex-col lg:mt-10">
-        <Card className="shadow-none min-w-[250px] p-5 rounded-2xl min-h-[100px] max-h-[50px] z-10">
+        <Card className="shadow-none min-w-[150px] p-5 rounded-2xl min-h-[100px] max-h-[50px] z-10">
           <p className="">Уровень</p>
-          <Typography variant="h6" className="font-semibold">
+          <Typography variant="h6" className="font-semibold text-[18px]">
             {educationLevel[0]}
           </Typography>
         </Card>
-        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+        <Card className="shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
           <p className="">Срок обучения</p>
-          <Typography variant="h6" className="font-semibold">
+          <Typography variant="h6" className="font-semibold text-[18px]">
             {studyPeriod}
           </Typography>
         </Card>
-        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+        <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
           <p className="">Формат</p>
-          <Typography variant="h6" className="font-semibold">
+          <Typography variant="h6" className="font-semibold text-[18px]">
             {trainingForm}
           </Typography>
         </Card>
-        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+        <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
           <p className="">Результат</p>
-          <Typography variant="h6" className="font-semibold">
+          <Typography variant="h6" className="font-semibold text-[18px]">
             {diploma}
           </Typography>
         </Card>
+        {phoneNumber && (
+          <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+            <p className="">Номер Телефона</p>
+            <Typography variant="h6" className="font-semibold text-[18px]">
+              {phoneNumber}
+            </Typography>
+          </Card>
+        )}
+        {contractPrice && (
+          <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
+            <p className="">Стоимость Контракта</p>
+            <Typography variant="h6" className="font-semibold text-[18px]">
+              {contractPrice}
+            </Typography>
+          </Card>
+        )}
       </div>
       <img
         className="absolute right-[150px] top-0 h-[200px] w-[200px] lg:static lg:h-auto"
