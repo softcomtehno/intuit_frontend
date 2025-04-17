@@ -15,7 +15,7 @@ export const DiplomList = () => {
 
   return (
     <div className=" my-20">
-            <Typography
+      <Typography
         variant="h3"
         component="h3"
         className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
@@ -32,7 +32,6 @@ export const DiplomList = () => {
         <Swiper
           className="py-10 px-1 diplom-list"
           modules={[Pagination]}
-     
           slidesPerView={3}
           pagination={{ clickable: true }}
           breakpoints={{
@@ -48,7 +47,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery"
-              href="https://muit.makalabox.com/documents/%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC.pdf"
+              href="https://muit.makalabox.com/documents/bakalavr.pdf"
               className="lg:flex lg:justify-center"
             >
               <Card
@@ -118,7 +117,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-3"
-              href="https://muit.makalabox.com/documents/%D0%91%D0%B0%D0%BA%D0%B0%D0%BB%D0%B0%D0%B2%D1%80%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC.pdf"
+              href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
               className="lg:flex lg:justify-center"
             >
               <Card
@@ -127,7 +126,7 @@ export const DiplomList = () => {
               >
                 <div className="flex flex-col justify-between text-left">
                   <div>
-                  <Typography
+                    <Typography
                       variant="h4"
                       className="font-semibold text-[20px] leading-8"
                     >

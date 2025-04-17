@@ -13,82 +13,85 @@ export const SpecializationBanner = ({
   contractPrice,
 }: specializationTypes.Specialization) => {
   return (
-    <div
-      className="relative min-h-[350px]  flex flex-col justify-between p-10 rounded-2xl bg-[#d2effc]"
-      // style={{
-      //   background:
-      //     'linear-gradient(175deg, rgba(42,33,115,1) 0%, rgba(0,149,111,1) 100%)',
-      // }}
-    >
-      <div>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="black" href="/">
-            {t('specialization.home')}
-          </Link>
-          <Typography color="black">{title}</Typography>
-        </Breadcrumbs>
-        <Typography
-          variant="h1"
-          component="h1"
-          className="max-w-[600px] text-[47px] font-medium mt-3 text-black"
-        >
-          {title}
-        </Typography>
-        {/* <Button
-          variant="contained"
-          size="large"
-          className="px-20 py-3 rounded-lg shadow-none bg-green mt-5"
-        >
-          Оставить заявку
-        </Button> */}
-      </div>
-      <div className="flex gap-10 justify-between lg:flex-col lg:mt-10">
-        <Card className="shadow-none min-w-[250px] p-5 rounded-2xl min-h-[100px] max-h-[50px] z-10">
-          <p className="">{t('specialization.level')}</p>
-          <Typography variant="h6" className="font-semibold">
-            {educationLevel[0]}
+    <div className="relative min-h-[400px] flex rounded-2xl overflow-hidden">
+      {/* Левая часть с градиентом */}
+      <div
+        className="w-1/2 p-10 flex flex-col justify-between relative z-10"
+        style={{
+          background:
+            'linear-gradient(175deg, rgba(42,33,115,1) 0%, rgba(0,149,111,1) 100%)',
+        }}
+      >
+        <div>
+          <Breadcrumbs aria-label="breadcrumb">
+            <Link underline="hover" color="white" href="/">
+              {t('specialization.home')}
+            </Link>
+            <Typography color="white">{title}</Typography>
+          </Breadcrumbs>
+          <Typography
+            variant="h1"
+            component="h1"
+            className="max-w-[600px] text-[40px] font-medium mt-3 text-white"
+          >
+            {title}
           </Typography>
-        </Card>
-        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">{t('specialization.studyDuration')}</p>
-          <Typography variant="h6" className="font-semibold">
-            {studyPeriod}
-          </Typography>
-        </Card>
-        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">{t('specialization.format')}</p>
-          <Typography variant="h6" className="font-semibold">
-            {trainingForm}
-          </Typography>
-        </Card>
-        <Card className="min-w-[250px] shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-          <p className="">{t('specialization.result')}</p>
-          <Typography variant="h6" className="font-semibold">
-            {diploma}
-          </Typography>
-        </Card>
-        {phoneNumber && (
-          <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-            <p className="">Номер Телефона</p>
-            <Typography variant="h6" className="font-semibold text-[18px]">
-              {phoneNumber}
+        </div>
+
+        <div className="flex gap-5 flex-wrap mt-10">
+          <Card className="shadow-none p-5 rounded-2xl bg-white/90">
+            <p>{t('specialization.level')}</p>
+            <Typography variant="h6" className="font-semibold">
+              {educationLevel[0]}
             </Typography>
           </Card>
-        )}
-        {contractPrice && (
-          <Card className=" shadow-none p-5 rounded-2xl min-h-[100px] max-h-[100px] z-10">
-            <p className="">Стоимость Контракта</p>
-            <Typography variant="h6" className="font-semibold text-[18px]">
-              {contractPrice}
+          <Card className="shadow-none p-5 rounded-2xl bg-white/90">
+            <p>{t('specialization.studyDuration')}</p>
+            <Typography variant="h6" className="font-semibold">
+              {studyPeriod}
             </Typography>
           </Card>
-        )}
+          <Card className="shadow-none p-5 rounded-2xl bg-white/90">
+            <p>{t('specialization.format')}</p>
+            <Typography variant="h6" className="font-semibold">
+              {trainingForm}
+            </Typography>
+          </Card>
+          <Card className="shadow-none p-5 rounded-2xl bg-white/90">
+            <p>{t('specialization.result')}</p>
+            <Typography variant="h6" className="font-semibold">
+              {diploma}
+            </Typography>
+          </Card>
+          {phoneNumber && (
+            <Card className="shadow-none p-5 rounded-2xl bg-white/90">
+              <p>Номер Телефона</p>
+              <Typography variant="h6" className="font-semibold text-[18px]">
+                {phoneNumber}
+              </Typography>
+            </Card>
+          )}
+          {contractPrice && (
+            <Card className="shadow-none p-5 rounded-2xl bg-white/90">
+              <p>Стоимость Контракта</p>
+              <Typography variant="h6" className="font-semibold text-[18px]">
+                {contractPrice}
+              </Typography>
+            </Card>
+          )}
+        </div>
       </div>
-      <img
-        className="absolute right-[150px] top-0 h-[200px] w-[200px] lg:static lg:h-auto"
-        src={photo}
-        alt=""
-      />
+
+      {/* Правая часть с фото на фоне */}
+      <div
+        className="w-1/2 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${photo})`,
+        }}
+      >
+        {/* Можешь раскомментировать блок ниже, если хочешь затемнение поверх фото */}
+        {/* <div className="w-full h-full bg-black/30" /> */}
+      </div>
     </div>
   )
 }

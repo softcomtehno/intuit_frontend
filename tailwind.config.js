@@ -19,6 +19,7 @@ export default {
       sm: { max: '479px' },
       md: { max: '767px' },
       lg: { max: '1023px' },
+      xll: { max: '1200px' },
       xl: { max: '1439px' },
       'xl-max': '1340px', // Specific width for xl-max screens
     },
