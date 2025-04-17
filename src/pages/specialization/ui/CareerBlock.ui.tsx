@@ -1,4 +1,5 @@
 import { Avatar, Card, Typography } from '@mui/material'
+import { t } from 'i18next'
 import { specializationTypes } from '~entities/specialization'
 
 export const CareerBlock = ({
@@ -13,10 +14,10 @@ export const CareerBlock = ({
         component="h3"
         className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
       >
-        Кем вы станете
+        {t("specialization.professionTitle")}
       </Typography>
       <Typography variant="body1">
-        После завершения этой специальности вы сможете стать:
+        {t("specialization.professionDescription")}
       </Typography>
       <div className="flex mt-5 flex-wrap gap-10 justify-center">
         {professions.map((prof, i) => {

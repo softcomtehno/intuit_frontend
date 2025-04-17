@@ -5,12 +5,13 @@ import {
   CardMedia,
   CardContent,
   Link,
-} from '@mui/material'
-import ComtehnoLogo from './comtehno-logo.png' // Add appropriate logos
-import InnovativeCollegeLogo from './innovative-college-logo.png'
-import { NewsList } from '~widgets/news-list'
-import { SpeakerVideoList } from '~widgets/speaker-list'
-import { EnrollForm } from '~widgets/enroll-form'
+} from "@mui/material";
+import ComtehnoLogo from "./comtehno-logo.png"; // Add appropriate logos
+import InnovativeCollegeLogo from "./innovative-college-logo.png";
+import { NewsList } from "~widgets/news-list";
+import { SpeakerVideoList } from "~widgets/speaker-list";
+import { EnrollForm } from "~widgets/enroll-form";
+import { t } from "i18next";
 
 export const CollegesPage = () => {
   return (
@@ -19,21 +20,17 @@ export const CollegesPage = () => {
         <Typography
           variant="h4"
           className="font-bold text-center mb-8 text-gray-800"
-          style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
+          style={{ fontSize: "clamp(1.5rem, 5vw, 2.5rem)" }}
         >
-          Колледжи
+          {t("homepage.degrees.colleges")}
         </Typography>
 
         <Typography
           variant="body1"
           className="text-gray-700 mb-6"
-          style={{ fontSize: 'clamp(1rem, 4vw, 1.25rem)', lineHeight: 1.6 }}
+          style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)", lineHeight: 1.6 }}
         >
-          После 9-го класса или 11-класса ученики могут поступить в колледжи,
-          чтобы получить среднее профессиональное образование. Колледжи
-          предлагают практические и теоретические знания, которые помогают
-          готовить специалистов в различных областях. Это отличный выбор для
-          тех, кто хочет начать карьеру или продолжить обучение в вузе.
+          {t("collegesPage.after9Or11")}
         </Typography>
 
         <div className="flex flex-wrap justify-center gap-6">
@@ -46,7 +43,7 @@ export const CollegesPage = () => {
             <Card className="flex flex-col sm:flex-row mb-4 border border-gray shadow-none hover:shadow-lg p-4 w-full max-w-lg items-center">
               <CardMedia
                 component="img"
-                alt="Bishkek College Logo"
+                alt={t("collegesPage.comtehnoCard.title")}
                 image={ComtehnoLogo}
                 className="h-[120px] w-[120px] object-cover"
               />
@@ -56,22 +53,21 @@ export const CollegesPage = () => {
                   component="h5"
                   className="text-lg font-semibold mb-2"
                 >
-                  Бишкекский колледж компьютерных систем и технологий
+                  {t("collegesPage.comtehnoCard.title")}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="textSecondary"
                   className="mb-2"
                 >
-                  Колледж предлагает направления по программированию,
-                  менеджменту, дизайну, и другим востребованным профессиям.
+                  {t("collegesPage.comtehnoCard.description")}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="textSecondary"
                   className="text-blue-500"
                 >
-                  Подробнее на сайте: https://comtehno.kg/
+                  {t("collegesPage.comtehnoCard.moreInfo")}
                 </Typography>
               </CardContent>
             </Card>
@@ -98,22 +94,21 @@ export const CollegesPage = () => {
                   component="h5"
                   className="text-lg font-semibold mb-2"
                 >
-                  Колледж инновационных технологий и <br /> экономики
+                  {t('collegesPage.itecCard.title')}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="textSecondary"
                   className="mb-2"
                 >
-                  Этот колледж обучает студентов профессиям в области экономики,
-                  дизайна, IT, и управления.
+                 {t('collegesPage.itecCard.description')}
                 </Typography>
                 <Typography
                   variant="body2"
                   color="textSecondary"
                   className="text-blue-500"
                 >
-                  Подробнее на сайте: https://itec.kg/
+                   {t('collegesPage.itecCard.moreInfo')}
                 </Typography>
               </CardContent>
             </Card>
@@ -122,17 +117,14 @@ export const CollegesPage = () => {
         <Typography
           variant="body1"
           className="text-gray-700 mt-6"
-          style={{ fontSize: 'clamp(1rem, 4vw, 1.25rem)', lineHeight: 1.6 }}
+          style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)", lineHeight: 1.6 }}
         >
-          Эти колледжи предлагают отличные возможности для начала карьеры в
-          востребованных областях, таких как IT, управление, экономика, и
-          дизайн. Вы можете развивать свои навыки и получить профессию, которая
-          будет востребована на рынке труда.
+          {t("collegesPage.careerOpportunities")}
         </Typography>
       </Container>
       <NewsList />
       <SpeakerVideoList />
       <EnrollForm />
     </section>
-  )
-}
+  );
+};

@@ -20,7 +20,7 @@ export const DiplomList = () => {
         component="h3"
         className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
       >
-        Ваш будущий диплом
+        {t('homepage.diploma.yourFutureDiploma')}
       </Typography>
       <Fancybox
         options={{

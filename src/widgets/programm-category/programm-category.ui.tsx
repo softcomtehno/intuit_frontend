@@ -90,14 +90,14 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
   }
 
   if (isError) {
-    return <div>Произошла ошибка</div>
+    return <div>{t("loading.error")}</div>
   }
 
   if (isLoading || isDegreeLoading || isFacultyLoading) {
     return (
       <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
         <CircularProgress className="text-blue" />
-        <Typography variant="h6">Загрузка</Typography>
+        <Typography variant="h6">{t("loading.loading")}</Typography>
       </div>
     )
   }
@@ -139,7 +139,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
             className="shadow-none bg-blue text-white px-10 max-w-[250px] lg:w-full"
             onClick={handleClearFilters}
           >
-            Очистить
+            {t("loading.clear")}
           </Button>
         </div>
         <div className="flex flex-wrap justify-between gap-7 lg:gap-4  lg:justify-center">

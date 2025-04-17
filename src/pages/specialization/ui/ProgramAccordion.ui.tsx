@@ -7,6 +7,7 @@ import {
 } from '@mui/material'
 import ExpandCircleDownRoundedIcon from '@mui/icons-material/ExpandCircleDownRounded'
 import { specializationTypes } from '~entities/specialization'
+import { t } from 'i18next'
 
 export const ProgramAccordion = ({
   trainingPrograms,
@@ -23,7 +24,7 @@ export const ProgramAccordion = ({
   return (
     <div className="my-10 flex flex-col rounded-2xl bg-[#ededed] p-10">
       <Typography variant="h3" className="font-semibold mb-4">
-        Программа обучения
+       {t("specialization.trainingProgram")}
       </Typography>
       {trainingPrograms.map((course, index) => (
         <Accordion
@@ -44,7 +45,7 @@ export const ProgramAccordion = ({
             id={`panel${index}-header`}
             className="text-xl font-semibold p-0"
           >
-            {course.number} Курс
+            {course.number} {t("specialization.courseTitle")}
           </AccordionSummary>
           <AccordionDetails>
             <ul className="list-disc pl-7 font-medium text-lg">

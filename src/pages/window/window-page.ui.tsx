@@ -11,26 +11,25 @@ import {
   Paper,
   Button,
 } from '@mui/material';
+import { t } from 'i18next';
 
 export const WindowPage = () => {
   const services = [
-    { name: 'Обходной лист', time: '1 рабочий день' },
-    { name: 'Справка с места учебы', time: '1 рабочий день' },
-    { name: 'Справка в военкомат', time: '1 рабочий день' },
-    { name: 'Академическая справка', time: '3 рабочих дня' },
-    { name: 'Архивная справка', time: '3 рабочих дня' },
+    { name: t('windowPage.services.leaf'), time: t('time.oneDay') },
+    { name: t('windowPage.services.studyCertificate'), time: t('time.oneDay') },
+    { name: t('windowPage.services.militaryCertificate'), time: t('time.oneDay') },
+    { name: t('windowPage.services.academicCertificate'), time: t('time.threeDays') },
+    { name: t('windowPage.services.archiveCertificate'), time: t('time.threeDays') },
   ];
 
   return (
     <Container maxWidth="lg" className="py-10 px-4">
       <Typography variant="h4" className="font-semibold text-gray-700 mb-6">
-        Услуги в режиме "Единого окна"
+     {t("windowPage.servicesWindow")}
       </Typography>
 
       <Typography className="text-gray-600 mb-6">
-        В целях реализации Концепции цифровой трансформации "Цифровой Кыргызстан
-        2019-2023" и обеспечения качественного, своевременного оказания услуг, в
-        МУИТ автоматизированы следующие виды услуг:
+      {t("windowPage.digitalTransformationConcept")}
       </Typography>
 
       <TableContainer component={Paper} className="mb-8">
@@ -38,11 +37,11 @@ export const WindowPage = () => {
           <TableHead className="bg-gray-100">
             <TableRow>
               <TableCell>
-                <Typography className="font-semibold">Услуга</Typography>
+                <Typography className="font-semibold">{t("windowPage.service")}</Typography>
               </TableCell>
               <TableCell>
                 <Typography className="font-semibold">
-                  Срок выполнения
+                  {t("windowPage.executionTime")}
                 </Typography>
               </TableCell>
             </TableRow>
@@ -59,14 +58,13 @@ export const WindowPage = () => {
       </TableContainer>
 
       <Typography className="text-gray-600 mb-4">
-        Готовые справки можно получить в кабинете "Единое окно" (Учебное
-        управление, каб. 346). При себе иметь документ, удостоверяющий личность.
+       {t("windowPage.readyCertificates")}
       </Typography>
 
       <Typography className="text-gray-600 mb-6">
-        Телефоны для справок: 0312 46-79-15 <br />
-        Для студентов очной формы обучения: +996-707-980-788 <br />
-        Для студентов заочной формы обучения: +996-709-988-758
+        {t("windowPage.general")} <br />
+        {t("windowPage.fullTime")} <br />
+        {t("windowPage.partTime")}
       </Typography>
 
       <div>
@@ -75,7 +73,7 @@ export const WindowPage = () => {
           href="http://178.217.169.139:3000/lms/login"
           className=" border  p-2 rounded bg-green text-white border-white"
         >
-          Подать заявку на справку
+         {t(".windowPage.applyForCertificate")}
         </a>
       </div>
     </Container>

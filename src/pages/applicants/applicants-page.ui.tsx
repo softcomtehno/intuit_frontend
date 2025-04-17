@@ -6,7 +6,8 @@ import {
   List,
   ListItem,
   ListItemText,
-} from '@mui/material'
+} from "@mui/material";
+import { t } from "i18next";
 
 export const ApplicantsPage = () => {
   return (
@@ -14,9 +15,9 @@ export const ApplicantsPage = () => {
       <Typography
         variant="h4"
         className="font-bold text-center mb-8 text-gray-800"
-        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
+        style={{ fontSize: "clamp(1.5rem, 5vw, 2.5rem)" }}
       >
-        Информация для абитуриентов
+        {t("enrollPage.infoSection.title")}
       </Typography>
 
       <Grid container spacing={4}>
@@ -24,17 +25,13 @@ export const ApplicantsPage = () => {
         <Grid item xs={12} md={6}>
           <Box>
             <Typography variant="h6" className="font-semibold mb-4">
-              Поступление
+              {t("applicantsPage.admission")}
             </Typography>
             <Typography variant="body1" gutterBottom>
-              В МУИТ можно поступить на бюджетные места, финансируемые из
-              бюджета МУИТ (если ОРТ свыше 200 баллов или золотой сертификат), и
-              на контрактную основу обучения.
+              {t("applicantsPage.admissionInfo")}
             </Typography>
             <Typography variant="body1">
-              Льготы по оплате предоставляются инвалидам I и II групп,
-              детям-сиротам и детям, находящимся под опекой. Размер и период
-              предоставления льгот устанавливается комиссией МУИТ.
+              {t("applicantsPage.paymentBenefits")}
             </Typography>
           </Box>
         </Grid>
@@ -43,11 +40,10 @@ export const ApplicantsPage = () => {
         <Grid item xs={12} md={6}>
           <Box>
             <Typography variant="h6" className="font-semibold mb-4">
-              Регистрация и отбор
+              {t("applicantsPage.registrationAndSelection")}
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Электронная регистрация осуществляется исключительно в
-              дистанционном формате на порталах:
+              {t("applicantsPage.electronicRegistration")}
             </Typography>
             <List>
               <ListItem>
@@ -64,24 +60,16 @@ export const ApplicantsPage = () => {
         <Grid item xs={12}>
           <Box>
             <Typography variant="h6" className="font-semibold mb-4">
-              Документы при электронной регистрации
+              {t("applicantsPage.documentsForElectronicRegistration")}
             </Typography>
             <List>
-              <ListItem>
-                <ListItemText primary="Скан-копия паспорта" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Скан-копия документа об образовании" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Электронная версия фотографии размером 3х4 см" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Скан-копии документов, дающих право на льготы" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Скан-копия сертификата ОРТ (для граждан КР)" />
-              </ListItem>
+              {t("applicantsPage.documentsList", { returnObjects: true }).map(
+                (item, index) => (
+                  <ListItem key={index}>
+                    <ListItemText primary={item} />
+                  </ListItem>
+                )
+              )}
             </List>
           </Box>
         </Grid>
@@ -90,17 +78,21 @@ export const ApplicantsPage = () => {
         <Grid item xs={12}>
           <Box>
             <Typography variant="h6" className="font-semibold mb-4">
-              Дополнительная информация
+              {t("applicantsPage.additionalInfo")}
             </Typography>
             <Typography variant="body1">
-              • Справка № 086-У не требуется.
-              <br />
-              • МУИТ не имеет общежитий.
-              <br />• Полный перечень специальностей доступен в буклете МУИТ.
+              {t("applicantsPage.additionalNotes")
+                .split("\n")
+                .map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
             </Typography>
           </Box>
         </Grid>
       </Grid>
     </Container>
-  )
-}
+  );
+};
