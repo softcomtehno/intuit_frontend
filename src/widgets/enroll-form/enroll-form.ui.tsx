@@ -44,8 +44,8 @@ export const EnrollForm = () => {
   }
 
   return (
-    <div className="bg-blue p-5 rounded-lg w-full mt-5">
-      <div className="flex items-center gap-5">
+    <div className="bg-blue p-5 rounded-lg w-full mt-5 md:p-10">
+      <div className="flex items-center gap-5 md:flex-col">
         <div>
           <Typography
             variant="h3"
@@ -61,7 +61,7 @@ export const EnrollForm = () => {
         </div>
         <div>
           <div className="flex flex-col">
-            <div className="flex gap-3">
+            <div className="flex gap-3 md:flex-col">
               <fieldset className="my-5">
                 <input
                   type="text"
@@ -71,10 +71,10 @@ export const EnrollForm = () => {
                   placeholder={t('homepage.enrollForm.placeholders.name')}
                   value={formData.name}
                   onChange={handleChange}
-                  className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base lg:w-full"
+                  className="text-base py-3 px-3 w-[320px] rounded outline-none placeholder:text-base lg:w-full md:w-full"
                 />
               </fieldset>
-              <fieldset className="my-5 w-[320px]">
+              <fieldset className="my-5 w-[320px] md:w-full">
                 <PhoneInput
                   country={'kg'}
                   value={formData.phone}
