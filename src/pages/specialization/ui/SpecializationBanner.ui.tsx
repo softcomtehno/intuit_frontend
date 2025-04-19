@@ -13,10 +13,10 @@ export const SpecializationBanner = ({
   contractPrice,
 }: specializationTypes.Specialization) => {
   return (
-    <div className="relative min-h-[400px] flex rounded-2xl overflow-hidden">
+    <div className="relative min-h-[400px] flex rounded-2xl overflow-hidden md:flex-col-reverse">
       {/* Левая часть с градиентом */}
       <div
-        className="w-1/2 p-10 flex flex-col justify-between relative z-10"
+        className="w-1/2 p-10 flex flex-col justify-between relative z-10 md:w-full"
         style={{
           background:
             'linear-gradient(175deg, rgba(42,33,115,1) 0%, rgba(0,149,111,1) 100%)',
@@ -84,7 +84,7 @@ export const SpecializationBanner = ({
 
       {/* Правая часть с фото на фоне */}
       <div
-        className="w-1/2 bg-cover bg-center"
+        className="w-1/2 bg-cover bg-center md:w-full md:h-[400px]"
         style={{
           backgroundImage: `url(${photo})`,
         }}
