@@ -4,18 +4,19 @@ import {
   Instagram,
   Facebook,
   ContactPage,
-} from '@mui/icons-material'
-import { Typography } from '@mui/material'
-import { Link, useParams } from 'react-router-dom'
-import { staffQueries } from '~entities/staff'
-import './index.css'
-import { t } from 'i18next'
+} from '@mui/icons-material';
+import { Typography } from '@mui/material';
+import { Link, useParams } from 'react-router-dom';
+import { staffQueries } from '~entities/staff';
+import './index.css';
+import { t } from 'i18next';
+import { FileUser } from 'lucide-react';
 
 export const TeacherPage = () => {
-  const { slug } = useParams()
+  const { slug } = useParams();
 
   if (!slug) {
-    return <div>Invalid URL</div>
+    return <div>Invalid URL</div>;
   }
 
   const {
@@ -23,48 +24,120 @@ export const TeacherPage = () => {
     isSuccess,
     isError,
     isLoading,
-  } = staffQueries.useGetStaffDetail(slug)
+  } = staffQueries.useGetStaffDetail(slug);
 
   const gradientStyle = {
     background:
       'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
-  }
+  };
 
   if (isLoading) {
-    return <div>{t("loading.dataLoading")}</div>
+    return <div>{t('loading.dataLoading')}</div>;
   }
   if (isError) {
-    return <div>{t("loading.dataNotLoaded")}</div>
+    return <div>{t('loading.dataNotLoaded')}</div>;
   }
 
   if (isSuccess) {
     return (
-      <section className=" rounded-lg flex items-center justify-center py-10 mb-5 t w-full teacher">
-        <div className="container mx-auto">
-          <div className="flex  items-center justify-center  gap-10 md:flex-col">
-            <div className="flex flex-col items-center justify-center gap-10">
-              <div className="flex justify-center  border-3 border-solid border-black rounded-full shadow-lg">
-                <img
-                  src={staffData.data.image}
-                  alt="User Avatar"
-                  className=" w-[500px] rounded-lg  border-3 border-solid border-black  shadow-lg"
-                />
+      <section className=" rounded-lg flex items-center justify-center py-10 mb-5 t w-full bg-[url(/public/bg2.png)] ">
+        <div className="max-w-[800px] mx-auto md:items-center md:flex md:flex-col">
+          <div className="flex  items-center justify-center  gap-10 flex-col md:max-w-[90%]">
+            <div className="flex gap-10 md:flex-col md:items-center md:justify-center">
+              <img
+                src={staffData.data.image}
+                alt="User Avatar"
+                className=" w-[200px] h-[250px] object-cover rounded-lg md:self-center border-3 border-solid border-black  shadow-lg"
+              />
+              <div className="flex flex-col  justify-center  gap-5 ">
+                <Typography
+                  variant="h4"
+                  className="font-bold text-white md:text-center"
+                >
+                  {staffData.data.name}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  className=" text-white text-lg max-w-md "
+                >
+                  {staffData.data.description}
+                </Typography>
               </div>
             </div>
-            <div className="flex flex-col  justify-center  gap-5 ">
-              <Typography
-                variant="h4"
-                className="font-bold text-white md:text-center"
+            <div className="w-full flex justify-between md:flex-col items-center md:gap-5">
+              <a
+                href={staffData.data.whatsapp}
+                target="_blank"
+                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
               >
-                {staffData.data.name}
-              </Typography>
-              <Typography
-                variant="body1"
-                className="text-center text-white text-lg max-w-md self-center"
+                <img
+                  className="h-[25px]"
+                  src="/social-icons/whatsapp.svg"
+                  alt=""
+                />
+                <span className="text-md font-bold text-black/80">
+                  WhatsApp
+                </span>
+              </a>
+              <a
+                  href={staffData.data.telegram}
+                target="_blank"
+                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
               >
-                {staffData.data.description}
-              </Typography>
-              <div className="bg-green rounded-md   transition-all hover:scale-105">
+                <img
+                  className="h-[25px]"
+                  src="/social-icons/telegram.svg"
+                  alt=""
+                />
+                <span className="text-md font-bold text-black/80">
+                  Telegram
+                </span>
+              </a>
+              <a
+                 href={staffData.data.instagram}
+                target="_blank"
+                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
+              >
+                <img
+                  className="h-[25px]"
+                  src="/social-icons/instagram.svg"
+                  alt=""
+                />
+                <span className="text-md font-bold text-black/80">
+                  Instagram
+                </span>
+              </a>
+              <a
+                    href={staffData.data.facebook}
+                target="_blank"
+                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2  px-3 flex items-center gap-2 rounded-lg"
+              >
+                <img
+                  className="h-[25px]"
+                  src="/social-icons/facebook.svg"
+                  alt=""
+                />
+                <span className="text-md font-bold text-black/80">
+                  Facebook
+                </span>
+              </a>
+              <Link
+                  to={'cv'}
+                target="_blank"
+                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
+              >
+                <FileUser size={25} className='text-green'/>
+                <span className="text-md font-bold text-black/80">Резюме</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+};
+{
+  /* <div className="bg-green rounded-md   transition-all hover:scale-105">
                 <a
                   href={staffData.data.whatsapp}
                   target="_blank"
@@ -116,11 +189,5 @@ export const TeacherPage = () => {
                   <ContactPage className="mr-2" />
                   <span className="text-lg">{t("homepage.resume")}</span>
                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
+              </div> */
 }

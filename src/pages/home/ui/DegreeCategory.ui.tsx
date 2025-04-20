@@ -49,12 +49,12 @@ export const DegreeCategory = () => {
 
   const getIconById = (id: number) => {
     const icons = [
-      <Code className="text-black/60" />,
-      <Briefcase className="text-black/60" />,
-      <Book className="text-black/60" />,
-      <Globe className="text-black/60" />,
-      <GraduationCap className="text-black/60" />,
-      <University className="text-black/60" />,
+      <Code className="text-white" />,
+      <Briefcase className="text-white" />,
+      <Book className="text-white" />,
+      <Globe className="text-white" />,
+      <GraduationCap className="text-white" />,
+      <University className="text-white" />,
     ];
     return icons[id % icons.length];
   };
@@ -75,7 +75,7 @@ export const DegreeCategory = () => {
           className="py-10 px-1 degree-list text-left"
           modules={[Pagination]}
           spaceBetween={5}
-          loop={true}
+     
           slidesPerView={4}
           pagination={{ clickable: true }}
           breakpoints={{
@@ -91,23 +91,20 @@ export const DegreeCategory = () => {
               <SwiperSlide key={degree.id}>
                 <Card
                   onClick={() => navigate(`degree/${degree.slug}`)}
-                  className={`relative overflow-hidden max-w-[350px] text-left p-4 border-2 border-white hover:border-green text-black/80 transition 
-    duration-200 rounded-md hover:cursor-pointer shadow-none bg-cover bg-center text-white hover:text-white 
+                  className={`relative overflow-hidden max-w-[350px] text-left p-4 border-2  bg-green text-white transition 
+    duration-200 rounded-md hover:cursor-pointer shadow-none bg-cover bg-center  
     md:max-w-full flex flex-col justify-between`}
-                  style={{
-                    backgroundImage: `url('https://i.pinimg.com/736x/fa/b2/23/fab223bc9433fc53d1ddb189d766f6db.jpg')`,
-                  }}
                 >
-                  <div className="absolute inset-0 bg-green/40 backdrop-blur-[5px] backdrop-brightness-60 z-0" />
+   
                   <div className="relative z-10 flex flex-col justify-between h-full">
                     <Typography
                       variant="h6"
-                      className="font-bold text-lg flex items-center gap-1 text-black/80"
+                      className="font-bold text-lg flex items-center gap-1 "
                     >
                       {degree.title}
                       {getIconById(degree.id)}
                     </Typography>
-                    <CardContent className="p-0 pt-5 flex items-end justify-between text-black/70 font-medium">
+                    <CardContent className="p-0 pt-5 flex items-end justify-between font-medium">
                       <div>
                         <Typography
                           variant="subtitle1"
@@ -128,7 +125,7 @@ export const DegreeCategory = () => {
                         <Button className="bg-blue/60 text-white/90 font-semibold text-xs flex items-center gap-1">
                           <p>Узнать больше</p>
                           <p>
-                            <ExternalLink size={18} />
+                            <ExternalLink  size={18} />
                           </p>
                         </Button>
                       </div>

@@ -12,51 +12,39 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
 
   return (
     <div onClick={() => navigate(`/specialization/${url}`)}>
-<Card
-  variant="outlined"
-  className="relative w-[400px] max-h-[250px] min-h-[250px] flex flex-col justify-between p-5 hover:bg-green transition-all prof-card border-[#cfd3d8] rounded-xs cursor-pointer 
-  md:w-[350px] md:h-[300px]  bg-cover bg-center text-white hover:shadow-lg hover:shadow-green/50"
-  style={
-    {
-      background: "#138a6a",
-      backgroundImage: "linear-gradient(347deg,rgba(19, 138, 106, 0.89) 0%, rgba(107, 232, 199, 1) 99%)"
-    }
-  }
->
-  <div className="absolute inset-0 bg-green/30 backdrop-blur-sm z-0 rounded-xs" />
-  <Box className="relative z-10 flex items-start gap-2">
-    <div>
-    <Typography
-      variant="subtitle2"
-      className="text-sm  transition-all"
-    >
-      {degree} / {capitalizeFirstLetter(faculties)}
-    </Typography>
-    <Typography
-      variant="h6"
-      className="text-lg font-semibold  transition-all"
-    >
-      {title}
-    </Typography>
-    </div>
-    <div className='bg-green/80 p-2  rounded-full '>
-    <BookOpen />
-    </div>
-  </Box>
-
-  <Box className="relative z-10 flex gap-5 mt-auto">
-    <Link to={`/specialization/${url}`}>
-      <Button
+      <Card
         variant="outlined"
-        className="bg-white border-none text-green border-blue  transition-all text-sm"
-        endIcon={<ChevronRightRounded />}
+        className="relative w-[400px] max-h-[250px] min-h-[250px] flex flex-col justify-between p-5 bg-green transition-all prof-card border-green rounded-xs cursor-pointer 
+  md:w-[350px] md:h-[300px]  bg-cover bg-bottom text-white hover:shadow-lg hover:shadow-green/50"
       >
-        Узнать больше
-      </Button>
-    </Link>
-  </Box>
-</Card>
-
+        <Box className="relative z-10 flex items-start gap-2">
+          <div>
+            <Typography variant="subtitle2" className="text-sm  transition-all">
+              {degree} / {capitalizeFirstLetter(faculties)}
+            </Typography>
+            <Typography
+              variant="h6"
+              className="text-lg font-semibold  transition-all"
+            >
+              {title}
+            </Typography>
+          </div>
+          <div className="bg-blue/80 p-2  rounded-full ">
+            <BookOpen />
+          </div>
+        </Box>
+        <Box className="relative z-10 flex gap-5 mt-auto">
+          <Link to={`/specialization/${url}`}>
+            <Button
+              variant="outlined"
+              className="bg-white border-none text-green border-blue  transition-all text-sm"
+              endIcon={<ChevronRightRounded />}
+            >
+              Узнать больше
+            </Button>
+          </Link>
+        </Box>
+      </Card>
     </div>
   );
 };

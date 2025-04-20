@@ -96,7 +96,7 @@ export function Footer() {
         </div>
         <p className="my-3 text-center">&copy; 2024 Intuit</p>
       </div>
-      <div className=" max-w-[80%] mx-auto lg:hidden">
+      <div className=" container mx-auto lg:hidden">
         <div className="flex items-center gap-1 mb-5">
           <img src={IntuitLogo} alt="Intuit" className="h-[58px]" />
           <p className="text-xs font-semibold leading-3">

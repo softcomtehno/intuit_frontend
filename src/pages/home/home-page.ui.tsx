@@ -25,8 +25,8 @@ export function HomePage() {
       <DegreeCategory />
       <ProgramCategory />
       <OpportunitiesList />
-      <AboutBlock />
       <DiplomList />
+      <AboutBlock />
       <PartnersList />
       <div className="container">
         <Typography
