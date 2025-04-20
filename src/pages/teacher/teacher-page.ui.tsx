@@ -24,7 +24,7 @@ export const TeacherPage = () => {
     isSuccess,
     isError,
     isLoading,
-  } = staffQueries.useGetStaffDetail(slug);
+  } = staffQueries.useGetStaffDetail(slug)
 
   const gradientStyle = {
     background:
