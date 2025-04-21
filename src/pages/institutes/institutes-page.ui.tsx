@@ -29,9 +29,6 @@ export const InstitutesPage = () => {
         img="/bg.png"
       />
       <div className="my-5">
-        <Typography className="font-medium" variant="h3" component="div">
-        {t("institutesPage.introCard.title")}
-        </Typography>
         <div className="flex flex-wrap justify-between my-10 gap-5 ">
           {facultyData?.data.map((institute, index) => (
             <FacultyCard

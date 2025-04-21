@@ -21,19 +21,19 @@ export const IntroCard = ({ img, description }) => {
   return (
     <>
       <section
-        className="container border border-[gray]  h-[350px] w-full bg-no-repeat  bg-cover rounded-xl flex  justify-between p-10 md:bg-right text-left bg-center  "
+        className="container sm:p-3 border border-[gray] sm:py-6 h-[350px] w-full bg-no-repeat  bg-cover rounded-xl flex  sm:flex-col justify-between p-10 md:bg-right text-left bg-center  "
         style={{ backgroundImage: `url(${img})` }}
       >
         <Box className="flex flex-col justify-between h-[100%]">
           <div>
           <Typography
             variant="body1"
-            className="text-white text-4xl mb-4 max-w-[550px] font-bold md:text-center"
+            className="text-white text-4xl sm:text-2xl mb-4 max-w-[550px] font-bold md:text-center"
           >
             Институты университета
           </Typography>
           <Typography
-            className="text-white text-md max-w-[550px] font-bold md:text-center"
+            className="text-white  text-md max-w-[550px] font-bold md:text-center"
           >
            Откройте для себя все академические направления и выберите то, что подходит именно вам
           </Typography>
@@ -47,7 +47,10 @@ export const IntroCard = ({ img, description }) => {
            <BadgeHelp />
           </Button>
         </Box>
-        <BookCopy color='white' size={300} className='opacity-75 relative bottom-[-20px] right-[-80px]' />
+
+        <BookCopy color='white' size={300} className='sm:hidden opacity-75 relative bottom-[-20px] right-[-80px]' />
+
+
       </section>
     </>
   )
