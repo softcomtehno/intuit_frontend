@@ -15,7 +15,7 @@ export const HeroCarousel: React.FC = () => {
   if (isError) {
     return <div>Ошибка</div>
   }
-  
+
   return (
     <div className="w-full overflow-hidden">
       <Marquee direction="left" speed={100} className=" overflow-x-none">
@@ -38,7 +38,7 @@ export const HeroCarousel: React.FC = () => {
                       {carusel.title}
                     </Typography>
                     <Link
-                      to={`/event/${carusel.slug}`}
+                      to={`/news/event/${carusel.slug}`}
                       className="bg-blue inline-flex items-center text-white text-sm px-3 py-1 rounded transition"
                     >
                       Перейти
