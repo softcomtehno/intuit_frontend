@@ -59,7 +59,6 @@ export const DegreeCategory = () => {
     return icons[id % icons.length];
   };
 
-  console.log(degreeData?.data);
 
   return (
     <div>
@@ -74,15 +73,14 @@ export const DegreeCategory = () => {
         <Swiper
           className="py-10 px-1 degree-list text-left"
           modules={[Pagination]}
-          spaceBetween={5}
-     
+
           slidesPerView={4}
           pagination={{ clickable: true }}
           breakpoints={{
             360: { slidesPerView: 1, centeredSlides: true, spaceBetween: 10 },
             480: { slidesPerView: 2, spaceBetween: 10 },
             768: { slidesPerView: 3, spaceBetween: 10 },
-            1024: { slidesPerView: 3.5, spaceBetween: 10 },
+            1024: { slidesPerView: 3.5, spaceBetween: 5 },
           }}
         >
           {degreeData?.data

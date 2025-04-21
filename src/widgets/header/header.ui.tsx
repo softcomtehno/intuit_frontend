@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="bg-white fixed top-0 left-0 w-full z-50 border-b border-gray">
-      <div className="container px-6 py-2">
+      <div className=" px-6 py-2">
         <nav className="flex gap-2 items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-1 mr-5">

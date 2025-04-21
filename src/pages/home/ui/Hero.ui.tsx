@@ -28,12 +28,12 @@ export const HomeHero = () => {
     return <div>{t('loading.error')}</div>
   }
 
-  console.log(facultyData?.data, 'facultyData?.data')
+
 
   return (
-    <section className="r-sm:mx-2 r-sm:h-[360px] mx-5  rounded-md r-sm:mb-16 mb-20 relative overflow-hidden bg-[url('/bg2.png')] bg-cover bg-top ">
+    <section className=" r-sm:h-[360px]  rounded-md r-sm:mb-16 mb-20 relative overflow-hidden bg-[url('/bg2.png')] bg-cover bg-top ">
       <div className="relative py-5  r-md:py-6 px-4">
-        <Container className="z-[100px] max-w-[1440px] md:p-0">
+        <div className=" z-[100px] md:p-0">
           <div className="flex justify-between items-end md:flex-col mb-[30px]">
             <div className="mb-10 r-md:mb-2 r-md:max-w-2xl max-w-4xl">
               <Typography
@@ -41,7 +41,6 @@ export const HomeHero = () => {
                 className="mt-4 r-md:mt-2  md:mb-4 md:text-lg w-[75%]  text-white font-[900]   text-3xl"
               >
                 Выбирай не просто специальность — выбирай будущее с МУИТ
-                {/* {t('homepage.title')} */}
               </Typography>
               <p className="mb-20 text-white mt-2 italic ">
                 Образование, которое ведёт к реальной работе
@@ -71,7 +70,7 @@ export const HomeHero = () => {
             <HeroCarousel />
             {/* <FacultyCarousel /> */}
           </div>
-        </Container>
+        </div>
       </div>
     </section>
   )
