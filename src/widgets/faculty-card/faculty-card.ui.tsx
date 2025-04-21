@@ -16,8 +16,8 @@ export const FacultyCard: React.FC<FacultyCardProps> = ({
   icon,
 }) => {
   return (
-    <Link to={`/institutes/${slug}/`}>
-      <Card className="min-w-[400px] max-w-[400px] h-[190px] p-5 rounded-lg border border-gray shadow-none transition duration-300 bg-green  text-white flex flex-col  hover:shadow-xl hover:cursor-pointer sm:min-w-[300px]">
+    <Link to={`/institutes/${slug}/`} className='md:w-full'>
+      <Card className="min-w-[400px] max-w-[400px] h-[190px] p-5 rounded-lg border border-gray shadow-none transition duration-300 bg-green  text-white flex flex-col  hover:shadow-xl hover:cursor-pointer md:min-w-full ">
         <h3 className="font-bold min-h-[51px] text-lg">{instituteName}</h3>
         <div className="flex justify-between min-h-[90px] items-end">
           <div className="self-end sm:text-xs px-2 py-1 bg-blue/80 font-bold rounded-full text-sm">

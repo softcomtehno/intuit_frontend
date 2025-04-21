@@ -28,8 +28,8 @@ export const InstitutesPage = () => {
         description={t("institutesPage.introCard.description")}
         img="/bg.png"
       />
-      <div className="my-5">
-        <div className="flex flex-wrap justify-between my-10 gap-5 ">
+      <div className="my-5 w-full">
+        <div className="flex flex-wrap justify-between my-10 gap-5 w-full">
           {facultyData?.data.map((institute, index) => (
             <FacultyCard
               key={index}
