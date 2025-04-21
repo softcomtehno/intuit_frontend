@@ -60,7 +60,7 @@ export const EducationFormCard = ({
           </div>
         )}
 
-        <p className="text-md  text-white/90 leading-relaxed font-light max-w-[70%] md:text-xs md:!max-w-[50px]">
+        <p className="text-md text-white/90 leading-relaxed font-light max-w-[70%] md:text-xs md:!max-w-[50px]">
           {text}
         </p>
       </div>
