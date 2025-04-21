@@ -24,7 +24,7 @@ export const FacultyCard: React.FC<FacultyCardProps> = ({
             {programCount} {t('homepage.programs')}
           </div>
           <img
-            className="h-[140px] sm:h-[120px] sm:w-[150px] w-[200px] relative bottom-[-35px] right-[-60px] self-end filter invert opacity-70"
+            className="h-[140px] sm:h-[120px] sm:w-[150px] w-[200px] relative bottom-[-30px] right-[-60px] self-end filter invert opacity-60"
             alt="Intuit"
             src={icon}
           />
