@@ -10,6 +10,7 @@ import DescriptionCard from './ui/Description.ui'
 import { NewsList } from '~widgets/news-list'
 import { ProgramCategory } from '~widgets/programm-category'
 import { SpeakerVideoList } from '~widgets/speaker-list'
+import { Documents } from './ui/Document.ui'
 
 export const InstitutePage = () => {
   const slug = useParams()
@@ -19,6 +20,8 @@ export const InstitutePage = () => {
     isError,
     isLoading,
   } = facultyQueries.useGetFaculty(String(slug.slug))
+
+  console.log('facultyData', facultyData)
 
   if (isError) {
     return <div>Произошла Ошибка</div>
@@ -47,6 +50,7 @@ export const InstitutePage = () => {
         id={facultyData?.data.id}
       />
       {/* <ProgramCategory /> */}
+      <Documents data={facultyData?.data?.documentCollections} />
       <ProgramCategory facultyId={facultyData?.data.id} />
       <EnrollForm />
       <OpportunitiesList />

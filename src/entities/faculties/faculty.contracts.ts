@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'zod'
 
 export const FacultySchema = z.object({
   id: z.number(),
@@ -10,4 +10,15 @@ export const FacultySchema = z.object({
   subtext: z.string(),
   programCount: z.number(),
   educationLevel: z.array(z.number()),
-});
+  documentCollections: z.array(
+    z.object({
+      name: z.string(),
+      documentCollectionItems: z.array(
+        z.object({
+          name: z.string(),
+          document: z.string(),
+        })
+      ),
+    })
+  ),
+})
