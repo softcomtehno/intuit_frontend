@@ -33,7 +33,17 @@ export default {
         '2xl': '100px',
       },
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        'rotate-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        'rotate-slow': 'rotate-slow 12s linear infinite',
+      },
+    },
   },
   plugins: [],
 }
