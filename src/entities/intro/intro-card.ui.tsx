@@ -1,9 +1,8 @@
 import { Box, Button, Typography } from '@mui/material'
 import { t } from 'i18next'
+import { BadgeHelp, BookCopy, BookOpen, Compass } from 'lucide-react'
 import { useState } from 'react'
-import { MaterialModal } from '~shared/ui/modal/MaterialModal.ui'
-import { EventList } from '~widgets/events-list'
-import { Quizizz } from '~widgets/quizizz'
+
 
 const style = {
   position: 'absolute',
@@ -18,34 +17,38 @@ const style = {
 }
 
 export const IntroCard = ({ img, description }) => {
-  const [modal, setModal] = useState(false)
 
   return (
     <>
       <section
-        className="container border border-[gray]  h-[350px] w-full bg-no-repeat bg-center bg-cover rounded-xl flex flex-col justify-between p-10 md:bg-right text-left "
+        className="container border border-[gray]  h-[350px] w-full bg-no-repeat  bg-cover rounded-xl flex  justify-between p-10 md:bg-right text-left bg-center  "
         style={{ backgroundImage: `url(${img})` }}
       >
-        <Box className="flex flex-col justify-between h-[100%] gap-5">
+        <Box className="flex flex-col justify-between h-[100%]">
+          <div>
           <Typography
             variant="body1"
-            className="text-black text-xl max-w-[550px] font-bold md:text-center"
+            className="text-white text-4xl mb-4 max-w-[550px] font-bold md:text-center"
           >
-            {description}
+            Институты университета
           </Typography>
+          <Typography
+            className="text-white text-md max-w-[550px] font-bold md:text-center"
+          >
+           Откройте для себя все академические направления и выберите то, что подходит именно вам
+          </Typography>
+          </div>
           <Button
             variant="contained"
             size="large"
-            className="bg-green shadow-none self-start md:mx-auto"
-            onClick={() => setModal(true)}
+            className="bg-blue flex items-center gap-1 shadow-none self-start md:mx-auto"
           >
-           {t("institutesPage.pickProgram")}
+           Помочь с выбором
+           <BadgeHelp />
           </Button>
         </Box>
+        <BookCopy color='white' size={300} className='opacity-75 relative bottom-[-20px] right-[-80px]' />
       </section>
-      {/* <MaterialModal open={modal} setOpen={setModal}>
-        <Quizizz></Quizizz>
-      </MaterialModal> */}
     </>
   )
 }

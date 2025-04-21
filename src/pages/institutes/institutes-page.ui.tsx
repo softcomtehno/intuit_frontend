@@ -26,7 +26,7 @@ export const InstitutesPage = () => {
       <IntroCard
         title={t("institutesPage.introCard.title")}
         description={t("institutesPage.introCard.description")}
-        img={intro}
+        img="/bg.png"
       />
       <div className="my-5">
         <Typography className="font-medium" variant="h3" component="div">
@@ -37,8 +37,9 @@ export const InstitutesPage = () => {
             <FacultyCard
               key={index}
               slug={institute.slug}
-              instituteName={institute.title}
-              programCount={institute.programs}
+              instituteName={institute.subtitle}
+              programCount={institute.programCount}
+              icon={institute.icon}
             />
           ))}
         </div>
