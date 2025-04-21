@@ -31,7 +31,7 @@ export const HomeHero = () => {
   console.log(facultyData?.data, 'facultyData?.data');
 
   return (
-    <section className="r-sm:mx-2 r-sm:h-[360px] mx-5  rounded-md r-sm:mb-16 mb-20 relative overflow-hidden bg-[url('/bg3.png')] bg-cover bg-top ">
+    <section className="r-sm:mx-2 r-sm:h-[360px] mx-5  rounded-md r-sm:mb-16 mb-20 relative overflow-hidden bg-[url('/bg2.png')] bg-cover bg-top ">
       <div className="relative py-5  r-md:py-6 px-4">
         <Container className="z-[100px] max-w-[1440px] md:p-0">
           <div className="flex justify-between items-end md:flex-col mb-[30px]">

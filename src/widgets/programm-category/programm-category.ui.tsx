@@ -147,9 +147,10 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
             <ProfessionCard
               key={index}
               degree={profession.educationLevel[0].title}
-              faculties={profession.faculty[0].title}
+              faculties={profession.faculty[0].subtitle}
               title={profession.title}
               url={profession.slug}
+              icon={profession.faculty[0].icon}
             />
           ))}
         </div>

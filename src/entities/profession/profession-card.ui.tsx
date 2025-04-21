@@ -7,7 +7,7 @@ const capitalizeFirstLetter = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 };
 
-export const ProfessionCard = ({ degree, faculties, title, url }) => {
+export const ProfessionCard = ({ degree, faculties, title, url, icon }) => {
   const navigate = useNavigate();
 
   return (
@@ -29,8 +29,9 @@ export const ProfessionCard = ({ degree, faculties, title, url }) => {
               {title}
             </Typography>
           </div>
-          <div className="bg-blue/80 p-2  rounded-full ">
-            <BookOpen />
+          <div className="bg-blue/80 p-2 rounded-full ">
+          <img src={icon} alt="" className="h-[20px] w-[20px] filter invert" />
+
           </div>
         </Box>
         <Box className="relative z-10 flex gap-5 mt-auto">
