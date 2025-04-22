@@ -283,7 +283,7 @@ export const Header: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center">
-          <div className="relative  border py-1 rounded-full border-gray px-3">
+          <div className="relative hidden lg:block border py-1 rounded-full border-gray px-3">
             <button
               className="flex items-center text-black text-md font-medium hover:text-gray-400 focus:outline-none"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
