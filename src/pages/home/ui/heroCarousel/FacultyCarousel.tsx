@@ -33,37 +33,20 @@ export const FacultyCarousel: React.FC = () => {
               to={`/institutes/${carusel.slug}`}
               className="no-underline"
             >
-              {!isMobile ? (
-                <div className="group flex items-center justify-between backdrop-blur-xl bg-white/30 p-3 rounded-lg w-full text-white hover:bg-white/90 hover:text-black transition">
-                  <div className="flex flex-col items-start">
-                    <Typography
-                      variant="h3"
-                      className="text-[14px] font-normal gap-1 flex items-center"
-                    >
-                      {carusel.subtitle}
-                      <ArrowUpRight
-                        size={18}
-                        className="ml-1 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1"
-                      />
-                    </Typography>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex gap-4">
+              <div className="group flex items-center justify-between backdrop-blur-xl bg-white/30 p-3 rounded-lg w-full text-white hover:bg-white/90 hover:text-black transition">
+                <div className="flex flex-col items-start">
                   <Typography
-                    sx={{
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                      maxWidth: '220px',
-                    }}
                     variant="h3"
-                    className="mb-2 r-sm:text-base backdrop-blur-xl bg-white/30 px-2 py-1 rounded-md text-white text-lg font-normal hover:bg-white/40 transition"
+                    className="text-[14px] font-normal gap-1 flex items-center"
                   >
                     {carusel.subtitle}
+                    <ArrowUpRight
+                      size={18}
+                      className="ml-1 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1"
+                    />
                   </Typography>
                 </div>
-              )}
+              </div>
             </Link>
           ))}
         </div>

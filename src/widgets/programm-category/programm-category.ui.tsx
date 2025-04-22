@@ -56,7 +56,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
-  const itemsPerPage = 6;
+  const itemsPerPage = 8;
 
   const professions = propdata || serverData;
 
@@ -147,7 +147,6 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       >
         {t('homepage.degrees.programs')}
       </Typography>
-
       <div className="my-5 flex flex-col gap-5">
         <div className="flex flex-wrap gap-4 items-stretch justify-between md:flex-col">
           <div className="flex-1 min-w-[250px]">
@@ -188,7 +187,6 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
             </Button>
           </div>
         </div>
-
         <TextField
           fullWidth
           variant="outlined"
@@ -221,8 +219,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
           }}
         />
       </div>
-
-      <div className="grid grid-cols-3 md:grid-cols-1 gap-6 justify-items-center mt-10">
+      <div className="grid grid-cols-4 md:grid-cols-1 gap-6 justify-items-center mt-10">
         {paginatedProfessions?.map((profession, index) => (
           <ProfessionCard
             key={index}
@@ -234,7 +231,6 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
           />
         ))}
       </div>
-
       {totalPages > 1 && (
         <div className="flex justify-center mt-8">
           <Pagination

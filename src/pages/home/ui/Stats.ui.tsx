@@ -42,7 +42,7 @@ const StatsCard: React.FC<StatsCardProps> = ({ count, label, color, iconKey }) =
         >
           {isCounting ? <CountUp start={0} end={count} duration={2} /> : '0'}
         </Typography>
-        <Typography variant="subtitle1" className='md:w-[90px] text-xs'>
+        <Typography variant="subtitle1" className='md:w-[90px] md:text-xs text-sm'>
           {label}
         </Typography>
         </div>

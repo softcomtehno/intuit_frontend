@@ -11,7 +11,8 @@ export const ArticleList = () => {
     isSuccess,
     isError,
   } = articleQueries.useGetArticles();
-  const latestArticles = articles?.data.results.slice(0, 3);
+
+  const latestArticles = articles?.data.results.slice(0, 4);
 
   return (
     <div>
