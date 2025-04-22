@@ -21,15 +21,12 @@ export const NewsList = ({ id = null }) => {
 
   const totalPages = Math.ceil(data.data.results.length)
 
-
-  
   if (isSuccess && data.data.results.length > 0) {
     return (
       <div>
         <Typography variant="h3" component="div" className="font-semibold">
           {t("news-page.news")}
         </Typography>
-
         <Swiper
           className="my-10"
           modules={[Navigation, SwiperPagination]}
@@ -45,7 +42,7 @@ export const NewsList = ({ id = null }) => {
               slidesPerView: 2,
             },
             768: {
-              slidesPerView:3,
+              slidesPerView:3.5,
             },
           }}
         >

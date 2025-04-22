@@ -5,7 +5,7 @@ import { t } from 'i18next'
 
 export const License = () => {
   return (
-    <div className="container mx-auto py-10 ">
+    <div className=" mx-auto py-10 ">
       <Typography
         variant="h3"
         component="h3"
@@ -21,13 +21,13 @@ export const License = () => {
         }}
       >
         <div className="flex justify-between gap-4 lg:flex-col">
-          <div className="max-w-md w-full border border-gray rounded-lg bg-white p-2 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]">
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-gray-800">
-                {t('homepage.License.scholarship')}
+          <div className="max-w-md w-full border border-gray rounded-lg bg-white p-3 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]">
+            <div className="flex flex-col ">
+              <h3 className="text-xl font-bold ">
+              Официальные документы университета
               </h3>
               <p className="text-sm text-gray-600 mt-4">
-                {t('homepage.License.content')}
+              Лицензия на право ведения образовательной деятельности в сфере профессионального образования и свидетельство о государственной регистрации Международного Университета Инновационных Технологий.
               </p>
             </div>
           </div>
