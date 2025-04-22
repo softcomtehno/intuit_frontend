@@ -9,7 +9,7 @@ export function GenericLayout() {
       <ScrollTop />
       <div className="min-h-screen flex flex-col justify-between">
         <Header />
-        <div className="px-6 mt-20">
+        <div className="px-6 md:px-2 mt-20">
           <Outlet />
         </div>
         <Footer />

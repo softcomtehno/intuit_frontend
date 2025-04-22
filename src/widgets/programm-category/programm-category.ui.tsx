@@ -1,4 +1,10 @@
-import { Button, CircularProgress, Typography, Pagination } from '@mui/material'
+import {
+  Button,
+  CircularProgress,
+  Typography,
+  Pagination,
+  TextField,
+} from '@mui/material'
 import Select from 'react-select'
 import { ProfessionCard } from '~entities/profession'
 import { useTranslation } from 'react-i18next'
@@ -32,7 +38,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       .sort((a, b) => a.id - b.id)
       .map((faculty) => ({
         value: faculty.id,
-        label: faculty.titleRu || faculty.title,
+        label: faculty.subtitle || faculty.subtitle,
       })) || []
 
   const sortedDegrees =
@@ -45,6 +51,10 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
 
   const [selectedDegree, setSelectedDegree] = useState(degreeId || null)
   const [selectedFaculty, setSelectedFaculty] = useState(facultyId || null)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const itemsPerPage = 6
 
   const professions = propdata || serverData
 
@@ -55,11 +65,11 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
     const matchesFaculty = selectedFaculty
       ? profession.faculty.some((faculty) => faculty.id === selectedFaculty)
       : true
-    return matchesDegree && matchesFaculty
+    const matchesSearch = profession.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase())
+    return matchesDegree && matchesFaculty && matchesSearch
   })
-
-  const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 6
 
   const totalPages = Math.ceil(
     (filteredProfessions?.length || 0) / itemsPerPage
@@ -71,62 +81,93 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
 
   const handleDegreeChange = (selectedOption) => {
     setSelectedDegree(selectedOption?.value || null)
-    setCurrentPage(1) 
+    setCurrentPage(1)
   }
 
   const handleFacultyChange = (selectedOption) => {
     setSelectedFaculty(selectedOption?.value || null)
-    setCurrentPage(1) 
+    setCurrentPage(1)
+  }
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value)
+    setCurrentPage(1)
   }
 
   const handleClearFilters = () => {
     setSelectedDegree(null)
     setSelectedFaculty(null)
-    setCurrentPage(1) 
+    setSearchQuery('')
+    setCurrentPage(1)
   }
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value)
   }
 
-  if (isError) {
-    return <div>{t("loading.error")}</div>
+  const customSelectStyles = {
+    control: (provided) => ({
+      ...provided,
+      borderRadius: '10px',
+      borderColor: '#ccc',
+      boxShadow: 'none',
+      padding: '2px 4px',
+      minHeight: '42px',
+      '&:hover': {
+        borderColor: '#888',
+      },
+    }),
+    menu: (provided) => ({
+      ...provided,
+      zIndex: 100,
+    }),
+  }
+
+  if (isError || isFacultyError || isDegreeError) {
+    return <div>{t('loading.error')}</div>
   }
 
   if (isLoading || isDegreeLoading || isFacultyLoading) {
     return (
       <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
         <CircularProgress className="text-blue" />
-        <Typography variant="h6">{t("loading.loading")}</Typography>
+        <Typography variant="h6">{t('loading.loading')}</Typography>
       </div>
     )
   }
 
-  return (
-    <div className="my-20 rounded-lg ">
-      <Typography
-        variant="h3"
-        component="h3"
-        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
-      >
-        {t('homepage.degrees.programs')}
-      </Typography>
-      <div>
-        <div className="flex gap-5 my-5 lg:flex-col items-center">
+
+return (
+  <div className="my-20 rounded-lg ">
+    <Typography
+      variant="h3"
+      component="h3"
+      className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:text-[30px] text-center mb-6"
+    >
+      {t('homepage.degrees.programs')}
+    </Typography>
+
+    <div className="my-5 flex flex-col gap-5">
+      <div className="flex flex-wrap gap-4 w-full items-stretch justify-between md:flex-col">
+        <div className="flex-1 min-w-[250px]">
           <Select
             options={sortedDegrees}
-            placeholder="Выберите уровень "
-            className="w-[350px] lg:w-full"
+            styles={customSelectStyles}
+            placeholder="Выберите уровень"
+            className="z-50"
             onChange={handleDegreeChange}
             value={
               sortedDegrees.find((degree) => degree.value === selectedDegree) ||
               null
             }
           />
+        </div>
+        <div className="flex-1 min-w-[250px]">
           <Select
             options={sortedFaculties}
-            placeholder="Выберите институт"
-            className="w-[350px] lg:w-full"
+            styles={customSelectStyles}
+            placeholder="Выберите направление"
+            className="z-50"
             onChange={handleFacultyChange}
             value={
               sortedFaculties.find(
@@ -134,42 +175,58 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
               ) || null
             }
           />
+        </div>
+        <div className="min-w-[200px] flex items-center">
           <Button
             variant="outlined"
-            className="shadow-none bg-blue text-white px-10 max-w-[250px] lg:w-full"
+            className="shadow-none bg-blue text-white px-6 w-full"
             onClick={handleClearFilters}
           >
-            {t("loading.clear")}
+            {t('loading.clear')}
           </Button>
         </div>
-        <div className="flex flex-wrap justify-between gap-7 lg:gap-4  lg:justify-center">
-          {paginatedProfessions?.map((profession, index) => (
-            <ProfessionCard
-              key={index}
-              degree={profession.educationLevel[0].title}
-              faculties={profession.faculty[0].subtitle}
-              title={profession.title}
-              url={profession.slug}
-              icon={profession.faculty[0].icon}
-            />
-          ))}
-        </div>
-        {totalPages > 1 && (
-          <div className="flex justify-center mt-5">
-            <Pagination
-              count={totalPages}
-              page={currentPage}
-              onChange={handlePageChange}
-              sx={{
-                '& .MuiPaginationItem-root.Mui-selected': {
-                  color: 'white',
-                  backgroundColor: '#00956F',
-                },
-              }}
-            />
-          </div>
-        )}
       </div>
+
+      <TextField
+        fullWidth
+        variant="outlined"
+        placeholder="Поиск по названию программы"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
     </div>
-  )
+
+
+    <div className="grid grid-cols-3 md:grid-cols-1 gap-6 justify-items-center mt-10">
+      {paginatedProfessions?.map((profession, index) => (
+        <ProfessionCard
+          key={index}
+          degree={profession.educationLevel[0].title}
+          faculties={profession.faculty[0].subtitle}
+          title={profession.title}
+          url={profession.slug}
+          icon={profession.faculty[0].icon}
+        />
+      ))}
+    </div>
+
+    {/* Пагинация */}
+    {totalPages > 1 && (
+      <div className="flex justify-center mt-8">
+        <Pagination
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+          sx={{
+            '& .MuiPaginationItem-root.Mui-selected': {
+              color: 'white',
+              backgroundColor: '#00956F',
+            },
+          }}
+        />
+      </div>
+    )}
+  </div>
+)
+
 }

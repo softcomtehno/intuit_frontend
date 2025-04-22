@@ -15,7 +15,7 @@ export const ProfessionCard = ({ degree, faculties, title, url, icon }) => {
       <Card
         variant="outlined"
         className="relative w-[470px] max-h-[250px] min-h-[250px] flex flex-col justify-between p-5 bg-green transition-all prof-card border-green rounded-xs cursor-pointer 
-  md:w-[350px] md:h-[300px]  bg-cover bg-bottom text-white/90 hover:shadow-lg hover:shadow-green/50"
+  md:w-[350px] md:h-[300px] md:w-full bg-cover bg-bottom text-white/90 hover:shadow-lg hover:shadow-green/50"
       >
         <Box className="relative z-10 flex items-start gap-2">
           <div>
