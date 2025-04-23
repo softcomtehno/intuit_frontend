@@ -1,6 +1,7 @@
-import { Typography, Box } from '@mui/material';
-import { t } from 'i18next';
-import { specializationTypes } from '~entities/specialization';
+import { Typography, Box } from '@mui/material'
+import { t } from 'i18next'
+import { specializationTypes } from '~entities/specialization'
+import { Title } from '~shared/ui/title'
 
 export const About = ({
   text,
@@ -17,22 +18,13 @@ export const About = ({
     >
       <Box
         sx={{
-          maxWidth:'750px',
+          maxWidth: '750px',
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
         }}
       >
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: 'bold',
-            color: 'primary.main',
-            textAlign: { xs: 'center', lg: 'left' },
-          }}
-        >
-          {text}
-        </Typography>
+        <Title>{text}</Title>
         <Typography
           variant="body1"
           sx={{
@@ -48,11 +40,11 @@ export const About = ({
       <Box
         component="img"
         src={textPhoto}
-        alt={t("specialization.professionPhoto")}
+        alt={t('specialization.professionPhoto')}
         sx={{
           maxWidth: '450px',
           borderRadius: '16px',
-          maxHeight:"300px",
+          maxHeight: '300px',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
           transition: 'transform 0.3s ease',
           '&:hover': {
@@ -61,5 +53,5 @@ export const About = ({
         }}
       />
     </Box>
-  );
-};
+  )
+}

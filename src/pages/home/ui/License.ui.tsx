@@ -2,17 +2,12 @@ import Fancybox from './Fancybox'
 import Gerb from '../../../assets/gerb.svg'
 import { Typography } from '@mui/material'
 import { t } from 'i18next'
+import { Title } from '~shared/ui/title'
 
 export const License = () => {
   return (
     <div className=" mx-auto py-10 ">
-      <Typography
-        variant="h3"
-        component="h3"
-        className="text-[2.5rem] mb-5 font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
-      >
-        {t('homepage.License.documents')}
-      </Typography>
+      <Title>{t('homepage.License.documents')}</Title>
       <Fancybox
         options={{
           Carousel: {
@@ -24,10 +19,13 @@ export const License = () => {
           <div className="max-w-md w-full border border-gray rounded-lg bg-white p-3 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]">
             <div className="flex flex-col ">
               <h3 className="text-xl font-bold ">
-              Официальные документы университета
+                Официальные документы университета
               </h3>
               <p className="text-sm text-gray-600 mt-4">
-              Лицензия на право ведения образовательной деятельности в сфере профессионального образования и свидетельство о государственной регистрации Международного Университета Инновационных Технологий.
+                Лицензия на право ведения образовательной деятельности в сфере
+                профессионального образования и свидетельство о государственной
+                регистрации Международного Университета Инновационных
+                Технологий.
               </p>
             </div>
           </div>

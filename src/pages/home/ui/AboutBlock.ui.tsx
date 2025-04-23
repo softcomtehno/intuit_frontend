@@ -1,26 +1,18 @@
 import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { Stats } from './Stats.ui'
-
-
+import { Title } from '~shared/ui/title'
 
 export const AboutBlock = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="py-10  bg-gradient-to-b from-white to-gray-50 rounded-2xl ">
-      <Typography
-        variant="h3"
-        component="h3"
-        className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r  mb-6"
-      >
-        {t('homepage.aboutUniversity.title')}
-      </Typography>
+    <section className=" bg-gradient-to-b from-white to-gray-50 rounded-2xl ">
+      <Title>{t('homepage.aboutUniversity.title')}</Title>
 
       <div className="flex justify-between md:flex-col-reverse gap-8 ">
         <div className="w-1/2 md:w-full bg-white rounded-2xl shadow-none ">
           <div className="flex items-center gap-2 mb-4">
-    
             <Typography variant="h5" className="text-blue-600 font-bold">
               {t('homepage.aboutUniversity.goal')}
             </Typography>

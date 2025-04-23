@@ -9,19 +9,14 @@ import Fancybox from '~widgets/diplom-list/Fancybox'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
+import { Title } from '~shared/ui/title'
 
 export const DiplomList = () => {
   const { t } = useTranslation()
 
   return (
     <div className=" my-20">
-      <Typography
-        variant="h3"
-        component="h3"
-        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
-      >
-        {t('homepage.diploma.yourFutureDiploma')}
-      </Typography>
+      <Title>{t('homepage.diploma.yourFutureDiploma')}</Title>
       <Fancybox
         options={{
           Carousel: {
@@ -37,10 +32,10 @@ export const DiplomList = () => {
             480: {
               slidesPerView: 1,
               centeredSlides: true,
-              spaceBetween:10,
+              spaceBetween: 10,
             },
             1024: {
-              slidesPerView:4,
+              slidesPerView: 4,
               spaceBetween: 20,
             },
           }}
@@ -49,7 +44,6 @@ export const DiplomList = () => {
             <a
               data-fancybox="gallery"
               href="https://muit.makalabox.com/documents/bakalavr.pdf"
-        
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
@@ -85,7 +79,6 @@ export const DiplomList = () => {
             <a
               data-fancybox="gallery-2"
               href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
-            
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
@@ -157,7 +150,6 @@ export const DiplomList = () => {
             <a
               data-fancybox="gallery-4"
               href="https://muit.makalabox.com/documents/diploms/diplom_en.pdf"
-        
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 

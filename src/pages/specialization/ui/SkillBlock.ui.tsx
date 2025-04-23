@@ -9,6 +9,7 @@ import {
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded'
 import { specializationTypes } from '~entities/specialization'
 import { t } from 'i18next'
+import { Title } from '~shared/ui/title'
 
 export const SkillsBlock = ({
   skills,
@@ -18,9 +19,7 @@ export const SkillsBlock = ({
 
   return (
     <div>
-      <Typography variant="h3" className="font-semibold">
-        {t("specialization.skillsAndTools")}
-      </Typography>
+      <Title>{t('specialization.skillsAndTools')}</Title>
 
       <div className="flex gap-20 md:flex-col">
         <div className="p-5  border-t mt-5 border-gray">
@@ -36,7 +35,7 @@ export const SkillsBlock = ({
                 />
               </ListItem>
             ))}
-          </List>   
+          </List>
         </div>
         <div className="border-t mt-5 border-gray  flex flex-wrap  gap-5 items-start  pt-5">
           {tools.map((tool, i) => (

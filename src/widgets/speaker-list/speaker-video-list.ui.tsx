@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/scrollbar'
 import './index.css'
 import { t } from 'i18next'
+import { Title } from '~shared/ui/title'
 
 interface SpeakerVideoListProps {
   facultyId?: number
@@ -35,26 +36,20 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
       : allSpeakersData?.data
 
   if (isLoading) {
-    return <div>{t("loading.loading")}...</div>
+    return <div>{t('loading.loading')}...</div>
   }
 
   if (isError) {
-    return <div>{t("loading.error")}</div>
+    return <div>{t('loading.error')}</div>
   }
 
   if (!speakersData || speakersData.length === 0) {
-    return <div>{t("loading.dataNotLoaded")}</div>
+    return <div>{t('loading.dataNotLoaded')}</div>
   }
 
   return (
     <>
-      <Typography
-        variant="h3"
-        component="h3"
-        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
-      >
-       {t("reviews.studentReviews")}
-      </Typography>
+      <Title>{t('reviews.studentReviews')}</Title>
 
       <Swiper
         className="py-10 pointer"
