@@ -8,6 +8,7 @@ import {
 } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { degreeQueries } from '~entities/degree'
+import { Loader } from '~shared/ui/loader'
 import { EnrollForm } from '~widgets/enroll-form'
 import { OpportunitiesList } from '~widgets/opportunities-list'
 // import { FeedbackList } from '~widgets/feedback-list'
@@ -29,12 +30,7 @@ export const DegreePage = () => {
   }
 
   if (isLoading) {
-    return (
-      <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
-        <CircularProgress className="text-blue" />
-        <Typography variant="h6">Загрузка</Typography>
-      </div>
-    )
+    return <Loader />
   }
 
   return (

@@ -16,6 +16,7 @@ import { useState } from 'react'
 import { FacultySchema } from '~entities/faculties/faculty.types'
 import { SearchCheck } from 'lucide-react'
 import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
   const { t } = useTranslation()
@@ -131,12 +132,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
   }
 
   if (isLoading || isDegreeLoading || isFacultyLoading) {
-    return (
-      <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
-        <CircularProgress className="text-blue" />
-        <Typography variant="h6">{t('loading.loading')}</Typography>
-      </div>
-    )
+    return <Loader />
   }
 
   return (
@@ -214,7 +210,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
           }}
         />
       </div>
-      <div className="grid grid-cols-4 md:grid-cols-1 gap-6 justify-items-center mt-10">
+      <div className="grid grid-cols-4 justify-items-center mt-10 md:grid-cols-1 gap-6 lg:grid-cols-2 xll:grid-cols-2 xl:grid-cols-3">
         {paginatedProfessions?.map((profession, index) => (
           <ProfessionCard
             key={index}

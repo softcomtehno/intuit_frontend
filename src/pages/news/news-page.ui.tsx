@@ -10,6 +10,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { FacultySchema } from '~entities/news/news.types'
 import { t } from 'i18next'
+import { Loader } from '~shared/ui/loader'
 
 export const NewsPage = () => {
   const { slug } = useParams()
@@ -26,10 +27,10 @@ export const NewsPage = () => {
   console.log(newsData)
 
   if (isLoading) {
-    return <div>{t("loading.loading")}</div>
+    return <Loader />
   }
   if (isError) {
-    return <div>{t("loading.error")}</div>
+    return <div>{t('loading.error')}</div>
   }
   if (isSuccess) {
     return (
@@ -73,7 +74,7 @@ export const NewsPage = () => {
           </Box>
 
           <Box className="col-span-1 p-5">
-            <Typography variant="h4">{t("news-page.otherNews")}</Typography>
+            <Typography variant="h4">{t('news-page.otherNews')}</Typography>
             <NewsRecomendationList></NewsRecomendationList>
           </Box>
         </section>

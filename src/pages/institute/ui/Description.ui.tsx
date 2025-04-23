@@ -7,6 +7,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { t } from 'i18next'
 import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 interface DescriptionCardProps {
   subtitle: string
@@ -30,7 +31,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ text, id }) => {
         <Title>{t('descriptionPage.leadingTeachers')}</Title>
 
         <div className="flex justify-center ">
-          {isLoading && <div>Загрузка данных...</div>}
+          {isLoading && <Loader />}
           {isError && <div>Произошла ошибка при загрузке данных.</div>}
 
           {isSuccess && staffData?.data?.length > 0 ? (

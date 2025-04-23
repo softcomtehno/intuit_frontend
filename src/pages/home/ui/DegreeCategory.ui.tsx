@@ -19,6 +19,7 @@ import {
   University,
 } from 'lucide-react'
 import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 export const DegreeCategory = () => {
   const { t } = useTranslation()
@@ -26,7 +27,7 @@ export const DegreeCategory = () => {
   const { data: degreeData, isLoading, isError } = degreeQueries.useGetDegrees()
 
   if (isLoading) {
-    return <h1>{t('homepage.loading.loading')}</h1>
+    return <Loader />
   }
   if (isError) {
     return <h1>{t('homepage.loading.error')}</h1>

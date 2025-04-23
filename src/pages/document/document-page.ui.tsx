@@ -11,6 +11,7 @@ import {
   CircularProgress,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { Loader } from '~shared/ui/loader'
 
 export const DocumentPage = () => {
   const { slug } = useParams()
@@ -25,12 +26,7 @@ export const DocumentPage = () => {
   }
 
   if (isLoading) {
-    return (
-      <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
-        <CircularProgress className="text-blue" />
-        <Typography variant="h6">Загрузка</Typography>
-      </div>
-    )
+    return <Loader />
   }
 
   return (

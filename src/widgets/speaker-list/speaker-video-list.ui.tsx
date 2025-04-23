@@ -7,6 +7,7 @@ import 'swiper/css/scrollbar'
 import './index.css'
 import { t } from 'i18next'
 import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 interface SpeakerVideoListProps {
   facultyId?: number
@@ -36,7 +37,7 @@ export const SpeakerVideoList: React.FC<SpeakerVideoListProps> = ({
       : allSpeakersData?.data
 
   if (isLoading) {
-    return <div>{t('loading.loading')}...</div>
+    return <Loader />
   }
 
   if (isError) {

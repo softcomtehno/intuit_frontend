@@ -8,6 +8,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { t } from 'i18next'
 import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 export const NewsList = ({ id = null }) => {
   const { data, isError, isLoading, isSuccess } = id
@@ -16,7 +17,7 @@ export const NewsList = ({ id = null }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const swiperRef = useRef(null)
 
-  if (isLoading) return <div>Загрузка...</div>
+  if (isLoading) return <Loader />
   if (isError) return <div>Ошибка при загрузке новостей</div>
   if (!data?.data) return <div>Нет данных</div>
 
