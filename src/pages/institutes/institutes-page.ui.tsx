@@ -26,19 +26,17 @@ export const InstitutesPage = () => {
       <IntroCard
         title={t("institutesPage.introCard.title")}
         description={t("institutesPage.introCard.description")}
-        img={intro}
+        img="/bg.png"
       />
-      <div className="my-5">
-        <Typography className="font-medium" variant="h3" component="div">
-        {t("institutesPage.introCard.title")}
-        </Typography>
-        <div className="flex flex-wrap justify-between my-10 gap-5 ">
+      <div className="my-5 w-full">
+        <div className="flex flex-wrap justify-between my-10 gap-5 w-full">
           {facultyData?.data.map((institute, index) => (
             <FacultyCard
               key={index}
               slug={institute.slug}
-              instituteName={institute.title}
-              programCount={institute.programs}
+              instituteName={institute.subtitle}
+              programCount={institute.programCount}
+              icon={institute.icon}
             />
           ))}
         </div>

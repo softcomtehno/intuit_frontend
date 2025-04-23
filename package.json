@@ -23,7 +23,7 @@
     "axios": "^1.7.2",
     "dayjs": "^1.11.11",
     "formik": "^2.4.6",
-    "framer-motion": "^11.2.11",
+    "framer-motion": "^11.18.2",
     "i18next": "^23.16.4",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.2",

@@ -19,6 +19,7 @@ const StaffList = () => {
     isError: isStaffError,
     isLoading: isStaffLoading,
   } = staffQueries.useGetStaffs()
+
   const {
     data: positionsData,
     isSuccess: isPositionsSuccess,
@@ -42,9 +43,6 @@ const StaffList = () => {
     return 0
   })
 
-
-  console.log(staffData?.data);
-  
   return (
     <>
       <div className="position-navigation flex justify-start my-4 lg:hidden">
@@ -93,17 +91,17 @@ const StaffList = () => {
       </div>
 
       <Swiper
-        className="py-10 px-1 staff-list lg:pb-28"
+        className="py-10 px-1 staff-list "
         modules={[Pagination]}
-        spaceBetween={20}
-        slidesPerView={2.5}
+        slidesPerView={3}
         pagination={{ clickable: true }}
         breakpoints={{
           0: {
             slidesPerView: 1,
           },
           768: {
-            slidesPerView: 2.5,
+            slidesPerView: 3,
+            spaceBetween: 10,
           },
         }}
       >

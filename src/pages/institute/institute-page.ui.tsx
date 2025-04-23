@@ -40,18 +40,19 @@ export const InstitutePage = () => {
     <div className="my-5">
       <InstituteBanner
         title={facultyData?.data.title}
+        subtitle={facultyData?.data.subtitle}
         banner={facultyData?.data.banner}
         programCount={facultyData?.data.programCount}
+        icon={facultyData?.data.icon}
       />
+        <ProgramCategory facultyId={facultyData?.data.id} />
       <DescriptionCard
         subtitle={facultyData?.data.subtitle}
         text={facultyData?.data.text}
         subtext={facultyData?.data.subtext}
         id={facultyData?.data.id}
       />
-      {/* <ProgramCategory /> */}
       <Documents data={facultyData?.data?.documentCollections} />
-      <ProgramCategory facultyId={facultyData?.data.id} />
       <EnrollForm />
       <OpportunitiesList />
       <NewsList id={facultyData?.data.id} />

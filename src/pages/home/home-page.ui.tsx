@@ -28,7 +28,7 @@ export function HomePage() {
       <DiplomList />
       <AboutBlock />
       <PartnersList />
-      <div className="container">
+      <div >
         <Typography
           variant="h3"
           component="h3"

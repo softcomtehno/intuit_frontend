@@ -32,15 +32,16 @@ export const DiplomList = () => {
         <Swiper
           className="py-10 px-1 diplom-list"
           modules={[Pagination]}
-          slidesPerView={3}
           pagination={{ clickable: true }}
           breakpoints={{
-            360: {
+            480: {
               slidesPerView: 1,
               centeredSlides: true,
+              spaceBetween:10,
             },
             1024: {
-              slidesPerView: 2.5,
+              slidesPerView:4,
+              spaceBetween: 20,
             },
           }}
         >
@@ -48,11 +49,11 @@ export const DiplomList = () => {
             <a
               data-fancybox="gallery"
               href="https://muit.makalabox.com/documents/bakalavr.pdf"
-              className="lg:flex lg:justify-center"
+        
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 min-h-[190px]"
+ min-h-[190px]"
               >
                 <div className="flex flex-col justify-between h-full text-left">
                   <div>
@@ -62,12 +63,12 @@ export const DiplomList = () => {
                     >
                       {t('homepage.diploma.bachelor.degree')}
                     </Typography>
-                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium md:px-4">
+                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium ">
                       {t('homepage.diploma.bachelor.description')}
                     </Typography>
                   </div>
 
-                  <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium                   lg:self-center">
+                  <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium">
                     {t('homepage.diploma.buttonText')}
                   </Button>
                 </div>
@@ -84,11 +85,11 @@ export const DiplomList = () => {
             <a
               data-fancybox="gallery-2"
               href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
-              className="lg:flex lg:justify-center"
+            
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 min-h-[190px]"
+    min-h-[190px]"
               >
                 <div className="flex flex-col justify-between text-left">
                   <div>
@@ -98,11 +99,11 @@ export const DiplomList = () => {
                     >
                       {t('homepage.diploma.master.degree')}
                     </Typography>
-                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium md:px-4">
+                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium ">
                       {t('homepage.diploma.master.description')}
                     </Typography>
                   </div>
-                  <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium                   lg:self-center">
+                  <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium">
                     {t('homepage.diploma.buttonText')}
                   </Button>
                 </div>
@@ -118,11 +119,10 @@ export const DiplomList = () => {
             <a
               data-fancybox="gallery-3"
               href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
-              className="lg:flex lg:justify-center"
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 min-h-[190px]"
+ min-h-[190px]"
               >
                 <div className="flex flex-col justify-between text-left">
                   <div>
@@ -132,13 +132,13 @@ export const DiplomList = () => {
                     >
                       {t('homepage.diploma.postgraduate.degree')}
                     </Typography>
-                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium md:px-4">
+                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium ">
                       {t('homepage.diploma.postgraduate.description')}
                     </Typography>
                   </div>
                   <Button
                     className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium
-                    lg:self-center
+                   
 
                   "
                   >
@@ -157,13 +157,13 @@ export const DiplomList = () => {
             <a
               data-fancybox="gallery-4"
               href="https://muit.makalabox.com/documents/diploms/diplom_en.pdf"
-              className="lg:flex lg:justify-center"
+        
             >
               <Card
                 className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    md:flex-col-reverse  md:gap-6 min-h-[190px]"
+       min-h-[190px]"
               >
-                <div className="flex flex-col justify-between lg:items-center text-left">
+                <div className="flex flex-col justify-between items-center text-left">
                   <div>
                     <Typography
                       variant="h4"
@@ -171,13 +171,13 @@ export const DiplomList = () => {
                     >
                       {t('homepage.diploma.diplomaSupplement.title')}
                     </Typography>
-                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium md:px-4">
+                    <Typography className="mt-2 text-gray-600 text-[15px] font-medium ">
                       {t('homepage.diploma.diplomaSupplement.description')}
                     </Typography>
                   </div>
                   <Button
                     className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium 
-                  lg:self-center
+                 
                   "
                   >
                     {t('homepage.diploma.buttonText')}

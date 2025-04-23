@@ -4,8 +4,8 @@ export default {
   important: '#root',
   theme: {
     fontFamily: {
-      serif: ['Manrope', 'serif'],
-      sans: ['Manrope', 'sans'],
+      serif: ['Jost', 'serif'],
+      sans: ['Jost', 'sans'],
     },
     colors: {
       green: '#00956F',

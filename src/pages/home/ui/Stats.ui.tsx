@@ -32,21 +32,21 @@ const StatsCard: React.FC<StatsCardProps> = ({ count, label, color, iconKey }) =
   return (
     <Card
       ref={ref}
-      className="w-[260px] rounded-xl shadow-none border border-gray/50 transition-transform bg-white"
+      className="w-full  rounded-lg shadow-none bg-green border-green transition-transform text-white "
     >
       <CardContent className="flex  justify-between items-start gap-3 p-3">
         <div>
         <Typography
           variant="h5"
-          className={`text-${color}-600 font-bold `}
+          className={` font-bold md:font-semibold`}
         >
           {isCounting ? <CountUp start={0} end={count} duration={2} /> : '0'}
         </Typography>
-        <Typography variant="subtitle1" className="text-black/70">
+        <Typography variant="subtitle1" className='md:w-[90px] md:text-xs text-sm'>
           {label}
         </Typography>
         </div>
-        <div className="bg-gray-100 rounded-full p-3">
+        <div className='bg-blue p-2 rounded-full' >
           {iconMap[iconKey]}
         </div>
       </CardContent>
@@ -56,7 +56,7 @@ const StatsCard: React.FC<StatsCardProps> = ({ count, label, color, iconKey }) =
 
 export const Stats = () => {
   return (
-    <div className="flex justify-between flex-wrap mt-10 ">
+    <div className="flex justify-between md:grid md:grid-cols-2 gap-5 mt-4 ">
       <StatsCard
         count={2007}
         label={t('homepage.Stats.yearOfEstablishment')}

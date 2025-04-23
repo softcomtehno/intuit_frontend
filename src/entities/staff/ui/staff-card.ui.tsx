@@ -1,6 +1,12 @@
-import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
-import { staffTypes } from '..'
-import { useNavigate } from 'react-router-dom'
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+} from '@mui/material';
+import { staffTypes } from '..';
+import { useNavigate } from 'react-router-dom';
 
 export const StaffCard = ({
   name,
@@ -8,59 +14,53 @@ export const StaffCard = ({
   image,
   slug,
 }: staffTypes.Staff) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  // Функция для обрезки текста
   const truncateText = (text: string, maxLength: number) => {
-    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text
-  }
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  };
 
   return (
-    <div
+    <Card
       onClick={() => navigate(`/teachers/${slug}`)}
-      className="cursor-pointer"
+      className="
+      min-w-full max-w-full min-h-[220px] max-h-[240px] md:min-h-[300px] md:max-h-[300px] p-3 shadow-md rounded-md bg-white 
+     cursor-pointer "
     >
-      <Card
-        className="
-      min-w-[500px] max-w-[500px] min-h-[220px] max-h-[240px] p-3 shadow-md rounded-md bg-white 
-      lg:max-w-full lg:min-w-full lg:min-h-[400px] lg:max-h-[400px]"
-      >
-        <div className="flex mih-h-[140px] max-h-[140px]  lg:flex-col ">
-          <CardMedia
-            component="img"
-            className="max-w-[110px] min-h-[150px] max-h-[140px] rounded-xl"
-            image={image}
-            alt={name}
-          />
-          <CardContent
-            className="flex flex-col text-left justify-between gap-5 mih-h-[150px] max-h-[150px] p-2 px-4 
+      <div className="flex mih-h-[140px] max-h-[140px]   ">
+        <CardMedia
+          component="img"
+          className="max-w-[110px] min-h-[150px] max-h-[140px] rounded-xl"
+          image={image}
+          alt={name}
+        />
+        <CardContent
+          className="flex flex-col text-left justify-between gap-5 mih-h-[150px] max-h-[150px]   p-2 px-4 
           "
+        >
+          <Typography
+            component="div"
+            variant="h5"
+            className="text-[20px] font-semibold leading-6 "
           >
-            <Typography
-              component="div"
-              variant="h5"
-              className="text-[20px] font-semibold leading-6 "
-            >
-              {name}
-            </Typography>
-            <Typography
-              variant="h2"
-              component="div"
-              className="text-[16px] font-semibold"
-            >
-              {truncateText(description, 100)}
-            </Typography>
-            <Button
-              variant="contained"
-              className="shadow-none  self-start bg-green px-5 lg:self-center"
-              size="small"
-            >
-              Узнать больше
-            </Button>
-          </CardContent>
-        </div>
-        <div></div>
-      </Card>
-    </div>
-  )
-}
+            {name}
+          </Typography>
+          <Typography
+            variant="h2"
+            component="div"
+            className="text-[16px] font-semibold"
+          >
+            {truncateText(description, 100)}
+          </Typography>
+          <Button
+            variant="contained"
+            className="shadow-none  self-start bg-green px-5"
+            size="small"
+          >
+            Узнать больше
+          </Button>
+        </CardContent>
+      </div>
+    </Card>
+  );
+};

@@ -10,7 +10,7 @@ type CustomThemeProviderProps = {
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Manrope',
+    fontFamily: 'Jost',
   },
 })
 
