@@ -2,6 +2,7 @@ import { Typography, useMediaQuery, useTheme } from '@mui/material'
 import Marquee from 'react-fast-marquee'
 import { Link } from 'react-router-dom'
 import { eventQueries } from '~entities/events'
+import { Loader } from '~shared/ui/loader'
 
 export const HeroCarousel: React.FC = () => {
   const theme = useTheme()
@@ -10,7 +11,7 @@ export const HeroCarousel: React.FC = () => {
   const { data: eventsData, isLoading, isError } = eventQueries.useGetEvents()
 
   if (isLoading) {
-    return <div>Загрузка</div>
+    return <Loader />
   }
   if (isError) {
     return <div>Ошибка</div>

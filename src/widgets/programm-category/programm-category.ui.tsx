@@ -5,35 +5,37 @@ import {
   Pagination,
   TextField,
   InputAdornment,
-} from '@mui/material';
-import Select from 'react-select';
-import { ProfessionCard } from '~entities/profession';
-import { useTranslation } from 'react-i18next';
-import { programQueries } from '~entities/programs';
-import { facultyQueries } from '~entities/faculties';
-import { degreeQueries } from '~entities/degree';
-import { useState } from 'react';
-import { FacultySchema } from '~entities/faculties/faculty.types';
-import { SearchCheck } from 'lucide-react';
+} from '@mui/material'
+import Select from 'react-select'
+import { ProfessionCard } from '~entities/profession'
+import { useTranslation } from 'react-i18next'
+import { programQueries } from '~entities/programs'
+import { facultyQueries } from '~entities/faculties'
+import { degreeQueries } from '~entities/degree'
+import { useState } from 'react'
+import { FacultySchema } from '~entities/faculties/faculty.types'
+import { SearchCheck } from 'lucide-react'
+import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const {
     data: serverData,
     isLoading,
     isError,
-  } = programQueries.useGetPrograms(degreeId, facultyId);
+  } = programQueries.useGetPrograms(degreeId, facultyId)
   const {
     data: facultyData,
     isFacultyLoading,
     isFacultyError,
-  } = facultyQueries.useGetFaculties();
+  } = facultyQueries.useGetFaculties()
   const {
     data: degreeData,
     isDegreeLoading,
     isDegreeError,
-  } = degreeQueries.useGetDegrees();
+  } = degreeQueries.useGetDegrees()
 
   const sortedFaculties =
     facultyData?.data
@@ -41,7 +43,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       .map((faculty) => ({
         value: faculty.id,
         label: faculty.subtitle || faculty.subtitle,
-      })) || [];
+      })) || []
 
   const sortedDegrees =
     degreeData?.data
@@ -49,63 +51,63 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       .map((degree) => ({
         value: degree.id,
         label: degree.titleRu || degree.title,
-      })) || [];
+      })) || []
 
-  const [selectedDegree, setSelectedDegree] = useState(degreeId || null);
-  const [selectedFaculty, setSelectedFaculty] = useState(facultyId || null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedDegree, setSelectedDegree] = useState(degreeId || null)
+  const [selectedFaculty, setSelectedFaculty] = useState(facultyId || null)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
 
-  const itemsPerPage = 8;
+  const itemsPerPage = 8
 
-  const professions = propdata || serverData;
+  const professions = propdata || serverData
 
   const filteredProfessions = professions?.data.filter((profession) => {
     const matchesDegree = selectedDegree
       ? profession.educationLevel.some((level) => level.id === selectedDegree)
-      : true;
+      : true
     const matchesFaculty = selectedFaculty
       ? profession.faculty.some((faculty) => faculty.id === selectedFaculty)
-      : true;
+      : true
     const matchesSearch = profession.title
       .toLowerCase()
-      .includes(searchQuery.toLowerCase());
-    return matchesDegree && matchesFaculty && matchesSearch;
-  });
+      .includes(searchQuery.toLowerCase())
+    return matchesDegree && matchesFaculty && matchesSearch
+  })
 
   const totalPages = Math.ceil(
     (filteredProfessions?.length || 0) / itemsPerPage
-  );
+  )
   const paginatedProfessions = filteredProfessions?.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
-  );
+  )
 
   const handleDegreeChange = (selectedOption) => {
-    setSelectedDegree(selectedOption?.value || null);
-    setCurrentPage(1);
-  };
+    setSelectedDegree(selectedOption?.value || null)
+    setCurrentPage(1)
+  }
 
   const handleFacultyChange = (selectedOption) => {
-    setSelectedFaculty(selectedOption?.value || null);
-    setCurrentPage(1);
-  };
+    setSelectedFaculty(selectedOption?.value || null)
+    setCurrentPage(1)
+  }
 
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-    setCurrentPage(1);
-  };
+    setSearchQuery(event.target.value)
+    setCurrentPage(1)
+  }
 
   const handleClearFilters = () => {
-    setSelectedDegree(null);
-    setSelectedFaculty(null);
-    setSearchQuery('');
-    setCurrentPage(1);
-  };
+    setSelectedDegree(null)
+    setSelectedFaculty(null)
+    setSearchQuery('')
+    setCurrentPage(1)
+  }
 
   const handlePageChange = (event, value) => {
-    setCurrentPage(value);
-  };
+    setCurrentPage(value)
+  }
 
   const customSelectStyles = {
     control: (provided) => ({
@@ -123,30 +125,19 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
       ...provided,
       zIndex: 100,
     }),
-  };
+  }
 
   if (isError || isFacultyError || isDegreeError) {
-    return <div>{t('loading.error')}</div>;
+    return <div>{t('loading.error')}</div>
   }
 
   if (isLoading || isDegreeLoading || isFacultyLoading) {
-    return (
-      <div className="flex flex-col gap-3 items-center justify-center h-[400px]">
-        <CircularProgress className="text-blue" />
-        <Typography variant="h6">{t('loading.loading')}</Typography>
-      </div>
-    );
+    return <Loader />
   }
 
   return (
     <div className="my-20 rounded-lg ">
-      <Typography
-        variant="h3"
-        component="h3"
-        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:text-[30px] text-center mb-6"
-      >
-        {t('homepage.degrees.programs')}
-      </Typography>
+      <Title>{t('homepage.degrees.programs')}</Title>
       <div className="my-5 flex flex-col gap-5">
         <div className="flex flex-wrap gap-4 items-stretch justify-between md:flex-col">
           <div className="flex-1 min-w-[250px]">
@@ -219,7 +210,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
           }}
         />
       </div>
-      <div className="grid grid-cols-4 md:grid-cols-1 gap-6 justify-items-center mt-10">
+      <div className="grid grid-cols-4 justify-items-center mt-10 md:grid-cols-1 gap-6 lg:grid-cols-2 xll:grid-cols-2 xl:grid-cols-3">
         {paginatedProfessions?.map((profession, index) => (
           <ProfessionCard
             key={index}
@@ -247,5 +238,5 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}

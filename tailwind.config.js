@@ -15,13 +15,13 @@ export default {
       gray: '#CFD1DF',
     },
     screens: {
-      xs: { max: '359px' },
-      sm: { max: '479px' },
-      md: { max: '767px' },
-      lg: { max: '1023px' },
-      xll: { max: '1200px' },
-      xl: { max: '1439px' },
       'xl-max': '1340px', // Specific width for xl-max screens
+      xl: { max: '1439px' },
+      xll: { max: '1200px' },
+      lg: { max: '1023px' },
+      md: { max: '767px' },
+      sm: { max: '479px' },
+      xs: { max: '359px' },
     },
     container: {
       center: true,
@@ -33,7 +33,17 @@ export default {
         '2xl': '100px',
       },
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        'rotate-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        'rotate-slow': 'rotate-slow 12s linear infinite',
+      },
+    },
   },
   plugins: [],
 }

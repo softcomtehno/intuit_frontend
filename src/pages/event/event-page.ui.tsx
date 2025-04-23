@@ -1,16 +1,16 @@
-import { useParams } from 'react-router-dom';
-import { eventQueries } from '~entities/events';
-import { Typography, Card, CircularProgress, Alert } from '@mui/material';
-import { t } from 'i18next';
+import { useParams } from 'react-router-dom'
+import { eventQueries } from '~entities/events'
+import { Typography, Card, Alert } from '@mui/material'
+import { t } from 'i18next'
+import { Loader } from '~shared/ui/loader'
 
 export const EventPage = () => {
-  const { slug } = useParams();
-  const { data, isLoading, isError } = eventQueries.useGetEventDetail(slug);
+  const { slug } = useParams()
+  const { data, isLoading, isError } = eventQueries.useGetEventDetail(slug)
 
-  if (isLoading) return <CircularProgress className="block mx-auto mt-10" />;
+  if (isLoading) return <Loader />
   if (isError || !data)
-    return <Alert severity="error">{t("homepage.eventError")}</Alert>;
-
+    return <Alert severity="error">{t('homepage.eventError')}</Alert>
 
   return (
     <div className="max-w-3xl mx-auto p-5">
@@ -31,9 +31,10 @@ export const EventPage = () => {
         />
 
         <Typography variant="caption" className="mt-2 text-gray-500 block">
-          {t("homepage.creationDate")} {new Date(data.data.createdAt).toLocaleDateString()}
+          {t('homepage.creationDate')}{' '}
+          {new Date(data.data.createdAt).toLocaleDateString()}
         </Typography>
       </Card>
     </div>
-  );
-};
+  )
+}

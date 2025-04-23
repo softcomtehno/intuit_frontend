@@ -3,6 +3,7 @@ import Marquee from 'react-fast-marquee'
 import { PartnerCard } from '~entities/partner'
 import { useTranslation } from 'react-i18next'
 import { EventCard, eventQueries, eventTypes } from '~entities/events'
+import { Loader } from '~shared/ui/loader'
 
 export const EventList = () => {
   const { t } = useTranslation()
@@ -15,7 +16,7 @@ export const EventList = () => {
   } = eventQueries.useGetEvents()
 
   if (isLoading) {
-    return <div>{t('homepage.loading.loading')}</div>
+    return <Loader />
   }
   if (isError) {
     return <div>{t('homepage.loading.error')}</div>

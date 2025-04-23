@@ -6,15 +6,14 @@ import {
 } from '@mui/material'
 import Fancybox from '~shared/ui/fancybox/Fancybox'
 import { ExpandMore } from '@mui/icons-material/'
+import { Title } from '~shared/ui/title'
 
 export const Documents = ({ data }) => {
   if (data.length > 0) {
     return (
       <>
         <section className="my-20">
-          <Typography className="mb-5 font-bold" variant="h4">
-            Документы Университета
-          </Typography>
+          <Title>Документы Университета</Title>
           <Fancybox
             options={{
               Carousel: {

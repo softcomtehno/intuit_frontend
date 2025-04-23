@@ -4,19 +4,20 @@ import {
   Instagram,
   Facebook,
   ContactPage,
-} from '@mui/icons-material';
-import { Typography } from '@mui/material';
-import { Link, useParams } from 'react-router-dom';
-import { staffQueries } from '~entities/staff';
-import './index.css';
-import { t } from 'i18next';
-import { FileUser } from 'lucide-react';
+} from '@mui/icons-material'
+import { Typography } from '@mui/material'
+import { Link, useParams } from 'react-router-dom'
+import { staffQueries } from '~entities/staff'
+import './index.css'
+import { t } from 'i18next'
+import { FileUser } from 'lucide-react'
+import { Loader } from '~shared/ui/loader'
 
 export const TeacherPage = () => {
-  const { slug } = useParams();
+  const { slug } = useParams()
 
   if (!slug) {
-    return <div>Invalid URL</div>;
+    return <div>Invalid URL</div>
   }
 
   const {
@@ -26,16 +27,16 @@ export const TeacherPage = () => {
     isLoading,
   } = staffQueries.useGetStaffDetail(slug)
 
-  const gradientStyle = {
-    background:
-      'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
-  };
+  // const gradientStyle = {
+  //   background:
+  //     'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+  // }
 
   if (isLoading) {
-    return <div>{t('loading.dataLoading')}</div>;
+    return <Loader />
   }
   if (isError) {
-    return <div>{t('loading.dataNotLoaded')}</div>;
+    return <div>{t('loading.dataNotLoaded')}</div>
   }
 
   if (isSuccess) {
@@ -80,7 +81,7 @@ export const TeacherPage = () => {
                 </span>
               </a>
               <a
-                  href={staffData.data.telegram}
+                href={staffData.data.telegram}
                 target="_blank"
                 className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
               >
@@ -94,7 +95,7 @@ export const TeacherPage = () => {
                 </span>
               </a>
               <a
-                 href={staffData.data.instagram}
+                href={staffData.data.instagram}
                 target="_blank"
                 className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
               >
@@ -108,7 +109,7 @@ export const TeacherPage = () => {
                 </span>
               </a>
               <a
-                    href={staffData.data.facebook}
+                href={staffData.data.facebook}
                 target="_blank"
                 className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2  px-3 flex items-center gap-2 rounded-lg"
               >
@@ -122,72 +123,17 @@ export const TeacherPage = () => {
                 </span>
               </a>
               <Link
-                  to={'cv'}
+                to={'cv'}
                 target="_blank"
                 className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
               >
-                <FileUser size={25} className='text-green'/>
+                <FileUser size={25} className="text-green" />
                 <span className="text-md font-bold text-black/80">Резюме</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
-    );
+    )
   }
-};
-{
-  /* <div className="bg-green rounded-md   transition-all hover:scale-105">
-                <a
-                  href={staffData.data.whatsapp}
-                  target="_blank"
-                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
-                >
-                  <WhatsApp className="mr-2" />
-                  <span className="text-lg">WhatsApp</span>
-                </a>
-              </div>
-              <div className="bg-[#32A9E1] rounded-md transition-all hover:scale-105">
-                <a
-                  href={staffData.data.telegram}
-                  target="_blank"
-                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
-                >
-                  <Telegram className="mr-2" />
-                  <span className="text-lg">Telegram</span>
-                </a>
-              </div>
-              <div
-                style={gradientStyle}
-                className=" rounded-md transition-all hover:scale-105"
-              >
-                <a
-                  href={staffData.data.instagram}
-                  target="_blank"
-                  className="pointer flex items-center justify-around transition-all text-white m-1 py-3 px-5 w-1/6  "
-                >
-                  <Instagram className="mr-2" />
-                  <span className="text-lg">Instagram</span>
-                </a>
-              </div>
-              <div className="bg-[#4867AA] rounded-md transition-all hover:scale-105">
-                <a
-                  href={staffData.data.facebook}
-                  target="_blank"
-                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
-                >
-                  <Facebook className="mr-2" />
-                  <span className="text-lg">Facebook</span>
-                </a>
-              </div>
-              <div className="bg-[#383838] rounded-md transition-all hover:scale-105">
-                <Link
-                  to={'cv'}
-                  target="_blank"
-                  className="pointer flex items-center justify-around text-white m-1 py-3 px-5 w-1/6 "
-                >
-                  <ContactPage className="mr-2" />
-                  <span className="text-lg">{t("homepage.resume")}</span>
-                </Link>
-              </div> */
 }

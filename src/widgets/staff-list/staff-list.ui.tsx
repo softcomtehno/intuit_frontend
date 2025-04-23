@@ -9,6 +9,7 @@ import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
 import { Staff } from '~entities/staff/staff.types'
 import { MenuItem, Select } from '@mui/material'
+import { Loader } from '~shared/ui/loader'
 
 const StaffList = () => {
   const { t } = useTranslation()
@@ -28,11 +29,11 @@ const StaffList = () => {
   } = staffQueries.useGetStaffPositions()
 
   if (isStaffLoading || isPositionsLoading) {
-    return <div>{t('homepage.loading.loading')}</div>
+    return <Loader />
   }
 
   if (isStaffError || isPositionsError) {
-    return <div>{t('homepage.loading.error')}</div>
+    return <Loader />
   }
 
   const filterData = staffData?.data

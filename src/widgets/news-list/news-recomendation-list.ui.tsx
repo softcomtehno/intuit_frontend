@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import { t } from 'i18next'
 import { newsQueries, NewsRecomendationCard } from '~entities/news'
+import { Loader } from '~shared/ui/loader'
 
 export const NewsRecomendationList = () => {
   const {
@@ -12,10 +13,10 @@ export const NewsRecomendationList = () => {
   console.log(newsRecomendationList)
 
   if (isError) {
-    return <div>{t("loading.error")}</div>
+    return <div>{t('loading.error')}</div>
   }
   if (isLoading) {
-    return <div>{t("loading.error")}</div>
+    return <Loader />
   }
   if (isSuccess) {
     return (

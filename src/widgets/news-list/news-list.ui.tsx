@@ -1,5 +1,5 @@
 import { NewsCard, newsQueries } from '~entities/news'
-import { Typography, Pagination } from '@mui/material'
+import { Pagination } from '@mui/material'
 import { useState, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination as SwiperPagination } from 'swiper/modules'
@@ -7,6 +7,8 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { t } from 'i18next'
+import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 export const NewsList = ({ id = null }) => {
   const { data, isError, isLoading, isSuccess } = id
@@ -15,7 +17,7 @@ export const NewsList = ({ id = null }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const swiperRef = useRef(null)
 
-  if (isLoading) return <div>Загрузка...</div>
+  if (isLoading) return <Loader />
   if (isError) return <div>Ошибка при загрузке новостей</div>
   if (!data?.data) return <div>Нет данных</div>
 
@@ -24,9 +26,7 @@ export const NewsList = ({ id = null }) => {
   if (isSuccess && data.data.results.length > 0) {
     return (
       <div>
-        <Typography variant="h3" component="div" className="font-semibold">
-          {t("news-page.news")}
-        </Typography>
+        <Title>{t('news-page.news')}</Title>
         <Swiper
           className="my-10"
           modules={[Navigation, SwiperPagination]}
@@ -42,7 +42,7 @@ export const NewsList = ({ id = null }) => {
               slidesPerView: 2,
             },
             768: {
-              slidesPerView:3.5,
+              slidesPerView: 3.5,
             },
           }}
         >

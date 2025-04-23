@@ -6,6 +6,8 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { t } from 'i18next'
+import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 interface DescriptionCardProps {
   subtitle: string
@@ -23,19 +25,13 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ text, id }) => {
   } = staffQueries.useGetStaffs(id)
 
   return (
-    <div className="my-10 md:flex md:flex-col md:items-center">
+    <div className="my-2 md:flex md:flex-col md:items-center">
       {/* Блок с преподавателями (справа) */}
       <div className="w-[550px] bg-[#e0e1e5] p-5 rounded-xl float-right ml-5 lg:w-full items-center ">
-        <Typography
-          variant="h3"
-          component="h3"
-          className="text-[2rem] font-semibold text-[#333] "
-        >
-          {t('descriptionPage.leadingTeachers')}
-        </Typography>
+        <Title>{t('descriptionPage.leadingTeachers')}</Title>
 
-        <div className="flex justify-center py-5">
-          {isLoading && <div>Загрузка данных...</div>}
+        <div className="flex justify-center ">
+          {isLoading && <Loader />}
           {isError && <div>Произошла ошибка при загрузке данных.</div>}
 
           {isSuccess && staffData?.data?.length > 0 ? (
@@ -60,13 +56,7 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ text, id }) => {
 
       {/* Левый блок с текстом */}
       <div className="p-5 bg-white shadow-lg rounded-lg text-justify">
-        <Typography
-          variant="h3"
-          component="h3"
-          className="text-[2rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
-        >
-          {t('descriptionPage.aboutInstitute')}
-        </Typography>
+        <Title>{t('descriptionPage.aboutInstitute')}</Title>
         <div dangerouslySetInnerHTML={{ __html: text }}></div>
       </div>
 

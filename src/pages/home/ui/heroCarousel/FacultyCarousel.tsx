@@ -1,26 +1,27 @@
-import { Typography, useMediaQuery, useTheme } from '@mui/material';
-import { ArrowUpRight, MoveUpRight } from 'lucide-react';
-import Marquee from 'react-fast-marquee';
-import { Link, useNavigate } from 'react-router-dom';
+import { Typography, useMediaQuery, useTheme } from '@mui/material'
+import { ArrowUpRight, MoveUpRight } from 'lucide-react'
+import Marquee from 'react-fast-marquee'
+import { Link, useNavigate } from 'react-router-dom'
 
-import { facultyQueries } from '~entities/faculties';
+import { facultyQueries } from '~entities/faculties'
+import { Loader } from '~shared/ui/loader'
 
 export const FacultyCarousel: React.FC = () => {
-  const theme = useTheme();
-  const navigate = useNavigate();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const theme = useTheme()
+  const navigate = useNavigate()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   const {
     data: eventsData,
     isLoading,
     isError,
-  } = facultyQueries.useGetFaculties();
+  } = facultyQueries.useGetFaculties()
 
   if (isLoading) {
-    return <div>Загрузка</div>;
+    return <Loader />
   }
   if (isError) {
-    return <div>Ошибка</div>;
+    return <div>Ошибка</div>
   }
 
   return (
@@ -52,5 +53,5 @@ export const FacultyCarousel: React.FC = () => {
         </div>
       </Marquee>
     </div>
-  );
-};
+  )
+}

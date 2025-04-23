@@ -1,18 +1,13 @@
-import { Container, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { HeroCarousel } from './heroCarousel/HeroCarousel'
-import { facultyQueries } from '~entities/faculties'
 import { Link } from 'react-router-dom'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 import { degreeQueries } from '~entities/degree'
-import { FacultyCarousel } from './heroCarousel/FacultyCarousel'
-import { Target } from 'lucide-react'
+import { Loader } from '~shared/ui/loader'
 
 export const HomeHero = () => {
   const { t } = useTranslation()
@@ -23,7 +18,7 @@ export const HomeHero = () => {
   } = degreeQueries.useGetDegrees()
 
   if (isLoading) {
-    return <div>{t('loading.loading')}</div>
+    return <Loader />
   }
   if (isError) {
     return <div>{t('loading.error')}</div>
@@ -65,19 +60,19 @@ export const HomeHero = () => {
               />
             </div>
             <div className="hidden mt-3 flex-wrap max-w-full gap-y-8 gap-1  md:flex">
-                {facultyData?.data.map((item, index) => (
-                  <Link key={index} to={`/degree/${item.slug}/`} >
-                    <span className=" text-[14px] px-2 hover:cursor-pointer  py-3 border border-white/50 bg-white rounded-full text-black font-bold">
-                      {item.title}
-                    </span>
-                  </Link>
-                ))}
-                <a href="" >
+              {facultyData?.data.map((item, index) => (
+                <Link key={index} to={`/degree/${item.slug}/`}>
+                  <span className=" text-[14px] px-2 hover:cursor-pointer  py-3 border border-white/50 bg-white rounded-full text-black font-bold">
+                    {item.title}
+                  </span>
+                </Link>
+              ))}
+              <a href="">
                 <span className=" text-[14px] px-2 hover:cursor-pointer  py-3 border border-blue text-white bg-blue rounded-full font-bold">
                   Помочь с выбором
                 </span>
-                </a>
-              </div>
+              </a>
+            </div>
           </div>
           <div className="mt-[50px]">
             <HeroCarousel />

@@ -1,24 +1,14 @@
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from '@mui/material';
-import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
-import { degreeQueries } from '~entities/degree';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { Button, Card, CardContent, Typography } from '@mui/material'
+import { degreeQueries } from '~entities/degree'
+import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import { Swiper as SwiperType } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { useRef } from 'react';
-import PrevButton from '~shared/ui/swiper/PrevButton.ui';
-import NextButton from '~shared/ui/swiper/NextButton.ui';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
 import {
   Book,
   Briefcase,
@@ -26,25 +16,21 @@ import {
   ExternalLink,
   Globe,
   GraduationCap,
-  School,
   University,
-} from 'lucide-react';
+} from 'lucide-react'
+import { Title } from '~shared/ui/title'
+import { Loader } from '~shared/ui/loader'
 
 export const DegreeCategory = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-  const swiperRef = useRef<SwiperType | null>(null);
-  const {
-    data: degreeData,
-    isLoading,
-    isError,
-  } = degreeQueries.useGetDegrees();
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const { data: degreeData, isLoading, isError } = degreeQueries.useGetDegrees()
 
   if (isLoading) {
-    return <h1>{t('homepage.loading.loading')}</h1>;
+    return <Loader />
   }
   if (isError) {
-    return <h1>{t('homepage.loading.error')}</h1>;
+    return <h1>{t('homepage.loading.error')}</h1>
   }
 
   const getIconById = (id: number) => {
@@ -55,25 +41,21 @@ export const DegreeCategory = () => {
       <Globe className="text-white" />,
       <GraduationCap className="text-white" />,
       <University className="text-white" />,
-    ];
-    return icons[id % icons.length];
-  };
-
+    ]
+    return icons[id % icons.length]
+  }
 
   return (
     <div>
-      <Typography
-        variant="h3"
-        component="h3"
-        className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
+      <Title
+      // className="text-[2.5rem] font-semibold text-[#333] lg:text-[40px] md:!text-[30px]"
       >
         {t('homepage.degrees.degreeCategory')}
-      </Typography>
+      </Title>
       <div className="relative">
         <Swiper
           className="py-10 px-1 degree-list text-left"
           modules={[Pagination]}
-
           slidesPerView={4}
           pagination={{ clickable: true }}
           breakpoints={{
@@ -90,10 +72,8 @@ export const DegreeCategory = () => {
                 <Card
                   onClick={() => navigate(`degree/${degree.slug}`)}
                   className={`relative overflow-hidden max-w-[350px] text-left p-4 border-2  bg-green text-white transition 
-    duration-200 rounded-md hover:cursor-pointer shadow-none bg-cover bg-center  
-    md:max-w-full flex flex-col justify-between`}
+                  duration-200 rounded-md hover:cursor-pointer shadow-none bg-cover bg-center md:max-w-full flex flex-col justify-between`}
                 >
-   
                   <div className="relative z-10 flex flex-col justify-between h-full">
                     <Typography
                       variant="h6"
@@ -123,7 +103,7 @@ export const DegreeCategory = () => {
                         <Button className="bg-blue/60 text-white/90 font-semibold text-xs flex items-center gap-1">
                           <p>Узнать больше</p>
                           <p>
-                            <ExternalLink  size={18} />
+                            <ExternalLink size={18} />
                           </p>
                         </Button>
                       </div>
@@ -135,5 +115,5 @@ export const DegreeCategory = () => {
         </Swiper>
       </div>
     </div>
-  );
-};
+  )
+}
