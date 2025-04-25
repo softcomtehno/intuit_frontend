@@ -26,6 +26,7 @@ import { headPageRoute } from '~pages/head'
 import { documentPageRoute } from '~pages/document'
 import { teacherPageCvRoute } from '~pages/teacher/teacher-page.route'
 import { eventPageRoute } from '~pages/event'
+import { expoPageRoute } from '~pages/expo'
 
 function BubbleError() {
   const error = useRouteError()
@@ -62,6 +63,7 @@ const router = createBrowserRouter([
           documentPageRoute,
           teacherPageCvRoute,
           eventPageRoute,
+          expoPageRoute,
         ],
       },
     ],
