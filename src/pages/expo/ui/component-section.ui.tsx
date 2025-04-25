@@ -40,7 +40,7 @@ const components = [
     description:
       'Инновационная система для анализа навыков абитуриентов, помогающая определить их сильные стороны и потенциал.',
     icon: <Brain className="h-10 w-10 text-blue-600" />,
-    link: 'https://comtehno.kg/tanda/',
+    link: 'https://bilimtrack.makalabox.com/tanda/test',
     status: 'active',
   },
   {
