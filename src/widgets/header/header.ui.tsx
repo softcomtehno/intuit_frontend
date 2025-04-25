@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { setLanguage, getLanguage } from '~shared/lib/i18n/i18nHelper';
-import IntuitLogo from '../../assets/intuit-logo.png';
-import { Link } from 'react-router-dom';
-import { IconButton, Menu, MenuItem } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { t } from 'i18next';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDownIcon } from 'lucide-react';
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { setLanguage, getLanguage } from '~shared/lib/i18n/i18nHelper'
+import IntuitLogo from '../../assets/intuit-logo.png'
+import { Link } from 'react-router-dom'
+import { IconButton, Menu, MenuItem } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import { t } from 'i18next'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronDownIcon } from 'lucide-react'
 
 export const Header: React.FC = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { i18n } = useTranslation();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const { i18n } = useTranslation()
 
   useEffect(() => {
-    const savedLanguage = getLanguage();
+    const savedLanguage = getLanguage()
     if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage);
+      i18n.changeLanguage(savedLanguage)
     }
-  }, [i18n]);
+  }, [i18n])
 
   const handleLanguageChange = (lng: string) => {
-    setLanguage(lng);
-    window.location.reload();
-  };
+    setLanguage(lng)
+    window.location.reload()
+  }
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   const languageMap = {
     en: {
-      shortLabel:"EN",
+      shortLabel: 'EN',
       label: 'English',
       flag: (
         <svg
@@ -162,7 +162,7 @@ export const Header: React.FC = () => {
       ),
     },
     ru: {
-      shortLabel:"RU",
+      shortLabel: 'RU',
       label: 'Русский',
       flag: (
         <svg
@@ -194,7 +194,7 @@ export const Header: React.FC = () => {
       ),
     },
     kg: {
-      shortLabel:"KG",
+      shortLabel: 'KG',
       label: 'Кыргызча',
       flag: (
         <svg
@@ -240,12 +240,12 @@ export const Header: React.FC = () => {
         </svg>
       ),
     },
-  };
+  }
 
   const currentLanguage = languageMap[i18n.language] || {
     label: 'Language',
     flag: '🌐',
-  };
+  }
 
   const headerItems = [
     { label: t('enrollPage.introCard.title'), link: '/applicants' },
@@ -257,7 +257,8 @@ export const Header: React.FC = () => {
       label: 'For International Students',
       link: '/institutes/kitajsko-kyrgyzskij-institut-innovacionnyh-tehnolo/',
     },
-  ];
+    { label: 'IT Expo', link: '/expo' },
+  ]
 
   return (
     <header className="bg-white fixed top-0 left-0 w-full z-[90000] border-b border-gray">
@@ -283,46 +284,47 @@ export const Header: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center">
-          <div className="relative hidden lg:block border py-1 rounded-full border-gray px-3">
-            <button
-              className="flex items-center text-black text-md font-medium hover:text-gray-400 focus:outline-none"
-              onClick={() => setIsDropdownOpen((prev) => !prev)}
-            >
-              <span className="mr-1">{currentLanguage.flag}</span>
-              {currentLanguage.shortLabel}
-              <ChevronDownIcon  size={18}
-                className={` ml-2 text-black/60 transition-transform ${
-                  isDropdownOpen ? 'rotate-180' : ''
-                }`}
-              />
-            </button>
-            <AnimatePresence>
-              {isDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute right-1 border border-black/30 top-full mt-2 min-w-[120px] bg-white text-gray-800 rounded-md shadow-lg z-50 p-1"
-                >
-                  <ul className="space-y-1">
-                    {Object.entries(languageMap).map(
-                      ([key, { shortLabel, flag }]) => (
-                        <li key={key}>
-                          <button
-                            className="flex items-center gap-1 w-full px-4 py-2 text-left hover:bg-green hover:text-white rounded-md"
-                            onClick={() => handleLanguageChange(key)}
-                          >
-                            {flag} {shortLabel}
-                          </button>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+            <div className="relative hidden lg:block border py-1 rounded-full border-gray px-3">
+              <button
+                className="flex items-center text-black text-md font-medium hover:text-gray-400 focus:outline-none"
+                onClick={() => setIsDropdownOpen((prev) => !prev)}
+              >
+                <span className="mr-1">{currentLanguage.flag}</span>
+                {currentLanguage.shortLabel}
+                <ChevronDownIcon
+                  size={18}
+                  className={` ml-2 text-black/60 transition-transform ${
+                    isDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-1 border border-black/30 top-full mt-2 min-w-[120px] bg-white text-gray-800 rounded-md shadow-lg z-50 p-1"
+                  >
+                    <ul className="space-y-1">
+                      {Object.entries(languageMap).map(
+                        ([key, { shortLabel, flag }]) => (
+                          <li key={key}>
+                            <button
+                              className="flex items-center gap-1 w-full px-4 py-2 text-left hover:bg-green hover:text-white rounded-md"
+                              onClick={() => handleLanguageChange(key)}
+                            >
+                              {flag} {shortLabel}
+                            </button>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <div className="hidden lg:block">
               <IconButton onClick={handleMenuOpen}>
                 <MenuIcon className="text-black" />
@@ -353,7 +355,8 @@ export const Header: React.FC = () => {
             >
               <span className="mr-1">{currentLanguage.flag}</span>
               {currentLanguage.label}
-              <ChevronDownIcon  size={18}
+              <ChevronDownIcon
+                size={18}
                 className={` ml-2 text-black/60 transition-transform ${
                   isDropdownOpen ? 'rotate-180' : ''
                 }`}
@@ -389,5 +392,5 @@ export const Header: React.FC = () => {
         </nav>
       </div>
     </header>
-  );
-};
+  )
+}
