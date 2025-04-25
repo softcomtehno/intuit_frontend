@@ -37,7 +37,7 @@ const components = [
     title: 'Платформа Tanda',
     description: 'Анализ навыков абитуриентов и их потенциала.',
     icon: <Brain className="h-10 w-10 text-blue-600" />,
-    link: 'https://comtehno.kg/tanda/',
+    link: 'https://bilimtrack.makalabox.com/tanda/test',
     status: 'active',
   },
   {
