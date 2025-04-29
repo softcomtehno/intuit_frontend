@@ -257,7 +257,6 @@ export const Header: React.FC = () => {
       label: 'For International Students',
       link: '/institutes/kitajsko-kyrgyzskij-institut-innovacionnyh-tehnolo/',
     },
-    { label: 'IT Expo', link: '/expo' },
   ]
 
   return (

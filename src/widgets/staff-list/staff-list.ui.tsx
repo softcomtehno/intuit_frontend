@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { StaffCard, staffQueries } from '~entities/staff'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
-import { useTranslation } from 'react-i18next'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Button from '@mui/material/Button'
@@ -12,7 +11,6 @@ import { MenuItem, Select } from '@mui/material'
 import { Loader } from '~shared/ui/loader'
 
 const StaffList = () => {
-  const { t } = useTranslation()
   const [selectedPosition, setSelectedPosition] = useState<number | null>(29)
 
   const {
@@ -37,12 +35,12 @@ const StaffList = () => {
   }
 
   const filterData = staffData?.data
-  .filter((staff: Staff) => staff.position.id === selectedPosition)
-  .sort((a, b) => {
-    if (a.id === 35) return -1
-    if (b.id === 35) return 1
-    return 0
-  })
+    .filter((staff: Staff) => staff.position.id === selectedPosition)
+    .sort((a, b) => {
+      if (a.id === 35) return -1
+      if (b.id === 35) return 1
+      return 0
+    })
 
   return (
     <>
@@ -51,7 +49,7 @@ const StaffList = () => {
           <ButtonGroup
             sx={{
               '& .MuiButtonGroup-grouped:not(:last-of-type)': {
-                borderRight: '1px solid green', 
+                borderRight: '1px solid green',
               },
             }}
             variant="contained"
@@ -78,7 +76,7 @@ const StaffList = () => {
       <div>
         <Select
           value={selectedPosition}
-          className="mt-5 hidden lg:block md:max-w-[90%]"
+          className="mt-5 hidden lg:block md:max-w-[90%] md:mr-0"
           onChange={(e) => setSelectedPosition(e.target.value)}
         >
           {positionsData?.data.map(

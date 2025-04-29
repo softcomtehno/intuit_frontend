@@ -5,7 +5,6 @@ import EGerb from '../../assets/eugerb.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 import Fancybox from '~widgets/diplom-list/Fancybox'
-
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
@@ -45,10 +44,7 @@ export const DiplomList = () => {
               data-fancybox="gallery"
               href="https://muit.makalabox.com/documents/bakalavr.pdf"
             >
-              <Card
-                className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
- min-h-[190px]"
-              >
+              <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between h-full text-left">
                   <div>
                     <Typography
@@ -80,10 +76,7 @@ export const DiplomList = () => {
               data-fancybox="gallery-2"
               href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
             >
-              <Card
-                className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-    min-h-[190px]"
-              >
+              <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between text-left">
                   <div>
                     <Typography
@@ -113,10 +106,7 @@ export const DiplomList = () => {
               data-fancybox="gallery-3"
               href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
             >
-              <Card
-                className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
- min-h-[190px]"
-              >
+              <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between text-left">
                   <div>
                     <Typography
@@ -129,12 +119,7 @@ export const DiplomList = () => {
                       {t('homepage.diploma.postgraduate.description')}
                     </Typography>
                   </div>
-                  <Button
-                    className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium
-                   
-
-                  "
-                  >
+                  <Button className="self-start mt-3 shadow-none bg-blue text-white p-1 rounded px-4 font-medium">
                     {t('homepage.diploma.buttonText')}
                   </Button>
                 </div>
@@ -151,10 +136,7 @@ export const DiplomList = () => {
               data-fancybox="gallery-4"
               href="https://muit.makalabox.com/documents/diploms/diplom_en.pdf"
             >
-              <Card
-                className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 
-       min-h-[190px]"
-              >
+              <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between items-center text-left">
                   <div>
                     <Typography

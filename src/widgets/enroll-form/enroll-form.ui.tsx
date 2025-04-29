@@ -44,7 +44,7 @@ export const EnrollForm = () => {
   }
 
   return (
-    <div className="bg-blue p-5 rounded-lg w-full mt-5 md:p-10">
+    <div className="bg-blue p-5 rounded-lg w-full mt-5 ">
       <div className="flex items-center gap-5 md:flex-col">
         <div>
           <Typography
