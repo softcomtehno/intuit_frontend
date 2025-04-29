@@ -1,11 +1,4 @@
-import {
-  Button,
-  CircularProgress,
-  Typography,
-  Pagination,
-  TextField,
-  InputAdornment,
-} from '@mui/material'
+import { Button, Pagination, TextField, InputAdornment } from '@mui/material'
 import Select from 'react-select'
 import { ProfessionCard } from '~entities/profession'
 import { useTranslation } from 'react-i18next'
@@ -28,13 +21,13 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
   } = programQueries.useGetPrograms(degreeId, facultyId)
   const {
     data: facultyData,
-    isFacultyLoading,
-    isFacultyError,
+    isLoading: isFacultyLoading,
+    isError: isFacultyError,
   } = facultyQueries.useGetFaculties()
   const {
     data: degreeData,
-    isDegreeLoading,
-    isDegreeError,
+    isLoading: isDegreeLoading,
+    isError: isDegreeError,
   } = degreeQueries.useGetDegrees()
 
   const sortedFaculties =
@@ -123,7 +116,11 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
     }),
     menu: (provided) => ({
       ...provided,
-      zIndex: 100,
+      zIndex: 9999, // чтобы само меню было поверх
+    }),
+    menuPortal: (base) => ({
+      ...base,
+      zIndex: 9999, // чтобы портал был поверх всех блоков
     }),
   }
 
@@ -147,6 +144,7 @@ export const ProgramCategory = ({ data: propdata, degreeId, facultyId }) => {
               placeholder="Выберите уровень"
               className="z-50"
               onChange={handleDegreeChange}
+              menuPortalTarget={document.body}
               value={
                 sortedDegrees.find(
                   (degree) => degree.value === selectedDegree
