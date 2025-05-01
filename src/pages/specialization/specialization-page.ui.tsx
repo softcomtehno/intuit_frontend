@@ -7,6 +7,7 @@ import { specializationQueries } from '~entities/specialization/'
 import { useParams } from 'react-router-dom'
 import { EducationForm } from '~widgets/education-form/education-form.ui.tsx'
 import { t } from 'i18next'
+import { Loader } from '~shared/ui/loader/loader.ui.tsx'
 
 type RouteObject = {
   slug: string

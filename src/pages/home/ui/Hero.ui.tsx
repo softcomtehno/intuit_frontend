@@ -8,6 +8,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 import { degreeQueries } from '~entities/degree'
 import { Loader } from '~shared/ui/loader'
+import { FacultyCarousel } from './heroCarousel/FacultyCarousel'
 
 export const HomeHero = () => {
   const { t } = useTranslation()
@@ -75,8 +76,8 @@ export const HomeHero = () => {
             </div>
           </div>
           <div className="mt-[50px]">
-            <HeroCarousel />
-            {/* <FacultyCarousel /> */}
+            {/* <HeroCarousel /> */}
+            <FacultyCarousel />
           </div>
         </div>
       </div>

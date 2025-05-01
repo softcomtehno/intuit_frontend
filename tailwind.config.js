@@ -15,7 +15,7 @@ export default {
       gray: '#CFD1DF',
     },
     screens: {
-      'xl-max': '1340px', // Specific width for xl-max screens
+      'xl-max': '1340px', 
       xl: { max: '1439px' },
       xll: { max: '1200px' },
       lg: { max: '1023px' },

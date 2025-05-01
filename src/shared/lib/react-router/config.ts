@@ -14,6 +14,18 @@ export const pathKeys = {
       return pathKeys.enroll.root().concat('payments/')
     },
   },
+  tanda() {
+    return pathKeys.root.concat("tanda/");
+  },
+  tandaTest() {
+    return pathKeys.root.concat("tanda/test/");
+  },
+  tandaLogin() {
+    return pathKeys.root.concat("tanda/login/");
+  },
+  tandaResult() {
+    return pathKeys.root.concat("tanda/result/");
+  },
   about: {
     root() {
       return pathKeys.root.concat('about/')

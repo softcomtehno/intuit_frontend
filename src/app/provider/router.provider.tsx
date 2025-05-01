@@ -27,6 +27,11 @@ import { documentPageRoute } from '~pages/document'
 import { teacherPageCvRoute } from '~pages/teacher/teacher-page.route'
 import { eventPageRoute } from '~pages/event'
 import { expoPageRoute } from '~pages/expo'
+import { tandaPageRoute } from '~pages/tanda'
+import { TestPageRoute } from '~pages/tandaTestPage'
+import { LoginPageRoute } from '~pages/tandaLoginPage/tandaLogin.route'
+import { ResultPageRoute } from '~pages/tandaResultPage'
+import { TandaLayout } from '~pages/tandalayout'
 
 function BubbleError() {
   const error = useRouteError()
@@ -64,6 +69,15 @@ const router = createBrowserRouter([
           teacherPageCvRoute,
           eventPageRoute,
           expoPageRoute,
+        ],
+      },
+      {
+        element: <TandaLayout />,
+        children: [
+          tandaPageRoute,
+          TestPageRoute,
+          LoginPageRoute,
+          ResultPageRoute,
         ],
       },
     ],
