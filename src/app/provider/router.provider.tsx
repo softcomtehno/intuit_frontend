@@ -32,6 +32,7 @@ import { TestPageRoute } from '~pages/tandaTestPage'
 import { LoginPageRoute } from '~pages/tandaLoginPage/tandaLogin.route'
 import { ResultPageRoute } from '~pages/tandaResultPage'
 import { TandaLayout } from '~pages/tandalayout'
+import { internationalPageRoute } from '~pages/international'
 
 function BubbleError() {
   const error = useRouteError()
@@ -69,6 +70,7 @@ const router = createBrowserRouter([
           teacherPageCvRoute,
           eventPageRoute,
           expoPageRoute,
+          internationalPageRoute,
         ],
       },
       {
