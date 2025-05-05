@@ -255,7 +255,7 @@ export const Header: React.FC = () => {
     { label: t('homepage.aboutUniversity.title'), link: '/about' },
     {
       label: 'For International Students',
-      link: '/institutes/kitajsko-kyrgyzskij-institut-innovacionnyh-tehnolo/',
+      link: '/international',
     },
   ]
 

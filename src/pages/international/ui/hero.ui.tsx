@@ -8,9 +8,10 @@ import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 import { degreeQueries } from '~entities/degree'
 import { Loader } from '~shared/ui/loader'
-import { FacultyCarousel } from './heroCarousel/FacultyCarousel'
+import { FacultyCarousel } from './facultyCarousel'
+// import { FacultyCarousel } from './heroCarousel/FacultyCarousel'
 
-export const HomeHero = () => {
+export const InternationalHero = () => {
   const { t } = useTranslation()
   const {
     data: facultyData,
@@ -35,10 +36,10 @@ export const HomeHero = () => {
                 variant="h1"
                 className="mt-4 md:mb-4 md:text-2xl w-full md:w-full  text-white font-[900]   text-5xl"
               >
-                Выбирай не просто специальность — выбирай будущее с МУИТ
+                For international students
               </Typography>
               <p className="mb-20 md:mb-0 text-xl md:text-sm text-white mt-2 italic ">
-                Образование, которое ведёт к реальной работе
+                Education that leads to real work{' '}
               </p>
               <div className="flex flex-wrap max-w-[450px] gap-2 gap-y-4 md:hidden">
                 {facultyData?.data.map((item, index) => (
