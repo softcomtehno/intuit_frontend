@@ -31,7 +31,7 @@ export const License = () => {
           </div>
           <a
             data-fancybox="gallery"
-            href="https://muit.makalabox.com/documents/license.pdf"
+            href="https://intuit.kg/documents/license.pdf"
             className="flex items-center border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]"
           >
             <div className="flex  items-center justify-center gap-3">
@@ -50,7 +50,7 @@ export const License = () => {
           </a>
           <a
             data-fancybox="gallery"
-            href="https://muit.makalabox.com/documents/Svidetelstvo.png"
+            href="https://intuit.kg/documents/Svidetelstvo.png"
             className="block border border-gray rounded-lg bg-white p-6 shadow hover:shadow-lg transition-shadow duration-300 min-h-[150px]"
           >
             <div className="flex  items-center gap-3">
