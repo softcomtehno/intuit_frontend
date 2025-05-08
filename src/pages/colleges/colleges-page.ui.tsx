@@ -35,7 +35,7 @@ export const CollegesPage = () => {
 
         <div className="flex flex-wrap justify-center gap-6">
           <Link
-            href="https://comtehno.kg/"
+            href="https://comtehno.kg"
             className="no-underline"
             target="_blank"
             rel="noopener"
