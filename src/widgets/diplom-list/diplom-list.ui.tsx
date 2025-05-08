@@ -42,7 +42,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery"
-              href="https://muit.makalabox.com/documents/bakalavr.pdf"
+              href="https://intuit.kg/documents/bakalavr.pdf"
             >
               <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between h-full text-left">
@@ -74,7 +74,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-2"
-              href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
+              href="https://intuit.kg/documents/diploms/magistratura.pdf"
             >
               <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between text-left">
@@ -104,7 +104,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-3"
-              href="https://muit.makalabox.com/documents/diploms/magistratura.pdf"
+              href="https://intuit.kg/documents/diploms/magistratura.pdf"
             >
               <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between text-left">
@@ -134,7 +134,7 @@ export const DiplomList = () => {
           <SwiperSlide>
             <a
               data-fancybox="gallery-4"
-              href="https://muit.makalabox.com/documents/diploms/diplom_en.pdf"
+              href="https://intuit.kg/documents/diploms/diplom_en.pdf"
             >
               <Card className="group transition duration-300 max-w-[420px]  bg-white p-5 flex  gap-5 rounded-xs border border-gray   hover:bg-blue/5 min-h-[190px]">
                 <div className="flex flex-col justify-between items-center text-left">

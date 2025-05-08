@@ -14,9 +14,10 @@ import {
 const components = [
   {
     title: 'Официальный сайт МУИТ',
-    description: 'Информация об университете, программах и студенческих возможностях.',
+    description:
+      'Информация об университете, программах и студенческих возможностях.',
     icon: <Globe className="h-10 w-10 text-blue-600" />,
-    link: 'https://muit.makalabox.com',
+    link: 'https://intuit.kg',
     status: 'active',
   },
   {
@@ -28,7 +29,8 @@ const components = [
   },
   {
     title: 'Рейтинговая система',
-    description: 'Оценка студентов и преподавателей по успеваемости и активности.',
+    description:
+      'Оценка студентов и преподавателей по успеваемости и активности.',
     icon: <BarChart2 className="h-10 w-10 text-blue-600" />,
     link: 'https://bilimtrack.makalabox.com/tv',
     status: 'active',
@@ -58,7 +60,7 @@ const components = [
     icon: <MessageCircle className="h-10 w-10 text-blue-600" />,
     status: 'development',
   },
-];
+]
 
 export const HeroCarousel: React.FC = () => {
   const theme = useTheme()
@@ -74,14 +76,18 @@ export const HeroCarousel: React.FC = () => {
               className="flex items-center justify-between backdrop-blur-xl bg-white/30 p-4 rounded-xl text-black shadow-md w-[320px] min-h-[130px] max-h-[130px] sm:w-[260px] h-auto sm:flex-col sm:items-start"
             >
               <div className="flex gap-3 sm:gap-2 sm:flex-col items-start">
-                <div className="bg-white p-2 rounded-md">
-                  {item.icon}
-                </div>
+                <div className="bg-white p-2 rounded-md">{item.icon}</div>
                 <div className="flex flex-col gap-1 text-white">
-                  <Typography variant="h6" className="text-sm font-semibold truncate max-w-[180px]">
+                  <Typography
+                    variant="h6"
+                    className="text-sm font-semibold truncate max-w-[180px]"
+                  >
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" className="text-xs text-gray-700 line-clamp-3">
+                  <Typography
+                    variant="body2"
+                    className="text-xs text-gray-700 line-clamp-3"
+                  >
                     {item.description}
                   </Typography>
                   {item.status === 'active' ? (

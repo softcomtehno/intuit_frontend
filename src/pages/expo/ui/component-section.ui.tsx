@@ -16,7 +16,7 @@ const components = [
     description:
       'Современный веб-ресурс с информацией об университете, программах и возможностях для абитуриентов и студентов.',
     icon: <Globe className="h-10 w-10 text-blue-600" />,
-    link: 'https://muit.makalabox.com',
+    link: 'https://intuit.kg',
     status: 'active',
   },
   {
