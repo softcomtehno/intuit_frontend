@@ -1,10 +1,10 @@
-import {
-  WhatsApp,
-  Telegram,
-  Instagram,
-  Facebook,
-  ContactPage,
-} from '@mui/icons-material'
+// import {
+//   WhatsApp,
+//   Telegram,
+//   Instagram,
+//   Facebook,
+//   ContactPage,
+// } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
 import { staffQueries } from '~entities/staff'
@@ -38,6 +38,7 @@ export const TeacherPage = () => {
   if (isError) {
     return <div>{t('loading.dataNotLoaded')}</div>
   }
+  console.log(staffData)
 
   if (isSuccess) {
     return (
@@ -65,71 +66,97 @@ export const TeacherPage = () => {
                 </Typography>
               </div>
             </div>
-            <div className="w-full flex justify-between md:flex-col items-center md:gap-5">
-              <a
-                href={staffData.data.whatsapp}
-                target="_blank"
-                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
-              >
-                <img
-                  className="h-[25px]"
-                  src="/social-icons/whatsapp.svg"
-                  alt=""
-                />
-                <span className="text-md font-bold text-black/80">
-                  WhatsApp
-                </span>
-              </a>
-              <a
-                href={staffData.data.telegram}
-                target="_blank"
-                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
-              >
-                <img
-                  className="h-[25px]"
-                  src="/social-icons/telegram.svg"
-                  alt=""
-                />
-                <span className="text-md font-bold text-black/80">
-                  Telegram
-                </span>
-              </a>
-              <a
-                href={staffData.data.instagram}
-                target="_blank"
-                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
-              >
-                <img
-                  className="h-[25px]"
-                  src="/social-icons/instagram.svg"
-                  alt=""
-                />
-                <span className="text-md font-bold text-black/80">
-                  Instagram
-                </span>
-              </a>
-              <a
-                href={staffData.data.facebook}
-                target="_blank"
-                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2  px-3 flex items-center gap-2 rounded-lg"
-              >
-                <img
-                  className="h-[25px]"
-                  src="/social-icons/facebook.svg"
-                  alt=""
-                />
-                <span className="text-md font-bold text-black/80">
-                  Facebook
-                </span>
-              </a>
-              <Link
-                to={'cv'}
-                target="_blank"
-                className="bg-white w-[150px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
-              >
-                <FileUser size={25} className="text-green" />
-                <span className="text-md font-bold text-black/80">Резюме</span>
-              </Link>
+            <div className="w-full flex gap-5 justify-center flex-wrap md:flex-col items-center md:gap-5">
+              {staffData.data.whatsapp && (
+                <a
+                  href={staffData.data.whatsapp}
+                  target="_blank"
+                  className="bg-white w-[140px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
+                >
+                  <img
+                    className="h-[25px]"
+                    src="/social-icons/whatsapp.svg"
+                    alt=""
+                  />
+                  <span className="text-md font-bold text-black/80">
+                    WhatsApp
+                  </span>
+                </a>
+              )}
+              {staffData.data.telegram && (
+                <a
+                  href={staffData.data.telegram}
+                  target="_blank"
+                  className="bg-white w-[140px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
+                >
+                  <img
+                    className="h-[25px]"
+                    src="/social-icons/telegram.svg"
+                    alt=""
+                  />
+                  <span className="text-md font-bold text-black/80">
+                    Telegram
+                  </span>
+                </a>
+              )}
+              {staffData.data.instagram && (
+                <a
+                  href={staffData.data.instagram}
+                  target="_blank"
+                  className="bg-white w-[140px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
+                >
+                  <img
+                    className="h-[25px]"
+                    src="/social-icons/instagram.svg"
+                    alt=""
+                  />
+                  <span className="text-md font-bold text-black/80">
+                    Instagram
+                  </span>
+                </a>
+              )}
+              {staffData.data.facebook && (
+                <a
+                  href={staffData.data.facebook}
+                  target="_blank"
+                  className="bg-white w-[140px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2  px-3 flex items-center gap-2 rounded-lg"
+                >
+                  <img
+                    className="h-[25px]"
+                    src="/social-icons/facebook.svg"
+                    alt=""
+                  />
+                  <span className="text-md font-bold text-black/80">
+                    Facebook
+                  </span>
+                </a>
+              )}
+              {staffData.data.email && (
+                <a
+                  href={staffData.data.email}
+                  target="_blank"
+                  className="bg-white w-[140px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2  px-3 flex items-center gap-2 rounded-lg"
+                >
+                  <img
+                    className="h-[25px]"
+                    src="/social-icons/email.svg"
+                    alt=""
+                  />
+                  <span className="text-md font-bold text-black/80">Email</span>
+                </a>
+              )}
+              {staffData.data.cv && (
+                <Link
+                  to={'cv'}
+                  target="_blank"
+                  className="bg-white w-[140px] md:w-full border border-white hover:cursor-pointer hover:bg-white/90  transition duration-200 p-2 px-3  flex items-center gap-2 rounded-lg"
+                >
+                  <FileUser size={25} className="text-green" />
+                  <span className="text-md font-bold text-black/80">
+                    Резюме
+                  </span>
+                </Link>
+              )}
             </div>
           </div>
         </div>
