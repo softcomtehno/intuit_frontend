@@ -110,7 +110,6 @@ export function Footer() {
             </li>
           ))}
         </ul>
-
         <div className="flex justify-between mt-6">
           <ul>
             <h5 className="font-bold mt-5">{t("footer.fields.address")}</h5>
