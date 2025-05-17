@@ -1,33 +1,36 @@
 import { useEffect } from "react";
-import { Box, Button, FormControlLabel, LinearProgress, Radio, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControlLabel,
+  LinearProgress,
+  Radio,
+  Typography,
+} from "@mui/material";
 import { Question as QuestionType } from "~entities/tandaQuestion";
 import { Reveal } from "~shared/lib/framer";
 
-
 function Progress(props) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Box sx={{ width: '100%', mr: 1 }}>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box sx={{ width: "100%", mr: 1 }}>
         <LinearProgress
           variant="determinate"
           sx={{
-            backgroundColor: '#00956f54',
-            '& .MuiLinearProgress-bar': {
-              backgroundColor: '#00956F',
+            backgroundColor: "#00956f54",
+            "& .MuiLinearProgress-bar": {
+              backgroundColor: "#00956F",
             },
           }}
           {...props}
         />
       </Box>
       <Box sx={{ minWidth: 35 }}>
-        <Typography variant="body2" >
-          {`${Math.round(props.value)}%`}
-        </Typography>
+        <Typography variant="body2">{`${Math.round(props.value)}%`}</Typography>
       </Box>
     </Box>
   );
 }
-
 
 interface QuestionProps {
   question: QuestionType;
@@ -123,7 +126,7 @@ export const QuestionCard: React.FC<QuestionProps> = ({
               onClick={onPreviousQuestion}
               disabled={currentQuestionIndex === 0}
               variant="contained"
-              className="   m-auto text-white font-medium  bg-green text-[16px]   transition-colors duration-150 ease-in-out"
+              className="m-auto text-white font-medium  bg-green text-[16px]   transition-colors duration-150 ease-in-out"
             >
               Назад
             </Button>

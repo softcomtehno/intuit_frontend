@@ -15,16 +15,16 @@ export const pathKeys = {
     },
   },
   tanda() {
-    return pathKeys.root.concat("tanda/");
+    return pathKeys.root.concat('tanda/')
   },
   tandaTest() {
-    return pathKeys.root.concat("tanda/test/");
+    return pathKeys.root.concat('tanda/test/')
   },
   tandaLogin() {
-    return pathKeys.root.concat("tanda/login/");
+    return pathKeys.root.concat('tanda/login/')
   },
   tandaResult() {
-    return pathKeys.root.concat("tanda/result/");
+    return pathKeys.root.concat('tanda/result/')
   },
   about: {
     root() {
@@ -72,6 +72,11 @@ export const pathKeys = {
     },
     bySlug(params: { slug: string }) {
       return pathKeys.document.root().concat(String(params.slug), '/')
+    },
+  },
+  international: {
+    root() {
+      return pathKeys.root.concat('international/')
     },
   },
 }
