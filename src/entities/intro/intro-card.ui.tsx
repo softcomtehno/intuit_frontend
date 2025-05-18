@@ -21,7 +21,7 @@ export const IntroCard = ({ img, description }) => {
   return (
     <>
       <section
-        className="container sm:p-3 border border-[gray] sm:py-6 h-[350px] w-full bg-no-repeat  bg-cover rounded-xl flex  sm:flex-col justify-between p-10 md:bg-right text-left bg-center  "
+        className=" sm:p-3 border border-[gray] sm:py-6 h-[350px] w-full bg-no-repeat  bg-cover rounded-xl flex  sm:flex-col justify-between p-10 md:bg-right text-left bg-center  "
         style={{ backgroundImage: `url(${img})` }}
       >
         <Box className="flex flex-col justify-between h-[100%]">
