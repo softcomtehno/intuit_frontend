@@ -14,11 +14,13 @@ import { NewsList } from '~widgets/news-list'
 import { HomeHero } from './ui/Hero.ui'
 import { t } from 'i18next'
 import { Title } from '~shared/ui/title'
+import { EventList } from '~widgets/events-list'
 
 export function HomePage() {
   return (
     <div>
       <HomeHero />
+      <EventList />
       <DegreeCategory />
       <ProgramCategory />
       <OpportunitiesList />
