@@ -1,10 +1,13 @@
-import { Card, Typography } from '@mui/material';
-import { eventTypes } from '..';
-import { Link } from 'react-router-dom';
+import { Card, Typography } from '@mui/material'
+import { eventTypes } from '..'
+import { Link } from 'react-router-dom'
 
 export const EventCard = ({ banner, title, slug }: eventTypes.Event) => {
   return (
-    <Link to={`/news/event/${slug}`} className="relative block w-[350px] h-[200px] mx-2">
+    <Link
+      to={`/news/event/${slug}`}
+      className="relative block w-[350px] h-[200px] mx-2"
+    >
       <div className="absolute  bg-black rounded-xl backdrop-blur"></div>
       <Card
         style={{ backgroundImage: `url(${banner})` }}
@@ -24,6 +27,5 @@ export const EventCard = ({ banner, title, slug }: eventTypes.Event) => {
         </Link>
       </Card>
     </Link>
-  );
-};
-
+  )
+}
