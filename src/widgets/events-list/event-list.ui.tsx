@@ -34,12 +34,21 @@ export const EventList = () => {
           className="w-full h-[600px] rounded-md bg-cover bg-center bg-no-repeat mt-5 flex justify-end items-end p-10"
           style={{ backgroundImage: `url(${eventsData.data[0].banner})` }}
         >
-          <Link
-            className="rounded text-white inline-block bg-green p-2 hover:bg-green-600 transition"
-            to={`/news/event/${eventsData.data[0].slug}`}
-          >
-            Узнать больше
-          </Link>
+          {eventsData.data[0].link ? (
+            <Link
+              className="rounded text-white inline-block bg-green p-2 hover:bg-green-600 transition"
+              to={`${eventsData.data[0].link}`}
+            >
+              Узнать больше
+            </Link>
+          ) : (
+            <Link
+              className="rounded text-white inline-block bg-green p-2 hover:bg-green-600 transition"
+              to={`/news/event/${eventsData.data[0].slug}`}
+            >
+              Узнать больше
+            </Link>
+          )}
         </section>
         <div className="uppercase text-2xl font-bold text-[#333] mt-10">
           Другие Мероприятия
