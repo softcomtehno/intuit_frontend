@@ -39,6 +39,15 @@ export const StudentsPage = () => {
         'https://api.makalabox.com/media/article/photos/2024/05/19/maka.png',
       isExternal: true,
     },
+    {
+      title: 'Научный Журнал',
+      description:
+        'Научный и информационный рецензируемый журнал «Наука и инновационные технологии»',
+      url: 'https://sit.net.kg/',
+      image:
+        'https://itpr.net.kg/wp-content/uploads/2024/06/muit_zhurnal_-_2016_2_40_a3-1-1086x1536-1.jpg',
+      isExternal: true,
+    },
   ]
 
   const [activeTab, setActiveTab] = useState('bachelor')
