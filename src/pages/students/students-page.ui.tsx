@@ -52,7 +52,7 @@ export const StudentsPage = () => {
 
   const [activeTab, setActiveTab] = useState('bachelor')
 
-  const handleTabChange = (event, newValue) => {
+  const handleTabChange = (_, newValue) => {
     setActiveTab(newValue)
   }
 
@@ -211,7 +211,10 @@ export const StudentsPage = () => {
                 marginRight: '16px',
               }}
             />
-            <Box className="md:flex md:flex-col md:items-center">
+            <Box
+              className="md:flex md:flex-col md:items-center 
+            flex flex-col justify-between w-full h-full"
+            >
               <Typography
                 variant="h6"
                 sx={{
