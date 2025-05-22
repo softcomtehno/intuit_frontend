@@ -63,7 +63,7 @@ export const StudentsPage = () => {
       courses: [
         {
           name: t('studentsPage.tabs.course1'),
-          url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzk1vYoQxwwQEeuU4xl6vOpoF5p4WAhu9vhBsrFtgTorAPR53qN8Tc1-4MKXRv6Q/pubhtml',
+          url: 'https://docs.google.com/spreadsheets/d/1La_XL5PtlmATPW55TzjY0iKg0WnqJRJb/edit?gid=306500418#gid=306500418',
         },
         {
           name: t('studentsPage.tabs.course2'),
