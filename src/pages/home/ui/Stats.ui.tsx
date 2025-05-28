@@ -8,9 +8,9 @@ import { Building2, Calendar, GraduationCap, Users } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
   year: <Calendar />,
-  institutes:<Building2 />,
-  faculty:<Users />,
-  graduates:<GraduationCap />,
+  institutes: <Building2 />,
+  faculty: <Users />,
+  graduates: <GraduationCap />,
 };
 
 interface StatsCardProps {
@@ -18,9 +18,15 @@ interface StatsCardProps {
   label: string;
   color: string;
   iconKey: string;
+  showPlusOnly?: boolean;
 }
-
-const StatsCard: React.FC<StatsCardProps> = ({ count, label, color, iconKey }) => {
+const StatsCard: React.FC<StatsCardProps> = ({
+  count,
+  label,
+  color,
+  iconKey,
+  showPlusOnly,
+}) => {
   const [isCounting, setIsCounting] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.3 });
 
@@ -36,19 +42,23 @@ const StatsCard: React.FC<StatsCardProps> = ({ count, label, color, iconKey }) =
     >
       <CardContent className="flex  justify-between items-start gap-3 p-3">
         <div>
-        <Typography
-          variant="h5"
-          className={` font-bold md:font-semibold`}
-        >
-          {isCounting ? <CountUp start={0} end={count} duration={2} /> : '0'}
-        </Typography>
-        <Typography variant="subtitle1" className='md:w-[90px] md:text-xs text-sm'>
-          {label}
-        </Typography>
+          <Typography variant="h5" className={` font-[900] md:font-semibold`}>
+            {showPlusOnly ? (
+              `+${count}`
+            ) : isCounting ? (
+              <CountUp start={0} end={count} duration={2} separator="" />
+            ) : (
+              '0'
+            )}
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            className="md:w-[90px] md:text-xs text-sm"
+          >
+            {label}
+          </Typography>
         </div>
-        <div className='bg-blue p-2 rounded-full' >
-          {iconMap[iconKey]}
-        </div>
+        <div className="bg-blue p-2 rounded-full">{iconMap[iconKey]}</div>
       </CardContent>
     </Card>
   );
@@ -70,16 +80,18 @@ export const Stats = () => {
         iconKey="institutes"
       />
       <StatsCard
-        count={120}
+        count={155}
         label={t('homepage.Stats.facultyMembers')}
         color="purple"
         iconKey="faculty"
+        showPlusOnly
       />
       <StatsCard
         count={5000}
         label={t('homepage.Stats.graduates')}
         color="red"
         iconKey="graduates"
+        showPlusOnly
       />
     </div>
   );
