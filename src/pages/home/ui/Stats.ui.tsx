@@ -58,7 +58,7 @@ export const Stats = () => {
   return (
     <div className="flex justify-between md:grid md:grid-cols-2 gap-5 mt-4 ">
       <StatsCard
-        count={2007}
+        count={2006}
         label={t('homepage.Stats.yearOfEstablishment')}
         color="blue"
         iconKey="year"
@@ -76,7 +76,7 @@ export const Stats = () => {
         iconKey="faculty"
       />
       <StatsCard
-        count={20000}
+        count={5000}
         label={t('homepage.Stats.graduates')}
         color="red"
         iconKey="graduates"
