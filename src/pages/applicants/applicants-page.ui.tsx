@@ -27,9 +27,6 @@ export const ApplicantsPage = () => {
             <Typography variant="h6" className="font-semibold mb-4">
               {t('applicantsPage.admission')}
             </Typography>
-            <Typography variant="body1" gutterBottom>
-              {t('applicantsPage.admissionInfo')}
-            </Typography>
             <Typography variant="body1">
               {t('applicantsPage.paymentBenefits')}
             </Typography>
