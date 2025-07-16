@@ -248,14 +248,17 @@ export const Header: React.FC = () => {
   }
 
   const headerItems = [
-    { label: t('enrollPage.introCard.title'), link: '/applicants' },
+    {
+      label: t('enrollPage.introCard.title'),
+      link: '/document/informaciya-dlya-abiturientov',
+    },
     { label: t('homepage.degrees.collegesCount'), link: '/institutes' },
     { label: t('homepage.degrees.colleges'), link: '/colleges' },
     { label: t('degreePage.header.students'), link: '/students' },
     { label: t('homepage.aboutUniversity.title'), link: '/about' },
     {
       label: 'For International Students',
-      link: '/international',
+      link: '/document/for-international-students',
     },
   ]
 
