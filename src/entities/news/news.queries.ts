@@ -13,10 +13,10 @@ export function useGetNews() {
     queryFn: getNews,
   })
 }
-export function useGetNewsInstitutes(id: number) {
+export function useGetNewsInstitutes(id: number | null, category: number | null) {
   return useQuery({
     queryKey: keys.getNewsInstitutes(id),
-    queryFn: () => getNewsInstitutes(id),
+    queryFn: () => getNewsInstitutes(id, category),
   })
 }
 

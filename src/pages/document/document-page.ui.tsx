@@ -8,10 +8,10 @@ import {
   AccordionDetails,
   Typography,
   Container,
-  CircularProgress,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { Loader } from '~shared/ui/loader'
+import { NewsList } from '~widgets/news-list'
 
 export const DocumentPage = () => {
   const { slug } = useParams()
@@ -29,6 +29,7 @@ export const DocumentPage = () => {
     return <Loader />
   }
 
+  console.log(documentData)
   return (
     <Container maxWidth="lg" className="py-10">
       <Typography
@@ -50,7 +51,10 @@ export const DocumentPage = () => {
         }}
       >
         {documentData?.data.documentCollections.map((acc, i) => (
-          <Accordion className="mb-4 border border-gray shadow-none rounded">
+          <Accordion
+            key={i}
+            className="mb-4 border border-gray shadow-none rounded"
+          >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className="text-gray-800 font-semibold">
                 {acc.name}
@@ -72,6 +76,7 @@ export const DocumentPage = () => {
           </Accordion>
         ))}
       </Fancybox>
+      {slug == 'for-international-students' && <NewsList category={23} />}
     </Container>
   )
 }
