@@ -10,9 +10,11 @@ import { t } from 'i18next'
 import { Title } from '~shared/ui/title'
 import { Loader } from '~shared/ui/loader'
 
-export const NewsList = ({ id = null }) => {
+export const NewsList = ({ id = null, category = null }) => {
   const { data, isError, isLoading, isSuccess } = id
-    ? newsQueries.useGetNewsInstitutes(id)
+    ? newsQueries.useGetNewsInstitutes(id, null)
+    : category
+    ? newsQueries.useGetNewsInstitutes(null, category)
     : newsQueries.useGetNews()
   const [currentPage, setCurrentPage] = useState(1)
   const swiperRef = useRef(null)
