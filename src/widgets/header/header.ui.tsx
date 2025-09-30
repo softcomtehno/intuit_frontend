@@ -254,7 +254,7 @@ export const Header: React.FC = () => {
     },
     { label: t('homepage.degrees.collegesCount'), link: '/institutes' },
     { label: t('homepage.degrees.colleges'), link: '/colleges' },
-    { label: t('degreePage.header.students'), link: '/students' },
+    { label: t('degreePage.header.students'), link: '/schedule' },
     { label: t('homepage.aboutUniversity.title'), link: '/about' },
     {
       label: 'For International Students',
