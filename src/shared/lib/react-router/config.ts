@@ -30,6 +30,9 @@ export const pathKeys = {
     root() {
       return pathKeys.root.concat("schedule/");
     },
+    timeTable() {
+      return pathKeys.root.concat("time-table/");
+    },
     bySlugGroup(id: string | number) {
       return pathKeys.schedule.root().concat(`groups/${id}/`);
     },

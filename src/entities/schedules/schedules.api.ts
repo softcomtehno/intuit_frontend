@@ -7,14 +7,18 @@ export const getEduLevel = async () => {
   return response.data;
 };
 
-export const getEduCourses = async () => {
-  const response = await axios.get(`${API_URL}/courses/`);
-  return response.data;
+export const getEduCourses = async (organizationId: number) => {
+  const { data } = await axios.get(`${API_URL}/courses/`, {
+    params: { organization: organizationId },
+  });
+  return data;
 };
 
-export const getGroups = async () => {
-  const response = await axios.get(`${API_URL}/groups/`);
-  return response.data;
+export const getGroups = async (organizationId: number) => {
+  const { data } = await axios.get(`${API_URL}/groups/`, {
+    params: { organization: organizationId },
+  });
+  return data;
 };
 
 export const getGroupsDetails = async (slug: string) => {
@@ -23,9 +27,9 @@ export const getGroupsDetails = async (slug: string) => {
 };
 
 // ticher
-export const getTeachers = async () => {
+export const getTeachers = async (organizationId: number) => {
   const { data } = await axios.get(`${API_URL}/teachers`, {
-    params: { organization: 1 },
+    params: { organization: organizationId },
   });
   return data;
 };

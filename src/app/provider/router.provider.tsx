@@ -35,6 +35,7 @@ import { TandaLayout } from "~pages/tandalayout";
 import { internationalPageRoute } from "~pages/international";
 import { scheduleDetailGroupsRoute } from "~pages/students/scheduleDetailsGroups";
 import { scheduleDetailTeacherRoute } from "~pages/students/scheduleTeacherDetails";
+import { timeTablePageRoute } from "~pages/timetable";
 
 function BubbleError() {
   const error = useRouteError();
@@ -66,6 +67,8 @@ const router = createBrowserRouter([
           studentsPageRoute,
           scheduleDetailGroupsRoute,
           scheduleDetailTeacherRoute,
+          // timeTable
+          timeTablePageRoute,
           // ----------
           applicantsPageRoute,
           admissionsPageRoute,

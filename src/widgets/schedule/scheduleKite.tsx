@@ -10,53 +10,32 @@ import {
 } from "@mui/material";
 import { t } from "i18next";
 import { ChevronRight, School, SearchIcon } from "lucide-react";
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { schedulesQueries } from "~entities/schedules";
-import {
-  EducationLevel,
-  Course,
-  Group,
-  Teacher,
-} from "~entities/schedules/schedules.types";
+import { Course, Group, Teacher } from "~entities/schedules/schedules.types";
 import { pathKeys } from "~shared/lib/react-router";
 
-export const Schedule = () => {
+export const ScheduleKite = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [selectedCourseId, setSelectedCourseId] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeTabLvl, setActiveTabLvl] = useState("Бакалавриат");
 
-  const { data: groupsData = [] } = schedulesQueries.useGetGroups(1);
-  const { data: teachersData = [] } = schedulesQueries.useGetTeachers(1);
-  const { data: eduLvlData } = schedulesQueries.useGetEduLvl();
-  const { data: coursesData } = schedulesQueries.useGetCourses(1);
+  const { data: groupsData = [] } = schedulesQueries.useGetGroups(3);
+  const { data: teachersData = [] } = schedulesQueries.useGetTeachers(3);
+  const { data: coursesData = [] } = schedulesQueries.useGetCourses(3);
 
-  // Выбранный уровень образования
-  const selectedEducationLevel = useMemo(() => {
-    return eduLvlData?.find(
-      (level: EducationLevel) => level.name === activeTabLvl
-    );
-  }, [eduLvlData, activeTabLvl]);
+  // Все курсы без привязки к уровню образования
+  const relevantCourses = useMemo(() => coursesData, [coursesData]);
 
-  // Курсы, относящиеся к выбранному уровню образования
-  const relevantCourses = useMemo(() => {
-    if (!coursesData || !selectedEducationLevel) return [];
-    return coursesData.filter(
-      (course: Course) => course.educationLevel === selectedEducationLevel.id
-    );
-  }, [coursesData, selectedEducationLevel]);
-
-  // Устанавливаем первый курс при изменении уровня
+  // Устанавливаем первый курс при загрузке курсов
   useEffect(() => {
     if (relevantCourses.length > 0) {
       setSelectedCourseId(relevantCourses[0].id);
-    } else {
-      setSelectedCourseId(null);
     }
   }, [relevantCourses]);
 
-  // Группы, отфильтрованные по ID выбранного курса
+  // Фильтр групп по выбранному курсу и поиску
   const filteredGroups = useMemo(() => {
     if (!groupsData || selectedCourseId === null) return [];
     return groupsData
@@ -68,25 +47,20 @@ export const Schedule = () => {
       .sort((a: Group, b: Group) => (a.name || "").localeCompare(b.name || ""));
   }, [groupsData, selectedCourseId, searchQuery]);
 
-  // Преподаватели
+  // Фильтр преподавателей по поиску
   const filteredTeachers = useMemo(() => {
     if (!teachersData) return [];
     return teachersData
-      .filter((teacher: Teacher) => {
-        const teacherName = teacher.fullName || "";
-        return teacherName.toLowerCase().includes(searchQuery.toLowerCase());
-      })
-      .sort((a: Teacher, b: Teacher) =>
-        (a.fullName || "").localeCompare(b.fullName || "")
-      );
+      .filter((teacher: Teacher) =>
+        (teacher.fullName || "")
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
+      .sort((a, b) => (a.fullName || "").localeCompare(b.fullName || ""));
   }, [teachersData, searchQuery]);
 
-  const handleEduLevelChange = (_: React.SyntheticEvent, newValue: string) => {
-    setActiveTabLvl(newValue);
-  };
-
   return (
-    <Container maxWidth="lg" className="p-0 ">
+    <Container maxWidth="lg" className="p-0">
       <div className="flex mb-14 flex-wrap justify-center gap-12 r-md:gap-8 r-md:flex-col r-md:justify-center">
         {/* Левая колонка */}
         <div className="w-[460px] sm:w-full">
@@ -103,24 +77,6 @@ export const Schedule = () => {
           </div>
 
           <Paper className="rounded-xl shadow border border-gray-100 overflow-hidden">
-            {/* Уровень образования */}
-            <Tabs
-              value={activeTabLvl}
-              onChange={handleEduLevelChange}
-              className="text-[#2A2172]"
-              TabIndicatorProps={{ style: { backgroundColor: "#2A2172" } }}
-              variant="scrollable"
-            >
-              {eduLvlData?.map((tab: EducationLevel) => (
-                <Tab
-                  key={tab.id}
-                  className="text-black"
-                  label={tab.name}
-                  value={tab.name}
-                />
-              ))}
-            </Tabs>
-
             {/* Студент / Преподаватель */}
             <Tabs
               value={activeTab}
@@ -156,7 +112,7 @@ export const Schedule = () => {
             <div className="p-4 md:p-6">
               {activeTab === 0 && (
                 <>
-                  {relevantCourses.length > 0 ? (
+                  {relevantCourses.length > 0 && (
                     <Tabs
                       value={
                         selectedCourseId
@@ -189,10 +145,6 @@ export const Schedule = () => {
                         />
                       ))}
                     </Tabs>
-                  ) : (
-                    <div className="py-4 text-center text-gray-500">
-                      Нет курсов для выбранного уровня образования
-                    </div>
                   )}
 
                   <TextField
