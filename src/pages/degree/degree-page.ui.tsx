@@ -2,10 +2,13 @@ import InfoBlock from './ui/info-block.ui' // Adjusted import statement
 import {
   Breadcrumbs,
   Button,
+  Card,
+  CardContent,
+  CardHeader,
   CircularProgress,
   Link,
   Typography,
-} from '@mui/material'
+} from '@mui/material';
 import { useParams } from 'react-router-dom'
 import { degreeQueries } from '~entities/degree'
 import { Loader } from '~shared/ui/loader'
@@ -96,6 +99,147 @@ export const DegreePage = () => {
               { value: 'Документ', label: `${degreeData?.data.diploma}` },
             ]}
           />
+                {slug.slug === "magistratura" && (
+        <Card className="p-4 shadow-md rounded-2xl border border-gray-200 bg-white">
+          <CardHeader>
+            <h2 className="text-2xl font-semibold text-gray-900">
+              Кто такой магистр?
+            </h2>
+          </CardHeader>
+
+          <CardContent className="space-y-6 text-gray-700 leading-relaxed">
+
+            {/* Кто такой магистр */}
+            <div>
+              <p>
+                Магистр — это квалификация, присваиваемая после окончания магистратуры.
+                Обучение направлено на углублённое освоение выбранного направления и подготовку
+                к научно-исследовательской, педагогической, аналитической и консультационной
+                деятельности.
+              </p>
+            </div>
+
+            {/* Где может работать магистр */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Где может работать магистр?
+              </h3>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Научно-исследовательские организации;</li>
+                <li>Консалтинговые компании;</li>
+                <li>Средние специальные и высшие учебные заведения;</li>
+                <li>Аналитические подразделения учреждений и организаций.</li>
+              </ul>
+            </div>
+
+            {/* Срок обучения */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Срок обучения
+              </h3>
+              <p>Очная форма — 2 года.</p>
+              <p>Условие поступления — завершённая программа бакалавриата (4 года).</p>
+              <p className="mt-2">
+                Квалификация присваивается после успешной защиты магистерской диссертации и даёт
+                право поступления в аспирантуру и докторантуру.
+              </p>
+            </div>
+
+            {/* Обязанности обучающегося */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Обязанности обучающегося
+              </h3>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Осваивать образовательную программу и выполнять индивидуальный учебный план;</li>
+                <li>Посещать занятия;</li>
+                <li>Готовиться к занятиям и выполнять задания преподавателей.</li>
+              </ul>
+            </div>
+
+            {/* Магистерская программа */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Магистерская программа
+              </h3>
+
+              <p className="mb-2">
+                Магистратура обеспечивает углублённую фундаментальную и профессиональную подготовку.
+                Учебный процесс организован на основе:
+              </p>
+
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Учебного плана;</li>
+                <li>Календарного учебного графика.</li>
+              </ul>
+            </div>
+
+            {/* Научный руководитель */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Научный руководитель
+              </h3>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Направляет научную и учебную деятельность;</li>
+                <li>Помогает формировать индивидуальный план;</li>
+                <li>Руководит подготовкой диссертации;</li>
+              </ul>
+              <p className="mt-1">Назначается в течение первого месяца обучения.</p>
+            </div>
+
+            {/* НИРМ */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Научно-исследовательская работа магистранта (НИРМ)
+              </h3>
+              <p>
+                Выполняется на протяжении всего периода обучения. Формы и содержание отражаются
+                в индивидуальном плане.
+              </p>
+            </div>
+
+            {/* Диссертация */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Магистерская диссертация
+              </h3>
+
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Выполняется под руководством научного руководителя;</li>
+                <li>Тема выбирается магистрантом или из утверждённого перечня;</li>
+                <li>Перед защитой проходит рецензирование;</li>
+              </ul>
+
+              <p className="mt-1">
+                К защите допускаются обучающиеся, завершившие программу и сдавшие госэкзамены.
+              </p>
+
+              <p className="mt-2 font-semibold">
+                После успешной защиты выдаётся диплом магистра.
+              </p>
+            </div>
+
+            {/* МБРС */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Модульно-балльно-рейтинговая система (МБРС)
+              </h3>
+
+              <p className="mb-2">
+                МБРС — система оценки учебных достижений, обеспечивающая прозрачность и качество.
+              </p>
+
+              <ul className="list-disc pl-5 space-y-1">
+                <li>100-балльная шкала;</li>
+                <li>Учёт всех видов деятельности через AVN;</li>
+                <li>Дисциплины делятся на модули;</li>
+                <li>Итоговый балл = текущая работа + экзамен.</li>
+              </ul>
+            </div>
+
+          </CardContent>
+        </Card>
+      )}
           <ProgramCategory degreeId={degreeData?.data.id} />
           <OpportunitiesList />
           <EnrollForm />
