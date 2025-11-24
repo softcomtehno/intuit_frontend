@@ -43,14 +43,6 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
               </div>
             ))}
           </Box>
-          {/* <Box className="flex gap-2">
-            <div className="bg-white p-2 rounded-[100%]">
-              <SchoolRounded fontSize="small" />
-            </div>
-            <div className="bg-white p-2 rounded-[100%]">
-              <PaidRounded fontSize="small" />
-            </div>
-          </Box> */}
         </Box>
       </Card>
       <Box className="grid grid-cols-2 gap-4">

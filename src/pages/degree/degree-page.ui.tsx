@@ -2,22 +2,18 @@ import InfoBlock from './ui/info-block.ui' // Adjusted import statement
 import {
   Breadcrumbs,
   Button,
-  Card,
   CardContent,
-  CardHeader,
-  CircularProgress,
   Link,
   Typography,
-    Accordion,
+  Accordion,
   AccordionSummary,
   AccordionDetails,
-} from '@mui/material';
+} from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { degreeQueries } from '~entities/degree'
 import { Loader } from '~shared/ui/loader'
 import { EnrollForm } from '~widgets/enroll-form'
 import { OpportunitiesList } from '~widgets/opportunities-list'
-// import { FeedbackList } from '~widgets/feedback-list'
 import { ProgramCategory } from '~widgets/programm-category'
 import { SpeakerVideoList } from '~widgets/speaker-list'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -46,9 +42,6 @@ export const DegreePage = () => {
         <div className="my-10">
           <div
             className="bg-cover bg-center min-h-[300px] rounded-2xl p-5 flex flex-col justify-between"
-            // style={{
-            //   backgroundImage: `url(${degreeData?.data.banner})`,
-            // }}
             style={{
               background: `linear-gradient(200deg, rgba(42,33,115,1) 0%, rgba(0,149,111,1) 100%)`,
             }}
@@ -103,122 +96,118 @@ export const DegreePage = () => {
               { value: 'Документ', label: `${degreeData?.data.diploma}` },
             ]}
           />
-{slug.slug === "magistratura" && (
-  <Accordion className="my-6 shadow-md rounded-2xl border border-gray-200 bg-white">
-    <AccordionSummary
-      expandIcon={<ExpandMoreIcon />}
-      aria-controls="magistr-summary"
-      id="magistr-header"
-    >
-      <Typography className="text-xl font-semibold">
-        Памятка магистранта
-      </Typography>
-    </AccordionSummary>
-    <AccordionDetails>
-      <CardContent className="space-y-6 text-gray-700 leading-relaxed p-0">
-        {/* Кто такой магистр */}
-        <div>
-          <p>
-Магистр — это квалификация, присваиваемая после окончания магистратуры. Обучение направлено на углублённое освоение выбранного направления и подготовку к научно-исследовательской, педагогической, аналитической и консультационной деятельности.
-          </p>
-        </div>
+          {slug.slug === 'magistratura' && (
+            <Accordion className="my-6 shadow-md rounded-2xl border border-gray-200 bg-white">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="magistr-summary"
+                id="magistr-header"
+              >
+                <Typography className="text-xl font-semibold">
+                  Памятка магистранта
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <CardContent className="space-y-6 text-gray-700 leading-relaxed p-0">
+                  {/* Кто такой магистр */}
+                  <div>
+                    <p>
+                      В магистратуру принимаются лица, имеющие законченное
+                      высшее образование (диплом бакалавра или специалиста).
+                    </p>
+                  </div>
 
-        {/* Где может работать магистр */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
-            Где может работать магистр?
-          </h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Научно-исследовательские организации;</li>
-            <li>Консалтинговые компании;</li>
-            <li>Средние специальные и высшие учебные заведения;</li>
-            <li>Аналитические подразделения учреждений и организаций.</li>
-          </ul>
-        </div>
+                  {/* Где может работать магистр */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Лицензии:{' '}
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>
+                        Лицензия № LD160000749 выдана 04.11.2016 г., срок
+                        действия бессрочная;
+                      </li>
+                      <li>
+                        Лицензия № LD160000382 выдана 10.05.2016 г., срок
+                        действия бессрочная;
+                      </li>
+                      <li>Средние специальные и высшие учебные заведения;</li>
+                      <li>
+                        Лицензия № LD150001054 выдана 04.12.2015 г., срок
+                        действия бессрочная.{' '}
+                      </li>
+                    </ul>
+                  </div>
 
-        {/* Срок обучения */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
-            Срок обучения
-          </h3>
-          <p>Очная форма — 2 года.</p>
-          <p>Условие поступления — завершённая программа бакалавриата (4 года).</p>
-          <p className="mt-2">
-            Квалификация присваивается после успешной защиты магистерской диссертации и даёт
-            право поступления в аспирантуру и докторантуру.
-          </p>
-        </div>
-
-        {/* Обязанности обучающегося */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
-            Обязанности обучающегося
-          </h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Осваивать образовательную программу и выполнять индивидуальный учебный план;</li>
-            <li>Посещать занятия;</li>
-            <li>Готовиться к занятиям и выполнять задания преподавателей.</li>
-          </ul>
-        </div>
-
-
-
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Магистерская программа</h3>
-          <p>Магистратура обеспечивает углублённую фундаментальную и профессиональную подготовку.</p>
-          <p>Учебный процесс организован на основе:</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Учебного плана, определяющего перечень дисциплин, практик и форм аттестации;</li>
-            <li>Календарного учебного графика.</li>
-          </ul>
-        </div>
-
-        {/* Научный руководитель */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Научный руководитель</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Направляет научную и учебную деятельность магистранта;</li>
-            <li>Помогает формировать и контролировать индивидуальный план;</li>
-            <li>Руководит подготовкой магистерской диссертации.</li>
-          </ul>
-          <p className="mt-1">Назначается в течение первого месяца обучения.</p>
-        </div>
-
-        {/* Научно-исследовательская работа магистранта (НИРМ) */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Научно-исследовательская работа магистранта (НИРМ)</h3>
-          <p>НИРМ выполняется на протяжении всего периода обучения. Формы и содержание работы отражаются в индивидуальном плане.</p>
-        </div>
-
-        {/* Магистерская диссертация */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Магистерская диссертация</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Выполняется под руководством научного руководителя с первого года обучения;</li>
-            <li>Тема выбирается магистрантом или из перечня, утверждённого учебным подразделением;</li>
-            <li>Перед защитой проходит рецензирование.</li>
-          </ul>
-          <p>К защите допускаются обучающиеся, завершившие программу и сдавшие государственные экзамены.</p>
-          <p className="mt-1 font-semibold">После успешной защиты выдаётся диплом магистра.</p>
-        </div>
-
-        {/* Модульно-балльно-рейтинговая система (МБРС) */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Модульно-балльно-рейтинговая система (МБРС)</h3>
-          <p>МБРС — система оценки учебных достижений, обеспечивающая прозрачность и качество освоения программы.</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Оценивание проводится по 100-балльной шкале;</li>
-            <li>Учёт всех видов учебной деятельности через портал AVN;</li>
-            <li>Каждая дисциплина делится на модули, представляющие логические этапы изучения;</li>
-            <li>Итоговый балл формируется из текущей работы и экзамена.</li>
-          </ul>
-        </div>
-
-
-      </CardContent>
-    </AccordionDetails>
-  </Accordion>
-)}
+                  {/* Срок обучения */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Направления в Магистратуре МУИТ:{' '}
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>710200 «Информационные системы и технологии»;</li>
+                      <li>750500 «Строительство»;</li>
+                      <li>640200 «Электроэнергетика и электротехника»;</li>
+                      <li>580100 «Экономика»;</li>
+                      <li>580200 «Менеджмент».</li>
+                    </ul>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Преимущества обучения в магистратуре МУИТ:{' '}
+                    </h3>
+                    <ol>
+                      <li>
+                        1. Высококвалифицированный
+                        профессорско-преподавательский состав;
+                      </li>
+                      <li>
+                        2. Диплом магистра, признаваемый в зарубежных странах;
+                      </li>
+                      <li>
+                        3. Возможность продолжить обучение в аспирантуре и
+                        докторантуре PhD;
+                      </li>
+                      <li>
+                        4. Перспектива заниматься научной и преподавательской
+                        деятельностью;
+                      </li>
+                      <li>5. Индивидуальный подход к каждому магистранту;</li>
+                      <li>6. Широкие возможности для карьерного роста.</li>
+                    </ol>
+                    <div>
+                      <strong>
+                        Право поступления на магистерскую программу
+                      </strong>
+                      <p>
+                        имеют лица, имеющие государственный документ о высшем
+                        профессиональном образовании с присвоением степени
+                        «бакалавр» по соответствующему направлению либо о высшем
+                        профессиональном образовании с квалификацией
+                        «специалист».
+                      </p>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Документы необходимые для поступления:{' '}
+                    </h3>
+                    <div>
+                      — Личное заявление, с предоставлением документа,
+                      удостоверяющего его личность и гражданство;
+                      <br />
+                      — Копия диплома государственного образца (бакалавра или
+                      специалиста) о высшем образовании, заверенная нотариально;
+                      <br />— 4 фотографий размером 3х4;
+                      <br />— Копия паспорта.
+                    </div>
+                    <div>
+                      <strong>Зачисление в магистратуру </strong>
+                      <span>
+                        проводится на основании результатов собеседования.
+                      </span>
+                    </div>
+                  </div>
+                </CardContent>
+              </AccordionDetails>
+            </Accordion>
+          )}
           <ProgramCategory degreeId={degreeData?.data.id} />
           <OpportunitiesList />
           <EnrollForm />
